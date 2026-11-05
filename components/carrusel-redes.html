@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarruselRedes — Envíos DosRuedas (Comunidad Digital)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+      --font-sans: "Outfit", sans-serif;
+      --font-display: "Anton SC", "Anton", sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+      --ease-out-ui: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 4px rgba(255, 236, 1, 0.15);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-blue-500); color: var(--color-white); line-height: 1.5; }
+    .font-sans { font-family: var(--font-sans); }
+    .font-display { font-family: var(--font-display); text-transform: uppercase; letter-spacing: -0.025em; line-height: 0.92; }
+    .font-subheading { font-family: var(--font-subheading); text-transform: uppercase; letter-spacing: 0.05em; }
+    .font-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+    .carrusel-section {
+      padding: 5rem 1rem;
+      background-color: var(--color-brand-blue-500);
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    @media (min-width: 768px) {
+      .carrusel-section { padding: 8rem 1.5rem; }
+    }
+
+    .ambient-radial-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(255, 236, 1, 0.08), transparent 50%);
+      pointer-events: none;
+    }
+
+    .section-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto 4rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .header-badge {
+      padding: 0.375rem 1rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: var(--font-subheading);
+      box-shadow: var(--shadow-accent-sm);
+    }
+
+    .header-title {
+      font-size: 2rem;
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      color: var(--color-white);
+    }
+    @media (min-width: 640px) { .header-title { font-size: 2.5rem; } }
+    @media (min-width: 1024px) { .header-title { font-size: 3rem; } }
+
+    .title-yellow {
+      color: var(--color-brand-yellow-500);
+    }
+
+    .header-desc {
+      font-size: 0.875rem;
+      line-height: 1.625;
+      color: var(--color-brand-blue-50);
+      max-width: 42rem;
+      opacity: 0.9;
+    }
+    @media (min-width: 640px) { .header-desc { font-size: 1rem; } }
+
+    .header-line {
+      height: 2px;
+      width: 5rem;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.5rem;
+    }
+
+    /* Grilla de 3 Tarjetas */
+    .networks-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .networks-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    }
+
+    .social-card-outer {
+      position: relative;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+    }
+    .social-card-outer:hover {
+      transform: translateY(-6px);
+    }
+
+    .social-card-inner {
+      position: relative;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 24.5rem; /* h-98 */
+      overflow: hidden;
+      border-width: 1px;
+      border-style: solid;
+    }
+    @media (min-width: 768px) {
+      .social-card-inner { height: 27rem; padding: 1.75rem; }
+    }
+
+    /* Marca de agua de ícono */
+    .watermark-icon {
+      position: absolute;
+      right: -2rem;
+      bottom: -2rem;
+      width: 14rem;
+      height: 14rem;
+      opacity: 0.1;
+      pointer-events: none;
+      user-select: none;
+      transition: transform 0.5s ease-out, opacity 0.5s;
+    }
+    .social-card-outer:hover .watermark-icon {
+      transform: scale(1.2) rotate(-10deg);
+      opacity: 0.18;
+    }
+
+    /* Temas por Tarjeta */
+    /* 1. Facebook */
+    .outer-facebook {
+      background-color: rgba(9, 80, 246, 0.8);
+      border: 1px solid rgba(24, 119, 242, 0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    .inner-facebook {
+      background-color: #0866FF;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .inner-facebook:hover { background-color: #1877F2; }
+    .badge-facebook { background-color: #FFFFFF; color: #0866FF; }
+    .iconbox-facebook { background-color: #FFFFFF; color: #0866FF; box-shadow: 0 10px 20px rgba(8, 102, 255, 0.3); }
+    .btn-facebook { background-color: #FFFFFF; color: #0866FF; }
+    .btn-facebook:hover { background-color: rgba(255, 255, 255, 0.9); }
+    .btn-icon-facebook { background-color: rgba(8, 102, 255, 0.15); color: #0866FF; }
+
+    /* 2. Instagram */
+    .outer-instagram {
+      padding: 2px;
+      background: linear-gradient(135deg, #833AB4, #E1306C, #FD1D1D, #F77737);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    .inner-instagram {
+      background: linear-gradient(135deg, #833AB4, #E1306C, #FD1D1D, #F77737);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .badge-instagram { background-color: #FFFFFF; color: #E1306C; }
+    .iconbox-instagram { background-color: #FFFFFF; color: #E1306C; box-shadow: 0 10px 20px rgba(253, 29, 29, 0.3); }
+    .btn-instagram { background-color: #FFFFFF; color: #E1306C; }
+    .btn-instagram:hover { background-color: rgba(255, 255, 255, 0.9); }
+    .btn-icon-instagram { background-color: rgba(225, 48, 108, 0.15); color: #E1306C; }
+
+    /* 3. WhatsApp */
+    .outer-whatsapp {
+      background-color: rgba(9, 80, 246, 0.8);
+      border: 1px solid rgba(37, 211, 102, 0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    .inner-whatsapp {
+      background-color: #128C7E;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .inner-whatsapp:hover { background-color: #0e7468; }
+    .badge-whatsapp { background-color: #FFFFFF; color: #128C7E; }
+    .iconbox-whatsapp { background-color: #FFFFFF; color: #128C7E; box-shadow: 0 10px 20px rgba(18, 140, 126, 0.4); }
+    .btn-whatsapp { background-color: #FFFFFF; color: #128C7E; }
+    .btn-whatsapp:hover { background-color: rgba(255, 255, 255, 0.9); }
+    .btn-icon-whatsapp { background-color: rgba(18, 140, 126, 0.15); color: #128C7E; }
+
+    /* Partes internas */
+    .card-top {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .card-badges-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .badge-tag {
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      font-family: var(--font-subheading);
+      border: 1px solid #FFFFFF;
+    }
+
+    .icon-box-network {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .social-card-outer:hover .icon-box-network {
+      transform: scale(1.1);
+    }
+    .icon-box-network svg { width: 1.25rem; height: 1.25rem; }
+
+    .card-network-name {
+      font-family: var(--font-display);
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      line-height: 1;
+      color: #FFFFFF;
+    }
+    @media (min-width: 640px) { .card-network-name { font-size: 2.25rem; } }
+
+    .card-handle {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 0.375rem;
+    }
+
+    .card-network-desc {
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .card-bottom-action {
+      position: relative;
+      z-index: 10;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-network-action {
+      width: 100%;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-subheading);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.8125rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-network-icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-left: 0.5rem;
+      transition: transform 0.2s ease;
+    }
+    .btn-network-action:hover .btn-network-icon {
+      transform: translateX(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       COMPONENTE: CarruselRedes (src/components/layout/CarruselRedes.tsx)
+       ======================================================================== -->
+  <section id="carrusel-redes" class="carrusel-section">
+    <div class="ambient-radial-glow" aria-hidden="true"></div>
+
+    <div class="section-container">
+      
+      <!-- HEADER EDITORIAL -->
+      <div class="section-header">
+        <span class="header-badge">Nuestra Comunidad Digital</span>
+        <h2 class="header-title">
+          SEGUÍ NUESTRO <span class="title-yellow">MOVIMIENTO</span>
+        </h2>
+        <p class="header-desc">
+          Sumate a nuestros canales digitales y enterate al toque de todas las novedades operativas en Mar del Plata.
+        </p>
+        <div class="header-line"></div>
+      </div>
+
+      <!-- GRILLA DE 3 TARJETAS SOCIALES -->
+      <div class="networks-grid">
+
+        <!-- 1. FACEBOOK -->
+        <div class="social-card-outer outer-facebook">
+          <div class="social-card-inner inner-facebook">
+            <!-- Watermark Facebook Icon -->
+            <svg class="watermark-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+            </svg>
+
+            <div class="card-top">
+              <div class="card-badges-row">
+                <span class="badge-tag badge-facebook">FACEBOOK OFICIAL</span>
+                <div class="icon-box-network iconbox-facebook" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="card-network-name">FACEBOOK</h3>
+                <p class="card-handle">Envíos DosRuedas</p>
+              </div>
+
+              <p class="card-network-desc">
+                Seguí nuestro día a día, novedades operativas y la comunidad comercial en Mar del Plata.
+              </p>
+            </div>
+
+            <div class="card-bottom-action">
+              <a href="https://www.facebook.com/share/1RnSzyweir/" target="_blank" rel="noopener noreferrer" class="btn-network-action btn-facebook">
+                <span>SEGUIR COMUNIDAD</span>
+                <span class="btn-network-icon btn-icon-facebook" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. INSTAGRAM -->
+        <div class="social-card-outer outer-instagram">
+          <div class="social-card-inner inner-instagram">
+            <!-- Watermark Instagram Icon -->
+            <svg class="watermark-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+            </svg>
+
+            <div class="card-top">
+              <div class="card-badges-row">
+                <span class="badge-tag badge-instagram">INSTAGRAM MDQ</span>
+                <div class="icon-box-network iconbox-instagram" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="card-network-name">INSTAGRAM</h3>
+                <p class="card-handle">@enviosdosruedas</p>
+              </div>
+
+              <p class="card-network-desc">
+                Mirá el detrás de escena de nuestros riders y la flota recorriendo las calles de MDQ.
+              </p>
+            </div>
+
+            <div class="card-bottom-action">
+              <a href="https://www.instagram.com/enviosdosruedas/" target="_blank" rel="noopener noreferrer" class="btn-network-action btn-instagram">
+                <span>VER CONTENIDO</span>
+                <span class="btn-network-icon btn-icon-instagram" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. WHATSAPP -->
+        <div class="social-card-outer outer-whatsapp">
+          <div class="social-card-inner inner-whatsapp">
+            <!-- Watermark WhatsApp Icon -->
+            <svg class="watermark-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+            </svg>
+
+            <div class="card-top">
+              <div class="card-badges-row">
+                <span class="badge-tag badge-whatsapp">WHATSAPP DIRECTO</span>
+                <div class="icon-box-network iconbox-whatsapp" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="card-network-name">WHATSAPP</h3>
+                <p class="card-handle">+54 9 223 555-0000</p>
+              </div>
+
+              <p class="card-network-desc">
+                Escribinos directamente para consultas, contrataciones o soporte express al toque.
+              </p>
+            </div>
+
+            <div class="card-bottom-action">
+              <a href="https://api.whatsapp.com/send/?phone=5492235550000" target="_blank" rel="noopener noreferrer" class="btn-network-action btn-whatsapp">
+                <span>INICIAR CHAT</span>
+                <span class="btn-network-icon btn-icon-whatsapp" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmprendedoresHome — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales: Outfit, Anton SC, Bebas Neue, Geist Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ========================================================================
+     * TOKENS OFICIALES DE GLOBALS.CSS
+     * ======================================================================== */
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-600: #0843D1;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-600: #E6D400;
+
+      --color-white: #FFFFFF;
+
+      --font-sans: "Outfit", "IBM Plex Sans", sans-serif;
+      --font-display: "Anton SC", "Anton", sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --ease-out-ui: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+
+      --shadow-sm: 0 2px 4px rgba(9, 80, 246, 0.06), 0 1px 2px rgba(9, 80, 246, 0.03);
+      --shadow-md: 0 4px 8px rgba(9, 80, 246, 0.08), 0 2px 4px rgba(9, 80, 246, 0.04);
+      --shadow-float: 0 25px 50px -12px rgba(9, 80, 246, 0.15);
+      --shadow-antigravity-deep: 0 24px 64px rgba(9, 80, 246, 0.22);
+      --shadow-accent-sm: 0 2px 4px rgba(255, 236, 1, 0.15);
+      --shadow-glow-yellow: 0 0 25px rgba(255, 241, 46, 0.45);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .font-sans { font-family: var(--font-sans); }
+    .font-display {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      line-height: 0.92;
+    }
+    .font-subheading {
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .font-mono {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ========================================================================
+     * ESTRUCTURA DE LA SECCIÓN (EmprendedoresHome.tsx)
+     * ======================================================================== */
+    .emprendedores-section {
+      padding: 4rem 1rem;
+      background-color: var(--color-brand-blue-500);
+      position: relative;
+      overflow: hidden;
+      color: var(--color-white);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    @media (min-width: 640px) {
+      .emprendedores-section { padding: 6rem 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .emprendedores-section { padding: 8rem 2rem; }
+    }
+
+    /* Glows asimétricos decorativos */
+    .glow-blue {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 31.25rem;
+      height: 31.25rem;
+      background-color: rgba(9, 80, 246, 0.05);
+      border-radius: 9999px;
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .glow-yellow {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 37.5rem;
+      height: 37.5rem;
+      background-color: rgba(255, 236, 1, 0.05);
+      border-radius: 9999px;
+      filter: blur(150px);
+      pointer-events: none;
+      animation: pulseSubtle 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseSubtle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    .section-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Cabecera Editorial */
+    .header-box {
+      max-width: 72rem;
+      margin-bottom: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .header-badge {
+      padding: 0.375rem 1rem;
+      background-color: rgba(230, 238, 254, 0.05);
+      color: var(--color-brand-yellow-500);
+      border: 1px solid rgba(255, 236, 1, 0.2);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      display: inline-block;
+      text-transform: uppercase;
+      box-shadow: var(--shadow-sm);
+      font-family: var(--font-subheading);
+      width: fit-content;
+    }
+
+    .header-title {
+      font-size: 2rem;
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      color: var(--color-white);
+      max-width: 64rem;
+    }
+    @media (min-width: 640px) { .header-title { font-size: 2.5rem; } }
+    @media (min-width: 1024px) { .header-title { font-size: 3.25rem; } }
+
+    /* Pill Inline MDQ */
+    .mdq-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.5rem;
+      height: 1.75rem;
+      border-radius: 9999px;
+      vertical-align: middle;
+      background: linear-gradient(to right, var(--color-brand-yellow-500), var(--color-brand-yellow-400));
+      margin: 0 0.375rem;
+      border: 1px solid var(--color-brand-yellow-500);
+      box-shadow: var(--shadow-md);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      transition: transform 0.4s ease;
+    }
+    @media (min-width: 640px) {
+      .mdq-pill { width: 4.5rem; height: 2.25rem; font-size: 1rem; }
+    }
+    @media (min-width: 1024px) {
+      .mdq-pill { width: 5rem; height: 2.5rem; font-size: 1.125rem; }
+    }
+    .mdq-pill:hover { transform: scale(1.05); }
+
+    .header-desc {
+      color: var(--color-brand-blue-50);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.625;
+      max-width: 48rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    @media (min-width: 640px) { .header-desc { font-size: 1.125rem; } }
+    @media (min-width: 768px) { .header-desc { font-size: 1.25rem; } }
+
+    .header-line {
+      height: 2px;
+      width: 6rem;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.5rem;
+    }
+
+    /* ========================================================================
+     * BENTO ASIMÉTRICO (Grid 12 cols: 7 cols + 5 cols apiladas)
+     * ======================================================================== */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 1024px) {
+      .bento-grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+        grid-auto-rows: minmax(18rem, auto);
+      }
+    }
+
+    /* CARD 1: PyMEs (lg:col-span-7 lg:row-span-2) */
+    .bento-card-pymes {
+      padding: 0.75rem;
+      border-radius: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 640px) { .bento-card-pymes { padding: 1rem; } }
+    @media (min-width: 1024px) {
+      .bento-card-pymes {
+        grid-column: span 7 / span 7;
+        grid-row: span 2 / span 2;
+      }
+    }
+    .bento-card-pymes:hover {
+      border-color: rgba(255, 241, 46, 0.4);
+      box-shadow: var(--shadow-glow-yellow);
+      transform: translateY(-4px);
+    }
+
+    .inner-card-pymes {
+      border-radius: 20px;
+      background-color: var(--color-brand-blue-500);
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+      flex: 1;
+    }
+    @media (min-width: 640px) { .inner-card-pymes { padding: 2rem; } }
+
+    .watermark-landmark {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      color: var(--color-white);
+      opacity: 0.03;
+      pointer-events: none;
+      user-select: none;
+      width: 11rem;
+      height: 11rem;
+    }
+
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .icon-badge-box {
+      padding: 0.75rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-radius: 0.75rem;
+      box-shadow: 2px 2px 0px var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-badge-box svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke-width: 2.2;
+    }
+
+    .tag-emprendedores {
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      text-transform: uppercase;
+      font-family: var(--font-subheading);
+      border: 1px solid rgba(255, 236, 1, 0.3);
+    }
+
+    .card-title-lg {
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      color: var(--color-white);
+      margin-bottom: 0.5rem;
+      transition: color 0.2s ease;
+    }
+    @media (min-width: 640px) { .card-title-lg { font-size: 1.875rem; } }
+    .bento-card-pymes:hover .card-title-lg {
+      color: var(--color-brand-yellow-500);
+    }
+
+    .card-pymes-desc {
+      color: var(--color-brand-blue-50);
+      font-size: 0.875rem;
+      line-height: 1.625;
+      font-family: var(--font-sans);
+      margin-bottom: 1.5rem;
+    }
+
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      padding-top: 0.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--color-white);
+      font-family: var(--font-sans);
+    }
+    @media (min-width: 640px) { .feature-item { font-size: 0.875rem; } }
+
+    .feature-item svg {
+      width: 1.125rem;
+      height: 1.125rem;
+      color: var(--color-brand-yellow-500);
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+
+    .card-footer-cta {
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* Botón Conocé Más */
+    .btn-conoce-mas {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 9999px;
+      min-height: 52px;
+      padding: 0.875rem 2rem;
+      background-color: var(--color-brand-yellow-400);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: var(--shadow-glow-yellow);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-conoce-mas:hover {
+      background-color: var(--color-brand-yellow-300);
+      transform: scale(1.02);
+    }
+
+    /* CARD 2: MercadoLibre Flex (lg:col-span-5) */
+    .bento-card-flex {
+      padding: 0.5rem;
+      border-radius: 1rem;
+      background-color: rgba(255, 236, 1, 0.1);
+      border: 1px solid rgba(255, 236, 1, 0.2);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 1024px) {
+      .bento-card-flex {
+        grid-column: span 5 / span 5;
+        grid-row: span 1 / span 1;
+      }
+    }
+    .bento-card-flex:hover {
+      border-color: rgba(9, 80, 246, 0.3);
+      background-color: rgba(255, 236, 1, 0.15);
+      box-shadow: 0 20px 40px -15px rgba(255, 236, 1, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .inner-card-flex {
+      background: linear-gradient(135deg, var(--color-brand-yellow-500), var(--color-brand-yellow-400));
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 236, 1, 0.2);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+      color: var(--color-brand-blue-500);
+      flex: 1;
+    }
+    @media (min-width: 640px) { .inner-card-flex { padding: 2rem; } }
+
+    .tag-meli {
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      text-transform: uppercase;
+      font-family: var(--font-subheading);
+      border: 1px solid rgba(9, 80, 246, 0.3);
+    }
+
+    .card-title-sm {
+      font-size: 1.25rem;
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 0.25rem;
+    }
+    @media (min-width: 640px) { .card-title-sm { font-size: 1.5rem; } }
+
+    .card-flex-desc {
+      color: var(--color-brand-blue-500);
+      font-size: 0.75rem;
+      line-height: 1.5;
+      font-family: var(--font-sans);
+      font-weight: 500;
+    }
+    @media (min-width: 640px) { .card-flex-desc { font-size: 0.875rem; } }
+
+    /* CARD 3: Corporativo (lg:col-span-5) */
+    .bento-card-corp {
+      padding: 0.5rem;
+      border-radius: 1rem;
+      background-color: rgba(230, 238, 254, 0.8);
+      border: 1px solid var(--color-brand-blue-100);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 1024px) {
+      .bento-card-corp {
+        grid-column: span 5 / span 5;
+        grid-row: span 1 / span 1;
+      }
+    }
+    .bento-card-corp:hover {
+      border-color: var(--color-brand-blue-300);
+      box-shadow: var(--shadow-antigravity-deep);
+      transform: translateY(-4px);
+    }
+
+    .inner-card-corp {
+      background-color: var(--color-white);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(230, 238, 254, 0.5);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+      color: var(--color-brand-blue-500);
+      flex: 1;
+    }
+    @media (min-width: 640px) { .inner-card-corp { padding: 2rem; } }
+
+    .tag-corp {
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      text-transform: uppercase;
+      font-family: var(--font-subheading);
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    /* Píldoras anidadas CTA */
+    .cta-pill-blue {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      padding: 0.625rem 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-family: var(--font-subheading);
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: var(--shadow-md);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease;
+    }
+    .cta-pill-blue:hover {
+      background-color: var(--color-brand-blue-400);
+    }
+
+    .cta-pill-yellow {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.625rem 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-family: var(--font-subheading);
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease;
+    }
+    .cta-pill-yellow:hover {
+      background-color: var(--color-brand-yellow-400);
+    }
+
+    /* ========================================================================
+     * MARQUEE DE MARCAS LOCALES (Aliados Estratégicos)
+     * ======================================================================== */
+    .marquee-wrapper {
+      margin-top: 6rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .marquee-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .marquee-controls { flex-direction: row; }
+    }
+
+    .marquee-label {
+      text-align: center;
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--color-brand-blue-50);
+      text-transform: uppercase;
+    }
+
+    .btn-pause-marquee {
+      min-height: 44px;
+      padding: 0.375rem 0.875rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-pause-marquee:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: var(--color-brand-yellow-500);
+    }
+    .btn-pause-marquee svg {
+      width: 0.875rem;
+      height: 0.875rem;
+      fill: currentColor;
+    }
+
+    .marquee-track-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 1rem 0;
+      user-select: none;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .marquee-inner-track {
+      display: flex;
+      gap: 4rem;
+      width: max-content;
+      animation: marqueeScroll 30s linear infinite;
+    }
+    .marquee-inner-track.paused,
+    .marquee-inner-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-item-list {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .partner-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue-50);
+      text-transform: uppercase;
+      cursor: default;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .partner-name:hover {
+      color: var(--color-brand-yellow-500);
+      transform: scale(1.05);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-inner-track {
+        animation: none !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+      }
+      .bento-card-pymes, .bento-card-flex, .bento-card-corp {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       SECCIÓN: EmprendedoresHome
+       ======================================================================== -->
+  <section
+    id="emprendedores-home"
+    aria-labelledby="emprendedores-home-title"
+    class="emprendedores-section"
+  >
+    <!-- Background Decorative Asymmetric Glows -->
+    <div class="glow-blue" aria-hidden="true"></div>
+    <div class="glow-yellow" aria-hidden="true"></div>
+
+    <div class="section-container">
+      
+      <!-- 1. HEADER EDITORIAL CON INLINE TYPOGRAPHY BADGE -->
+      <div class="header-box">
+        <span class="header-badge">Socio Estratégico Local</span>
+        
+        <h2 id="emprendedores-home-title" class="font-display header-title">
+          Potenciamos tu{' '}
+          <span aria-hidden="true" class="mdq-pill">
+            MDQ
+          </span>{' '}
+          Marca en Mar del Plata
+        </h2>
+
+        <div>
+          <p class="header-desc">
+            Si vendés online, necesitás un socio logístico que responda al toque. Creamos planes a tu medida con tarifas dinámicas transparentes y recolección programada a domicilio en Mar del Plata.
+          </p>
+        </div>
+
+        <div class="header-line"></div>
+      </div>
+
+      <!-- 2. BENTO GRID ASIMÉTRICO (12 COLUMNAS) -->
+      <div class="bento-grid">
+
+        <!-- CARD 1: PyMEs (E-Commerce) — lg:col-span-7 lg:row-span-2 -->
+        <div class="bento-card-pymes">
+          <div class="inner-card-pymes">
+            <!-- Subtle Radial Glow -->
+            <div style="position: absolute; bottom: 0; right: 0; width: 12rem; height: 12rem; border-radius: 9999px; background-color: rgba(255, 236, 1, 0.1); filter: blur(48px); pointer-events: none;"></div>
+            
+            <!-- Watermark Icon Landmark -->
+            <svg class="watermark-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <line x1="3" y1="22" x2="21" y2="22"></line>
+              <line x1="6" y1="18" x2="6" y2="11"></line>
+              <line x1="10" y1="18" x2="10" y2="11"></line>
+              <line x1="14" y1="18" x2="14" y2="11"></line>
+              <line x1="18" y1="18" x2="18" y2="11"></line>
+              <polygon points="12 2 20 7 4 7 12 2"></polygon>
+            </svg>
+
+            <div style="position: relative; z-index: 10;">
+              <div class="card-top-row">
+                <div class="icon-badge-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="22" x2="21" y2="22"></line>
+                    <line x1="6" y1="18" x2="6" y2="11"></line>
+                    <line x1="10" y1="18" x2="10" y2="11"></line>
+                    <line x1="14" y1="18" x2="14" y2="11"></line>
+                    <line x1="18" y1="18" x2="18" y2="11"></line>
+                    <polygon points="12 2 20 7 4 7 12 2"></polygon>
+                  </svg>
+                </div>
+                <span class="tag-emprendedores">EMPRENDEDORES</span>
+              </div>
+
+              <div>
+                <h3 class="card-title-lg">Cuenta Corriente Flexible</h3>
+                <p class="card-pymes-desc">
+                  Tu equipo de entregas de confianza, aunque la cantidad de pedidos cambie cada día. Pagás los envíos juntos, por semana, quincena o mes.
+                </p>
+              </div>
+
+              <ul class="features-list">
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span>Sin volumen mínimo de envíos: entrás con la cantidad que tengas</span>
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span>Accedés a tarifas LowCost con franjas horarias de 3 hs, como Express</span>
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span>Trabajás de forma exclusiva con nosotros para tus envíos</span>
+                </li>
+                <li class="feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span>Entregas contrareembolso integradas sin cargo extra</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-footer-cta">
+              <a href="/servicios/empresas-cuenta-corriente" class="btn-conoce-mas">
+                <span>Conocé Más</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: MercadoLibre Flex — lg:col-span-5 lg:row-span-1 -->
+        <div class="bento-card-flex">
+          <div class="inner-card-flex">
+            <!-- Watermark Icon ShoppingBag -->
+            <svg style="position: absolute; right: 1rem; bottom: 1rem; opacity: 0.05; pointer-events: none; width: 8rem; height: 8rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+
+            <div style="position: relative; z-index: 10;">
+              <div class="card-top-row" style="margin-bottom: 1rem;">
+                <div class="icon-badge-box" style="background-color: var(--color-brand-blue-500); color: var(--color-white); box-shadow: 2px 2px 0px var(--color-brand-blue-500);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                    <path d="M3 6h18"></path>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                </div>
+                <span class="tag-meli">MERCADOLIBRE</span>
+              </div>
+
+              <div>
+                <h3 class="card-title-sm">Envíos Flex Meli</h3>
+                <p class="card-flex-desc">
+                  Servicio adaptado a los estándares de Mercado Envíos Flex para tus envíos rápidos en el día. Recolección en tu local y entrega puntual garantizada.
+                </p>
+              </div>
+            </div>
+
+            <div style="padding-top: 1rem; margin-top: 1rem; border-top: 1px solid rgba(9, 80, 246, 0.15); display: flex; justify-content: flex-end; position: relative; z-index: 10;">
+              <a href="/servicios/enviosflex" class="cta-pill-blue">
+                <span>Configurar Flex</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Corporativos — lg:col-span-5 lg:row-span-1 -->
+        <div class="bento-card-corp">
+          <div class="inner-card-corp">
+            <!-- Watermark Icon Building2 -->
+            <svg style="position: absolute; right: 1rem; bottom: 1rem; opacity: 0.03; pointer-events: none; width: 8rem; height: 8rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+              <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+              <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+              <path d="M10 6h4"></path>
+              <path d="M10 10h4"></path>
+              <path d="M10 14h4"></path>
+              <path d="M10 18h4"></path>
+            </svg>
+
+            <div style="position: relative; z-index: 10;">
+              <div class="card-top-row" style="margin-bottom: 1rem;">
+                <div class="icon-badge-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                    <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                    <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                    <path d="M10 6h4"></path>
+                    <path d="M10 10h4"></path>
+                    <path d="M10 14h4"></path>
+                    <path d="M10 18h4"></path>
+                  </svg>
+                </div>
+                <span class="tag-corp">CORPORATIVO</span>
+              </div>
+
+              <div>
+                <h3 class="card-title-sm">Soluciones Corporativas</h3>
+                <p class="card-flex-desc" style="color: rgba(9, 80, 246, 0.85);">
+                  Soporte a gran escala con pagos agrupados (semanales, quincenales o mensuales), ruteos especiales para grandes volúmenes y entregas express coordinadas en Mar del Plata.
+                </p>
+              </div>
+            </div>
+
+            <div style="padding-top: 1rem; margin-top: 1rem; border-top: 1px solid var(--color-brand-blue-100); display: flex; justify-content: flex-end; position: relative; z-index: 10;">
+              <a href="/contacto" class="cta-pill-yellow">
+                <span>Abrir Cuenta Corriente</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3. MARQUEE DE MARCAS LOCALES -->
+      <div class="marquee-wrapper">
+        <div class="marquee-controls">
+          <p class="marquee-label">Marcas locales que confían en nosotros</p>
+          <button type="button" id="btn-toggle-marquee" class="btn-pause-marquee" aria-pressed="false" aria-label="Pausar carrusel de marcas locales">
+            <svg id="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+            <span id="label-pause">Pausar</span>
+          </button>
+        </div>
+
+        <div class="marquee-track-container">
+          <div id="marquee-track" class="marquee-inner-track">
+            <!-- Set 1 -->
+            <div class="marquee-item-list">
+              <span class="partner-name">TOY PIOLA JUGUETERÍA</span>
+              <span class="partner-name">AMA & POLA</span>
+              <span class="partner-name">DROPIX 3D</span>
+              <span class="partner-name">EL CÓNDOR</span>
+              <span class="partner-name">STARCEL</span>
+              <span class="partner-name">URBANCOW</span>
+              <span class="partner-name">WANCA</span>
+              <span class="partner-name">CATALINA INDUMENTARIA</span>
+              <span class="partner-name">ENVASES 3G</span>
+              <span class="partner-name">LA PERI</span>
+            </div>
+            <!-- Set 2 (Duplicado para loop continuo infinito) -->
+            <div class="marquee-item-list" aria-hidden="true">
+              <span class="partner-name">TOY PIOLA JUGUETERÍA</span>
+              <span class="partner-name">AMA & POLA</span>
+              <span class="partner-name">DROPIX 3D</span>
+              <span class="partner-name">EL CÓNDOR</span>
+              <span class="partner-name">STARCEL</span>
+              <span class="partner-name">URBANCOW</span>
+              <span class="partner-name">WANCA</span>
+              <span class="partner-name">CATALINA INDUMENTARIA</span>
+              <span class="partner-name">ENVASES 3G</span>
+              <span class="partner-name">LA PERI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Script para control interactivo del Marquee -->
+  <script>
+    (function() {
+      const btn = document.getElementById('btn-toggle-marquee');
+      const track = document.getElementById('marquee-track');
+      const icon = document.getElementById('icon-pause');
+      const label = document.getElementById('label-pause');
+
+      let isPaused = false;
+
+      btn.addEventListener('click', () => {
+        isPaused = !isPaused;
+        if (isPaused) {
+          track.classList.add('paused');
+          btn.setAttribute('aria-pressed', 'true');
+          btn.setAttribute('aria-label', 'Reanudar carrusel de marcas locales');
+          label.innerText = 'Reanudar';
+          icon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"></polygon>';
+        } else {
+          track.classList.remove('paused');
+          btn.setAttribute('aria-pressed', 'false');
+          btn.setAttribute('aria-label', 'Pausar carrusel de marcas locales');
+          label.innerText = 'Pausar';
+          icon.innerHTML = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

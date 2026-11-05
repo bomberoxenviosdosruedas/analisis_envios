@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SegmentosHome — Envíos DosRuedas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-600: #E6D400;
+      --color-white: #FFFFFF;
+      --font-sans: "Outfit", sans-serif;
+      --font-display: "Anton SC", "Anton", sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+      --ease-out-ui: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-xs: 0 1px 2px rgba(9, 80, 246, 0.04);
+      --shadow-sm: 0 2px 4px rgba(9, 80, 246, 0.06), 0 1px 2px rgba(9, 80, 246, 0.03);
+      --shadow-float: 0 25px 50px -12px rgba(9, 80, 246, 0.15);
+      --shadow-elevated: 0 16px 40px rgba(9, 80, 246, 0.18);
+      --shadow-hover-lift: 0 24px 64px rgba(9, 80, 246, 0.20);
+      --shadow-antigravity-deep: 0 24px 64px rgba(9, 80, 246, 0.22);
+      --shadow-accent-sm: 0 2px 4px rgba(255, 236, 1, 0.15);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-white); color: var(--color-brand-blue-500); line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    .font-sans { font-family: var(--font-sans); }
+    .font-display { font-family: var(--font-display); text-transform: uppercase; letter-spacing: -0.025em; }
+    .font-subheading { font-family: var(--font-subheading); text-transform: uppercase; letter-spacing: 0.05em; }
+    .font-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+    .segmentos-section { padding: 4rem 0.875rem; max-width: 80rem; margin: 0 auto; width: 100%; overflow: hidden; }
+    @media (min-width: 640px) { .segmentos-section { padding: 6rem 1.5rem; } }
+    @media (min-width: 1024px) { .segmentos-section { padding: 6rem 2rem; } }
+    .section-header { text-align: center; max-width: 48rem; margin: 0 auto 3rem auto; display: flex; flex-direction: column; gap: 0.75rem; }
+    @media (min-width: 640px) { .section-header { margin-bottom: 4rem; } }
+    .section-kicker { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: var(--color-brand-blue-400); }
+    .section-kicker svg { width: 0.875rem; height: 0.875rem; color: var(--color-brand-yellow-500); fill: var(--color-brand-yellow-500); flex-shrink: 0; }
+    .section-title { font-family: var(--font-display); font-size: 1.875rem; line-height: 0.9; text-transform: uppercase; letter-spacing: -0.025em; color: var(--color-brand-blue-500); margin-bottom: 0.75rem; text-wrap: balance; }
+    @media (min-width: 640px) { .section-title { font-size: 3rem; } }
+    .highlight-yellow { color: var(--color-brand-yellow-500); }
+    .section-desc { font-family: var(--font-sans); font-size: 1rem; font-weight: 300; line-height: 1.625; color: rgba(9, 80, 246, 0.8); text-wrap: balance; }
+    @media (min-width: 640px) { .section-desc { font-size: 1.125rem; } }
+    .cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: stretch; width: 100%; }
+    @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .cards-grid { gap: 2rem; } }
+    .double-bezel-outer {
+      background-color: color-mix(in srgb, var(--color-brand-blue-50) 80%, transparent);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      box-shadow: var(--shadow-float);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .double-bezel-outer:hover { border-color: var(--color-brand-blue-300); box-shadow: var(--shadow-antigravity-deep); transform: translateY(-2px); }
+    .double-bezel-inner {
+      background-color: var(--color-white);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid color-mix(in srgb, var(--color-brand-blue-50) 50%, transparent);
+      color: var(--color-brand-blue-500);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.2s ease;
+    }
+    @media (min-width: 640px) { .double-bezel-inner { padding: 1.75rem; } }
+    @media (min-width: 1024px) { .double-bezel-inner { padding: 2rem; } }
+    .card-watermark { position: absolute; right: 1.25rem; top: 1rem; font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: rgba(9, 80, 246, 0.1); user-select: none; pointer-events: none; transition: color 0.3s ease; line-height: 1; }
+    .double-bezel-outer:hover .card-watermark { color: rgba(9, 80, 246, 0.2); }
+    .card-icon-box {
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(186, 206, 253, 0.7);
+      box-shadow: var(--shadow-xs);
+      transition: all 0.3s ease;
+    }
+    .double-bezel-outer:hover .card-icon-box { background-color: var(--color-brand-blue-500); color: var(--color-brand-yellow-500); }
+    .card-icon-box svg { width: 1.5rem; height: 1.5rem; stroke-width: 2; }
+    .card-tag { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--color-brand-blue-400); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem; }
+    .card-title { font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; letter-spacing: -0.025em; color: var(--color-brand-blue-500); margin-bottom: 0.75rem; line-height: 1.25; transition: color 0.2s ease; }
+    .double-bezel-outer:hover .card-title { color: var(--color-brand-blue-400); }
+    .card-desc { font-family: var(--font-sans); font-size: 0.875rem; font-weight: 300; line-height: 1.625; color: rgba(9, 80, 246, 0.8); margin-bottom: 1.5rem; }
+    .card-benefit { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; color: var(--color-brand-blue-500); padding: 0.625rem 0.75rem; border-radius: 0.5rem; background-color: rgba(230, 238, 254, 0.6); border: 1px solid rgba(186, 206, 253, 0.6); margin-bottom: 1.5rem; }
+    .card-benefit svg { width: 1rem; height: 1rem; color: var(--color-brand-yellow-500); stroke: var(--color-brand-yellow-500); flex-shrink: 0; }
+    .card-footer { padding-top: 1rem; border-top: 1px solid var(--color-brand-blue-50); margin-top: auto; }
+    .cta-nested-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.875rem;
+      min-height: 44px;
+      transition: transform var(--duration-feedback) var(--ease-out-ui), background-color var(--duration-feedback) var(--ease-out-ui), border-color var(--duration-feedback) var(--ease-out-ui), box-shadow var(--duration-feedback) var(--ease-out-ui);
+    }
+    .cta-nested-pill:active { transform: scale(0.97); }
+    .cta-nested-icon { width: 2rem; height: 2rem; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-left: 0.75rem; transition: transform 0.25s var(--ease-out-ui), background-color var(--duration-feedback) var(--ease-out-ui), color var(--duration-feedback) var(--ease-out-ui); }
+    .cta-nested-icon svg { width: 1rem; height: 1rem; stroke: currentColor; fill: none; stroke-width: 2.2; }
+    .cta-nested-pill:hover .cta-nested-icon { transform: translateX(4px); }
+    .pill-primary { background-color: var(--color-brand-yellow-500); color: var(--color-brand-blue-500); border-color: var(--color-brand-yellow-500); box-shadow: var(--shadow-accent-sm); }
+    .pill-primary:hover { background-color: var(--color-brand-yellow-400); box-shadow: var(--shadow-cta-glow); transform: translateY(-1px); }
+    .pill-primary .cta-nested-icon { background-color: transparent; color: var(--color-brand-blue-500); }
+    .pill-primary:hover .cta-nested-icon { background-color: var(--color-brand-blue-500); color: var(--color-brand-yellow-500); }
+    .pill-elevated { background-color: var(--color-white); color: var(--color-brand-blue-500); border-color: var(--color-brand-blue-100); box-shadow: var(--shadow-elevated); }
+    .pill-elevated:hover { border-color: var(--color-brand-blue-300); box-shadow: var(--shadow-hover-lift); transform: translateY(-1px); }
+    .pill-elevated .cta-nested-icon { background-color: transparent; color: var(--color-brand-blue-500); }
+    .pill-elevated:hover .cta-nested-icon { background-color: var(--color-brand-blue-500); color: var(--color-white); }
+  </style>
+</head>
+<body>
+  <section id="segmentos-home" aria-labelledby="segmentos-home-heading" class="segmentos-section">
+    <div class="section-header">
+      <div class="section-kicker">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        <span>Soluciones a Medida</span>
+        <span style="color: var(--color-brand-yellow-500);">/</span>
+        <span>en Mar del Plata</span>
+      </div>
+      <h2 id="segmentos-home-heading" class="section-title">
+        ¿Qué tipo de envío necesitás <span class="highlight-yellow">coordinar</span>?
+      </h2>
+      <p class="section-desc">
+        Diseñamos esquemas operativos específicos según el volumen, la urgencia y los requerimientos de tu negocio o necesidad personal.
+      </p>
+    </div>
+    <div class="cards-grid">
+      <div class="double-bezel-outer">
+        <div class="double-bezel-inner">
+          <span class="card-watermark" aria-hidden="true">01</span>
+          <div>
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <span class="card-tag">Particulares · Trámites</span>
+            <h3 class="card-title">Trámites y Encomiendas Personales</h3>
+            <p class="card-desc">Olvidate de hacer filas o perder la mañana. Trasladamos llaves, documentación legal, medicamentos, compras del día y paquetes urgentes puerta a puerta en todo Mar del Plata.</p>
+            <div class="card-benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-4"></path></svg>
+              <span>Franja de 3 hs o entrega inmediata</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="/cotizar" id="segment_cta_01" class="cta-nested-pill pill-primary">
+              <span>Cotizar Mandado</span>
+              <span class="cta-nested-icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="double-bezel-outer">
+        <div class="double-bezel-inner">
+          <span class="card-watermark" aria-hidden="true">02</span>
+          <div>
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path><path d="M2 7h20"></path><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"></path></svg>
+            </div>
+            <span class="card-tag">Comercios · E-Commerce</span>
+            <h3 class="card-title">Envíos en el Día y Mercado Envíos Flex</h3>
+            <p class="card-desc">Multiplicá tus ventas online entregando el mismo día con cadetes propios de confianza. Cobro contra reembolso integrado y rendición formal en 24 hs.</p>
+            <div class="card-benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-4"></path></svg>
+              <span>Retiro bonificado en tu local</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="/servicios/plan-emprendedores" id="segment_cta_02" class="cta-nested-pill pill-elevated">
+              <span>Ver Plan Emprendedores</span>
+              <span class="cta-nested-icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="double-bezel-outer">
+        <div class="double-bezel-inner">
+          <span class="card-watermark" aria-hidden="true">03</span>
+          <div>
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+            </div>
+            <span class="card-tag">Empresas · Cuenta Corriente</span>
+            <h3 class="card-title">Cadetería Corporativa & Ruteo B2B</h3>
+            <p class="card-desc">Solución logística integral para distribuidoras, repuesteras y estudios profesionales. Facturación unificada A/B quincenal o mensual con remitos conformados.</p>
+            <div class="card-benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-4"></path></svg>
+              <span>Atención prioritaria y soporte dedicado</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="/servicios/empresas-cuenta-corriente" id="segment_cta_03" class="cta-nested-pill pill-elevated">
+              <span>Solicitar Apertura B2B</span>
+              <span class="cta-nested-icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,617 @@
+{
+  "version": 1,
+  "skills": {
+    "affirmations": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/agent/affirmations/SKILL.md",
+      "computedHash": "aa4190ce8b7e83cfa58f65cf8599f2441b793afa2ee85142a2ef56584114e859"
+    },
+    "agent-browser": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/utilities/agent-browser/SKILL.md",
+      "computedHash": "39ad19a8a5f98fbb4cdcdffdba5eb9a10f13926876c40638697ed1c87ddd2143"
+    },
+    "agent-tools": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/agent-tools/SKILL.md",
+      "computedHash": "35ab67d24b123a88450c9c8a27fc0d16c2c40391c60441e0c47a9aa67d3015b6"
+    },
+    "agent-ui": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "ui/agent-ui/SKILL.md",
+      "computedHash": "def8f77148bc6cfd6d96fc2b053b2d5a19397464a554bfca5914ef5c3f642176"
+    },
+    "ai-automation-workflows": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/content/ai-automation-workflows/SKILL.md",
+      "computedHash": "9a39b2052a519fb3a9944f2c393e65ac664ad2f72ba91db85af713851d2bcf5e"
+    },
+    "ai-avatar-video": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/ai-avatar-video/SKILL.md",
+      "computedHash": "a751b3173df4e4745b27741a19f0fbfc7740851b51170bc7849f15a62964f6ec"
+    },
+    "ai-content-pipeline": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/content/ai-content-pipeline/SKILL.md",
+      "computedHash": "61e2e73942bf72c7622b5ffec7958b626375f304caf0bafba4b8fde34d8101f7"
+    },
+    "ai-image-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/ai-image-generation/SKILL.md",
+      "computedHash": "f34fd2ee8788b5763b237ddb17614708b85d0e0c03e8f27f024158f4d81183d1"
+    },
+    "ai-marketing-videos": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/video/ai-marketing-videos/SKILL.md",
+      "computedHash": "9c44a646efbb634514894c29f1476a1d0ab19fad4906c0807fcfdd1c4febba44"
+    },
+    "ai-music-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/ai-music-generation/SKILL.md",
+      "computedHash": "76fcabe810f0451ddfc3b076bbf83eec50f99f37637a4016ca8c7f9cd8a8c7a5"
+    },
+    "ai-podcast": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/content/ai-podcast/SKILL.md",
+      "computedHash": "3c88df8d1cd613f41f5bbe7b15e7e63c3ee1fa437b71f4a50a9de01fb8d9f240"
+    },
+    "ai-podcast-creation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/content/ai-podcast-creation/SKILL.md",
+      "computedHash": "a29f019ffdc70ca31ff64114184a959f8c676d98245c0ff1e2c02ca41ca33b20"
+    },
+    "ai-product-photography": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/photo/ai-product-photography/SKILL.md",
+      "computedHash": "24528d35612c321f327c814d5174750a722c878e82280d1e325da5f235ef6bb2"
+    },
+    "ai-rag-pipeline": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/llm/ai-rag-pipeline/SKILL.md",
+      "computedHash": "60cfa21bca7a7f90e377683f76e790d48a1becbad615f0b9b75cb7b2ed79a707"
+    },
+    "ai-social-media-content": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/social/ai-social-media-content/SKILL.md",
+      "computedHash": "6c862ea9bc1ab05cab81d34ae25e806cfdffa88363a63977e1a4db93b6065bf5"
+    },
+    "ai-video-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/ai-video-generation/SKILL.md",
+      "computedHash": "8b0703b4e28e895b23bfc231173c71b1a67ce0d28f70d0aee04221fe6213a1fb"
+    },
+    "ai-voice-cloning": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/ai-voice-cloning/SKILL.md",
+      "computedHash": "9dfd5b1637e576bc1d79f5872d0edfb923ebe150aa633d807bfbfee27d190374"
+    },
+    "app-store-screenshots": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/app-store-screenshots/SKILL.md",
+      "computedHash": "2b83c1849f46fa729fc8b668613dcdd4e135937fa2266ad9932be020fe6fa77a"
+    },
+    "background-removal": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/background-removal/SKILL.md",
+      "computedHash": "55d856ec44912dcf5521c67fca3a1900ce0f676ad5686da76e7b38af8cef7aaf"
+    },
+    "book-cover-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/book-cover-design/SKILL.md",
+      "computedHash": "a247cab4cc9537f970ef5773c54031669656e552936ea6b737befdc328697936"
+    },
+    "building-inferencesh-apps": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "sdk/building-apps/SKILL.md",
+      "computedHash": "57651be61fbd559d48c87043f3f965cab0773e69ef87454f32441ac365e765fe"
+    },
+    "case-study-writing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/writing/case-study-writing/SKILL.md",
+      "computedHash": "f63486aa7112ce6aeaf871e74027df97d5fd47640e014d586c44f089e3099874"
+    },
+    "character-design-sheet": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/character-design-sheet/SKILL.md",
+      "computedHash": "11293fe9e75da7a9c15ea4d4bebe24eb95c35ebe586f3959aa16e65c528884a6"
+    },
+    "chat-ui": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "ui/chat-ui/SKILL.md",
+      "computedHash": "e4b867cb300150004dbd3325de68a12d953957049d7fc4bdbb867471bfc3e473"
+    },
+    "competitor-teardown": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/product/competitor-teardown/SKILL.md",
+      "computedHash": "58cc5ac6aeff6872113f354f28b4c590698bc68878cf4de1aad09045ca0e5ae8"
+    },
+    "content-repurposing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/content/content-repurposing/SKILL.md",
+      "computedHash": "b8d925ace84f4e7104a0cc4cf7689ba4dca0d4e272db659ef05adca656091768"
+    },
+    "customer-persona": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/product/customer-persona/SKILL.md",
+      "computedHash": "c77298c707816cda3b673a04030c6ebc8bd3ffd80106df99459bdc1e9a149335"
+    },
+    "data-visualization": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/data-visualization/SKILL.md",
+      "computedHash": "9b1405af6c28927ca4a1b2e51772836517a46a6d2465d610bef558bd1dabda63"
+    },
+    "design-md": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-utilities/skills/design-md/SKILL.md",
+      "computedHash": "44af3e6e89a42a765d9cebf943f1e2ff3cdf43d1958341eb43fb7b74116f6691"
+    },
+    "dialogue-audio": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/dialogue-audio/SKILL.md",
+      "computedHash": "624fad45225c7b241c53b1966b52e2816695470706d6b98f68bcf26839fa1566"
+    },
+    "elevenlabs-dialogue": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/elevenlabs-dialogue/SKILL.md",
+      "computedHash": "647332bf0d1ffb241c746b01ace54a2606ba46e7ed581707004e6af717de6ef7"
+    },
+    "elevenlabs-dubbing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/elevenlabs-dubbing/SKILL.md",
+      "computedHash": "f22b7b29b26f1f4d3b65b1f848ae07d29f1d3b38e53384228aaf2deec09f0742"
+    },
+    "elevenlabs-music": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/elevenlabs-music/SKILL.md",
+      "computedHash": "af154aecc253ed07f51f1a4a79f760f0e06efa60624fef147eefe13377e06411"
+    },
+    "elevenlabs-sound-effects": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/elevenlabs-sound-effects/SKILL.md",
+      "computedHash": "a32c0584cf0e810f130c908b40276280173ae6b54ff5e9fbf7c06a0b5bf4f315"
+    },
+    "elevenlabs-stt": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/elevenlabs-stt/SKILL.md",
+      "computedHash": "dc95968f757f6e2e162ad0af8a57a25e288fd80a0ebd181a8f1ac43aa16cd0aa"
+    },
+    "elevenlabs-tts": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/elevenlabs-tts/SKILL.md",
+      "computedHash": "ee8641ef2693b04de2de64cf289cde630eea51781aed5110abe28647d106f2a1"
+    },
+    "elevenlabs-voice-changer": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/elevenlabs-voice-changer/SKILL.md",
+      "computedHash": "e6d161a6b8bdf8e44657cc43f358d1e11bef573fbb37467f566cf977032e84bf"
+    },
+    "elevenlabs-voice-isolator": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/elevenlabs-voice-isolator/SKILL.md",
+      "computedHash": "4de100283635731e79b6386070e7ca0ac2d24508a7b0e8e47342b60cdccd67d7"
+    },
+    "email-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/email-design/SKILL.md",
+      "computedHash": "0eb6e20352715892596e94586670737580f72df746b53944a6e1017474e44d73"
+    },
+    "enhance-prompt": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-utilities/skills/enhance-prompt/SKILL.md",
+      "computedHash": "28c47bcbc0e8d81f48fbbbe41d227efe4018a32c5d4674b0d052a70d215072d3"
+    },
+    "explainer-video-guide": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/video/explainer-video-guide/SKILL.md",
+      "computedHash": "8fbf0a290dd30a2bdba162484534bd1cf3d41fca92e1c8089da150eb572bff9d"
+    },
+    "flux-image": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/flux-image/SKILL.md",
+      "computedHash": "18f493a9a7494b270c5ac409edcee8fd5c3ce6e0b1f1e2417bcb6524c863fa3e"
+    },
+    "google-veo": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/google-veo/SKILL.md",
+      "computedHash": "aaaa66d62fd7a0cf4a964d83f918e0697ae4670e47d3cf1a7d3ef7ac5e83a77e"
+    },
+    "gpt-image": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/gpt-image/SKILL.md",
+      "computedHash": "989f1af41a6c5bf808b66cf4bc2cbb17fce9486697efb49df805c972b97b12e8"
+    },
+    "happyhorse": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/happyhorse/SKILL.md",
+      "computedHash": "980f3f6cbfce9a553e7518b5781b231756544785fefd6d65460a9a34f6f49922"
+    },
+    "image-to-video": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/image-to-video/SKILL.md",
+      "computedHash": "81674b765015d5e7471afabb14ed702e7b90cb760f18391fed67827f92d00518"
+    },
+    "image-upscaling": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/image-upscaling/SKILL.md",
+      "computedHash": "fb4b5cc690344e7531f19ffc93f5eaf864d69ee86cb91760153d14587a13d1d2"
+    },
+    "infsh-cli": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/infsh-cli/SKILL.md",
+      "computedHash": "47872284d9103727e01797d4ae3c5c2feb099317c51e90f375b229b884bcf1bb"
+    },
+    "javascript-sdk": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "sdk/javascript-sdk/SKILL.md",
+      "computedHash": "a40f9e0467e4dfc2aba8abf7f0d635f3395cd11687b3f7541e6b02eeda980ad7"
+    },
+    "landing-page-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/landing-page-design/SKILL.md",
+      "computedHash": "00c0bb9b3bf40a9865f51471c26724e140de40b8850a213378ab04d8e89679c9"
+    },
+    "linkedin-content": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/social/linkedin-content/SKILL.md",
+      "computedHash": "7485ca912837e6eee6b788835ac9263bd31a2179806a3b5b49e916a310cb7995"
+    },
+    "llm-models": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/llm/llm-models/SKILL.md",
+      "computedHash": "35bf50360d58f2c280f1b8717bd015610659be661d9f8a339dd7a18140c35ff3"
+    },
+    "logo-design-guide": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/logo-design-guide/SKILL.md",
+      "computedHash": "bd6b52136beabb268f4428844d3a71861ef75372de02d658723b07752c82512f"
+    },
+    "nano-banana": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/nano-banana/SKILL.md",
+      "computedHash": "4aa16048d57425bdc8e66665cd70520c9abaeada856ee5985a00ebea37108ed8"
+    },
+    "nano-banana-2": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/nano-banana-2/SKILL.md",
+      "computedHash": "ec7f3a65920fcac47179fb79e4991aa71ad28ce3e5c74fbbd7e2c25ff615dfe8"
+    },
+    "newsletter-curation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/writing/newsletter-curation/SKILL.md",
+      "computedHash": "f41fec662d6be2fee9c0daac5565e90fc7fdaebd9c727e2296c2138f9b706cae"
+    },
+    "og-image-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/og-image-design/SKILL.md",
+      "computedHash": "b0eb8fb5bc253bf42750890d213f4b6e56246a5ae6db88a37ffbfe8033d2fdf8"
+    },
+    "p-image": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/p-image/SKILL.md",
+      "computedHash": "8765414decf21f7ebedbc79949b52ac6053983f065c8e85d3b5a06b148419268"
+    },
+    "p-video": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/p-video/SKILL.md",
+      "computedHash": "d0a8ebd205c8d4ad42185acd9afd33e6590687079d7cbd965793bdd96273c169"
+    },
+    "p-video-avatar": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/p-video-avatar/SKILL.md",
+      "computedHash": "f91b7286a2134f0a20fd353757162abfe58c262b9f5f3311f07a2aab1068b3f1"
+    },
+    "pitch-deck-visuals": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/pitch-deck-visuals/SKILL.md",
+      "computedHash": "53fe2ece21ac9d7e44be004621fbc90e3c816aad6efcbc72e7f16425b4b5a1b9"
+    },
+    "press-release-writing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/writing/press-release-writing/SKILL.md",
+      "computedHash": "24ea75a198b0948f5f187cb26a2927a2b4ceec7d20544adce7dc7a7f0f342521"
+    },
+    "product-changelog": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/product/product-changelog/SKILL.md",
+      "computedHash": "e578fb4a0ebdd3a5266402f9c7bcf033acfe145b6568522264fee93dfba169a0"
+    },
+    "product-hunt-launch": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/product/product-hunt-launch/SKILL.md",
+      "computedHash": "924404f684354b61daa5a82ee239f5aed499f31ccbd1788540f059e9a5855aed"
+    },
+    "product-photography": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/photo/product-photography/SKILL.md",
+      "computedHash": "b00a2f054b0c66169dbe4fa20d7aba04014039cfa156f7869d0c0fcca1594622"
+    },
+    "prompt-engineering": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/prompting/prompt-engineering/SKILL.md",
+      "computedHash": "ba3c5b496cdbce9e3737dd1355fa0c47addf9c4464e553c3a76cbe6baa633cea"
+    },
+    "python-executor": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/utilities/python-executor/SKILL.md",
+      "computedHash": "943110e8753d078653f98e3208f12d9d1ab66136895967f64ff2ab672e6eb6c5"
+    },
+    "python-sdk": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "sdk/python-sdk/SKILL.md",
+      "computedHash": "ae1c7932707d87804afcdec892a77695e652028202dea0b08850aca442260eab"
+    },
+    "qwen-image-2": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/qwen-image-2/SKILL.md",
+      "computedHash": "f9a2065ee3a17af38a542ea43da9c50c51ac443ce59abbd1b92767b77e547250"
+    },
+    "qwen-image-2-pro": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/image/qwen-image-2-pro/SKILL.md",
+      "computedHash": "e2d18888cfc5565bd50df528bd53fede244a16a3e149eb2f4a75048d3469aeba"
+    },
+    "react-vite-dashboard": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-build/skills/react-vite-dashboard/SKILL.md",
+      "computedHash": "b6f866588eb36baf119a57c529bff89bdce9d1b8d3b608f0e4f8c39e09af5195"
+    },
+    "related-skill": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/utilities/related-skill/SKILL.md",
+      "computedHash": "840b9294a823352aec79853e57b6d75a96f5053577dc61104fa832275fac2671"
+    },
+    "remotion": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-build/skills/remotion/SKILL.md",
+      "computedHash": "86c72dff442c4f725107924f48298391e33eaf9788f0faefe360f3061b25fcec"
+    },
+    "remotion-render": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/remotion-render/SKILL.md",
+      "computedHash": "9a00df8ceabf3033451cf0c4d41cdda5f38024822de07ea69884055611064ffe"
+    },
+    "seedance": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/video/seedance/SKILL.md",
+      "computedHash": "fff9a48b3676721ced33cfe6d67a526be34d25bb464abe98a4654044de05839e"
+    },
+    "seo-content-brief": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/writing/seo-content-brief/SKILL.md",
+      "computedHash": "192347fa5abaab173bcdfaeca229dc0d7efab3d112b789345ff578ccad9e198c"
+    },
+    "shadcn-ui": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-build/skills/shadcn-ui/SKILL.md",
+      "computedHash": "57e2cc881eb395418d28f1529e2d453b85f1d77a8de000c8af59512fab7b318d"
+    },
+    "site-md": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-utilities/skills/site-md/SKILL.md",
+      "computedHash": "8661ca3a2a43795296cc66091a2ed16a087521e47ca9b8aa6a2f5e10e609d586"
+    },
+    "social-media-carousel": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/social/social-media-carousel/SKILL.md",
+      "computedHash": "e6a2c96537742f412aed718aa33edf83491f50980c6921c1a8ba25c84d77baba"
+    },
+    "speech-to-text": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/speech-to-text/SKILL.md",
+      "computedHash": "15669c7cadb0475fc5f4580ec1eccace9acf5af7b62d4d6bfc66f4c59ea2728d"
+    },
+    "stitch-loop": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-utilities/skills/stitch-loop/SKILL.md",
+      "computedHash": "cf47da05045ce0c11f1a8b21dc4ef9bbfed0122d68548a48786cb1608257d574"
+    },
+    "stitch::code-to-design": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-design/skills/code-to-design/SKILL.md",
+      "computedHash": "fc0343ee91bb255ad29b6a02155c1eb77dce58002273f9308bb2ea43be0ffbc3"
+    },
+    "stitch::extract-design-md": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-design/skills/extract-design-md/SKILL.md",
+      "computedHash": "73cddd92063421923afbe00b423b0027aecd251a2c84bfda9c31bf992baf006b"
+    },
+    "stitch::extract-static-html": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-design/skills/extract-static-html/SKILL.md",
+      "computedHash": "94aa19fa4f7554351bbeef9ef237bd21c982bd9541b6ebd0e7751ab3b9a9d6b5"
+    },
+    "stitch::generate-design": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-design/skills/generate-design/SKILL.md",
+      "computedHash": "b854eb1747fbd02220bb7323590030fa644b8de126f8f6311749905ea09d7ae9"
+    },
+    "stitch::manage-design-system": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-design/skills/manage-design-system/SKILL.md",
+      "computedHash": "0a2ff4062197344c76c418f0a8ee09b15fb644565825ecbe4fd7598b06fe14e7"
+    },
+    "stitch::react-components": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-build/skills/react-components/SKILL.md",
+      "computedHash": "a0dbfa0ed6c0425a175ec25460625f7cdabfdb034b09f523f4d06d8cdb09f5b7"
+    },
+    "stitch::react-native": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-build/skills/react-native/SKILL.md",
+      "computedHash": "8fb779a0449a4dd0e9fe4b8b78973033f5977716903c2e291f896bf43c392411"
+    },
+    "stitch::upload-to-stitch": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-design/skills/upload-to-stitch/SKILL.md",
+      "computedHash": "956ce2eff922fb56eb4fa04393c4508bd7e393fe368833b3a97b7083887ae975"
+    },
+    "storyboard-creation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/video/storyboard-creation/SKILL.md",
+      "computedHash": "5de9d3f244cd5337ad4d45cccf46f05ac07364389beb347760fc144e372a63e0"
+    },
+    "talking-head-production": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/video/talking-head-production/SKILL.md",
+      "computedHash": "84a43e38f52f99e6f9bd36d0137a250e05fab3fbf5d8930a6a46c3ada94867df"
+    },
+    "taste-design": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/stitch-utilities/skills/taste-design/SKILL.md",
+      "computedHash": "3772ea408777070865890e10d693118baa1e1de14ee5bacdf6ab46fdea7359bb"
+    },
+    "technical-blog-writing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/writing/technical-blog-writing/SKILL.md",
+      "computedHash": "20953f95653bf92cc185230b57f628f1756c75c1d916588c1de54bdeedd33b79"
+    },
+    "text-to-speech": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/audio/text-to-speech/SKILL.md",
+      "computedHash": "3b250e9958e4a31c553b46b5875a9c8ed2a7105eaf542f7d4634fc7ef9d48a29"
+    },
+    "tools-ui": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "ui/tools-ui/SKILL.md",
+      "computedHash": "88156e56526a986befe2f2df9c5421a468fce3f2e2af4a933e8db6e827c9255a"
+    },
+    "twitter-automation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/social/twitter-automation/SKILL.md",
+      "computedHash": "a0eec82d5695aaeccd31ecaea283b934ab36650cbfc1b0c885ffec0da48bd355"
+    },
+    "twitter-thread-creation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/social/twitter-thread-creation/SKILL.md",
+      "computedHash": "99c3c577e4d6518d526bedde682c56bea0587874716db3af16d4c5560993d7b8"
+    },
+    "video-ad-specs": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/video/video-ad-specs/SKILL.md",
+      "computedHash": "b9b03b07fdfc6ce8f37fd94793c4cb6c822f96744b0bb08eb778c58e967bc981"
+    },
+    "video-prompting-guide": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/prompting/video-prompting-guide/SKILL.md",
+      "computedHash": "741d1b9ed81723a2dcce8a873ac7a18cc08172c17bb73ce36c8f00f35fbc350c"
+    },
+    "web-search": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "tools/llm/web-search/SKILL.md",
+      "computedHash": "acb021df44d30dbcbd8b517dc2edffcc121c53ae485a136f59b1dbc71306f674"
+    },
+    "widgets-ui": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "ui/widgets-ui/SKILL.md",
+      "computedHash": "d39f6a9c71ca7a5b0686520784e6b809543929dfac7f5a77ed4af44729504b73"
+    },
+    "youtube-thumbnail-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/youtube-thumbnail-design/SKILL.md",
+      "computedHash": "f3055eeface99a636e9434439fbca142d7af0f55d835f859ef8fd53a80cf717b"
+    }
+  }
+}

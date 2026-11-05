@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0950F6" />
+  <meta name="description"
+    content="Envíos DosRuedas: Mensajería urbana y logística e-commerce en Mar del Plata. Envíos en el día con motos propias, sin tercerizar. Base física en Friuli 1972." />
+  <title>Envíos DosRuedas — Mensajería y Logística E-Commerce en Mar del Plata</title>
+
+  <!-- Fuentes de Marca Google Fonts (pesos exactos utilizados) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Preload del recurso LCP (Mapa Hero) -->
+  <link rel="preload" as="image" href="./public/card_mapa.webp" type="image/webp" fetchpriority="high" />
+
+  <!-- Estilos Unificados Separados -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ========================================================================
+   * 1. NAVEGADOR MODULAR (SITE-HEADER)
+   * ======================================================================== -->
+  <header class="site-header" id="site-header">
+
+    <!-- BRAND LOGO (logo.webp) + TEXTO TIPOGRÁFICO -->
+    <a class="brand" href="/" aria-label="Envíos DosRuedas, inicio">
+      <img src="./public/logo.webp" alt="Envíos DosRuedas" class="brand-logo-img" width="44" height="44"
+        decoding="async" />
+      <span class="brand-name">
+        ENVÍOS DOSRUEDAS
+        <small>MENSAJERÍA · LOGÍSTICA MDP</small>
+      </span>
+    </a>
+
+    <!-- NAVEGACIÓN PRINCIPAL (ENLACES DE OPTIMIZED-HEADER) -->
+    <nav class="primary-nav" id="primary-nav" aria-label="Navegación principal">
+
+      <!-- Inicio -->
+      <div class="nav-item">
+        <a href="/" class="nav-link" aria-current="page">Inicio</a>
+      </div>
+
+      <!-- Dropdown: Servicios -->
+      <div class="nav-item">
+        <button type="button" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <span>Servicios</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="/servicios/envios-express" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <span>Envíos Express (&lt; 90 min)</span>
+          </a>
+          <a href="/servicios/envios-lowcost" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                <polyline points="17 18 23 18 23 12"></polyline>
+              </svg>
+            </div>
+            <span>Envíos LowCost</span>
+          </a>
+          <a href="/servicios/enviosflex" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <span>Envíos Flex (MeLi)</span>
+          </a>
+          <a href="/servicios/empresas-cuenta-corriente" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+              </svg>
+            </div>
+            <span>Cuenta Corriente Flexible</span>
+          </a>
+          <a href="/servicios#ecommerce-24hs" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="m7.5 4.27 9 5.15"></path>
+                <path
+                  d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                </path>
+              </svg>
+            </div>
+            <span>E-commerce 24HS</span>
+          </a>
+          <a href="/servicios/deposito-fulfillment" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path>
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              </svg>
+            </div>
+            <span>Depósito &amp; Fulfillment</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Dropdown: Plataformas -->
+      <div class="nav-item">
+        <button type="button" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <span>Plataformas</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="/logistica-dosruedas" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </svg>
+            </div>
+            <span>Logística DosRuedas</span>
+          </a>
+          <a href="/mardelivery" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8Z"></path>
+                <path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"></path>
+              </svg>
+            </div>
+            <span>MarDelivery Gastronomía</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Dropdown: Nosotros -->
+      <div class="nav-item">
+        <button type="button" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <span>Nosotros</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="/nosotros/sobre-nosotros" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+            </div>
+            <span>Sobre Nosotros</span>
+          </a>
+          <a href="/nosotros/preguntas-frecuentes" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <path d="M12 17h.01"></path>
+              </svg>
+            </div>
+            <span>Preguntas Frecuentes</span>
+          </a>
+          <a href="/nosotros/nuestras-redes" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </div>
+            <span>Nuestras Redes</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contacto Directo -->
+      <div class="nav-item">
+        <a href="/contacto" class="nav-link">Contacto</a>
+      </div>
+
+    </nav>
+
+    <!-- HEADER ACTIONS (TELÉFONO + BOTÓN COTIZAR + TOGGLE HAMBURGUESA) -->
+    <div class="header-actions">
+
+      <!-- Teléfono directo -->
+      <a class="header-phone" href="tel:+5492236025348" aria-label="Llamar al 223 602-5348">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg>
+        <span>223 602-5348</span>
+      </a>
+
+      <!-- Botón CTA con Arrow-Disc -->
+      <a class="header-cta" href="/contacto">
+        <span>Cotizá tu envío</span>
+        <span class="arrow-disc" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </span>
+      </a>
+
+      <!-- Botón Menú Móvil -->
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-nav"
+        aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- ========================================================================
+   * DRAWER MÓVIL RESPONSIVO
+   * ======================================================================== -->
+  <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+    <div class="mobile-drawer-box" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navegación móvil">
+
+      <div class="drawer-top-bar">
+        <span class="drawer-title">MENÚ PRINCIPAL</span>
+        <button class="drawer-close-btn" id="drawer-close-btn" type="button" aria-label="Cerrar menú">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-list" aria-label="Menú móvil">
+        <a href="/" class="mobile-nav-link" aria-current="page">Inicio</a>
+
+        <div class="mobile-nav-heading">Servicios</div>
+        <a href="/servicios/envios-express" class="mobile-nav-link">Envíos Express</a>
+        <a href="/servicios/envios-lowcost" class="mobile-nav-link">Envíos LowCost</a>
+        <a href="/servicios/enviosflex" class="mobile-nav-link">Envíos Flex (MeLi)</a>
+        <a href="/servicios/empresas-cuenta-corriente" class="mobile-nav-link">Cuenta Corriente</a>
+        <a href="/servicios/deposito-fulfillment" class="mobile-nav-link">Depósito &amp; Fulfillment</a>
+
+        <div class="mobile-nav-heading">Plataformas</div>
+        <a href="/logistica-dosruedas" class="mobile-nav-link">Logística DosRuedas</a>
+        <a href="/mardelivery" class="mobile-nav-link">MarDelivery Gastronomía</a>
+
+        <div class="mobile-nav-heading">Institucional</div>
+        <a href="/nosotros/sobre-nosotros" class="mobile-nav-link">Sobre Nosotros</a>
+        <a href="/nosotros/preguntas-frecuentes" class="mobile-nav-link">Preguntas Frecuentes</a>
+        <a href="/nosotros/nuestras-redes" class="mobile-nav-link">Nuestras Redes</a>
+        <a href="/contacto" class="mobile-nav-link">Contacto</a>
+      </nav>
+
+      <div class="mobile-footer-box">
+        <a href="tel:+5492236025348" class="mobile-footer-phone">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>223 602-5348</span>
+        </a>
+        <span class="mobile-footer-address">Friuli 1972 · Mar del Plata</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+   * 2. HERO PRINCIPAL (HERO_PARA_ADAPTAR)
+   * ======================================================================== -->
+  <main id="main">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <svg class="route-art" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-100 650 C160 510 240 770 460 625 S780 455 920 565 S1185 760 1550 380" fill="none" stroke="#FFEC01"
+          stroke-width="2.5" stroke-dasharray="10 17" />
+        <path d="M-80 410 C180 280 300 470 530 355 S860 220 1030 330 S1280 460 1520 210" fill="none" stroke="#BACEFD"
+          stroke-width="1.5" stroke-dasharray="4 14" />
+        <circle cx="460" cy="625" r="5" fill="#FFEC01" />
+        <circle cx="920" cy="565" r="6" fill="#FFEC01" />
+        <circle cx="1030" cy="330" r="4" fill="#FFEC01" />
+      </svg>
+
+      <div class="hero-main">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>Flota propia · Todo Mar del Plata
+          </div>
+          <h1 id="hero-title" aria-label="El motor de tu última milla: somos la solución a tus envíos">
+            <span class="headline-line" aria-hidden="true" data-reveal>El motor de tu</span>
+            <span class="headline-line headline-pill" aria-hidden="true"><span data-reveal>Última milla</span></span>
+            <span class="headline-line" aria-hidden="true" data-reveal>Somos la solución</span>
+            <span class="headline-line" aria-hidden="true" data-reveal>a tus envíos</span>
+          </h1>
+          <p class="hero-deck">
+            Mensajería y logística e-commerce en Mar del Plata: <strong>envíos en el día con motos propias.</strong>
+            Llegamos a toda la ciudad y los repartidores son nuestros, sin tercerizar.
+          </p>
+          <p class="brand-promise">Tu negocio no para, nosotros tampoco.</p>
+          <div class="hero-ctas">
+            <a class="button-primary" href="/contacto">
+              <span>Cotizá tu envío</span>
+              <span class="arrow-disc" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+            <a class="text-link" href="/servicios/enviosflex">
+              Ver servicios
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="hero-proof" aria-label="Cobertura y operación">
+            <span><i class="proof-mark" aria-hidden="true"></i>Envíos en el día</span>
+            <span><i class="proof-mark" aria-hidden="true"></i>Sin tercerizar</span>
+            <span><i class="proof-mark" aria-hidden="true"></i>Cobertura MDQ</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Cobertura de Envíos DosRuedas en Mar del Plata">
+          <div class="orbit" aria-hidden="true"></div>
+          <span class="pulse-ring" aria-hidden="true"></span>
+          <span class="pulse-ring" aria-hidden="true"></span>
+          <span class="pulse-ring" aria-hidden="true"></span>
+          <img class="map-art" src="./public/card_mapa.webp"
+            alt="Pin de Envíos DosRuedas sobre un mapa de Mar del Plata con ruta amarilla" width="560" height="560"
+            fetchpriority="high" decoding="async" />
+          <div class="map-chip map-chip-base">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span><strong>Base Friuli 1972</strong>Mar del Plata</span>
+          </div>
+          <div class="map-chip map-chip-delivery">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M13 2 3 14h8l-1 8 11-13h-8l1-7Z" />
+            </svg>
+            <span><strong>Entrega en el día</strong>En todo MDQ</span>
+          </div>
+          <span class="art-caption" aria-hidden="true">Tu última milla · Mar del Plata</span>
+        </div>
+      </div>
+
+      <!-- Ticker Continuo de Ventajas -->
+      <div class="ticker" aria-label="Ventajas de Envíos DosRuedas">
+        <div class="ticker-track">
+          <ul class="ticker-list" aria-hidden="true">
+            <li>MERCADO ENVÍOS FLEX EN EL DÍA</li>
+            <li>RETIRO BONIFICADO</li>
+            <li>FLOTA PROPIA EN CALLE</li>
+            <li>COBRO CONTRA REEMBOLSO</li>
+            <li>BASE OPERATIVA FRIULI 1972</li>
+            <li>RENDICIÓN EN 24 HORAS</li>
+            <li>MAR DEL PLATA Y ZONA</li>
+          </ul>
+          <ul class="ticker-list" aria-hidden="true">
+            <li>MERCADO ENVÍOS FLEX EN EL DÍA</li>
+            <li>RETIRO BONIFICADO</li>
+            <li>FLOTA PROPIA EN CALLE</li>
+            <li>COBRO CONTRA REEMBOLSO</li>
+            <li>BASE OPERATIVA FRIULI 1972</li>
+            <li>RENDICIÓN EN 24 HORAS</li>
+            <li>MAR DEL PLATA Y ZONA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+   * 3. FOOTER MODULAR (OPTIMIZED-FOOTER)
+   * ======================================================================== -->
+  <footer id="optimized-footer" class="site-footer" role="contentinfo">
+
+    <!-- Franja Amarilla Superior de 6px (Firma de Marca) -->
+    <div class="footer-yellow-top-bar" aria-hidden="true"></div>
+
+    <!-- Fondos de brillo ambiental sutil -->
+    <div class="ambient-glow-center" aria-hidden="true"></div>
+    <div class="ambient-glow-corner" aria-hidden="true"></div>
+
+    <div class="footer-container">
+
+      <!-- 1. TOP CTA BANNER RESPONSIVO -->
+      <div class="footer-banner-cta">
+        <div class="banner-copy">
+          <div class="banner-badge-live">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span>Operación Activa en Mar del Plata</span>
+          </div>
+          <h3 class="banner-heading">
+            ¿Tenés un comercio o e-commerce? <br />
+            <span>Resolvé tus envíos hoy</span>
+          </h3>
+          <p class="banner-subtext">
+            Entregas en el día con cadetes propios, cobro contra reembolso y rendición en 24 hs.
+          </p>
+        </div>
+
+        <div class="banner-actions">
+          <a href="/contacto" class="btn-cotizar-footer">
+            <span>Cotizar mi Envío</span>
+            <span class="btn-cotizar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </span>
+          </a>
+          <a href="https://api.whatsapp.com/send/?phone=5492236025348&text=Hola!%20Quiero%20cotizar%20un%20env%C3%ADo"
+            target="_blank" rel="noopener noreferrer" class="btn-whatsapp-footer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z">
+              </path>
+            </svg>
+            <span>WhatsApp Directo</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. GRILLA PRINCIPAL DE CONTENIDOS -->
+      <div class="footer-columns-grid">
+
+        <!-- Columna 1: Marca, Identidad y Redes -->
+        <div class="col-brand">
+          <a href="/" class="brand-logo-link" aria-label="Envíos DosRuedas — Inicio">
+            <img src="./public/logo.webp" alt="Envíos DosRuedas" class="brand-logo-img" width="46" height="46"
+              loading="lazy" decoding="async" />
+            <div class="brand-title-box">
+              <span class="brand-name-footer">ENVÍOS <span>DOSRUEDAS</span></span>
+              <span class="brand-tagline-footer">MENSAJERÍA · LOGÍSTICA URBANA MDP</span>
+            </div>
+          </a>
+
+          <p class="brand-bio">
+            Soluciones logísticas urbanas y de última milla en Mar del Plata. Cadetería express, reparto de e-commerce y
+            distribución con flota propia de confianza desde nuestra base operativa física.
+          </p>
+
+          <div class="social-section">
+            <span class="social-label">Conectá con nuestra comunidad</span>
+            <div class="social-icons-row">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                aria-label="Seguinos en Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                aria-label="Seguinos en Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="https://api.whatsapp.com/send/?phone=5492236025348" target="_blank" rel="noopener noreferrer"
+                class="social-btn whatsapp-highlight" aria-label="Contactanos por WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hub-badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Hub Físico: Friuli 1972 · Mar del Plata</span>
+          </div>
+        </div>
+
+        <!-- Columna 2: Servicios y Plataformas -->
+        <div class="col-services">
+          <h4 class="col-heading">Servicios & Soluciones</h4>
+          <div class="services-subgrid">
+            <div>
+              <p class="service-category-title">Plataformas</p>
+              <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="/logistica-dosruedas">Logística DosRuedas</a></li>
+                <li class="footer-link-item"><a href="/mardelivery">MarDelivery Gastronomía</a></li>
+                <li class="footer-link-item"><a href="/servicios/plan-emprendedores">Plan Emprendedores MDQ</a></li>
+                <li class="footer-link-item"><a href="/nosotros/sobre-nosotros">Sobre Nosotros</a></li>
+                <li class="footer-link-item"><a href="/nosotros/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+                <li class="footer-link-item"><a href="/contacto">Contacto Comercial</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="service-category-title">Planes Logísticos</p>
+              <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="/servicios/envios-express">Envíos Express (3 hs)</a></li>
+                <li class="footer-link-item"><a href="/servicios/envios-lowcost">Envíos LowCost</a></li>
+                <li class="footer-link-item"><a href="/servicios/enviosflex">Mercado Envíos Flex</a></li>
+                <li class="footer-link-item"><a href="/servicios/empresas-cuenta-corriente">Cuenta Corriente B2B</a>
+                </li>
+                <li class="footer-link-item"><a href="/servicios/deposito-fulfillment">E-commerce Same Day</a></li>
+                <li class="footer-link-item"><a href="/servicios" class="footer-link-highlight">Ver todos los servicios
+                    →</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna 3: Base de Operaciones MDQ -->
+        <div class="col-ops">
+          <h4 class="col-heading">Base de Operaciones MDQ</h4>
+          <div class="ops-cards-stack">
+            <!-- Ubicación -->
+            <div class="ops-info-box">
+              <div class="ops-icon-container" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="ops-title">Centro de Distribución</p>
+                <p class="ops-text">Friuli 1972, Mar del Plata, Buenos Aires</p>
+              </div>
+            </div>
+
+            <!-- Teléfono y WhatsApp -->
+            <div class="ops-info-box">
+              <div class="ops-icon-container" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <p class="ops-title">Línea Directa y WhatsApp</p>
+                <a href="tel:+5492236025348" class="ops-phone-link">223 602-5348</a>
+              </div>
+            </div>
+
+            <!-- Horarios -->
+            <div class="ops-info-box">
+              <div class="ops-icon-container" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <p class="ops-title">Horarios de Despacho</p>
+                <p class="ops-text">Lunes a Viernes: 08:00 a 18:00 hs</p>
+                <p class="ops-text">Sábados: 08:00 a 13:00 hs · Guardia activa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3. BOTÓN VOLVER ARRIBA Y DIVISOR -->
+      <div class="footer-divider-row">
+        <button type="button" class="btn-scroll-top" id="btn-scroll-top" aria-label="Volver arriba en la página">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 4. BARRA LEGAL Y COPYRIGHT RESPONSIVA -->
+      <div class="legal-bar">
+        <p>© 2026 Envíos DosRuedas · Todos los derechos reservados · Mar del Plata, Argentina.</p>
+        <nav class="legal-links" aria-label="Enlaces legales y secundarios">
+          <a href="/servicios">Servicios</a>
+          <a href="/cobertura">Cobertura</a>
+          <a href="/logistica-dosruedas">Logística DosRuedas</a>
+          <a href="/mardelivery">MarDelivery</a>
+          <a href="/nosotros">Nosotros</a>
+          <a href="/terminos-y-condiciones">Términos y Condiciones</a>
+          <a href="/politica-de-privacidad">Privacidad</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts: GSAP Animación Hero + Lógica Interactiva Unificada -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="main.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SocialProofSection — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales: Outfit, Anton SC, Bebas Neue, Geist Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ========================================================================
+     * TOKENS OFICIALES DE GLOBALS.CSS
+     * ======================================================================== */
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-600: #E6D400;
+
+      --color-white: #FFFFFF;
+
+      --font-sans: "Outfit", "IBM Plex Sans", sans-serif;
+      --font-display: "Anton SC", "Anton", sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --ease-out-ui: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+
+      --shadow-sm: 0 2px 4px rgba(9, 80, 246, 0.06), 0 1px 2px rgba(9, 80, 246, 0.03);
+      --shadow-md: 0 4px 8px rgba(9, 80, 246, 0.08), 0 2px 4px rgba(9, 80, 246, 0.04);
+      --shadow-elevated: 0 16px 40px rgba(9, 80, 246, 0.18);
+      --shadow-white-card: 0 16px 40px rgba(9, 80, 246, 0.08);
+      --shadow-yellow-card: 0 16px 40px rgba(255, 236, 1, 0.3);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .font-sans { font-family: var(--font-sans); }
+    .font-display {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      line-height: 0.92;
+    }
+    .font-subheading {
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .font-mono {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ========================================================================
+     * ESTRUCTURA DE LA SECCIÓN (SocialProofSection.tsx)
+     * ======================================================================== */
+    .social-proof-section {
+      position: relative;
+      padding: 5rem 1rem;
+      background-color: var(--color-brand-blue-50);
+      border-top: 1px solid rgba(186, 206, 253, 0.6);
+      border-bottom: 1px solid rgba(186, 206, 253, 0.6);
+      content-visibility: auto;
+      contain-intrinsic-size: auto none auto 650px;
+    }
+    @media (min-width: 640px) {
+      .social-proof-section { padding: 5rem 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .social-proof-section { padding: 6rem 2rem; }
+    }
+
+    .section-container {
+      max-width: 80rem;
+      margin: 0 auto;
+    }
+
+    /* Header de la sección */
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 1024px) {
+      .section-header { margin-bottom: 3.5rem; }
+    }
+
+    .trust-badge-container {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: var(--shadow-md);
+    }
+    @media (min-width: 640px) {
+      .trust-badge { font-size: 0.8125rem; }
+    }
+
+    .header-content-split {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    @media (min-width: 1024px) {
+      .header-content-split {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 1.875rem;
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      max-width: 56rem;
+    }
+    @media (min-width: 640px) { .section-title { font-size: 2.5rem; } }
+    @media (min-width: 1024px) { .section-title { font-size: 3rem; } }
+
+    .title-highlight-pill {
+      display: inline-block;
+      position: relative;
+      margin: 0.25rem;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      box-shadow: var(--shadow-cta-glow);
+    }
+    @media (min-width: 640px) {
+      .title-highlight-pill { padding: 0.25rem 1.25rem; }
+    }
+
+    /* Botón Google Maps */
+    .btn-maps {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      border: 2px solid var(--color-brand-blue-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.75rem 1.75rem;
+      min-height: 44px;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--duration-feedback) var(--ease-out-ui);
+      width: fit-content;
+      white-space: nowrap;
+    }
+    @media (min-width: 640px) {
+      .btn-maps { font-size: 1.25rem; }
+    }
+    .btn-maps:hover {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-maps svg {
+      width: 1rem;
+      height: 1rem;
+      stroke-width: 2.5;
+    }
+
+    /* ========================================================================
+     * GRILLA DE TESTIMONIOS (3 x 2 = 6 Tarjetas)
+     * ======================================================================== */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    @media (min-width: 768px) {
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .review-card {
+      width: 100%;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem;
+      min-height: 21.25rem; /* min-h-85 */
+      transition: transform var(--duration-feedback) var(--ease-out-ui);
+    }
+    .review-card:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Variante: Azul */
+    .variant-blue {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      box-shadow: var(--shadow-elevated);
+    }
+    .variant-blue .stars { color: var(--color-brand-yellow-500); }
+    .variant-blue .date-badge {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+    .variant-blue .quote-title { color: var(--color-white); }
+    .variant-blue .quote-text { color: rgba(255, 255, 255, 0.9); }
+    .variant-blue .card-footer {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .variant-blue .avatar-chip {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+    .variant-blue .author-name { color: var(--color-white); }
+
+    /* Variante: Blanco */
+    .variant-white {
+      background-color: var(--color-white);
+      border: 2px solid var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      box-shadow: var(--shadow-white-card);
+    }
+    .variant-white .stars { color: var(--color-brand-blue-500); }
+    .variant-white .date-badge {
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+    }
+    .variant-white .quote-title { color: var(--color-brand-blue-500); }
+    .variant-white .quote-text { color: rgba(9, 80, 246, 0.85); }
+    .variant-white .card-footer {
+      border-color: rgba(186, 206, 253, 0.4);
+    }
+    .variant-white .avatar-chip {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+    .variant-white .author-name { color: var(--color-brand-blue-500); }
+
+    /* Variante: Amarillo */
+    .variant-yellow {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      box-shadow: var(--shadow-yellow-card);
+    }
+    .variant-yellow .stars { color: var(--color-brand-blue-500); }
+    .variant-yellow .date-badge {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      box-shadow: var(--shadow-sm);
+    }
+    .variant-yellow .quote-title { color: var(--color-brand-blue-500); }
+    .variant-yellow .quote-text { color: var(--color-brand-blue-500); }
+    .variant-yellow .card-footer {
+      border-color: rgba(9, 80, 246, 0.2);
+    }
+    .variant-yellow .avatar-chip {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+    .variant-yellow .author-name { color: var(--color-brand-blue-500); }
+
+    /* Estructura Interna Card */
+    .card-top-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .stars-group {
+      display: flex;
+      gap: 0.25rem;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .date-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.875rem;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      line-height: 1;
+    }
+
+    .quote-title {
+      font-family: var(--font-subheading);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.025em;
+    }
+    @media (min-width: 1024px) {
+      .quote-title { font-size: 1.5rem; }
+    }
+
+    .quote-text {
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      line-height: 1.625;
+      font-weight: 400;
+    }
+
+    .card-footer {
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+      border-top-width: 1px;
+      border-top-style: solid;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .avatar-chip {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+      font-family: var(--font-sans);
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 0.025em;
+      font-family: var(--font-sans);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .review-card, .btn-maps {
+        transition: none !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       SECCIÓN: SocialProofSection
+       ======================================================================== -->
+  <section
+    id="social-proof"
+    aria-labelledby="social-proof-title"
+    class="social-proof-section"
+  >
+    <div class="section-container">
+      
+      <!-- 1. HEADER EDITORIAL -->
+      <header class="section-header">
+        
+        <!-- Trust Badge Oficial Google -->
+        <div class="trust-badge-container">
+          <span class="trust-badge">
+            5.0 / 5.0 EN GOOGLE · +120 VALORACIONES
+          </span>
+        </div>
+
+        <div class="header-content-split">
+          <!-- Titular con Keyword Destacada en Pill Amarilla -->
+          <h2 id="social-proof-title" class="section-title">
+            LA PALABRA DE QUIENES{' '}
+            <span class="title-highlight-pill">
+              VENDEN Y ENVÍAN
+            </span>{' '}
+            EN MDQ
+          </h2>
+
+          <!-- Botón Directo a Google Maps -->
+          <div>
+            <a
+              href="https://www.google.com/maps?q=Friuli+1972,+Mar+del+Plata"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-maps"
+              aria-label="Ver todas las opiniones en Google Maps"
+            >
+              <span>VER EN GOOGLE MAPS</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </header>
+
+      <!-- 2. GRILLA DE TESTIMONIOS (3 x 2 = 6 Cards) -->
+      <ul class="reviews-grid">
+
+        <!-- Card 1: Karen Herrera (Azul) -->
+        <li style="display: flex;">
+          <article class="review-card variant-blue">
+            <div>
+              <div class="card-top-meta">
+                <div class="stars-group stars" role="img" aria-label="Calificación: 5 de 5 estrellas">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 13 semanas</span>
+              </div>
+              <h3 class="quote-title">RESOLVIERON MI PROBLEMA CON LA MEJOR PREDISPOSICIÓN</h3>
+              <p class="quote-text">
+                Excelente el servicio, rápidos, muy atentos, resolvieron mi problema con la mejor predisposición, los recomiendo ampliamente.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="avatar-chip" aria-hidden="true">K</div>
+              <span class="author-name">Karen Herrera</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 2: Agustin Torres (Blanco) -->
+        <li style="display: flex;">
+          <article class="review-card variant-white">
+            <div>
+              <div class="card-top-meta">
+                <div class="stars-group stars" role="img" aria-label="Calificación: 5 de 5 estrellas">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 48 semanas</span>
+              </div>
+              <h3 class="quote-title">IMPECABLE PARA LLEVAR PEDIDOS A NUESTROS CLIENTES</h3>
+              <p class="quote-text">
+                Lo usé varias veces para llevar pedidos a nuestros clientes. Impecable el servicio. Además hacen depósitos en cajeros sin problemas. Unos genios.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="avatar-chip" aria-hidden="true">A</div>
+              <span class="author-name">Agustin Torres</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 3: Alexis Bogarin (Amarillo) -->
+        <li style="display: flex;">
+          <article class="review-card variant-yellow">
+            <div>
+              <div class="card-top-meta">
+                <div class="stars-group stars" role="img" aria-label="Calificación: 5 de 5 estrellas">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 37 semanas</span>
+              </div>
+              <h3 class="quote-title">EL MEJOR SERVICIO PREMIUM DE LA ZONA</h3>
+              <p class="quote-text">
+                El mejor servicio premium de la zona en Mar del Plata. 100% recomendable por puntualidad y trato.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="avatar-chip" aria-hidden="true">A</div>
+              <span class="author-name">Alexis Bogarin</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 4: Lorenzo Elizagoyen (Blanco) -->
+        <li style="display: flex;">
+          <article class="review-card variant-white">
+            <div>
+              <div class="card-top-meta">
+                <div class="stars-group stars" role="img" aria-label="Calificación: 5 de 5 estrellas">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 32 semanas</span>
+              </div>
+              <h3 class="quote-title">ATENCIÓN DE PRIMERA, RÁPIDO, CONFIABLE Y SEGURO</h3>
+              <p class="quote-text">
+                Excelente servicio, atención de primera, rápido, confiable y seguro. Recomendado 100% para envíos puntuales.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="avatar-chip" aria-hidden="true">L</div>
+              <span class="author-name">Lorenzo Elizagoyen</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 5: Emiliano Garri (Azul) -->
+        <li style="display: flex;">
+          <article class="review-card variant-blue">
+            <div>
+              <div class="card-top-meta">
+                <div class="stars-group stars" role="img" aria-label="Calificación: 5 de 5 estrellas">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 48 semanas</span>
+              </div>
+              <h3 class="quote-title">¡LA MEJOR MENSAJERÍA DE MDP!</h3>
+              <p class="quote-text">
+                La mejor mensajería de Mar del Plata. Cumplen siempre con lo prometido y no te dejan tirado.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="avatar-chip" aria-hidden="true">E</div>
+              <span class="author-name">Emiliano Garri</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 6: NahuAri (Blanco) -->
+        <li style="display: flex;">
+          <article class="review-card variant-white">
+            <div>
+              <div class="card-top-meta">
+                <div class="stars-group stars" role="img" aria-label="Calificación: 5 de 5 estrellas">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 48 semanas</span>
+              </div>
+              <h3 class="quote-title">10 DE 10, RESPONSABLES POR SOBRE TODAS LAS COSAS</h3>
+              <p class="quote-text">
+                10 de 10 muy buenos en lo que hacen, responsables por sobre todas las cosas, super recomendable para tu negocio.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="avatar-chip" aria-hidden="true">N</div>
+              <span class="author-name">NahuAri</span>
+            </div>
+          </article>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+</body>
+</html>
