@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Animado | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Mensajería urbana y logística de última milla en todo Mar del Plata: envíos en el día con motos propias.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue: #0950F6;
+      --color-brand-blue-dark: #073ec2;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-yellow: #FFEC01;
+      --color-brand-yellow-hover: #FFF12E;
+      --color-brand-white: #FFFFFF;
+      --color-text-main: #FFFFFF;
+      --color-text-muted: rgba(255, 255, 255, 0.85);
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue);
+      color: var(--color-text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-section {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      min-height: 90vh;
+      min-height: 90dvh;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      background-color: var(--color-brand-blue);
+      color: #FFFFFF;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 236, 1, 0.1) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 36px 36px, 36px 36px;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 10;
+      margin-inline: auto;
+      display: flex;
+      width: 100%;
+      max-width: 80rem;
+      flex: 1;
+      align-items: center;
+      padding: 3.5rem 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-container {
+        padding: 5rem 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-container {
+        padding: 6rem 2rem;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 3.5rem;
+      }
+    }
+
+    /* Left Copy Column */
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 1rem;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      align-self: flex-start;
+      box-shadow: 0 4px 14px rgba(255, 236, 1, 0.35);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 0.92;
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 4.25rem;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .hero-title {
+        font-size: 4.75rem;
+      }
+    }
+
+    .knockout {
+      display: inline-block;
+      position: relative;
+      padding: 0.1em 0.35em;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      border-radius: 6px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-lead {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+      max-width: 56ch;
+      font-family: var(--font-sans);
+    }
+
+    @media (min-width: 640px) {
+      .hero-lead {
+        font-size: 1.125rem;
+      }
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-actions {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .cta-pill-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.25rem;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta-pill-primary:hover {
+      background-color: var(--color-brand-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 236, 1, 0.4);
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 2.75rem;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #FFFFFF;
+      text-decoration: underline;
+      text-decoration-color: var(--color-brand-yellow);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      transition: color 0.15s ease;
+    }
+
+    .cta-link:hover {
+      color: var(--color-brand-yellow);
+    }
+
+    /* Right Map Column */
+    .hero-map-wrapper {
+      position: relative;
+      margin-inline: auto;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      max-width: 28rem;
+    }
+
+    .pulse-ring {
+      position: absolute;
+      left: 50%;
+      top: 44%;
+      width: 32%;
+      aspect-ratio: 1 / 1;
+      transform: translate(-50%, -50%);
+      border-radius: 9999px;
+      border: 2px solid rgba(255, 236, 1, 0.6);
+      animation: pulseRing 3.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      pointer-events: none;
+    }
+
+    .pulse-ring:nth-child(2) {
+      animation-delay: 1.06s;
+    }
+
+    .pulse-ring:nth-child(3) {
+      animation-delay: 2.13s;
+    }
+
+    @keyframes pulseRing {
+      0% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 0.9;
+      }
+      80%, 100% {
+        transform: translate(-50%, -50%) scale(2.8);
+        opacity: 0;
+      }
+    }
+
+    .hero-map-img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 40px rgba(9, 80, 246, 0.25));
+    }
+
+    .map-chip {
+      position: absolute;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 0.75rem;
+      padding: 0.625rem 0.875rem;
+      background-color: #FFFFFF;
+      color: var(--color-brand-blue);
+      box-shadow: 0 12px 30px rgba(9, 80, 246, 0.25);
+      border: 1px solid var(--color-brand-blue-100);
+      transition: transform 0.2s ease;
+    }
+
+    .map-chip:hover {
+      transform: scale(1.03);
+    }
+
+    .chip-base {
+      left: 0.5rem;
+      bottom: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .chip-base {
+        left: -4%;
+        bottom: 14%;
+      }
+    }
+
+    .chip-delivery {
+      right: 0.5rem;
+      top: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .chip-delivery {
+        right: -2%;
+        top: 10%;
+      }
+    }
+
+    .chip-text {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      line-height: 1.25;
+    }
+
+    .chip-title {
+      display: block;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    /* Bottom Marquee Ticker */
+    .ticker-wrapper {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      background-color: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+      padding-block: 0.875rem;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeLeft 28s linear infinite;
+    }
+
+    @keyframes marqueeLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track {
+        animation: none;
+      }
+    }
+
+    .ticker-list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      flex-shrink: 0;
+    }
+
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      padding-inline: 1.25rem;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      white-space: nowrap;
+    }
+
+    .ticker-diamond {
+      width: 0.4375rem;
+      height: 0.4375rem;
+      transform: rotate(45deg);
+      border-radius: 1px;
+      background-color: var(--color-brand-yellow);
+      display: inline-block;
+    }
+
+    .svg-icon {
+      width: 1.125rem;
+      height: 1.125rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="hero-animado" aria-label="Mensajería urbana y logística de última milla en todo Mar del Plata" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-grid">
+
+        <!-- Copy (7 cols) -->
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <svg class="svg-icon" style="width:0.875rem;height:0.875rem;" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Flota propia · Todo Mar del Plata</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span style="display:block;">El motor de tu</span>
+            <span class="knockout">última milla</span>
+            <span style="display:block;margin-top:0.2em;">Somos la solución a tus envíos</span>
+          </h1>
+
+          <p class="hero-lead">
+            Mensajería y logística e-commerce en Mar del Plata: envíos en el día con motos propias. Llegamos a toda la ciudad y los repartidores son nuestros, sin tercerizar.
+          </p>
+
+          <div class="hero-actions">
+            <a href="/cotizar" class="cta-pill-primary">
+              <span>Cotizá tu envío</span>
+            </a>
+
+            <a href="/servicios" class="cta-link">
+              <span>Ver servicios</span>
+              <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Isometric Map (5 cols) -->
+        <div class="hero-map-wrapper">
+          <div class="pulse-ring" aria-hidden="true"></div>
+          <div class="pulse-ring" aria-hidden="true"></div>
+          <div class="pulse-ring" aria-hidden="true"></div>
+
+          <img
+            src="/heroes/inicio-mapa.webp"
+            alt="Pin de Envíos DosRuedas sobre un mapa isométrico de Mar del Plata con una ruta amarilla"
+            width="560"
+            height="560"
+            class="hero-map-img"
+            onerror="this.src='/elementos/dudas_transparent.webp'"
+          >
+
+          <!-- Chip 1: Base Friuli -->
+          <div class="map-chip chip-base">
+            <svg class="svg-icon" style="width:1rem;height:1rem;flex-shrink:0;" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="chip-text">
+              <span class="chip-title">Base Friuli 1972</span>
+              Mar del Plata
+            </span>
+          </div>
+
+          <!-- Chip 2: Entrega en el día -->
+          <div class="map-chip chip-delivery">
+            <svg class="svg-icon" style="width:1rem;height:1rem;flex-shrink:0;" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span class="chip-text">
+              <span class="chip-title">Entrega en el día</span>
+              en todo MDQ
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ticker de diferenciales -->
+    <div class="ticker-wrapper" aria-label="Diferenciales de Envíos DosRuedas">
+      <div class="ticker-track" aria-hidden="true">
+        <!-- Set 1 -->
+        <ul class="ticker-list">
+          <li class="ticker-item">Envíos en el día <span class="ticker-diamond"></span></li>
+          <li class="ticker-item">Flota propia <span class="ticker-diamond"></span></li>
+          <li class="ticker-item">Cero tercerización <span class="ticker-diamond"></span></li>
+          <li class="ticker-item">Todo Mar del Plata <span class="ticker-diamond"></span></li>
+          <li class="ticker-item">Retiro en tu local <span class="ticker-diamond"></span></li>
+        </ul>
+        <!-- Set 2 -->
+        <ul class="ticker-list">
+          <li class="ticker-item">Envíos en el día <span class="ticker-diamond"></span></li>
+          <li class="ticker-item">Flota propia <span class="ticker-diamond"></span></li>
+          <li class="ticker-item">Cero tercerización <span class="ticker-diamond"></span></li>
+          <li class="ticker-item">Todo Mar del Plata <span class="ticker-diamond"></span></li>
+          <li class="ticker-item">Retiro en tu local <span class="ticker-diamond"></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

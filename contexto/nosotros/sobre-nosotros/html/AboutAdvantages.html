@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ventajas Territoriales — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+
+      --color-white: #FFFFFF;
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #F8FAFC;
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+      padding: 3rem 1rem;
+      min-height: 100vh;
+    }
+
+    .advantages-section {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 9999px;
+      transform: rotate(-1deg);
+      box-shadow: 0 0 16px rgba(255, 236, 1, 0.3);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--color-brand-blue-500);
+    }
+
+    .section-desc {
+      font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+      line-height: 1.6;
+      color: var(--color-brand-blue-500);
+      max-width: 65ch;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .bento-grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+      }
+      .col-7 { grid-column: span 7; }
+      .col-5 { grid-column: span 5; }
+      .col-12 { grid-column: span 12; }
+    }
+
+    /* Doble Bisel */
+    .bezel-outer {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 20px;
+      padding: 8px;
+      height: 100%;
+      box-shadow: 0 4px 20px rgba(9, 80, 246, 0.05);
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .bezel-outer:hover { transform: translateY(-3px); }
+
+    .bezel-inner {
+      background-color: var(--color-white);
+      border: 1px solid rgba(186, 206, 253, 0.5);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) { .bezel-inner { padding: 32px; } }
+
+    .icon-well {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .icon-well-blue {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+    }
+
+    .icon-well-yellow {
+      background-color: rgba(255, 236, 1, 0.2);
+      border: 1px solid rgba(255, 236, 1, 0.5);
+      color: var(--color-brand-blue-500);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 8px;
+    }
+
+    .card-text {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-brand-blue-500);
+    }
+
+    .card-footer-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--color-brand-blue-100);
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-brand-blue-500);
+    }
+
+    /* Card 3 Full Width */
+    .cta-card-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .cta-card-flex {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .cta-nested-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 50px;
+      padding: 0 8px 0 22px;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border: 1px solid var(--color-brand-yellow-500);
+      box-shadow: var(--shadow-accent-sm);
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .cta-nested-pill:hover {
+      background-color: var(--color-brand-yellow-400);
+      box-shadow: var(--shadow-cta-glow);
+      transform: translateY(-2px);
+    }
+
+    .pill-arrow-disc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 14px;
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .cta-nested-pill:hover .pill-arrow-disc { transform: translateX(3px); }
+  </style>
+</head>
+<body>
+
+  <section id="about-advantages" class="advantages-section" aria-labelledby="advantages-heading">
+    <!-- Header Block -->
+    <header class="section-header">
+      <span class="section-badge">VENTAJAS TERRITORIALES</span>
+      <h2 id="advantages-heading" class="section-title">
+        POR QUÉ CONFIAR EN DOSRUEDAS
+      </h2>
+      <p class="section-desc">
+        Frente a aplicaciones automatizadas y plataformas impersonales, nosotros brindamos compromiso presencial, operadores locales y conocimiento metro a metro de Mar del Plata.
+      </p>
+    </header>
+
+    <!-- Bento Grid -->
+    <div class="bento-grid">
+
+      <!-- Card 1: Atención Humana y Directa (7 cols) -->
+      <article class="col-7">
+        <div class="bezel-outer">
+          <div class="bezel-inner">
+            <div>
+              <div class="icon-well icon-well-blue" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Atención Humana y Directa</h3>
+              <p class="card-text">
+                Damos la cara siempre. Cuando surge una duda o reprogramación, te comunicás directamente por WhatsApp con operadores en Mar del Plata que gestionan y resuelven en el acto.
+              </p>
+            </div>
+            <footer class="card-footer-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+              </svg>
+              <span>COMUNICACIÓN DIRECTA VÍA WHATSAPP</span>
+            </footer>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Flota Propia Capacitada (5 cols) -->
+      <article class="col-5">
+        <div class="bezel-outer">
+          <div class="bezel-inner">
+            <div>
+              <div class="icon-well icon-well-yellow" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                  <path d="M15 18H9"/>
+                  <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+                  <circle cx="17" cy="18" r="2"/>
+                  <circle cx="7" cy="18" r="2"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Flota Propia Capacitada</h3>
+              <p class="card-text">
+                No tercerizamos de forma descontrolada. Nuestro equipo de cadetes está uniformado, capacitado en manejo de paquetes frágiles y con base física en <strong>Friuli 1972</strong>.
+              </p>
+            </div>
+            <footer class="card-footer-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+              </svg>
+              <span>COBERTURA TOTAL GENERAL PUEYRREDÓN</span>
+            </footer>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Garantía Operativa Sin Excusas (12 cols) -->
+      <article class="col-12">
+        <div class="bezel-outer">
+          <div class="bezel-inner">
+            <div class="cta-card-flex">
+              <div style="max-width: 800px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                  <div class="icon-well icon-well-blue" style="margin: 0; width: 40px; height: 40px;" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                      <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                  </div>
+                  <h3 class="card-title" style="margin: 0;">Garantía Operativa Sin Excusas</h3>
+                </div>
+                <p class="card-text">
+                  Tu reputación comercial depende de la puntualidad de entrega. Si coordinamos un envío express en 2 horas o un ruteo programado, cumplimos la franja pactada sin desvíos.
+                </p>
+              </div>
+
+              <div style="flex-shrink: 0;">
+                <a href="/cotizar" class="cta-nested-pill">
+                  <span>Cotizar tu Envío</span>
+                  <span class="pill-arrow-disc" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+</html>

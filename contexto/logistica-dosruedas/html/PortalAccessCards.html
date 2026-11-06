@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portales Digitales y Accesos | Logística DosRuedas Mar del Plata</title>
+  <meta name="description" content="Accesos directos a los portales de gestión para comercios, repartidores en moto y tiendas Shop DosRuedas en Mar del Plata.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue: #0950F6;
+      --color-brand-blue-dark: #073ec2;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-yellow: #FFEC01;
+      --color-brand-yellow-hover: #FFF12E;
+      --color-brand-white: #FFFFFF;
+      --color-text-main: #0950F6;
+      --color-text-dark: #0f172a;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #FFFFFF;
+      color: var(--color-text-dark);
+      padding: 3rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 80rem;
+      margin-inline: auto;
+      padding-inline: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding-inline: 1.5rem;
+      }
+    }
+
+    /* Section Header */
+    .section-header {
+      max-width: 48rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .header-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-brand-blue);
+      font-weight: 700;
+      padding: 0.25rem 0.875rem;
+      background-color: var(--color-brand-blue-50);
+      border-radius: 9999px;
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--color-brand-blue);
+    }
+
+    @media (min-width: 640px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #475569;
+    }
+
+    /* 3-Column Cards Grid */
+    .portals-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .portals-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Double Bezel Card */
+    .bezel-outer {
+      background: linear-gradient(135deg, rgba(9, 80, 246, 0.1), rgba(255, 236, 1, 0.05));
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--color-brand-blue-100);
+      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bezel-outer.dark-variant {
+      background: linear-gradient(135deg, rgba(9, 80, 246, 0.4), rgba(255, 236, 1, 0.15));
+      border-color: rgba(255, 236, 1, 0.3);
+      box-shadow: 0 20px 40px rgba(9, 80, 246, 0.2);
+    }
+
+    .bezel-inner {
+      background-color: #FFFFFF;
+      border-radius: 1.125rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(9, 80, 246, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      flex: 1;
+      gap: 1.5rem;
+    }
+
+    .bezel-outer.dark-variant .bezel-inner {
+      background-color: var(--color-brand-blue);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .card-top {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .icon-box {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      background-color: var(--color-brand-blue);
+      color: var(--color-brand-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.2);
+    }
+
+    .bezel-outer.dark-variant .icon-box {
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      box-shadow: 0 4px 14px rgba(255, 236, 1, 0.35);
+    }
+
+    .badge-tag {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .bezel-outer.dark-variant .badge-tag {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--color-brand-yellow);
+      border-color: rgba(255, 236, 1, 0.3);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--color-brand-blue);
+    }
+
+    .bezel-outer.dark-variant .card-title {
+      color: #FFFFFF;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #475569;
+    }
+
+    .bezel-outer.dark-variant .card-desc {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      padding-top: 0.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: #334155;
+    }
+
+    .bezel-outer.dark-variant .feature-item {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .feature-bullet {
+      width: 0.375rem;
+      height: 0.375rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue);
+      margin-top: 0.375rem;
+      flex-shrink: 0;
+    }
+
+    .bezel-outer.dark-variant .feature-bullet {
+      background-color: var(--color-brand-yellow);
+    }
+
+    .card-bottom {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-brand-blue-50);
+    }
+
+    .bezel-outer.dark-variant .card-bottom {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-portal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.875rem 1.25rem;
+      border-radius: 0.75rem;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background-color: var(--color-brand-blue);
+      color: #FFFFFF;
+    }
+
+    .btn-portal:hover {
+      background-color: var(--color-brand-blue-dark);
+      transform: translateY(-2px);
+    }
+
+    .bezel-outer.dark-variant .btn-portal {
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+    }
+
+    .bezel-outer.dark-variant .btn-portal:hover {
+      background-color: var(--color-brand-yellow-hover);
+    }
+
+    /* Bottom Info Banner */
+    .platform-banner {
+      padding: 1.5rem;
+      border-radius: 1.25rem;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .platform-banner {
+        flex-direction: row;
+        padding: 1.5rem 2rem;
+      }
+    }
+
+    .banner-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .banner-icon {
+      padding: 0.75rem;
+      background-color: var(--color-brand-blue);
+      color: var(--color-brand-yellow);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .banner-title {
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue);
+    }
+
+    .banner-desc {
+      font-size: 0.8125rem;
+      color: #475569;
+    }
+
+    .banner-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s ease;
+    }
+
+    .banner-link:hover {
+      color: var(--color-brand-blue-dark);
+    }
+
+    .svg-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="portales" class="container" aria-label="Portales dedicados de Logística DosRuedas">
+    
+    <!-- Header -->
+    <div class="section-header">
+      <span class="header-badge">Ecosistema Digital</span>
+      <h2 class="section-title">Portales dedicados para cada integrante de la red</h2>
+      <p class="section-subtitle">
+        Elegí la plataforma adecuada según tu rol en la operación logística de Mar del Plata.
+      </p>
+    </div>
+
+    <!-- 3 Cards Bento Grid -->
+    <div class="portals-grid">
+
+      <!-- Card 1: Comercios -->
+      <article class="bezel-outer">
+        <div class="bezel-inner">
+          <div class="card-top">
+            <div class="card-header-row">
+              <div class="icon-box" aria-hidden="true">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <span class="badge-tag">Portal Web B2B</span>
+            </div>
+
+            <h3 class="card-title">Panel para Comercios</h3>
+            <p class="card-desc">
+              Entorno exclusivo para locales comerciales y tiendas e-commerce. Generá etiquetas con código EDR, programá recolecciones en tu local y visualizá comprobantes de entrega.
+            </p>
+
+            <ul class="features-list">
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Carga individual y masiva de remitos</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Seguimiento simultáneo de todos tus envíos</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Descarga de reportes para administración</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-bottom">
+            <a href="https://www.logisticadosruedas.com/" target="_blank" rel="noopener noreferrer" class="btn-portal">
+              <span>Acceder al Panel Comercial</span>
+              <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Repartidores -->
+      <article class="bezel-outer">
+        <div class="bezel-inner">
+          <div class="card-top">
+            <div class="card-header-row">
+              <div class="icon-box" aria-hidden="true">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                  <circle cx="18.5" cy="17.5" r="3.5"></circle>
+                  <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5L9 9l4.5-3 2 4.5h3.5"></path>
+                </svg>
+              </div>
+              <span class="badge-tag">App de Reparto MDQ</span>
+            </div>
+
+            <h3 class="card-title">Panel para Repartidores</h3>
+            <p class="card-desc">
+              Herramienta de campo para la flota de cadetes de Envíos DosRuedas. Ruteo inteligente por zonas, visualización de paradas y confirmación con firma digital y foto.
+            </p>
+
+            <ul class="features-list">
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Hojas de ruta optimizadas por radio</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Notificación de estado en tiempo real</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Prueba de entrega con firma en pantalla</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-bottom">
+            <a href="https://www.logisticadosruedas.com/" target="_blank" rel="noopener noreferrer" class="btn-portal">
+              <span>Ingreso Cadetería</span>
+              <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Shop DosRuedas (Dark Variant) -->
+      <article class="bezel-outer dark-variant">
+        <div class="bezel-inner">
+          <div class="card-top">
+            <div class="card-header-row">
+              <div class="icon-box" aria-hidden="true">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+              </div>
+              <span class="badge-tag">Ecosistema E-commerce</span>
+            </div>
+
+            <h3 class="card-title">Shop DosRuedas</h3>
+            <p class="card-desc">
+              Creá tu tienda online con catálogo autogestionable y logística de última milla nativa integrada en Mar del Plata. Vendé online y despachá en un solo clic.
+            </p>
+
+            <ul class="features-list">
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Catálogo online con carrito y WhatsApp</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Envíos DosRuedas integrados automáticamente</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet" aria-hidden="true"></span>
+                <span>Tarifas unificadas sin intermediarios</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-bottom">
+            <a href="https://shopdosruedas.com" target="_blank" rel="noopener noreferrer" class="btn-portal">
+              <span>Conocer Shop DosRuedas</span>
+              <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Official Platform Banner -->
+    <div class="platform-banner">
+      <div class="banner-left">
+        <div class="banner-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="banner-title">Plataforma oficial: logisticadosruedas.com</h4>
+          <p class="banner-desc">Centralizá tus despachos y sincronizá con tu base en Mar del Plata.</p>
+        </div>
+      </div>
+
+      <a href="https://www.logisticadosruedas.com/" target="_blank" rel="noopener noreferrer" class="banner-link">
+        <span>Visitar www.logisticadosruedas.com</span>
+        <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
+
+  </section>
+
+</body>
+</html>

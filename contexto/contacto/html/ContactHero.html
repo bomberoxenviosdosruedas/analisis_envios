@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Contacto — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-600: #E6D400;
+
+      --color-white: #FFFFFF;
+      --color-whatsapp: #25D366;
+
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ========================================================================
+     * CONTACT HERO CONTAINER
+     * ======================================================================== */
+    .contact-hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 90vh;
+      min-height: 90dvh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+
+    /* Fondo Procedural: rejilla sutil y gradientes */
+    .hero-bg-procedural {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: 
+        radial-gradient(circle at 80% 20%, rgba(255, 236, 1, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 10% 80%, rgba(98, 143, 249, 0.3) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    }
+
+    .hero-main-content {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-container { padding: 5rem 1.5rem 7rem; }
+    }
+    @media (min-width: 1024px) {
+      .hero-container { padding: 6rem 2rem 8rem; }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 3.5rem;
+      }
+    }
+
+    /* ========================================================================
+     * COLUMNA IZQUIERDA: COPY & ACCIONES
+     * ======================================================================== */
+    .hero-copy-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-copy-col {
+        text-align: left;
+        gap: 2rem;
+      }
+    }
+
+    /* Badge */
+    .badge-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background-color: rgba(255, 236, 1, 0.18);
+      border: 1px solid rgba(255, 236, 1, 0.45);
+      color: var(--color-brand-yellow-500);
+      transform: rotate(-1deg);
+      box-shadow: 0 0 16px rgba(255, 236, 1, 0.25);
+    }
+
+    @media (min-width: 1024px) {
+      .badge-accent {
+        margin: 0;
+      }
+    }
+
+    /* Título Anton */
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: var(--color-white);
+      text-wrap: balance;
+    }
+
+    .title-block {
+      display: block;
+    }
+
+    .knockout-text {
+      display: inline-block;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.05em 0.25em;
+      border-radius: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Lead */
+    .hero-lead {
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 56ch;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-lead {
+        margin: 0;
+      }
+    }
+
+    /* Botones CTA */
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 0.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-cta-group {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .hero-cta-group {
+        justify-content: flex-start;
+      }
+    }
+
+    .cta-nested-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 52px;
+      padding: 0 8px 0 24px;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      transition: all var(--duration-feedback) var(--ease-out);
+      border: 1px solid transparent;
+    }
+
+    .pill-primary {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-color: var(--color-brand-yellow-500);
+      box-shadow: var(--shadow-accent-sm);
+    }
+
+    .pill-primary:hover {
+      background-color: var(--color-brand-yellow-400);
+      box-shadow: var(--shadow-cta-glow);
+      transform: translateY(-2px);
+    }
+
+    .pill-arrow-disc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 14px;
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .pill-primary:hover .pill-arrow-disc {
+      transform: translateX(3px);
+    }
+
+    .hero-link-form {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-white);
+      text-decoration: underline;
+      text-decoration-color: var(--color-brand-yellow-500);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      border-radius: 6px;
+      transition: color var(--duration-feedback) var(--ease-out);
+    }
+
+    .hero-link-form:hover {
+      color: var(--color-brand-yellow-500);
+    }
+
+    /* Switcher de Canales */
+    .channels-switcher {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .channel-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      border-radius: 1rem;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      text-align: left;
+    }
+
+    @media (min-width: 640px) {
+      .channel-item {
+        grid-template-columns: 44px 1fr auto;
+        padding-right: 1rem;
+      }
+    }
+
+    .channel-icon-well {
+      width: 44px;
+      height: 44px;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-well-yellow {
+      background-color: var(--color-brand-yellow-500);
+    }
+
+    .icon-well-white {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+    }
+
+    .channel-title {
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-white);
+      line-height: 1;
+    }
+
+    .channel-address {
+      display: block;
+      margin-top: 0.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Botón de Copiar Teléfono Integrado */
+    .copy-phone-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9375rem;
+      color: var(--color-white);
+      font-variant-numeric: tabular-nums;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color var(--duration-feedback) var(--ease-out);
+    }
+
+    @media (max-width: 639px) {
+      .copy-phone-btn {
+        grid-column-start: 2;
+        justify-self: start;
+      }
+    }
+
+    .copy-phone-btn:hover {
+      color: var(--color-brand-yellow-500);
+    }
+
+    .copy-badge-disc {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .badge-tag-yellow {
+      border-radius: 6px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.35rem 0.5rem;
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    @media (max-width: 639px) {
+      .badge-tag-yellow {
+        grid-column-start: 2;
+        justify-self: start;
+      }
+    }
+
+    /* ========================================================================
+     * COLUMNA DERECHA: DOUBLE BEZEL CARD DARK CON HORARIOS
+     * ======================================================================== */
+    .hero-card-col {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .card-dark-outer {
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 10px;
+      width: 100%;
+      max-width: 440px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 20px 48px -8px rgba(9, 80, 246, 0.45);
+    }
+
+    .card-dark-inner {
+      background-color: rgba(9, 80, 246, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card-dark-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pulse-yellow-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-brand-yellow-500);
+      box-shadow: 0 0 8px #FFEC01;
+      animation: pulse 1.8s infinite;
+    }
+
+    .card-dark-title {
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-brand-yellow-500);
+    }
+
+    .card-image-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: rgba(6, 59, 183, 0.5);
+    }
+
+    .card-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-schedule-grid {
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .schedule-label {
+      display: block;
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-brand-yellow-500);
+      margin-bottom: 2px;
+    }
+
+    /* ========================================================================
+     * FIRMA VISUAL: EL IDA Y VUELTA (BANDA INFERIOR)
+     * ======================================================================== */
+    .roundtrip-rail-band {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 56px;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    @media (min-width: 640px) {
+      .roundtrip-rail-band { height: 72px; }
+    }
+    @media (min-width: 1024px) {
+      .roundtrip-rail-band { height: 96px; }
+    }
+
+    .rail-container {
+      position: relative;
+      max-width: 1280px;
+      margin: 0 auto;
+      height: 100%;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .rail-container { padding: 0 2rem; }
+    }
+
+    .rail-svg-line {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.35;
+    }
+
+    .rail-terminal-left {
+      position: absolute;
+      left: 1.5rem;
+      top: 31%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid var(--color-brand-yellow-500);
+      background-color: var(--color-brand-blue-500);
+    }
+
+    @media (min-width: 1024px) {
+      .rail-terminal-left { left: 2rem; }
+    }
+
+    .rail-terminal-right {
+      position: absolute;
+      right: 1.5rem;
+      top: 31%;
+      transform: translate(50%, -50%);
+    }
+
+    @media (min-width: 1024px) {
+      .rail-terminal-right { right: 2rem; }
+    }
+
+    .rail-terminal-ping {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 236, 1, 0.6);
+      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .rail-terminal-dot {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--color-brand-yellow-500);
+    }
+
+    @keyframes ping {
+      75%, 100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
+    }
+
+    /* Token en movimiento constante: Escribís -> Friuli -> Escribís */
+    .rail-motion-track {
+      position: absolute;
+      left: 1.5rem;
+      right: 1.5rem;
+      top: 31%;
+      height: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .rail-motion-track { left: 2rem; right: 2rem; }
+    }
+
+    .rail-token {
+      position: absolute;
+      top: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--color-brand-yellow-500);
+      box-shadow: 0 0 18px rgba(255, 236, 1, 0.65);
+      transform: translate(-50%, -50%);
+      animation: roundtrip 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+
+    @keyframes roundtrip {
+      0%, 100% {
+        left: 0%;
+      }
+      50% {
+        left: 100%;
+      }
+    }
+
+    .rail-label-left {
+      position: absolute;
+      left: 1.5rem;
+      bottom: 8px;
+      font-family: var(--font-subheading);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    @media (min-width: 1024px) {
+      .rail-label-left { left: 2rem; }
+    }
+
+    .rail-label-right {
+      position: absolute;
+      right: 1.5rem;
+      bottom: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+      color: var(--color-brand-yellow-500);
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media (min-width: 1024px) {
+      .rail-label-right { right: 2rem; }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <section
+    id="contact-hero"
+    aria-label="Contacto directo con la base central de Envíos DosRuedas en Friuli 1972, Mar del Plata: WhatsApp, formulario y horarios de atención"
+    class="contact-hero"
+  >
+    <!-- Fondo Procedural con rejilla técnica y luz ambiental -->
+    <div class="hero-bg-procedural" aria-hidden="true"></div>
+
+    <div class="hero-main-content">
+      <div class="hero-container">
+        <div class="hero-grid">
+
+          <!-- COLUMNA IZQUIERDA: Titular, Copy y Conmutador de Canales -->
+          <div class="hero-copy-col">
+            <!-- Badge -->
+            <span class="badge-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+              </svg>
+              Conexión directa
+            </span>
+
+            <!-- Título Principal -->
+            <h1 class="hero-title">
+              <span class="title-block">Escribinos</span>
+              <span class="knockout-text">te respondemos</span>
+            </h1>
+
+            <!-- Párrafo Descriptivo -->
+            <p class="hero-lead">
+              Contanos qué necesitás mover y te cotizamos al toque. Atendemos desde la base central de Friuli 1972, en Mar del Plata, con flota propia de motos y cero tercerización.
+            </p>
+
+            <!-- Botones de Acción -->
+            <div class="hero-cta-group">
+              <a
+                href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20cotizar%20mis%20env%C3%ADos"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-nested-pill pill-primary"
+                id="contact-hero-cta-whatsapp"
+              >
+                <span>Escribinos por WhatsApp</span>
+                <span class="pill-arrow-disc" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="#contact-main-form" class="hero-link-form">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+                Completá el formulario
+              </a>
+            </div>
+
+            <!-- Conmutador de Canales: WhatsApp y Base -->
+            <ul class="channels-switcher" role="list">
+              <!-- Canal 1: WhatsApp comercial -->
+              <li class="channel-item">
+                <div class="channel-icon-well icon-well-yellow" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+                    <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Z"/>
+                  </svg>
+                </div>
+                <div class="channel-info">
+                  <span class="channel-title">WhatsApp comercial</span>
+                </div>
+                <button
+                  type="button"
+                  id="hero-copy-phone"
+                  class="copy-phone-btn"
+                  title="Copiar número"
+                  aria-label="Copiar número: 223 660-2699"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--color-brand-yellow-500)">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span id="phone-display-text" class="tabular-nums">223 660-2699</span>
+                  <span class="copy-badge-disc" id="copy-icon-container" aria-hidden="true">
+                    <svg id="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                    </svg>
+                    <svg id="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </span>
+                </button>
+              </li>
+
+              <!-- Canal 2: Hub central -->
+              <li class="channel-item">
+                <div class="channel-icon-well icon-well-white" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="channel-info">
+                  <span class="channel-title">Hub central</span>
+                  <span class="channel-address">Friuli 1972 · Mar del Plata</span>
+                </div>
+                <span class="badge-tag-yellow">Lun a sáb</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- COLUMNA DERECHA: Double Bezel Card Dark con Base Central -->
+          <div class="hero-card-col">
+            <div class="card-dark-outer">
+              <div class="card-dark-inner">
+                <div class="card-dark-header">
+                  <span class="pulse-yellow-dot" aria-hidden="true"></span>
+                  <span class="card-dark-title">Base central</span>
+                </div>
+
+                <div class="card-image-box">
+                  <img
+                    src="../../public/heroes/contacto-mensaje.webp"
+                    alt="Teléfono y sobre con el mensaje Escribinos hoy, de Envíos DosRuedas en Mar del Plata"
+                    loading="eager"
+                  />
+                </div>
+
+                <div class="card-schedule-grid">
+                  <div>
+                    <span class="schedule-label">Lun a Vie</span>
+                    <span>09:00 - 18:00 hs</span>
+                  </div>
+                  <div>
+                    <span class="schedule-label">Sábado</span>
+                    <span>10:00 - 15:00 hs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Firma visual: El ida y vuelta (Banda inferior con token animado) -->
+    <div class="roundtrip-rail-band" aria-hidden="true">
+      <div class="rail-container">
+        <!-- Riel punteado -->
+        <svg class="rail-svg-line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 96" preserveAspectRatio="none">
+          <line x1="0" y1="30" x2="1200" y2="30" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="6 10" />
+        </svg>
+
+        <!-- Terminal de partida: vos escribís -->
+        <span class="rail-terminal-left"></span>
+
+        <!-- Terminal de llegada: la base responde -->
+        <span class="rail-terminal-right">
+          <span class="rail-terminal-ping"></span>
+          <span class="rail-terminal-dot"></span>
+        </span>
+
+        <!-- Token animado en ida y vuelta -->
+        <div class="rail-motion-track">
+          <span class="rail-token"></span>
+        </div>
+
+        <!-- Rótulos -->
+        <span class="rail-label-left">Escribís</span>
+        <span class="rail-label-right">Friuli 1972 · Mar del Plata</span>
+      </div>
+    </div>
+
+    <!-- Anuncio accesible de copiado -->
+    <span id="hero-copy-feedback" aria-live="polite" class="sr-only"></span>
+  </section>
+
+  <script>
+    (function () {
+      const copyBtn = document.getElementById('hero-copy-phone');
+      const copyIcon = document.getElementById('copy-icon');
+      const checkIcon = document.getElementById('check-icon');
+      const feedback = document.getElementById('hero-copy-feedback');
+      const PHONE = '223 660-2699';
+      let timer = null;
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async function () {
+          let copied = false;
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(PHONE);
+              copied = true;
+            }
+          } catch (e) {
+            copied = false;
+          }
+
+          if (!copied) {
+            const ta = document.createElement('textarea');
+            ta.value = PHONE;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+              copied = document.execCommand('copy');
+            } catch (err) {
+              copied = false;
+            }
+            document.body.removeChild(ta);
+          }
+
+          if (copied) {
+            copyIcon.style.display = 'none';
+            checkIcon.style.display = 'block';
+            feedback.textContent = 'Teléfono ' + PHONE + ' copiado al portapapeles.';
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(function () {
+              copyIcon.style.display = 'block';
+              checkIcon.style.display = 'none';
+              feedback.textContent = '';
+            }, 2000);
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

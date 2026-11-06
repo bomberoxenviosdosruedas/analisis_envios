@@ -1,0 +1,151 @@
+import React from 'react';
+import { Metadata } from 'next';
+import LowCostHero from '@/components/servicios/lowcost/LowCostHero';
+import LowCostFeatures from '@/components/servicios/lowcost/LowCostFeatures';
+import LowCostPricing from '@/components/servicios/lowcost/LowCostPricing';
+import LowCostBenefits from '@/components/servicios/lowcost/LowCostBenefits';
+import LowCostHowItWorks from '@/components/servicios/lowcost/LowCostHowItWorks';
+
+const baseUrl = 'https://www.enviosdosruedas.com';
+
+export const metadata: Metadata = {
+  title: 'Cadetería y Envíos en el Día en Mar del Plata',
+  description:
+    'Paquetería y cadetería programada con entrega en el día en Mar del Plata. Pedidos antes de las 13:00 hs se entregan antes de las 19:00 hs con tarifa fija.',
+  alternates: {
+    canonical: `${baseUrl}/servicios/envios-lowcost`,
+  },
+  openGraph: {
+    title: 'Cadetería y Envíos en el Día en Mar del Plata | Envíos DosRuedas',
+    description:
+      'El servicio de cadetería y encomiendas más económico de Mar del Plata. Pedidos antes de las 13:00 hs se entregan antes de las 19:00 hs.',
+    url: `${baseUrl}/servicios/envios-lowcost`,
+    type: 'website',
+    locale: 'es_AR',
+    images: [`${baseUrl}/og-image.jpg`],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cadetería y Envíos en el Día en Mar del Plata | Envíos DosRuedas',
+    description: 'El servicio de cadetería y encomiendas más económico de Mar del Plata. Pedidos antes de las 13:00 hs se entregan antes de las 19:00 hs.',
+    images: [`${baseUrl}/og-image.jpg`],
+    creator: '@enviosdosruedas',
+  },
+};
+
+const jsonLdSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Paquetería E-Commerce, Servicio de Cadetería y Encomiendas LowCost en Mar del Plata',
+  description:
+    'Servicio de paquetería e-commerce, cadetería y encomiendas programadas de máxima rentabilidad en Mar del Plata. Pedidos ingresados antes de las 13:00 hs con entrega garantizada antes de las 19:00 hs.',
+  url: `${baseUrl}/servicios/envios-lowcost`,
+  provider: {
+    '@type': 'LocalBusiness',
+    '@id': `${baseUrl}#localbusiness`,
+    name: 'Envíos DosRuedas',
+    telephone: '+54-223-660-2699',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Friuli 1972',
+      addressLocality: 'Mar del Plata',
+      addressRegion: 'Buenos Aires',
+      postalCode: '7600',
+      addressCountry: 'AR',
+    },
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Mar del Plata',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Tarifas LowCost Vigentes 2026',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'LowCost 0 a 3 km',
+        price: '3000',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        name: 'LowCost 3 a 5 km',
+        price: '4000',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        name: 'LowCost 5 a 7 km',
+        price: '5300',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        name: 'LowCost 7 a 10 km',
+        price: '7000',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        name: 'LowCost +10 km',
+        price: '7000',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+        description: '$7.000 base más $700 por kilómetro adicional entero',
+      },
+    ],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+    { '@type': 'ListItem', position: 2, name: 'Servicios', item: `${baseUrl}/#servicios` },
+    { '@type': 'ListItem', position: 3, name: 'Envíos LowCost', item: `${baseUrl}/servicios/envios-lowcost` },
+  ],
+};
+
+export default function EnviosLowCostPage() {
+  return (
+    <main className="min-h-dvh bg-white text-brand-blue-500 relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Hero — el propio LowCostHero ya es el <section id="lowcost-hero"> */}
+      <LowCostHero />
+
+      {/* Ruteo masivo features — White Canvas */}
+      <section className="relative z-10 bg-white font-sans">
+        <LowCostFeatures />
+      </section>
+
+      {/* 2026 Zone Pricing rates table — Electric Speed Blue (brand-blue-500) */}
+      <section className="relative z-10 bg-brand-blue-500">
+        <LowCostPricing />
+      </section>
+
+      {/* Structured logistics benefits grid — Deep Midnight Navy (brand-blue-500) */}
+      <section className="relative z-10 bg-brand-blue-500 font-sans">
+        <LowCostBenefits />
+      </section>
+
+      {/* Step by step operation diagram — White Canvas */}
+      <section className="relative z-10 bg-white font-sans">
+        <LowCostHowItWorks />
+      </section>
+    </main>
+  );
+}

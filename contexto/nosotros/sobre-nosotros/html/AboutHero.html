@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Sobre Nosotros — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-600: #E6D400;
+
+      --color-white: #FFFFFF;
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .about-hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 90vh;
+      min-height: 90dvh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+
+    .hero-bg-procedural {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: 
+        radial-gradient(circle at 75% 25%, rgba(255, 236, 1, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 15% 75%, rgba(98, 143, 249, 0.3) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    }
+
+    .ghost-word {
+      pointer-events: none;
+      position: absolute;
+      bottom: -8%;
+      left: -1%;
+      z-index: 0;
+      white-space: nowrap;
+      font-family: var(--font-display);
+      font-size: clamp(90px, 17vw, 230px);
+      text-transform: uppercase;
+      line-height: 0.85;
+      color: rgba(255, 255, 255, 0.06);
+      user-select: none;
+    }
+
+    .hero-main-content {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 7rem;
+    }
+
+    @media (min-width: 640px) { .hero-container { padding: 4.5rem 1.5rem 8rem; } }
+    @media (min-width: 1024px) { .hero-container { padding: 5.5rem 2rem 9rem; } }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 3.5rem;
+      }
+    }
+
+    .hero-copy-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-copy-col {
+        text-align: left;
+        gap: 2rem;
+      }
+    }
+
+    .badge-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background-color: rgba(255, 236, 1, 0.18);
+      border: 1px solid rgba(255, 236, 1, 0.5);
+      color: var(--color-brand-yellow-500);
+      transform: rotate(-1deg);
+      box-shadow: 0 0 16px rgba(255, 236, 1, 0.25);
+    }
+
+    @media (min-width: 1024px) { .badge-accent { margin: 0; } }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.75rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: var(--color-white);
+      text-wrap: balance;
+    }
+
+    .title-block { display: block; }
+
+    .knockout-text {
+      display: inline-block;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.05em 0.25em;
+      border-radius: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 56ch;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) { .hero-lead { margin: 0; } }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 0.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-cta-group {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+    }
+    @media (min-width: 1024px) { .hero-cta-group { justify-content: flex-start; } }
+
+    .cta-nested-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 52px;
+      padding: 0 10px 0 24px;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      transition: all var(--duration-feedback) var(--ease-out);
+      border: 1px solid transparent;
+    }
+
+    .pill-primary {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-color: var(--color-brand-yellow-500);
+      box-shadow: var(--shadow-accent-sm);
+    }
+
+    .pill-primary:hover {
+      background-color: var(--color-brand-yellow-400);
+      box-shadow: var(--shadow-cta-glow);
+      transform: translateY(-2px);
+    }
+
+    .pill-arrow-disc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 14px;
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .pill-primary:hover .pill-arrow-disc { transform: translateX(3px); }
+
+    .hero-link-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-white);
+      text-decoration: underline;
+      text-decoration-color: var(--color-brand-yellow-500);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      border-radius: 6px;
+      transition: color var(--duration-feedback) var(--ease-out);
+    }
+
+    .hero-link-wa:hover { color: var(--color-brand-yellow-500); }
+
+    /* Chips de Estadísticas */
+    .chips-grid {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) { .chips-grid { margin: 0; } }
+
+    .chip-item {
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .chip-val {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      color: var(--color-brand-yellow-500);
+      font-variant-numeric: tabular-nums;
+      margin-top: 0.25rem;
+    }
+
+    .chip-lbl {
+      display: block;
+      font-family: var(--font-subheading);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-white);
+      margin-top: 0.125rem;
+    }
+
+    /* Columna Derecha: Tarjeta de Identidad y Base Central */
+    .hero-card-col { display: flex; justify-content: center; width: 100%; }
+
+    .outer-bezel-white {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 20px;
+      border: 1px solid var(--color-brand-blue-100);
+      background-color: var(--color-white);
+      padding: 10px;
+      box-shadow: 0 25px 50px -12px rgba(9, 80, 246, 0.25);
+    }
+
+    .inner-panel-blue {
+      border-radius: 14px;
+      background-color: var(--color-brand-blue-500);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      color: var(--color-white);
+    }
+
+    /* Sello Ladeado */
+    .stamp-badge {
+      align-self: flex-start;
+      transform: rotate(-1.5deg);
+      border-radius: 12px;
+      border: 2px solid var(--color-brand-yellow-500);
+      padding: 12px 14px;
+      background-color: rgba(9, 80, 246, 0.5);
+    }
+
+    .stamp-title {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: var(--color-brand-yellow-500);
+    }
+
+    .stamp-subtitle {
+      margin-top: 4px;
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-brand-blue-50);
+    }
+
+    /* Lista de Credenciales */
+    .cred-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .cred-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 10px;
+    }
+
+    .cred-dt {
+      font-family: var(--font-subheading);
+      font-size: 0.9375rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-brand-blue-50);
+    }
+
+    .cred-dd {
+      font-family: var(--font-mono);
+      font-size: 1.1875rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--color-white);
+    }
+
+    /* Horarios */
+    .hours-list {
+      display: grid;
+      gap: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--color-brand-blue-50);
+    }
+
+    .hours-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .hours-dt {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hours-dd {
+      color: var(--color-white);
+    }
+
+    .card-footer-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--color-brand-blue-50);
+    }
+
+    /* Firma Visual: El Nodo */
+    .node-fan-band {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 112px;
+      pointer-events: none;
+      z-index: 5;
+      overflow: hidden;
+    }
+
+    @media (min-width: 640px) { .node-fan-band { height: 144px; } }
+    @media (min-width: 1024px) { .node-fan-band { height: 176px; } }
+
+    .node-baseline {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      border-top: 1px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    .node-base-label {
+      position: absolute;
+      bottom: 8px;
+      right: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.85);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .node-square {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    .node-spoke {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 84%;
+      transform-origin: left bottom;
+    }
+
+    .spoke-line {
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .spoke-dot {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-brand-yellow-500);
+      animation: pulse 1.8s infinite;
+    }
+
+    .node-center-emitter {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .emitter-ring {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 236, 1, 0.6);
+      animation: ping 3.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .emitter-center-dot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-50);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+      50% { opacity: 0.4; transform: translateY(-50%) scale(0.8); }
+    }
+
+    @keyframes ping {
+      75%, 100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <section
+    id="about-hero"
+    aria-label="Sobre Envíos DosRuedas: base central en Friuli 1972, Mar del Plata, con flota propia y más de 7 años de trayectoria en logística urbana"
+    class="about-hero"
+  >
+    <!-- Fondo procedural -->
+    <div class="hero-bg-procedural" aria-hidden="true"></div>
+
+    <!-- Palabra fantasma monumental -->
+    <span class="ghost-word" aria-hidden="true">Dos Ruedas</span>
+
+    <div class="hero-main-content">
+      <div class="hero-container">
+        <div class="hero-grid">
+
+          <!-- COLUMNA IZQUIERDA (7 cols) -->
+          <div class="hero-copy-col">
+            <span class="badge-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              Identidad · Mar del Plata
+            </span>
+
+            <h1 class="hero-title">
+              <span class="title-block">Más que cadetería,</span>
+              <span class="knockout-text">somos logística</span>
+              <span class="title-block">de confianza</span>
+            </h1>
+
+            <p class="hero-lead">
+              Una base física en Friuli 1972 y flota motorizada 100% propia. Conectamos tiendas online, PyMEs y emprendedores de todo Mar del Plata con soporte en tiempo real y cumplimiento estricto de horarios.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="/contacto" class="cta-nested-pill pill-primary" id="about-hero-cta-contacto">
+                <span>Trabajemos juntos</span>
+                <span class="pill-arrow-disc" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20conocer%20la%20operativa%20de%20DosRuedas"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hero-link-wa"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+                Escribinos
+              </a>
+            </div>
+
+            <!-- Chips de Identidad -->
+            <ul class="chips-grid" role="list">
+              <li class="chip-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-brand-yellow-500); margin: 0 auto;" aria-hidden="true">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="16" x2="16" y1="2" y2="6"/>
+                </svg>
+                <span class="chip-val">+7</span>
+                <span class="chip-lbl">Años en ruta</span>
+              </li>
+              <li class="chip-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-brand-yellow-500); margin: 0 auto;" aria-hidden="true">
+                  <circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/>
+                </svg>
+                <span class="chip-val">100%</span>
+                <span class="chip-lbl">Flota propia</span>
+              </li>
+              <li class="chip-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-brand-yellow-500); margin: 0 auto;" aria-hidden="true">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                </svg>
+                <span class="chip-val">10 km</span>
+                <span class="chip-lbl">Cálculo automático</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- COLUMNA DERECHA: Ficha de la Empresa (5 cols) -->
+          <div class="hero-card-col">
+            <div class="outer-bezel-white">
+              <div class="inner-panel-blue">
+                <!-- Sello ladeado -->
+                <div class="stamp-badge">
+                  <span class="stamp-title">Friuli 1972</span>
+                  <span class="stamp-subtitle">Base central</span>
+                </div>
+
+                <!-- Credenciales -->
+                <dl class="cred-list">
+                  <div class="cred-row">
+                    <dt class="cred-dt">Operando</dt>
+                    <dd class="cred-dd">+7 años</dd>
+                  </div>
+                  <div class="cred-row">
+                    <dt class="cred-dt">Flota propia</dt>
+                    <dd class="cred-dd">100%</dd>
+                  </div>
+                  <div class="cred-row">
+                    <dt class="cred-dt">Corte diario</dt>
+                    <dd class="cred-dd">13:00 hs</dd>
+                  </div>
+                  <div class="cred-row">
+                    <dt class="cred-dt">Última entrega</dt>
+                    <dd class="cred-dd">19:00 hs</dd>
+                  </div>
+                </dl>
+
+                <!-- Horarios -->
+                <dl class="hours-list">
+                  <div class="hours-row">
+                    <dt class="hours-dt">Lun a Vie</dt>
+                    <dd class="hours-dd">09:00 - 18:00 hs</dd>
+                  </div>
+                  <div class="hours-row">
+                    <dt class="hours-dt">Sábado</dt>
+                    <dd class="hours-dd">10:00 - 15:00 hs</dd>
+                  </div>
+                  <div class="hours-row">
+                    <dt class="hours-dt">Domingo</dt>
+                    <dd class="hours-dd">Cerrado</dd>
+                  </div>
+                </dl>
+
+                <!-- Footer de la tarjeta -->
+                <div class="card-footer-info">
+                  <span style="display: flex; align-items: center; gap: 6px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Mar del Plata
+                  </span>
+                  <span style="color: var(--color-white); font-weight: 700;">223 660-2699</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Firma visual: El Nodo (Abanico radial en padding inferior) -->
+    <div class="node-fan-band" aria-hidden="true">
+      <div class="node-baseline"></div>
+      <span class="node-base-label">Base central · Friuli 1972 · MDQ</span>
+
+      <div class="node-square">
+        <!-- 7 Radios con inclinación progresiva de 10° a 70° -->
+        <div class="node-spoke" style="transform: rotate(-10deg);">
+          <span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0s;"></span>
+        </div>
+        <div class="node-spoke" style="transform: rotate(-20deg);">
+          <span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.13s;"></span>
+        </div>
+        <div class="node-spoke" style="transform: rotate(-30deg);">
+          <span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.26s;"></span>
+        </div>
+        <div class="node-spoke" style="transform: rotate(-40deg);">
+          <span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.39s;"></span>
+        </div>
+        <div class="node-spoke" style="transform: rotate(-50deg);">
+          <span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.52s;"></span>
+        </div>
+        <div class="node-spoke" style="transform: rotate(-60deg);">
+          <span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.65s;"></span>
+        </div>
+        <div class="node-spoke" style="transform: rotate(-70deg);">
+          <span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.78s;"></span>
+        </div>
+
+        <!-- Emisor central -->
+        <div class="node-center-emitter">
+          <span class="emitter-ring"></span>
+          <span class="emitter-center-dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+import React from 'react';
+import { Metadata } from 'next';
+import EmprendedoresHero from '@/components/servicios/emprendedores/EmprendedoresHero';
+import EmprendedoresFeatures from '@/components/servicios/emprendedores/EmprendedoresFeatures';
+import EmprendedoresBenefits from '@/components/servicios/emprendedores/EmprendedoresBenefits';
+import EmprendedoresPricing from '@/components/servicios/emprendedores/EmprendedoresPricing';
+
+const baseUrl = 'https://www.enviosdosruedas.com';
+
+export const metadata: Metadata = {
+  title: 'Depósito y Fulfillment para PyMEs',
+  description:
+    'Depósito y fulfillment logístico en Friuli 1972, Mar del Plata. Picking, empaque, opción Drop-Off y entregas en el día con stock seguro para tu negocio.',
+  alternates: {
+    canonical: `${baseUrl}/servicios/deposito-fulfillment`,
+  },
+  openGraph: {
+    title: 'Depósito y Fulfillment para PyMEs | Envíos DosRuedas',
+    description:
+      'Soluciones integrales de logística para e-commerce en Mar del Plata. Depósito en Friuli 1972, preparación y despacho directo.',
+    url: `${baseUrl}/servicios/deposito-fulfillment`,
+    type: 'website',
+    locale: 'es_AR',
+    images: [`${baseUrl}/og-image.jpg`],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Depósito, Fulfillment y Envíos PyME | Envíos DosRuedas',
+    description: 'Soluciones integrales de logística para e-commerce en Mar del Plata. Depósito en Friuli 1972, preparación y despacho directo.',
+    images: [`${baseUrl}/og-image.jpg`],
+    creator: '@enviosdosruedas',
+  },
+};
+
+const jsonLdSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Depósito, Fulfillment y Logística E-Commerce en Mar del Plata',
+  description:
+    'Servicio integral de almacenamiento y logística e-commerce en Mar del Plata. Incluye E-Commerce Same Day desde Friuli 1972 con picking QR, E-Commerce Next Day 24hs, opción DropOFF con 20% de descuento y cobro contrareembolso sin cargo extra.',
+  url: `${baseUrl}/servicios/deposito-fulfillment`,
+  provider: {
+    '@type': 'LocalBusiness',
+    '@id': `${baseUrl}#localbusiness`,
+    name: 'Envíos DosRuedas',
+    telephone: '+54-223-660-2699',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Friuli 1972',
+      addressLocality: 'Mar del Plata',
+      addressRegion: 'Buenos Aires',
+      postalCode: '7600',
+      addressCountry: 'AR',
+    },
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Mar del Plata',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Planes de Depósito, Fulfillment y Paquetería E-Commerce',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'E-Commerce Same Day',
+        description: 'Stock almacenado en Friuli 1972, despachado inmediatamente con picking QR y empaquetado',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        name: 'E-Commerce Next Day (24hs)',
+        description: 'Retiro programado para entrega al día siguiente. Recolección gratis para más de 10 envíos',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Opción DropOFF (-20% OFF)',
+        description: 'Despacho directo en Friuli 1972 con un 20% de descuento en la tarifa final',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+    ],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+    { '@type': 'ListItem', position: 2, name: 'Servicios', item: `${baseUrl}/#servicios` },
+    { '@type': 'ListItem', position: 3, name: 'Depósito & Fulfillment', item: `${baseUrl}/servicios/deposito-fulfillment` },
+  ],
+};
+
+export default function DepositoFulfillmentPage() {
+  return (
+    <main className="min-h-dvh bg-white text-brand-blue-500 relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Hero — el propio EmprendedoresHero pinta su fondo amarillo de marca */}
+      <EmprendedoresHero />
+
+      {/* Corporate logistics features — White Canvas */}
+      <section className="relative z-10 bg-white font-sans">
+        <EmprendedoresFeatures />
+      </section>
+
+      {/* Strategic business benefits grid — Deep Midnight Navy (brand-blue-500) */}
+      <section className="relative z-10 bg-brand-blue-500 font-sans">
+        <EmprendedoresBenefits />
+      </section>
+
+      {/* Premium custom e-commerce plans and warehousing prices — Electric Speed Blue (brand-blue-500) */}
+      <section className="relative z-10 bg-brand-blue-500">
+        <EmprendedoresPricing />
+      </section>
+    </main>
+  );
+}

@@ -1,0 +1,44 @@
+import React from 'react';
+import { Metadata } from 'next';
+import EmprendedoresHero from '@/components/servicios/emprendedores/EmprendedoresHero';
+import EmprendedoresFeatures from '@/components/servicios/emprendedores/EmprendedoresFeatures';
+import EmprendedoresBenefits from '@/components/servicios/emprendedores/EmprendedoresBenefits';
+import EmprendedoresDropoff from '@/components/servicios/emprendedores/EmprendedoresDropoff';
+import EmprendedoresPricing from '@/components/servicios/emprendedores/EmprendedoresPricing';
+
+export const metadata: Metadata = {
+  title: 'Plan Emprendedores y Fulfillment 3PL | Envíos DosRuedas Mar del Plata',
+  description:
+    'Logística 3PL, paquetería e-commerce y almacenamiento en Friuli 1972, Mar del Plata. Picking con código QR y despachos en el día para tu tienda online.',
+  keywords: [
+    'plan emprendedores envíos dosruedas',
+    'fulfillment mar del plata',
+    'almacenamiento e-commerce friuli 1972',
+    'logística 3PL mar del plata',
+    'paquetería same day mar del plata',
+    'cadetería emprendedores mar del plata',
+  ],
+  alternates: {
+    canonical: 'https://www.enviosdosruedas.com/servicios/plan-emprendedores',
+  },
+  openGraph: {
+    title: 'Plan Emprendedores y Fulfillment 3PL | Envíos DosRuedas MDQ',
+    description:
+      'Almacená tu stock en nuestro Hub de Friuli 1972. Al vender, empaquetamos y entregamos en el día en Mar del Plata.',
+    url: 'https://www.enviosdosruedas.com/servicios/plan-emprendedores',
+    type: 'website',
+    images: ['https://www.enviosdosruedas.com/og-image.jpg'],
+  },
+};
+
+export default function PlanEmprendedoresPage() {
+  return (
+    <main className="min-h-dvh bg-white">
+      <EmprendedoresHero />
+      <EmprendedoresFeatures />
+      <EmprendedoresBenefits />
+      <EmprendedoresDropoff />
+      <EmprendedoresPricing />
+    </main>
+  );
+}

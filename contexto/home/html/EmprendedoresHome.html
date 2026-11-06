@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Emprendedores y Comercios | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Potenciamos tu marca en Mar del Plata con Envíos Flex, Shop DosRuedas y cuentas corrientes para empresas.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue: #0950F6;
+      --color-brand-blue-dark: #073ec2;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-yellow: #FFEC01;
+      --color-brand-yellow-hover: #FFF12E;
+      --color-brand-white: #FFFFFF;
+      --color-text-main: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue);
+      color: var(--color-text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-wrap {
+      padding-block: 4rem;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-brand-blue);
+      border-block: 1px solid rgba(255, 255, 255, 0.1);
+      background-image: 
+        radial-gradient(circle at 100% 100%, rgba(255, 236, 1, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+    }
+
+    @media (min-width: 1024px) {
+      .section-wrap {
+        padding-block: 6rem;
+      }
+    }
+
+    .container {
+      max-width: 80rem;
+      margin-inline: auto;
+      padding-inline: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding-inline: 1.5rem;
+      }
+    }
+
+    /* Header */
+    .header-box {
+      max-width: 56rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+
+    .header-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-brand-yellow);
+      font-weight: 700;
+      padding: 0.25rem 0.875rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 236, 1, 0.3);
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      color: #FFFFFF;
+    }
+
+    @media (min-width: 640px) {
+      .title {
+        font-size: 3.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .title {
+        font-size: 4rem;
+      }
+    }
+
+    .city-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding-inline: 0.875rem;
+      height: 2rem;
+      vertical-align: middle;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--color-brand-yellow), #FFF12E);
+      color: var(--color-brand-blue);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      border: 1px solid var(--color-brand-yellow);
+      box-shadow: 0 4px 12px rgba(255, 236, 1, 0.3);
+      margin-inline: 0.375rem;
+    }
+
+    .desc {
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--color-brand-blue-50);
+      max-width: 46rem;
+      font-weight: 300;
+    }
+
+    .divider-line {
+      height: 3px;
+      width: 5rem;
+      background-color: var(--color-brand-yellow);
+      border-radius: 9999px;
+    }
+
+    /* Bento Grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .bento-grid {
+        grid-template-columns: 7fr 5fr;
+      }
+    }
+
+    /* Card Bezel Outer */
+    .bento-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 236, 1, 0.08));
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bento-inner {
+      background: rgba(9, 80, 246, 0.85);
+      border-radius: 1.125rem;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      gap: 1.5rem;
+    }
+
+    .card-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.75rem;
+      background-color: rgba(255, 236, 1, 0.15);
+      color: var(--color-brand-yellow);
+      border: 1px solid rgba(255, 236, 1, 0.4);
+      border-radius: 9999px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #FFFFFF;
+      margin-top: 0.75rem;
+    }
+
+    .card-desc {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 0.5rem;
+    }
+
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .feature-check {
+      width: 1.125rem;
+      height: 1.125rem;
+      color: var(--color-brand-yellow);
+      flex-shrink: 0;
+    }
+
+    .btn-pill-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.875rem 1.5rem;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      box-shadow: 0 4px 14px rgba(255, 236, 1, 0.35);
+    }
+
+    .btn-pill-action:hover {
+      background-color: var(--color-brand-yellow-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Right Stack */
+    .bento-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Partners Marquee Ticker */
+    .partners-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 1rem;
+    }
+
+    .partners-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .marquee-track {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+
+    .marquee-content {
+      display: flex;
+      gap: 2rem;
+      animation: marquee 25s linear infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .partner-pill {
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #FFFFFF;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+
+    .svg-icon {
+      width: 1.125rem;
+      height: 1.125rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="emprendedores-home" class="section-wrap" aria-labelledby="emprendedores-home-title">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="header-box">
+        <span class="header-badge">Socio Estratégico Local</span>
+        <h2 id="emprendedores-home-title" class="title">
+          Potenciamos tu <span class="city-chip">MDQ</span> Marca en Mar del Plata
+        </h2>
+        <p class="desc">
+          Si vendés online, necesitás un socio logístico que responda al toque. Creamos planes a tu medida con tarifas dinámicas transparentes y recolección programada a domicilio en Mar del Plata.
+        </p>
+        <div class="divider-line" aria-hidden="true"></div>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+        
+        <!-- Large Card: Plan Emprendedores / Envíos Flex -->
+        <article class="bento-card">
+          <div class="bento-inner">
+            <div>
+              <span class="card-badge">E-Commerce & Mercado Libre Flex</span>
+              <h3 class="card-title">Plan Emprendedores y Comercios</h3>
+              <p class="card-desc">
+                Diseñado para marcas de ropa, repuestos, calzado, tecnología y tiendas online que precisan entregas en el mismo día sin fallar en los tiempos prometidos al cliente.
+              </p>
+
+              <ul class="features-list">
+                <li class="feature-item">
+                  <svg class="feature-check svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Recolección programada sin costo en tu local o taller</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-check svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cobro contra reembolso con rendición en 24 hs</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-check svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>100% de cumplimiento para envíos MercadoLibre Flex</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-check svg-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Atención directa por WhatsApp con operador humano</span>
+                </li>
+              </ul>
+            </div>
+
+            <div style="padding-top:1.5rem;">
+              <a href="/servicios/plan-emprendedores" class="btn-pill-action">
+                <span>Consultar Plan Emprendedores</span>
+                <svg class="svg-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right Stack: Shop DosRuedas + Cuenta Corriente -->
+        <div class="bento-stack">
+          
+          <!-- Card: Shop DosRuedas -->
+          <article class="bento-card">
+            <div class="bento-inner" style="gap:1rem;">
+              <div>
+                <span class="card-badge">Plataforma Web Nativa</span>
+                <h3 class="card-title" style="font-size:1.5rem;">Shop DosRuedas</h3>
+                <p class="card-desc" style="font-size:0.875rem;">
+                  Creá tu tienda online con catálogo autogestionable, botón de compra y envíos locales integrados sin comisiones abusivas.
+                </p>
+              </div>
+
+              <a href="https://shopdosruedas.com" target="_blank" rel="noopener noreferrer" class="btn-pill-action" style="padding:0.75rem 1.25rem; font-size:0.9375rem;">
+                <span>Visitar shopdosruedas.com</span>
+                <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card: Empresas Cuenta Corriente -->
+          <article class="bento-card">
+            <div class="bento-inner" style="gap:1rem;">
+              <div>
+                <span class="card-badge">B2B Corporativo</span>
+                <h3 class="card-title" style="font-size:1.5rem;">Empresas y Distribuidores</h3>
+                <p class="card-desc" style="font-size:0.875rem;">
+                  Facturación oficial quincenal A o B, soporte dedicado y gestión de remitos para empresas con alto flujo diario.
+                </p>
+              </div>
+
+              <a href="/servicios/empresas-cuenta-corriente" class="btn-pill-action" style="padding:0.75rem 1.25rem; font-size:0.9375rem;">
+                <span>Abrir Cuenta Corriente</span>
+                <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+      <!-- Partners Marquee Ticker -->
+      <div class="partners-section">
+        <span class="partners-label">Marcas que confían en nuestra logística:</span>
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-content">
+            <span class="partner-pill">TOY PIOLA JUGUETERÍA</span>
+            <span class="partner-pill">AMA &amp; POLA</span>
+            <span class="partner-pill">DROPIX 3D</span>
+            <span class="partner-pill">EL CÓNDOR</span>
+            <span class="partner-pill">STARCEL</span>
+            <span class="partner-pill">URBANCOW</span>
+            <span class="partner-pill">WANCA</span>
+            <span class="partner-pill">CATALINA INDUMENTARIA</span>
+            <span class="partner-pill">ENVASES 3G</span>
+            <span class="partner-pill">LA PERI</span>
+            <!-- Repeat for seamless continuous loop -->
+            <span class="partner-pill">TOY PIOLA JUGUETERÍA</span>
+            <span class="partner-pill">AMA &amp; POLA</span>
+            <span class="partner-pill">DROPIX 3D</span>
+            <span class="partner-pill">EL CÓNDOR</span>
+            <span class="partner-pill">STARCEL</span>
+            <span class="partner-pill">URBANCOW</span>
+            <span class="partner-pill">WANCA</span>
+            <span class="partner-pill">CATALINA INDUMENTARIA</span>
+            <span class="partner-pill">ENVASES 3G</span>
+            <span class="partner-pill">LA PERI</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

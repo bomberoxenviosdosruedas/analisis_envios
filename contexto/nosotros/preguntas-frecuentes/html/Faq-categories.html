@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorías y Preguntas Frecuentes | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Buscador interactivo y preguntas frecuentes agrupadas por servicios, tiempos, precios y confianza en Mar del Plata.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue: #0950F6;
+      --color-brand-blue-dark: #073ec2;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-yellow: #FFEC01;
+      --color-brand-yellow-hover: #FFF12E;
+      --color-brand-white: #FFFFFF;
+      --color-text-main: #0950F6;
+      --color-text-muted: #4B5563;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #F8FAFC;
+      color: var(--color-text-main);
+      padding: 3rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 68rem;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Search Box */
+    .search-wrapper {
+      position: relative;
+      max-width: 36rem;
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--color-brand-blue);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 3rem;
+      padding-left: 3rem;
+      padding-right: 2.75rem;
+      background-color: #FFFFFF;
+      border: 2px solid var(--color-brand-blue-100);
+      border-radius: 0.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      color: var(--color-brand-blue);
+      outline: none;
+      box-shadow: 0 2px 8px rgba(9, 80, 246, 0.04);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--color-brand-blue);
+      box-shadow: 0 0 0 3px rgba(9, 80, 246, 0.15);
+    }
+
+    .search-input::placeholder {
+      color: rgba(9, 80, 246, 0.55);
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0.375rem;
+      background: none;
+      border: none;
+      color: var(--color-brand-blue);
+      border-radius: 9999px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.15s ease;
+    }
+
+    .search-clear-btn:hover {
+      background-color: var(--color-brand-blue-50);
+    }
+
+    /* Category Cards Grid */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .cat-btn {
+      position: relative;
+      text-align: left;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      border: 1px solid var(--color-brand-blue-100);
+      background-color: #FFFFFF;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      outline: none;
+    }
+
+    .cat-btn:hover {
+      border-color: var(--color-brand-blue);
+      background-color: rgba(230, 238, 254, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .cat-btn:focus-visible {
+      box-shadow: 0 0 0 4px rgba(9, 80, 246, 0.25);
+    }
+
+    .cat-btn.active {
+      background-color: var(--color-brand-blue);
+      border-color: var(--color-brand-blue);
+      color: #FFFFFF;
+      box-shadow: 0 10px 25px rgba(9, 80, 246, 0.25);
+      transform: scale(1.02) rotate(-1deg);
+    }
+
+    .cat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .cat-icon-box {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .cat-btn.active .cat-icon-box {
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      box-shadow: 0 2px 10px rgba(255, 236, 1, 0.4);
+    }
+
+    .cat-pill {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 0.125rem 0.625rem;
+      border-radius: 9999px;
+      font-variant-numeric: tabular-nums;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+    }
+
+    .cat-btn.active .cat-pill {
+      background-color: rgba(255, 236, 1, 0.15);
+      color: var(--color-brand-yellow);
+      border: 1px solid rgba(255, 236, 1, 0.4);
+    }
+
+    .cat-title {
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+      color: var(--color-brand-blue);
+    }
+
+    .cat-btn.active .cat-title {
+      color: #FFFFFF;
+    }
+
+    .cat-desc {
+      font-size: 0.75rem;
+      line-height: 1.4;
+      color: var(--color-brand-blue);
+      opacity: 0.85;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .cat-btn.active .cat-desc {
+      color: rgba(255, 255, 255, 0.9);
+      opacity: 1;
+    }
+
+    /* Double Bezel Outer Container */
+    .double-bezel-outer {
+      background: linear-gradient(135deg, rgba(9, 80, 246, 0.1), rgba(255, 236, 1, 0.05));
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--color-brand-blue-100);
+      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.06);
+    }
+
+    .double-bezel-inner {
+      background-color: #FFFFFF;
+      border-radius: 1.125rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(9, 80, 246, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .double-bezel-inner {
+        padding: 2rem;
+      }
+    }
+
+    /* Group Header inside Bezel */
+    .group-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-brand-blue-100);
+    }
+
+    @media (min-width: 640px) {
+      .group-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .group-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+    }
+
+    .group-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .group-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--color-brand-blue);
+      line-height: 1.1;
+    }
+
+    @media (min-width: 640px) {
+      .group-title {
+        font-size: 1.875rem;
+      }
+    }
+
+    .group-desc {
+      font-size: 0.8125rem;
+      color: var(--color-brand-blue);
+      opacity: 0.8;
+      margin-top: 0.125rem;
+    }
+
+    .badge-year {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--color-brand-blue);
+      background-color: var(--color-brand-blue-50);
+      padding: 0.375rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid var(--color-brand-blue-100);
+      align-self: flex-start;
+    }
+
+    @media (min-width: 640px) {
+      .badge-year {
+        align-self: center;
+      }
+    }
+
+    /* Accordion Item */
+    .accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .accordion-item {
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 0.75rem;
+      background-color: #FFFFFF;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .accordion-item:hover {
+      border-color: rgba(9, 80, 246, 0.5);
+    }
+
+    .accordion-item.open {
+      border-color: var(--color-brand-blue);
+      background-color: rgba(230, 238, 254, 0.35);
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.05);
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      min-height: 3rem;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .accordion-trigger:focus-visible {
+      box-shadow: inset 0 0 0 2px var(--color-brand-blue);
+    }
+
+    .accordion-trigger-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+    }
+
+    .q-icon {
+      padding: 0.375rem;
+      border-radius: 0.5rem;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .accordion-item.open .q-icon {
+      background-color: var(--color-brand-blue);
+      color: var(--color-brand-yellow);
+    }
+
+    .q-text {
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      color: var(--color-brand-blue);
+    }
+
+    @media (min-width: 640px) {
+      .q-text {
+        font-size: 1.1875rem;
+      }
+    }
+
+    .arrow-icon {
+      padding: 0.375rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+      margin-top: 0.125rem;
+    }
+
+    .accordion-item.open .arrow-icon {
+      transform: rotate(180deg);
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+    }
+
+    .accordion-panel {
+      display: none;
+      padding: 0.75rem 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid var(--color-brand-blue-100);
+      background-color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-brand-blue);
+    }
+
+    .accordion-item.open .accordion-panel {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Empty Search State */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+
+    .empty-state-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      color: rgba(9, 80, 246, 0.35);
+      margin-inline: auto;
+      margin-bottom: 0.75rem;
+    }
+
+    .empty-state-title {
+      font-family: var(--font-subheading);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue);
+    }
+
+    .empty-state-text {
+      font-size: 0.875rem;
+      color: var(--color-brand-blue);
+      opacity: 0.8;
+      max-width: 28rem;
+      margin: 0.375rem auto 1.25rem auto;
+    }
+
+    .empty-reset-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      border: 1px solid var(--color-brand-blue-100);
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+
+    .empty-reset-btn:hover {
+      background-color: var(--color-brand-blue-100);
+    }
+
+    .svg-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="faq-categories" aria-label="Buscador y categorías de preguntas frecuentes">
+    <div class="container">
+
+      <!-- Live Search Bar -->
+      <div class="search-wrapper">
+        <label for="faq-search-input" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">
+          Buscar en preguntas frecuentes
+        </label>
+        <svg class="search-icon svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          id="faq-search-input"
+          type="text"
+          placeholder="Buscar por palabra clave (ej: MercadoLibre, tarifas, cobertura)..."
+          class="search-input"
+          autocomplete="off"
+        >
+        <button type="button" id="search-clear-btn" aria-label="Limpiar búsqueda" class="search-clear-btn">
+          <svg class="svg-icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Category Filter Pills Grid -->
+      <div id="categories-filter-grid" class="categories-grid" role="tablist" aria-label="Categorías de preguntas">
+        
+        <!-- Tab 1: Servicios -->
+        <button
+          type="button"
+          class="cat-btn active"
+          id="tab-servicios"
+          role="tab"
+          aria-selected="true"
+          aria-controls="faq-panel"
+          data-category="servicios"
+        >
+          <div class="cat-header">
+            <div class="cat-icon-box">
+              <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <span class="cat-pill">8 Qs</span>
+          </div>
+          <h3 class="cat-title">Servicios y Envíos</h3>
+          <p class="cat-desc">Soluciones de última milla, cobertura urbana y tipos de entrega</p>
+        </button>
+
+        <!-- Tab 2: Tiempos -->
+        <button
+          type="button"
+          class="cat-btn"
+          id="tab-tiempos"
+          role="tab"
+          aria-selected="false"
+          aria-controls="faq-panel"
+          data-category="tiempos"
+        >
+          <div class="cat-header">
+            <div class="cat-icon-box">
+              <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <span class="cat-pill">5 Qs</span>
+          </div>
+          <h3 class="cat-title">Tiempos y Operatoria</h3>
+          <p class="cat-desc">Horarios de base, anticipación de pedidos, seguimiento y contingencias</p>
+        </button>
+
+        <!-- Tab 3: Precios -->
+        <button
+          type="button"
+          class="cat-btn"
+          id="tab-precios"
+          role="tab"
+          aria-selected="false"
+          aria-controls="faq-panel"
+          data-category="precios"
+        >
+          <div class="cat-header">
+            <div class="cat-icon-box">
+              <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <span class="cat-pill">5 Qs</span>
+          </div>
+          <h3 class="cat-title">Precios, Pagos y Facturación</h3>
+          <p class="cat-desc">Cálculo por distancia, métodos de pago y planes para comercios</p>
+        </button>
+
+        <!-- Tab 4: Confianza -->
+        <button
+          type="button"
+          class="cat-btn"
+          id="tab-confianza"
+          role="tab"
+          aria-selected="false"
+          aria-controls="faq-panel"
+          data-category="confianza"
+        >
+          <div class="cat-header">
+            <div class="cat-icon-box">
+              <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <span class="cat-pill">3 Qs</span>
+          </div>
+          <h3 class="cat-title">Confianza y Diferenciación</h3>
+          <p class="cat-desc">Nuestra propuesta de valor, flota propia y contacto directo</p>
+        </button>
+
+      </div>
+
+      <!-- Double Bezel Card Holding FAQ Accordion -->
+      <div class="double-bezel-outer">
+        <div class="double-bezel-inner" id="faq-panel" role="region" aria-live="polite">
+
+          <!-- Category Header Info -->
+          <div class="group-header">
+            <div class="group-header-left">
+              <div class="group-icon" id="group-icon-display">
+                <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <div>
+                <h2 class="group-title" id="group-title-display">Servicios y Envíos</h2>
+                <p class="group-desc" id="group-desc-display">Soluciones de última milla, cobertura urbana y tipos de entrega</p>
+              </div>
+            </div>
+            <div class="badge-year">
+              <svg class="svg-icon" style="width:0.875rem;height:0.875rem;" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              <span>Mar del Plata 2026</span>
+            </div>
+          </div>
+
+          <!-- Empty search result alert -->
+          <div id="faq-empty-state" class="empty-state">
+            <svg class="empty-state-icon svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <h3 class="empty-state-title">No encontramos respuestas exactas para esa búsqueda</h3>
+            <p class="empty-state-text">Despejá tu consulta inmediatamente con un operador humano en nuestro WhatsApp.</p>
+            <button type="button" id="empty-reset-btn" class="empty-reset-btn">
+              Ver todas las preguntas
+            </button>
+          </div>
+
+          <!-- Accordion Question List -->
+          <div id="faq-accordion-list" class="accordion-list">
+            <!-- Dynamically injected or active questions -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // FAQ Data Store
+    const FAQ_DATA = [
+      {
+        id: 'servicios',
+        label: 'Servicios y Envíos',
+        description: 'Soluciones de última milla, cobertura urbana y tipos de entrega',
+        iconSvg: '<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>',
+        questions: [
+          {
+            question: '¿Qué tipo de servicios y soluciones logísticas realizan en Mar del Plata?',
+            answer: 'Ofrecemos mensajería urbana y paquetería especializada en e-commerce: Envíos Flex para MercadoLibre con 100% cumplimiento en el día, Envíos Express prioritarios en franja horaria de 3 hs a elección, reparto LowCost económico antes de las 19:00 hs, cadetería corporativa, cobro contrarreembolso y servicio integral de depósito & fulfillment (picking, packing y despacho).'
+          },
+          {
+            question: '¿Se puede entregar en un horario puntual específico?',
+            answer: 'No, únicamente trabajamos con rangos horarios de entrega de 3 horas de espaciado (por ejemplo de 10:00 a 13:00 hs o de 14:00 a 17:00 hs). Esta metodología permite a nuestros repartidores optimizar las rutas viales en Mar del Plata y garantizar que tu entrega se cumpla sin demoras imprevistas.'
+          },
+          {
+            question: '¿Se puede elegir horario en los envíos LowCost?',
+            answer: 'No, las entregas LowCost no admiten elección de franja horaria. Los paquetes se entregan a lo largo de la jornada antes de las 19:00 hs. Esto nos permite consolidar volumen de envíos en la misma zona y ofrecerte la tarifa más económica de la ciudad.'
+          },
+          {
+            question: '¿Tienen mínimo de envíos para vendedores de Mercado Libre Flex?',
+            answer: 'No tenemos ningún mínimo de envíos diarios: retiramos desde 1 solo paquete en tu domicilio o local comercial. Retiramos varias veces al día si es necesario. A mayor cantidad de envíos diarios coordinados, obtenés mejores beneficios y tarifas reducidas por volumen.'
+          },
+          {
+            question: '¿Cómo funciona el depósito y fulfillment (Servicio E-Commerce / 3PL)?',
+            answer: 'Almacenamos tu stock en nuestra base logística de Friuli 1972. Cuando concretás una venta online o por redes, nosotros nos encargamos del empaquetado, etiquetado y despacho directo en el día (Same-Day). También disponemos de modalidad Drop-Off: traés tus envíos listos a nuestro depósito y obtenés un 20% de descuento sobre la tarifa final.'
+          },
+          {
+            question: '¿Cuáles son las zonas de cobertura?',
+            answer: 'Llegamos a todo Mar del Plata: Centro, Güemes, Puerto, Mogotes, Constitución, San Juan, La Perla, Camet y el resto de los barrios. Más allá de los 10 km de ruta, la tarifa se calcula por kilómetro: hasta 20 km la calcula el cotizador en el momento y más allá la coordinamos con el equipo.'
+          },
+          {
+            question: '¿Cuáles son los límites de peso y tamaño por paquete?',
+            answer: 'Operamos con una flota propia y exclusiva de motos. La capacidad estándar sin recargo es de hasta 5 kg o dimensiones de hasta 40 x 40 cm por bulto. Paquetes que superen este peso o volumen pueden tener un adicional por bulto especial.'
+          },
+          {
+            question: '¿Realizan entregas a contrareembolso? ¿Cobran comisión extra?',
+            answer: 'Sí, realizamos el cobro en efectivo en mano al destinatario en el momento de la entrega. Lo más importante: no cobramos ningún extra ni porcentaje de comisión por este servicio. El dinero recaudado se rinde en el día, al día siguiente o semanal, según lo acordado.'
+          }
+        ]
+      },
+      {
+        id: 'tiempos',
+        label: 'Tiempos y Operatoria',
+        description: 'Horarios de base, anticipación de pedidos, seguimiento y contingencias',
+        iconSvg: '<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>',
+        questions: [
+          {
+            question: '¿Cuáles son los horarios de corte para entregas en el mismo día?',
+            answer: 'Nuestros horarios de corte son: Reparto LowCost: solicitar antes de las 13:00 hs (entregas antes de las 19:00 hs). Envíos Express: solicitar antes de las 15:00 hs con mínimo 2 hs de anticipación. Mercado Envíos Flex: horario de corte a las 15:00 hs con entregas aseguradas antes de las 20:00 hs.'
+          },
+          {
+            question: '¿Cuáles son sus horarios de atención en base Friuli 1972?',
+            answer: 'Nuestra base de operaciones atiende de lunes a viernes de 09:00 a 18:00 hs y los sábados de 10:00 a 15:00 hs. Podés acercarte para dejar paquetes (Drop-Off) o retirar correspondencia y mercadería.'
+          },
+          {
+            question: '¿Cómo funciona el Servicio Express prioritario?',
+            answer: 'El Servicio Express cuenta con prioridad inmediata de cadetería. Es ideal para trámites urgentes, repuestos o mandados donde necesitás franja acotada de 3 hs. Podés pedirlo antes de las 15:00 hs con 2 horas de anticipación.'
+          },
+          {
+            question: '¿Cómo realizo el seguimiento de mi envío?',
+            answer: 'Centralizamos la gestión de forma ágil y directa vía WhatsApp (+54 223 660-2699). Cada cotización genera un identificador de seguimiento (#DR-XXXX). Te mantenemos informado del estado del paquete y te confirmamos la entrega con foto o firma en el acto.'
+          },
+          {
+            question: '¿Qué sucede si el destinatario no está en el domicilio o rechaza el producto?',
+            answer: 'Te contactamos en el momento por WhatsApp para intentar coordinar con el comprador o vecino. Si el paquete no puede entregarse y debe regresar a tu local o a nuestra base, la devolución o segundo intento se coordina de inmediato cuidando tu mercadería.'
+          }
+        ]
+      },
+      {
+        id: 'precios',
+        label: 'Precios, Pagos y Facturación',
+        description: 'Cálculo por distancia, métodos de pago y planes para comercios',
+        iconSvg: '<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>',
+        questions: [
+          {
+            question: '¿Cuáles son las tarifas vigentes 2026 de Envíos DosRuedas?',
+            answer: 'Nuestras tarifas base 2026 son transparentes: Express: 0-3km $3.700, 3-5km $4.600, 5-7km $6.100, 7-10km $8.200. LowCost: 0-3km $3.000, 3-5km $4.000, 5-7km $5.300, 7-10km $7.000. Superados los 10 km, rige el valor unitario por km con redondeo superior Math.ceil.'
+          },
+          {
+            question: '¿Cómo se calcula el precio para distancias de más de 10 km?',
+            answer: 'Para distancias superiores a 10 km (hasta nuestro límite de 20 km), se toma el kilometraje total redondeado hacia arriba (Math.ceil) y se multiplica por la tarifa por km: $1.000 por km en Express o $700 por km en LowCost. Por ejemplo, un envío de 10,3 km en Express se calcula como 11 km × $1.000 = $11.000.'
+          },
+          {
+            question: '¿Cuáles son las formas de pago aceptadas?',
+            answer: 'Aceptamos transferencias bancarias (CBU / CVU / alias), dinero en cuenta de Mercado Pago y efectivo en mano tanto en el retiro como en destino al entregar.'
+          },
+          {
+            question: '¿Emiten factura por el servicio logístico?',
+            answer: 'Sí, emitimos comprobantes oficiales de Facturación para todos nuestros servicios profesionales, comerciales y corporativos (ideal empresas con cuenta corriente quincenal).'
+          },
+          {
+            question: '¿Tienen descuentos para comercios y cuentas corrientes?',
+            answer: 'Sí, contamos con el servicio para Empresas con Cuenta Corriente: liquidación quincenal unificada, tarifas bonificadas por volumen diario recurrente y atención preferencial vía WhatsApp.'
+          }
+        ]
+      },
+      {
+        id: 'confianza',
+        label: 'Confianza y Diferenciación',
+        description: 'Nuestra propuesta de valor, flota propia y contacto directo',
+        iconSvg: '<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>',
+        questions: [
+          {
+            question: '¿Qué diferencia a Envíos DosRuedas de las apps de delivery o mensajerías informales?',
+            answer: 'Brindamos logística con cara humana y responsabilidad real: flota de cadetes de confianza, base física establecida en Friuli 1972, comunicación directa por WhatsApp sin bots automatizados impersonales, y más de 7 años de trayectoria en las calles de Mar del Plata con calificación 5 estrellas.'
+          },
+          {
+            question: '¿Cuál es la política de la empresa ante imprevistos o sobrecarga de demanda?',
+            answer: '\"Preferimos decir que no podemos, a fallar\". Si por factores climáticos adversos o saturación de flota no podemos garantizar la entrega en el tiempo pactado, te avisamos de inmediato con total transparencia. Jamás prometemos lo que no podemos cumplir.'
+          },
+          {
+            question: '¿Cómo puedo solicitar un envío en este momento?',
+            answer: 'Podés cotizar de forma inmediata en nuestra web o enviarnos un mensaje por WhatsApp al 2236602699 con las direcciones de retiro y entrega. Te asignamos cadete al instante.'
+          }
+        ]
+      }
+    ];
+
+    // State Variables
+    let currentCategoryId = 'servicios';
+    let expandedItemIndex = 0;
+    let searchQuery = '';
+
+    // DOM Elements
+    const searchInput = document.getElementById('faq-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    const categoriesFilterGrid = document.getElementById('categories-filter-grid');
+    const categoryButtons = document.querySelectorAll('.cat-btn');
+    const groupIconDisplay = document.getElementById('group-icon-display');
+    const groupTitleDisplay = document.getElementById('group-title-display');
+    const groupDescDisplay = document.getElementById('group-desc-display');
+    const accordionList = document.getElementById('faq-accordion-list');
+    const emptyState = document.getElementById('faq-empty-state');
+    const emptyResetBtn = document.getElementById('empty-reset-btn');
+
+    // Render Accordion
+    function renderAccordion() {
+      accordionList.innerHTML = '';
+      emptyState.style.display = 'none';
+
+      let itemsToRender = [];
+
+      if (searchQuery.trim() !== '') {
+        // Search Mode
+        const q = searchQuery.trim().toLowerCase();
+        FAQ_DATA.forEach(category => {
+          category.questions.forEach((item, idx) => {
+            if (item.question.toLowerCase().includes(q) || item.answer.toLowerCase().includes(q)) {
+              itemsToRender.push({ ...item, categoryLabel: category.label });
+            }
+          });
+        });
+
+        // Update header for search
+        categoriesFilterGrid.style.display = 'none';
+        groupIconDisplay.innerHTML = '<svg class="svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
+        groupTitleDisplay.textContent = `Resultados de búsqueda (${itemsToRender.length})`;
+        groupDescDisplay.textContent = `Mostrando coincidencias para "${searchQuery}" en todas las secciones`;
+
+        if (itemsToRender.length === 0) {
+          emptyState.style.display = 'block';
+          return;
+        }
+      } else {
+        // Category Mode
+        categoriesFilterGrid.style.display = 'grid';
+        const currentCat = FAQ_DATA.find(c => c.id === currentCategoryId) || FAQ_DATA[0];
+        groupIconDisplay.innerHTML = currentCat.iconSvg;
+        groupTitleDisplay.textContent = currentCat.label;
+        groupDescDisplay.textContent = currentCat.description;
+        itemsToRender = currentCat.questions;
+      }
+
+      // Render Item Elements
+      itemsToRender.forEach((item, index) => {
+        const isExpanded = expandedItemIndex === index;
+        const qId = `faq-q-${index}`;
+        const aId = `faq-a-${index}`;
+
+        const itemEl = document.createElement('div');
+        itemEl.className = `accordion-item ${isExpanded ? 'open' : ''}`;
+
+        itemEl.innerHTML = `
+          <button
+            type="button"
+            id="${qId}"
+            class="accordion-trigger"
+            aria-expanded="${isExpanded}"
+            aria-controls="${aId}"
+          >
+            <div class="accordion-trigger-left">
+              <div class="q-icon" aria-hidden="true">
+                <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <h3 class="q-text">${item.question}</h3>
+            </div>
+            <div class="arrow-icon" aria-hidden="true">
+              <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div
+            id="${aId}"
+            class="accordion-panel"
+            role="region"
+            aria-labelledby="${qId}"
+          >
+            <p>${item.answer}</p>
+          </div>
+        `;
+
+        const triggerBtn = itemEl.querySelector('.accordion-trigger');
+        triggerBtn.addEventListener('click', () => {
+          expandedItemIndex = (expandedItemIndex === index) ? null : index;
+          renderAccordion();
+        });
+
+        accordionList.appendChild(itemEl);
+      });
+    }
+
+    // Category Buttons Event Listeners
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        currentCategoryId = btn.getAttribute('data-category');
+        expandedItemIndex = 0;
+        searchQuery = '';
+        searchInput.value = '';
+        searchClearBtn.style.display = 'none';
+        renderAccordion();
+      });
+    });
+
+    // Search Input Listener
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      if (searchQuery.trim() !== '') {
+        searchClearBtn.style.display = 'flex';
+        expandedItemIndex = 0;
+      } else {
+        searchClearBtn.style.display = 'none';
+        expandedItemIndex = 0;
+      }
+      renderAccordion();
+    });
+
+    // Clear Button
+    searchClearBtn.addEventListener('click', () => {
+      searchQuery = '';
+      searchInput.value = '';
+      searchClearBtn.style.display = 'none';
+      expandedItemIndex = 0;
+      renderAccordion();
+      searchInput.focus();
+    });
+
+    // Reset from Empty State
+    emptyResetBtn.addEventListener('click', () => {
+      searchQuery = '';
+      searchInput.value = '';
+      searchClearBtn.style.display = 'none';
+      expandedItemIndex = 0;
+      renderAccordion();
+    });
+
+    // Initial Render
+    renderAccordion();
+  </script>
+
+</body>
+</html>

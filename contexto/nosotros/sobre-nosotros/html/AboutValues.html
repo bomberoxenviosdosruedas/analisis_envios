@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestros Valores — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+
+      --color-white: #FFFFFF;
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      line-height: 1.5;
+      padding: 4rem 1rem;
+      min-height: 100vh;
+    }
+
+    .values-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      width: fit-content;
+      padding: 6px 16px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 9999px;
+      transform: rotate(-1deg);
+      box-shadow: 0 0 16px rgba(255, 236, 1, 0.3);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--color-white);
+    }
+
+    .section-desc {
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 60ch;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .values-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 2rem;
+      }
+    }
+
+    /* Double Bezel Card */
+    .bezel-outer-white {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 20px;
+      padding: 8px;
+      height: 100%;
+      box-shadow: 0 10px 30px rgba(9, 80, 246, 0.15);
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .bezel-outer-white:hover { transform: translateY(-3px); }
+
+    .bezel-inner-white {
+      background-color: var(--color-white);
+      border: 1px solid rgba(186, 206, 253, 0.5);
+      border-radius: 14px;
+      padding: 24px;
+      color: var(--color-brand-blue-500);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) { .bezel-inner-white { padding: 32px; } }
+
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-box-sm {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+    }
+
+    .pill-tag {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      transform: rotate(-1deg);
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .card-title-lg {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--color-brand-blue-500);
+      margin: 8px 0;
+    }
+
+    .card-title-md {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--color-brand-blue-500);
+      margin: 6px 0;
+    }
+
+    .card-text {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-brand-blue-500);
+    }
+
+    .secondary-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="about-values" class="values-container" aria-labelledby="values-heading">
+    <!-- Header Block -->
+    <header class="section-header">
+      <span class="section-badge">FILOSOFÍA OPERATIVA</span>
+      <h2 id="values-heading" class="section-title">
+        NUESTROS VALORES
+      </h2>
+      <p class="section-desc">
+        Los pilares innegociables que sostienen nuestra operativa diaria en cada barrio de Mar del Plata.
+      </p>
+    </header>
+
+    <div class="values-grid">
+
+      <!-- Featured Value: Cuidado del Paquete (7 cols) -->
+      <article>
+        <div class="bezel-outer-white">
+          <div class="bezel-inner-white">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+
+            <div>
+              <span class="pill-tag">Pilar de Confianza</span>
+              <h3 class="card-title-lg">Cuidado del Paquete</h3>
+              <p class="card-text">
+                Manipulación profesional de paquetería e-commerce, indumentaria, tecnología y repuestos. Cada envío viaja seguro y protegido de las inclemencias del clima marplatense con mochilas reforzadas y cajas herméticas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Secondary Values (5 cols, stack of 2) -->
+      <div class="secondary-stack">
+
+        <!-- Value 1: Transparencia Total -->
+        <article style="flex: 1;">
+          <div class="bezel-outer-white">
+            <div class="bezel-inner-white">
+              <div class="icon-box icon-box-sm" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4l-2-2"/>
+                  <path d="m18 10 1-1a2 2 0 0 0 0-2.8l-2.2-2.2a2 2 0 0 0-2.8 0l-1 1"/>
+                  <path d="m2 18 3 3a1 1 0 0 0 1.4 0l6.6-6.6"/>
+                  <path d="M8 8 3 3"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="card-title-md">Transparencia Total</h3>
+                <p class="card-text">
+                  Tarifas públicas por kilómetro exacto, con los recargos del viaje publicados. Lo que no sabés al cotizar no aparece después en la liquidación.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Value 2: Innovación Tecnológica -->
+        <article style="flex: 1;">
+          <div class="bezel-outer-white">
+            <div class="bezel-inner-white">
+              <div class="icon-box icon-box-sm" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="card-title-md">Innovación Tecnológica</h3>
+                <p class="card-text">
+                  Ruteo optimizado en tiempo real, trazabilidad GPS instantánea y avisos automáticos para tus clientes en Mar del Plata.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

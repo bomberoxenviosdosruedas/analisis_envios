@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Contacto Comercial — Envíos DosRuedas</title>
+  
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-600: #E6D400;
+
+      --color-white: #FFFFFF;
+      --color-red-500: #EF4444;
+      --color-red-50: #FEF2F2;
+
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #F8FAFC;
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-wrapper {
+      width: 100%;
+      max-width: 540px;
+    }
+
+    /* Doble Bisel Claro */
+    .double-bezel-outer {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 20px;
+      padding: 8px;
+      box-shadow: 0 8px 30px rgba(9, 80, 246, 0.08);
+    }
+
+    .double-bezel-inner {
+      background-color: var(--color-white);
+      border: 1px solid rgba(186, 206, 253, 0.5);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .double-bezel-inner {
+        padding: 32px;
+      }
+    }
+
+    /* Header del Formulario */
+    .form-header {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--color-brand-blue-100);
+    }
+
+    .badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .badge-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: 1px solid var(--color-brand-blue-100);
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      transform: rotate(-1deg);
+    }
+
+    .badge-chip-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-variant-numeric: tabular-nums;
+      background-color: rgba(255, 236, 1, 0.25);
+      border: 1px solid rgba(255, 236, 1, 0.5);
+      color: var(--color-brand-blue-500);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-500);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: 640px) {
+      .form-title {
+        font-size: 1.875rem;
+      }
+    }
+
+    .form-subtitle {
+      font-size: 0.875rem;
+      line-height: 1.45;
+      color: var(--color-brand-blue-500);
+    }
+
+    /* Formulario */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .alert-error {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background-color: var(--color-red-50);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #991B1B;
+      font-size: 0.8125rem;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-label {
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue-500);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .required-marker {
+      color: var(--color-brand-blue-500);
+    }
+
+    .input-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      width: 18px;
+      height: 18px;
+      color: var(--color-brand-blue-300);
+      pointer-events: none;
+    }
+
+    .text-input, .select-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 14px 0 42px;
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      color: var(--color-brand-blue-500);
+      background-color: var(--color-white);
+      border: 2px solid var(--color-brand-blue-100);
+      border-radius: 12px;
+      transition: border-color var(--duration-feedback) var(--ease-out), box-shadow var(--duration-feedback) var(--ease-out);
+      outline: none;
+    }
+
+    .text-input::placeholder {
+      color: rgba(9, 80, 246, 0.4);
+    }
+
+    .text-input:focus, .select-input:focus {
+      border-color: var(--color-brand-blue-500);
+      box-shadow: 0 0 0 3px rgba(255, 236, 1, 0.6);
+    }
+
+    .select-input {
+      appearance: none;
+      -webkit-appearance: none;
+      padding-left: 14px;
+      padding-right: 40px;
+      cursor: pointer;
+      background-image: url("data:image/svg2+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230950F6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+    }
+
+    /* Botón Submit CTANestedPill */
+    .btn-submit {
+      margin-top: 6px;
+      width: 100%;
+      min-height: 50px;
+      border-radius: 9999px;
+      border: 1px solid var(--color-brand-yellow-500);
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px 0 24px;
+      cursor: pointer;
+      box-shadow: var(--shadow-accent-sm);
+      transition: background-color var(--duration-feedback) var(--ease-out), transform var(--duration-feedback) var(--ease-out), box-shadow var(--duration-feedback) var(--ease-out);
+    }
+
+    .btn-submit:hover {
+      background-color: var(--color-brand-yellow-400);
+      box-shadow: var(--shadow-cta-glow);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+
+    .arrow-disc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .btn-submit:hover .arrow-disc {
+      transform: translateX(3px);
+    }
+
+    /* Estado de Éxito */
+    .success-container {
+      display: none;
+      text-align: center;
+      padding: 24px 8px;
+    }
+
+    .success-icon-badge {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-cta-glow);
+    }
+
+    .success-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 8px;
+    }
+
+    .success-desc {
+      font-size: 0.9375rem;
+      color: var(--color-brand-blue-500);
+      max-width: 360px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+
+    .btn-reset {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: 9999px;
+      background-color: transparent;
+      border: 1px solid var(--color-brand-blue-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: background-color var(--duration-feedback) var(--ease-out);
+    }
+
+    .btn-reset:hover {
+      background-color: var(--color-brand-blue-50);
+    }
+
+    /* Footer del Formulario */
+    .form-footer {
+      padding-top: 16px;
+      border-top: 1px solid var(--color-brand-blue-100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--color-brand-blue-500);
+    }
+
+    .footer-guarantee {
+      font-family: var(--font-sans);
+    }
+
+    .footer-city {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <section aria-label="Formulario de contacto comercial">
+      <div class="double-bezel-outer">
+        <div class="double-bezel-inner">
+
+          <!-- Header & Badges -->
+          <header class="form-header">
+            <div class="badges-row">
+              <span class="badge-chip">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+                </svg>
+                Cotización Inmediata
+              </span>
+
+              <span class="badge-chip-time">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                Atención comercial &lt; 2 MIN
+              </span>
+            </div>
+
+            <h2 class="form-title">
+              ¿Listo para escalar la logística de tu e-commerce?
+            </h2>
+            <p class="form-subtitle">
+              Olvidate de la gestión de paquetes en Mar del Plata. Completá tus datos y te respondemos por WhatsApp al instante.
+            </p>
+          </header>
+
+          <!-- Región Dinámica (Formulario / Éxito) -->
+          <div id="form-container">
+            <div id="error-message" class="alert-error" role="alert" style="display: none; margin-bottom: 16px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>
+              </svg>
+              <span id="error-text">Por favor, completá los campos requeridos.</span>
+            </div>
+
+            <form id="contact-main-form" class="contact-form" novalidate>
+              <!-- Campo 1: Tu Nombre -->
+              <div class="field-group">
+                <label for="nombre" class="field-label">
+                  Tu Nombre <span class="required-marker" aria-hidden="true">*</span>
+                </label>
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                  </svg>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    autocomplete="name"
+                    required
+                    placeholder="Tu Nombre"
+                    class="text-input"
+                  />
+                </div>
+              </div>
+
+              <!-- Campo 2: Empresa / Negocio -->
+              <div class="field-group">
+                <label for="empresa" class="field-label">
+                  Empresa / Negocio
+                </label>
+                <div class="input-container">
+                  <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+                  </svg>
+                  <input
+                    type="text"
+                    id="empresa"
+                    name="empresa"
+                    autocomplete="organization"
+                    placeholder="Empresa / Negocio"
+                    class="text-input"
+                  />
+                </div>
+              </div>
+
+              <!-- Campo 3: Volumen Estimado Mensual -->
+              <div class="field-group">
+                <label for="volumen" class="field-label">
+                  Volumen Estimado Mensual
+                </label>
+                <select id="volumen" name="volumen" class="select-input">
+                  <option value="" disabled selected>Seleccioná una opción</option>
+                  <option value="1 a 50 envíos">1 a 50 envíos</option>
+                  <option value="51 a 200 envíos">51 a 200 envíos</option>
+                  <option value="Más de 200 envíos">Más de 200 envíos</option>
+                </select>
+              </div>
+
+              <!-- Botón Submit -->
+              <button type="submit" class="btn-submit" id="submit-button">
+                <span>Hablar por WhatsApp</span>
+                <span class="arrow-disc" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </button>
+            </form>
+
+            <!-- Panel de Confirmación de Éxito -->
+            <div id="success-panel" class="success-container" aria-live="polite">
+              <div class="success-icon-badge" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3 class="success-title">¡SOLICITUD ENVIADA!</h3>
+              <p class="success-desc">
+                Se abrió WhatsApp para conectar directamente con nuestro equipo comercial en Mar del Plata.
+              </p>
+              <button type="button" class="btn-reset" id="reset-button">
+                Completar otro formulario
+              </button>
+            </div>
+          </div>
+
+          <!-- Footer Guarantee -->
+          <footer class="form-footer">
+            <span class="footer-guarantee">Respuesta garantizada</span>
+            <span class="footer-city">Mar del Plata 2026</span>
+          </footer>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('contact-main-form');
+      const nombreInput = document.getElementById('nombre');
+      const empresaInput = document.getElementById('empresa');
+      const volumenSelect = document.getElementById('volumen');
+      const errorMessage = document.getElementById('error-message');
+      const errorText = document.getElementById('error-text');
+      const successPanel = document.getElementById('success-panel');
+      const resetButton = document.getElementById('reset-button');
+      const submitBtn = document.getElementById('submit-button');
+
+      const PHONE = '542236602699';
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nombre = nombreInput.value.trim();
+        const empresa = empresaInput.value.trim();
+        const volumen = volumenSelect.value;
+
+        if (!nombre) {
+          errorText.textContent = 'Por favor, ingresá tu nombre para iniciar el contacto.';
+          errorMessage.style.display = 'flex';
+          nombreInput.focus();
+          return;
+        }
+
+        errorMessage.style.display = 'none';
+        submitBtn.disabled = true;
+
+        const messageParts = [
+          '¡Hola Envíos DosRuedas! Vengo del sitio web. Mi nombre es *' + nombre + '*'
+        ];
+        if (empresa) {
+          messageParts.push(' de la empresa *' + empresa + '*');
+        }
+        messageParts.push('.');
+        if (volumen) {
+          messageParts.push(' Volumen mensual estimado: ' + volumen + '.');
+        }
+        messageParts.push(' Quisiera recibir una cotización.');
+
+        const fullMessage = messageParts.join('');
+        const waUrl = 'https://api.whatsapp.com/send/?phone=' + PHONE + '&text=' + encodeURIComponent(fullMessage);
+
+        try {
+          sessionStorage.setItem('contact_lead_meta', JSON.stringify({
+            submittedAt: new Date().toISOString(),
+            hasVolumen: Boolean(volumen)
+          }));
+        } catch (err) {}
+
+        setTimeout(function () {
+          form.style.display = 'none';
+          successPanel.style.display = 'block';
+          window.open(waUrl, '_blank', 'noopener,noreferrer');
+        }, 350);
+      });
+
+      resetButton.addEventListener('click', function () {
+        form.reset();
+        submitBtn.disabled = false;
+        errorMessage.style.display = 'none';
+        successPanel.style.display = 'none';
+        form.style.display = 'flex';
+        nombreInput.focus();
+      });
+    })();
+  </script>
+</body>
+</html>

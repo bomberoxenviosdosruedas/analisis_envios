@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sobre Nosotros y Trayectoria | Envíos DosRuedas</title>
+  <meta name="description" content="Conocé la historia y valores de Envíos DosRuedas. Más de 7 años de trayectoria en logística urbana, cadetería y última milla e-commerce en Mar del Plata." />
+  <link rel="canonical" href="https://www.enviosdosruedas.com/nosotros/sobre-nosotros" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:url" content="https://www.enviosdosruedas.com/nosotros/sobre-nosotros" />
+  <meta property="og:title" content="Sobre Nosotros y Trayectoria | Envíos DosRuedas" />
+  <meta property="og:description" content="Más de 7 años de trayectoria transformando la logística urbana y la última milla en Mar del Plata con flota propia." />
+  <meta property="og:image" content="https://www.enviosdosruedas.com/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sobre Nosotros y Trayectoria | Envíos DosRuedas" />
+  <meta name="twitter:description" content="Más de 7 años de trayectoria transformando la logística urbana y la última milla en Mar del Plata con flota propia." />
+  <meta name="twitter:image" content="https://www.enviosdosruedas.com/og-image.jpg" />
+  <meta name="twitter:creator" content="@enviosdosruedas" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Sobre Nosotros - Envíos DosRuedas",
+    "description": "Historia, valores y equipo de Envíos DosRuedas en Mar del Plata. Más de 7 años de trayectoria en logística urbana y última milla.",
+    "url": "https://www.enviosdosruedas.com/nosotros/sobre-nosotros",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.enviosdosruedas.com#localbusiness",
+      "name": "Envíos DosRuedas",
+      "description": "Somos tu aliado estratégico en logística urbana y mensajería de última milla. Con más de 7 años de trayectoria en Mar del Plata, transformamos el despacho de tus productos en un motor de crecimiento para emprendedores, PyMEs y comercios locales.",
+      "telephone": "+54-223-660-2699",
+      "email": "matiascejas@enviosdosruedas.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Friuli 1972",
+        "addressLocality": "Mar del Plata",
+        "addressRegion": "Buenos Aires",
+        "postalCode": "7600",
+        "addressCountry": "AR"
+      },
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 20,
+        "maxValue": 50
+      }
+    }
+  }
+  </script>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+
+      --color-white: #FFFFFF;
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Estilos Reutilizables de Componentes */
+    .section-badge-std {
+      display: inline-block;
+      padding: 6px 16px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 9999px;
+      transform: rotate(-1deg);
+      box-shadow: 0 0 16px rgba(255, 236, 1, 0.3);
+      width: fit-content;
+    }
+
+    .cta-nested-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 50px;
+      padding: 0 8px 0 24px;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .pill-primary {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border: 1px solid var(--color-brand-yellow-500);
+      box-shadow: var(--shadow-accent-sm);
+    }
+
+    .pill-primary:hover {
+      background-color: var(--color-brand-yellow-400);
+      box-shadow: var(--shadow-cta-glow);
+      transform: translateY(-2px);
+    }
+
+    .pill-outline {
+      background-color: transparent;
+      color: var(--color-white);
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .pill-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-yellow-500);
+      transform: translateY(-2px);
+    }
+
+    .pill-arrow-disc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 14px;
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .pill-primary:hover .pill-arrow-disc { transform: translateX(3px); }
+
+    /* Doble Bisel Universal */
+    .bezel-outer-std {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 20px;
+      padding: 8px;
+      height: 100%;
+      box-shadow: 0 4px 20px rgba(9, 80, 246, 0.06);
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .bezel-outer-std:hover { transform: translateY(-3px); }
+
+    .bezel-inner-std {
+      background-color: var(--color-white);
+      border: 1px solid rgba(186, 206, 253, 0.5);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      color: var(--color-brand-blue-500);
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) { .bezel-inner-std { padding: 32px; } }
+
+    /* ========================================================================
+     * SECCIÓN 1: ABOUT HERO
+     * ======================================================================== */
+    .about-hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 90vh;
+      min-height: 90dvh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+
+    .hero-bg-procedural {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: 
+        radial-gradient(circle at 75% 25%, rgba(255, 236, 1, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 15% 75%, rgba(98, 143, 249, 0.3) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    }
+
+    .ghost-word {
+      pointer-events: none;
+      position: absolute;
+      bottom: -8%;
+      left: -1%;
+      z-index: 0;
+      white-space: nowrap;
+      font-family: var(--font-display);
+      font-size: clamp(90px, 17vw, 230px);
+      text-transform: uppercase;
+      line-height: 0.85;
+      color: rgba(255, 255, 255, 0.06);
+      user-select: none;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 7rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (min-width: 640px) { .hero-container { padding: 4.5rem 1.5rem 8rem; } }
+    @media (min-width: 1024px) { .hero-container { padding: 5.5rem 2rem 9rem; } }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 3.5rem;
+      }
+    }
+
+    .hero-copy-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-copy-col { text-align: left; gap: 2rem; }
+    }
+
+    .badge-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background-color: rgba(255, 236, 1, 0.18);
+      border: 1px solid rgba(255, 236, 1, 0.5);
+      color: var(--color-brand-yellow-500);
+      transform: rotate(-1deg);
+      box-shadow: 0 0 16px rgba(255, 236, 1, 0.25);
+    }
+
+    @media (min-width: 1024px) { .badge-accent { margin: 0; } }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.75rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: var(--color-white);
+      text-wrap: balance;
+    }
+
+    .knockout-text {
+      display: inline-block;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.05em 0.25em;
+      border-radius: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 56ch;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) { .hero-lead { margin: 0; } }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-cta-group { flex-direction: row; justify-content: center; gap: 1.5rem; }
+    }
+    @media (min-width: 1024px) { .hero-cta-group { justify-content: flex-start; } }
+
+    .hero-link-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-white);
+      text-decoration: underline;
+      text-decoration-color: var(--color-brand-yellow-500);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .hero-link-wa:hover { color: var(--color-brand-yellow-500); }
+
+    .chips-grid {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) { .chips-grid { margin: 0; } }
+
+    .chip-item {
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .chip-val {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      color: var(--color-brand-yellow-500);
+      font-variant-numeric: tabular-nums;
+      margin-top: 0.25rem;
+    }
+
+    .chip-lbl {
+      display: block;
+      font-family: var(--font-subheading);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-white);
+    }
+
+    .outer-bezel-white {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 20px;
+      border: 1px solid var(--color-brand-blue-100);
+      background-color: var(--color-white);
+      padding: 10px;
+      box-shadow: 0 25px 50px -12px rgba(9, 80, 246, 0.25);
+    }
+
+    .inner-panel-blue {
+      border-radius: 14px;
+      background-color: var(--color-brand-blue-500);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      color: var(--color-white);
+    }
+
+    .stamp-badge {
+      align-self: flex-start;
+      transform: rotate(-1.5deg);
+      border-radius: 12px;
+      border: 2px solid var(--color-brand-yellow-500);
+      padding: 10px 14px;
+      background-color: rgba(9, 80, 246, 0.5);
+    }
+
+    .stamp-title {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: var(--color-brand-yellow-500);
+    }
+
+    .stamp-subtitle {
+      margin-top: 4px;
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-brand-blue-50);
+    }
+
+    .cred-list { display: grid; gap: 8px; margin: 0; }
+    .cred-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 8px;
+    }
+
+    .cred-dt { font-family: var(--font-subheading); font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-brand-blue-50); }
+    .cred-dd { font-family: var(--font-mono); font-size: 1.1875rem; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--color-white); }
+
+    .hours-list { display: grid; gap: 6px; border-top: 1px solid rgba(255, 255, 255, 0.18); padding-top: 10px; font-family: var(--font-mono); font-size: 0.75rem; font-variant-numeric: tabular-nums; color: var(--color-brand-blue-50); }
+    .hours-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .hours-dt { font-family: var(--font-subheading); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* Firma Visual El Nodo */
+    .node-fan-band {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 112px;
+      pointer-events: none;
+      z-index: 5;
+      overflow: hidden;
+    }
+    @media (min-width: 640px) { .node-fan-band { height: 144px; } }
+    @media (min-width: 1024px) { .node-fan-band { height: 176px; } }
+
+    .node-baseline { position: absolute; inset-inline: 0; bottom: 0; border-top: 1px dashed rgba(255, 255, 255, 0.3); }
+    .node-base-label { position: absolute; bottom: 8px; right: 1.5rem; font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255, 255, 255, 0.85); font-variant-numeric: tabular-nums; }
+    .node-square { position: absolute; bottom: 0; left: 0; height: 100%; aspect-ratio: 1 / 1; }
+    .node-spoke { position: absolute; bottom: 0; left: 0; height: 1px; width: 84%; transform-origin: left bottom; }
+    .spoke-line { display: block; height: 1px; width: 100%; background-color: rgba(255, 255, 255, 0.4); }
+    .spoke-dot { position: absolute; right: 0; top: 0; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background-color: var(--color-brand-yellow-500); animation: pulse 1.8s infinite; }
+    .node-center-emitter { position: absolute; bottom: 0; left: 0; width: 0; height: 0; }
+    .emitter-ring { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255, 236, 1, 0.6); animation: ping 3.6s cubic-bezier(0, 0, 0.2, 1) infinite; }
+    .emitter-center-dot { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); width: 10px; height: 10px; border-radius: 50%; background-color: var(--color-brand-blue-50); }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); } 50% { opacity: 0.4; transform: translateY(-50%) scale(0.8); } }
+    @keyframes ping { 75%, 100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; } }
+
+    /* ========================================================================
+     * SECCIÓN 2: VENTAJAS TERRITORIALES
+     * ======================================================================== */
+    .advantages-section { padding: 5rem 1rem; background-color: var(--color-white); }
+    @media (min-width: 640px) { .advantages-section { padding: 6rem 1.5rem; } }
+    .advantages-container { max-width: 1280px; margin: 0 auto; }
+
+    /* ========================================================================
+     * SECCIÓN 3: NUESTROS VALORES
+     * ======================================================================== */
+    .values-section { padding: 5rem 1rem; background-color: var(--color-brand-blue-500); color: var(--color-white); border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    @media (min-width: 640px) { .values-section { padding: 6rem 1.5rem; } }
+    .values-container { max-width: 1280px; margin: 0 auto; }
+
+    /* ========================================================================
+     * SECCIÓN 4: TIMELINE HISTÓRICO
+     * ======================================================================== */
+    .timeline-section { padding: 5rem 1rem; background-color: var(--color-brand-blue-50); border-top: 1px solid var(--color-brand-blue-100); }
+    @media (min-width: 640px) { .timeline-section { padding: 6rem 1.5rem; } }
+    .timeline-container { max-width: 1000px; margin: 0 auto; }
+
+    /* ========================================================================
+     * SECCIÓN 5: EQUIPO EN CALLE
+     * ======================================================================== */
+    .team-section { padding: 5rem 1rem; background-color: var(--color-brand-blue-500); color: var(--color-white); border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    @media (min-width: 640px) { .team-section { padding: 6rem 1.5rem; } }
+    .team-container { max-width: 1280px; margin: 0 auto; }
+
+    /* ========================================================================
+     * SECCIÓN 6: MISIÓN, VISIÓN & CIERRE
+     * ======================================================================== */
+    .mission-section { padding: 5rem 1rem; background-color: var(--color-brand-blue-50); border-top: 1px solid var(--color-brand-blue-100); }
+    @media (min-width: 640px) { .mission-section { padding: 6rem 1.5rem; } }
+    .mission-container { max-width: 1280px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- 1. HERO SOBRE NOSOTROS -->
+    <section id="about-hero" class="about-hero" aria-label="Sobre Envíos DosRuedas en Mar del Plata">
+      <div class="hero-bg-procedural" aria-hidden="true"></div>
+      <span class="ghost-word" aria-hidden="true">Dos Ruedas</span>
+
+      <div class="hero-container">
+        <div class="hero-grid">
+          <div class="hero-copy-col">
+            <span class="badge-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/>
+              </svg>
+              Identidad · Mar del Plata
+            </span>
+
+            <h1 class="hero-title">
+              <span class="title-block">Más que cadetería,</span>
+              <span class="knockout-text">somos logística</span>
+              <span class="title-block">de confianza</span>
+            </h1>
+
+            <p class="hero-lead">
+              Una base física en Friuli 1972 y flota motorizada 100% propia. Conectamos tiendas online, PyMEs y emprendedores de todo Mar del Plata con soporte en tiempo real y cumplimiento estricto de horarios.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="/contacto" class="cta-nested-pill pill-primary">
+                <span>Trabajemos juntos</span>
+                <span class="pill-arrow-disc" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20conocer%20la%20operativa%20de%20DosRuedas" target="_blank" rel="noopener noreferrer" class="hero-link-wa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+                Escribinos
+              </a>
+            </div>
+
+            <ul class="chips-grid" role="list">
+              <li class="chip-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-brand-yellow-500); margin: 0 auto;" aria-hidden="true">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="16" x2="16" y1="2" y2="6"/>
+                </svg>
+                <span class="chip-val">+7</span>
+                <span class="chip-lbl">Años en ruta</span>
+              </li>
+              <li class="chip-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-brand-yellow-500); margin: 0 auto;" aria-hidden="true">
+                  <circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/>
+                </svg>
+                <span class="chip-val">100%</span>
+                <span class="chip-lbl">Flota propia</span>
+              </li>
+              <li class="chip-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-brand-yellow-500); margin: 0 auto;" aria-hidden="true">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                </svg>
+                <span class="chip-val">10 km</span>
+                <span class="chip-lbl">Cálculo automático</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="display: flex; justify-content: center; width: 100%;">
+            <div class="outer-bezel-white">
+              <div class="inner-panel-blue">
+                <div class="stamp-badge">
+                  <span class="stamp-title">Friuli 1972</span>
+                  <span class="stamp-subtitle">Base central</span>
+                </div>
+
+                <dl class="cred-list">
+                  <div class="cred-row"><dt class="cred-dt">Operando</dt><dd class="cred-dd">+7 años</dd></div>
+                  <div class="cred-row"><dt class="cred-dt">Flota propia</dt><dd class="cred-dd">100%</dd></div>
+                  <div class="cred-row"><dt class="cred-dt">Corte diario</dt><dd class="cred-dd">13:00 hs</dd></div>
+                  <div class="cred-row"><dt class="cred-dt">Última entrega</dt><dd class="cred-dd">19:00 hs</dd></div>
+                </dl>
+
+                <dl class="hours-list">
+                  <div class="hours-row"><dt class="hours-dt">Lun a Vie</dt><dd>09:00 - 18:00 hs</dd></div>
+                  <div class="hours-row"><dt class="hours-dt">Sábado</dt><dd>10:00 - 15:00 hs</dd></div>
+                  <div class="hours-row"><dt class="hours-dt">Domingo</dt><dd>Cerrado</dd></div>
+                </dl>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 10px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-brand-blue-50);">
+                  <span>Friuli 1972 · Mar del Plata</span>
+                  <span style="color: var(--color-white); font-weight: 700;">223 660-2699</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Firma visual El Nodo -->
+      <div class="node-fan-band" aria-hidden="true">
+        <div class="node-baseline"></div>
+        <span class="node-base-label">Base central · Friuli 1972 · MDQ</span>
+        <div class="node-square">
+          <div class="node-spoke" style="transform: rotate(-10deg);"><span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0s;"></span></div>
+          <div class="node-spoke" style="transform: rotate(-20deg);"><span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.13s;"></span></div>
+          <div class="node-spoke" style="transform: rotate(-30deg);"><span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.26s;"></span></div>
+          <div class="node-spoke" style="transform: rotate(-40deg);"><span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.39s;"></span></div>
+          <div class="node-spoke" style="transform: rotate(-50deg);"><span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.52s;"></span></div>
+          <div class="node-spoke" style="transform: rotate(-60deg);"><span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.65s;"></span></div>
+          <div class="node-spoke" style="transform: rotate(-70deg);"><span class="spoke-line"></span><span class="spoke-dot" style="animation-delay: 0.78s;"></span></div>
+          <div class="node-center-emitter"><span class="emitter-ring"></span><span class="emitter-center-dot"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. VENTAJAS TERRITORIALES -->
+    <section id="about-advantages" class="advantages-section" aria-labelledby="advantages-main-heading">
+      <div class="advantages-container">
+        <header style="text-align: center; max-width: 800px; margin: 0 auto 3.5rem; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <span class="section-badge-std">VENTAJAS TERRITORIALES</span>
+          <h2 id="advantages-main-heading" style="font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); text-transform: uppercase; color: var(--color-brand-blue-500); line-height: 1.05;">
+            POR QUÉ CONFIAR EN DOSRUEDAS
+          </h2>
+          <p style="font-size: 1rem; color: var(--color-brand-blue-500); line-height: 1.6;">
+            Frente a aplicaciones automatizadas y plataformas impersonales, nosotros brindamos compromiso presencial, operadores locales y conocimiento metro a metro de Mar del Plata.
+          </p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+          <article class="bezel-outer-std">
+            <div class="bezel-inner-std">
+              <div>
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 8px;">Atención Humana y Directa</h3>
+                <p style="font-size: 0.875rem; line-height: 1.6;">Damos la cara siempre. Te comunicás directamente por WhatsApp con operadores en Mar del Plata que gestionan y resuelven en el acto.</p>
+              </div>
+              <footer style="padding-top: 10px; border-top: 1px solid var(--color-brand-blue-100); font-family: var(--font-subheading); font-size: 0.75rem; text-transform: uppercase;">
+                COMUNICACIÓN DIRECTA VÍA WHATSAPP
+              </footer>
+            </div>
+          </article>
+
+          <article class="bezel-outer-std">
+            <div class="bezel-inner-std">
+              <div>
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 8px;">Flota Propia Capacitada</h3>
+                <p style="font-size: 0.875rem; line-height: 1.6;">No tercerizamos de forma descontrolada. Repartidores uniformados con base física en <strong>Friuli 1972</strong>.</p>
+              </div>
+              <footer style="padding-top: 10px; border-top: 1px solid var(--color-brand-blue-100); font-family: var(--font-subheading); font-size: 0.75rem; text-transform: uppercase;">
+                COBERTURA TOTAL GENERAL PUEYRREDÓN
+              </footer>
+            </div>
+          </article>
+
+          <article class="bezel-outer-std" style="grid-column: 1 / -1;">
+            <div class="bezel-inner-std" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <div style="max-width: 700px;">
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 4px;">Garantía Operativa Sin Excusas</h3>
+                <p style="font-size: 0.875rem; line-height: 1.6;">Si coordinamos un envío express en 2 horas o un ruteo programado, cumplimos la franja pactada sin desvíos.</p>
+              </div>
+              <a href="/cotizar" class="cta-nested-pill pill-primary">
+                <span>Cotizar Envío</span>
+                <span class="pill-arrow-disc" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. NUESTROS VALORES -->
+    <section id="about-values" class="values-section" aria-labelledby="values-main-heading">
+      <div class="values-container">
+        <header style="max-width: 700px; margin-bottom: 3.5rem; display: flex; flex-direction: column; gap: 12px;">
+          <span class="section-badge-std">FILOSOFÍA OPERATIVA</span>
+          <h2 id="values-main-heading" style="font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.75rem); text-transform: uppercase; line-height: 1.05;">
+            NUESTROS VALORES
+          </h2>
+          <p style="font-size: 1rem; color: rgba(255,255,255,0.9); line-height: 1.6;">
+            Los pilares innegociables que sostienen nuestra operativa diaria en cada barrio de Mar del Plata.
+          </p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+          <article class="bezel-outer-std">
+            <div class="bezel-inner-std">
+              <span style="font-family: var(--font-subheading); font-size: 0.75rem; text-transform: uppercase; background: var(--color-brand-yellow-500); color: var(--color-brand-blue-500); padding: 2px 10px; border-radius: 9999px; width: fit-content;">Pilar de Confianza</span>
+              <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase;">Cuidado del Paquete</h3>
+              <p style="font-size: 0.875rem; line-height: 1.6;">Manipulación profesional de paquetería e-commerce, indumentaria, tecnología y repuestos. Mochilas reforzadas y cajas herméticas.</p>
+            </div>
+          </article>
+
+          <article class="bezel-outer-std">
+            <div class="bezel-inner-std">
+              <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase;">Transparencia Total</h3>
+              <p style="font-size: 0.875rem; line-height: 1.6;">Tarifas públicas por kilómetro exacto, con los recargos del viaje publicados. Lo que no sabés al cotizar no aparece después en la liquidación.</p>
+            </div>
+          </article>
+
+          <article class="bezel-outer-std">
+            <div class="bezel-inner-std">
+              <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase;">Innovación Tecnológica</h3>
+              <p style="font-size: 0.875rem; line-height: 1.6;">Ruteo optimizado en tiempo real, trazabilidad GPS instantánea y avisos automáticos para tus clientes en Mar del Plata.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LÍNEA DE TIEMPO -->
+    <section id="about-timeline" class="timeline-section" aria-labelledby="timeline-main-heading">
+      <div class="timeline-container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <span class="section-badge-std">TRAYECTORIA & EVOLUCIÓN</span>
+          <h2 id="timeline-main-heading" style="font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.75rem); text-transform: uppercase; line-height: 1.05;">
+            NUESTRA HISTORIA
+          </h2>
+          <p style="font-size: 1rem; line-height: 1.6;">
+            Más de 7 años transformando la última milla y la mensajería urbana en la ciudad de Mar del Plata.
+          </p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 1.75rem; font-weight: 700;">2019</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Lanzamiento Inicial</h3><p style="font-size: 0.8125rem;">Flota propia de motocicletas en el centro de MDQ.</p></div></div>
+          <div class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 1.75rem; font-weight: 700;">2021</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Soluciones LowCost</h3><p style="font-size: 0.8125rem;">Plan Emprendedores para impulsar ventas e-commerce.</p></div></div>
+          <div class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 1.75rem; font-weight: 700;">2023</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Consolidación de Flota</h3><p style="font-size: 0.8125rem;">Estructura propia de repartidores uniformados.</p></div></div>
+          <div class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 1.75rem; font-weight: 700;">2024</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Pioneros Flex MDQ</h3><p style="font-size: 0.8125rem;">Socio logístico Same-Day de Mercado Libre en Mar del Plata.</p></div></div>
+          <div class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 1.75rem; font-weight: 700;">2025</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Hub Friuli 1972</h3><p style="font-size: 0.8125rem;">Depósito central de paquetería y picking optimizado.</p></div></div>
+          <div class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 1.75rem; font-weight: 700;">2026</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Infraestructura 3PL</h3><p style="font-size: 0.8125rem;">+7 años con cotizadores en tiempo real y fulfillment.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EQUIPO EN CALLE -->
+    <section id="about-team" class="team-section" aria-labelledby="team-main-heading">
+      <div class="team-container">
+        <header style="max-width: 750px; margin-bottom: 3.5rem; display: flex; flex-direction: column; gap: 12px;">
+          <span class="section-badge-std">FUERZA OPERATIVA & EXPERIENCIA</span>
+          <h2 id="team-main-heading" style="font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.75rem); text-transform: uppercase; line-height: 1.05;">
+            NUESTRO EQUIPO EN CALLE
+          </h2>
+          <p style="font-size: 1rem; color: rgba(255,255,255,0.9); line-height: 1.6;">
+            Una estructura humana consolidada con base física en la ciudad, lista para responder al ritmo de tu negocio.
+          </p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          <article class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 3rem; font-weight: 700; line-height: 1;">+20</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Repartidores en Calle</h3><p style="font-size: 0.8125rem;">Cadetes capacitados y uniformados en toda la ciudad.</p></div></article>
+          <article class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 3rem; font-weight: 700; line-height: 1;">100%</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Base Operativa MDQ</h3><p style="font-size: 0.8125rem;">Depósito central en Friuli 1972 para recepción y despacho.</p></div></article>
+          <article class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 3rem; font-weight: 700; line-height: 1;">&lt; 2h</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Promedio Express</h3><p style="font-size: 0.8125rem;">Servicio prioritario punto a punto dentro del ejido urbano.</p></div></article>
+          <article class="bezel-outer-std"><div class="bezel-inner-std"><span style="font-family: var(--font-mono); font-size: 3rem; font-weight: 700; line-height: 1;">+7</span><h3 style="font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase;">Años de Trayectoria</h3><p style="font-size: 0.8125rem;">Compromiso ininterrumpido con comercios marplatenses.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. MISIÓN, VISIÓN & CIERRE -->
+    <section id="about-mission-vision" class="mission-section" aria-labelledby="mission-main-heading">
+      <div class="mission-container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <span class="section-badge-std">PROPÓSITO & FUTURO</span>
+          <h2 id="mission-main-heading" style="font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.75rem); text-transform: uppercase; line-height: 1.05;">
+            MISIÓN, VISIÓN & COMPROMISO
+          </h2>
+          <p style="font-size: 1rem; line-height: 1.6;">
+            Hacia dónde vamos y cuáles son las convicciones que guían cada entrega y ruteo diario en Mar del Plata.
+          </p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+          <article class="bezel-outer-std">
+            <div class="bezel-inner-std">
+              <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase;">Nuestra Misión</h3>
+              <p style="font-size: 0.9375rem; line-height: 1.6;">Brindar a cada negocio y e-commerce una infraestructura de última milla confiable, accesible y ágil. Eliminamos las fricciones logísticas para que te enfoques en vender.</p>
+              <footer style="padding-top: 10px; border-top: 1px solid var(--color-brand-blue-100); font-family: var(--font-subheading); font-size: 0.75rem; text-transform: uppercase;">COMPROMISO OPERATIVO PERMANENTE</footer>
+            </div>
+          </article>
+
+          <article class="bezel-outer-std">
+            <div class="bezel-inner-std">
+              <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase;">Nuestra Visión</h3>
+              <p style="font-size: 0.9375rem; line-height: 1.6;">Ser el estándar indiscutido de logística urbana y fulfillment 3PL en la Costa Atlántica, reconocidos por puntualidad, tecnología de ruteo y calidez humana.</p>
+              <footer style="padding-top: 10px; border-top: 1px solid var(--color-brand-blue-100); font-family: var(--font-subheading); font-size: 0.75rem; text-transform: uppercase;">VISIÓN DE FUTURO 2026</footer>
+            </div>
+          </article>
+
+          <article class="bezel-outer-std" style="grid-column: 1 / -1;">
+            <div class="bezel-inner-std" style="background-color: var(--color-brand-blue-500); color: var(--color-white); flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+              <div style="max-width: 750px;">
+                <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase; margin-bottom: 6px;">¿LISTO PARA ENVIAR CON LOS MEJORES?</h3>
+                <p style="font-size: 0.9375rem; line-height: 1.6; color: rgba(255,255,255,0.9);">Sumate a las cientos de tiendas y PyMEs que confían su logística diaria en Envíos DosRuedas.</p>
+              </div>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="/cotizar" class="cta-nested-pill pill-primary">
+                  <span>Cotizar Envío</span>
+                  <span class="pill-arrow-disc" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </a>
+                <a href="/contacto" class="cta-nested-pill pill-outline">
+                  <span>Contactar Asesor</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

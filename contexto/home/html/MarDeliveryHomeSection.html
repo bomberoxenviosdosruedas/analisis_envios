@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarDelivery Gastronomía | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Plataforma de delivery gastronómico para restaurantes y cervecerías en Mar del Plata: pedidos QR, IA y cadetería propia.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-md-bg: #031811;
+      --color-md-green: #2ECC85;
+      --color-md-green-hover: #26b374;
+      --color-md-amber: #F5B938;
+      --color-md-white: #FFFFFF;
+      --color-md-card: #07271c;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-md-bg);
+      color: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-wrap {
+      padding-block: 4rem;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-md-bg);
+      border-bottom: 1px solid rgba(46, 204, 133, 0.15);
+      background-image: 
+        radial-gradient(circle at 100% 0%, rgba(46, 204, 133, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(245, 185, 56, 0.08) 0%, transparent 45%),
+        linear-gradient(to right, rgba(46, 204, 133, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(46, 204, 133, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    }
+
+    @media (min-width: 1024px) {
+      .section-wrap {
+        padding-block: 6rem;
+      }
+    }
+
+    .container {
+      max-width: 80rem;
+      margin-inline: auto;
+      padding-inline: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding-inline: 1.5rem;
+      }
+    }
+
+    /* Header */
+    .header-box {
+      max-width: 52rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .badge-gastronomia {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-md-green);
+      font-weight: 700;
+      padding: 0.25rem 0.875rem;
+      background-color: rgba(46, 204, 133, 0.1);
+      border-radius: 9999px;
+      border: 1px solid rgba(46, 204, 133, 0.3);
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.96;
+      color: #FFFFFF;
+    }
+
+    @media (min-width: 640px) {
+      .title {
+        font-size: 3.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .title {
+        font-size: 4rem;
+      }
+    }
+
+    .highlight-green {
+      color: var(--color-md-green);
+    }
+
+    .desc {
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 46rem;
+      font-weight: 300;
+    }
+
+    /* 4-Card Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .bezel-outer {
+      background: linear-gradient(135deg, rgba(46, 204, 133, 0.2), rgba(245, 185, 56, 0.08));
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(46, 204, 133, 0.25);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+
+    .bezel-outer:hover {
+      transform: translateY(-4px);
+    }
+
+    .bezel-inner {
+      background-color: var(--color-md-card);
+      border-radius: 1.125rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(46, 204, 133, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      flex: 1;
+      gap: 1.25rem;
+    }
+
+    .card-top {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+    }
+
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .icon-box {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background-color: rgba(46, 204, 133, 0.15);
+      color: var(--color-md-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-box.amber {
+      background-color: rgba(245, 185, 56, 0.15);
+      color: var(--color-md-amber);
+    }
+
+    .card-badge {
+      font-family: var(--font-subheading);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.625rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #FFFFFF;
+    }
+
+    .card-desc {
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .card-bottom {
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--color-md-green);
+    }
+
+    .card-bottom.amber {
+      color: var(--color-md-amber);
+    }
+
+    /* Bottom Banner */
+    .cta-banner {
+      padding: 2rem;
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, rgba(46, 204, 133, 0.2), rgba(7, 39, 28, 0.95));
+      border: 1px solid rgba(46, 204, 133, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (min-width: 1024px) {
+      .cta-banner {
+        flex-direction: row;
+        padding: 2.5rem 3rem;
+      }
+    }
+
+    .cta-banner-text {
+      max-width: 36rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .cta-banner-text {
+        text-align: left;
+      }
+    }
+
+    .banner-heading {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: #FFFFFF;
+    }
+
+    @media (min-width: 640px) {
+      .banner-heading {
+        font-size: 2.25rem;
+      }
+    }
+
+    .banner-desc {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 300;
+    }
+
+    .btn-green-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      border-radius: 9999px;
+      background-color: var(--color-md-green);
+      color: #031811;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(46, 204, 133, 0.35);
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .btn-green-pill {
+        width: auto;
+      }
+    }
+
+    .btn-green-pill:hover {
+      background-color: var(--color-md-green-hover);
+      transform: translateY(-2px);
+    }
+
+    .svg-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="mardelivery-home" class="section-wrap" aria-labelledby="mardelivery-home-title">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="header-box">
+        <span class="badge-gastronomia">SISTEMA PARA GASTRONOMÍA &amp; DELIVERY</span>
+        <h2 id="mardelivery-home-title" class="title">
+          La plataforma que conecta tu cocina con la calle en <span class="highlight-green">Mar del Plata</span>
+        </h2>
+        <p class="desc">
+          Menú digital interactivo, carga rápida por WhatsApp con IA y cadetería inteligente para restaurantes, cervecerías y locales gastronómicos en toda la ciudad.
+        </p>
+      </div>
+
+      <!-- 4 Cards -->
+      <div class="cards-grid">
+        
+        <!-- Card 1 -->
+        <article class="bezel-outer">
+          <div class="bezel-inner">
+            <div class="card-top">
+              <div class="card-header-row">
+                <div class="icon-box" aria-hidden="true">
+                  <svg class="svg-icon" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </div>
+                <span class="card-badge">Menú Interactivo</span>
+              </div>
+
+              <h3 class="card-title">Carta Digital &amp; Pedidos QR</h3>
+              <p class="card-desc">
+                Menú o catálogo interactivo con promociones y cupones para recibir pedidos directos para retiro en local o envío a domicilio.
+              </p>
+            </div>
+
+            <div class="card-bottom">
+              <svg class="svg-icon" style="width:0.875rem;height:0.875rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Sin comisiones abusivas</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 (Amber) -->
+        <article class="bezel-outer">
+          <div class="bezel-inner">
+            <div class="card-top">
+              <div class="card-header-row">
+                <div class="icon-box amber" aria-hidden="true">
+                  <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <span class="card-badge">Rueditas IA</span>
+              </div>
+
+              <h3 class="card-title">Carga Rápida de Envíos</h3>
+              <p class="card-desc">
+                Armá borradores de entrega copiando chats de WhatsApp: con el asistente Rueditas IA transformás mensajes en envíos listos para despacho en segundos.
+              </p>
+            </div>
+
+            <div class="card-bottom amber">
+              <svg class="svg-icon" style="width:0.875rem;height:0.875rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Borradores con Rueditas IA</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="bezel-outer">
+          <div class="bezel-inner">
+            <div class="card-top">
+              <div class="card-header-row">
+                <div class="icon-box" aria-hidden="true">
+                  <svg class="svg-icon" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <span class="card-badge">Flota a Medida</span>
+              </div>
+
+              <h3 class="card-title">Modalidad Flexible</h3>
+              <p class="card-desc">
+                Operá con repartidores por turno (repartidores propios de tu local o provistos por la flota de MarDelivery), sumá a tu equipo a la app o combiná ambas opciones.
+              </p>
+            </div>
+
+            <div class="card-bottom">
+              <svg class="svg-icon" style="width:0.875rem;height:0.875rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Propios o Flota MarDelivery</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="bezel-outer">
+          <div class="bezel-inner">
+            <div class="card-top">
+              <div class="card-header-row">
+                <div class="icon-box" aria-hidden="true">
+                  <svg class="svg-icon" viewBox="0 0 24 24">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <span class="card-badge">Métricas Reales</span>
+              </div>
+
+              <h3 class="card-title">Estadísticas y Control</h3>
+              <p class="card-desc">
+                Información total de clientes con monitoreo de despachos por barrio y franja horaria, más exportación de resúmenes en Excel para tu gestión comercial.
+              </p>
+            </div>
+
+            <div class="card-bottom">
+              <svg class="svg-icon" style="width:0.875rem;height:0.875rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Información total de clientes</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Bottom Banner -->
+      <div class="cta-banner">
+        <div class="cta-banner-text">
+          <h3 class="banner-heading">¿Manejás un local gastronómico en Mar del Plata?</h3>
+          <p class="banner-desc">
+            Probá el ecosistema MarDelivery y optimizá tus turnos de reparto con tecnología y cadetes capacitados.
+          </p>
+        </div>
+
+        <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Me%20interesa%20sumar%20mi%20local%20a%20MarDelivery" target="_blank" rel="noopener noreferrer" class="btn-green-pill">
+          <span>Solicitar Demo por WhatsApp</span>
+          <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotización Inmediata | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="¿Listo para escalar la logística de tu e-commerce en Mar del Plata? Completá tus datos y cotizá tus envíos por WhatsApp al instante.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue: #0950F6;
+      --color-brand-blue-dark: #073ec2;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-yellow: #FFEC01;
+      --color-brand-yellow-hover: #FFF12E;
+      --color-brand-white: #FFFFFF;
+      --color-text-main: #0950F6;
+      --color-text-dark: #0f172a;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue);
+      color: var(--color-text-dark);
+      padding: 4rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 80rem;
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    /* Double Bezel Outer Shell */
+    .bezel-outer {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 2rem;
+      padding: 0.625rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .bezel-inner {
+      background-color: #FFFFFF;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .bezel-inner {
+        padding: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .bezel-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+        padding: 3.5rem 4rem;
+      }
+    }
+
+    /* Left Copy (60%) */
+    .copy-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+
+    @media (min-width: 1024px) {
+      .copy-block {
+        width: 58%;
+      }
+    }
+
+    .badge-eyebrow {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 0.375rem 1rem;
+      background-color: rgba(255, 236, 1, 0.15);
+      border: 1px solid rgba(255, 236, 1, 0.4);
+      color: var(--color-brand-blue);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    .cta-heading {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.94;
+      color: var(--color-brand-blue);
+    }
+
+    @media (min-width: 640px) {
+      .cta-heading {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cta-heading {
+        font-size: 3.5rem;
+      }
+    }
+
+    .cta-lead {
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: #334155;
+      font-weight: 300;
+      max-width: 36rem;
+    }
+
+    .cta-sla {
+      font-size: 0.8125rem;
+      font-family: var(--font-mono);
+      color: #64748b;
+    }
+
+    /* Right Form (40%) */
+    .form-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .form-block {
+        width: 42%;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+
+    .form-label {
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--color-brand-blue);
+    }
+
+    .input-control {
+      width: 100%;
+      height: 3rem;
+      padding-inline: 1rem;
+      border: 1px solid var(--color-brand-blue-100);
+      background-color: #FAFAFB;
+      border-radius: 0.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .input-control:focus {
+      border-color: var(--color-brand-blue);
+      background-color: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(9, 80, 246, 0.15);
+    }
+
+    .btn-submit-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      height: 3.5rem;
+      padding-inline: 2rem;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 236, 1, 0.4);
+      transition: all 0.2s ease;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+
+    .btn-submit-whatsapp:hover {
+      background-color: var(--color-brand-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 236, 1, 0.5);
+    }
+
+    .svg-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: currentColor;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="cta-section" class="container" aria-labelledby="cta-section-title">
+    
+    <div class="bezel-outer">
+      <div class="bezel-inner">
+
+        <!-- Left Copy -->
+        <div class="copy-block">
+          <span class="badge-eyebrow">Cotización Inmediata</span>
+          <h2 id="cta-section-title" class="cta-heading">
+            ¿Listo para escalar la logística de tu e-commerce?
+          </h2>
+          <p class="cta-lead">
+            Olvidate de la gestión de paquetes en Mar del Plata. Completá tus datos y te respondemos por WhatsApp en minutos.
+          </p>
+          <p class="cta-sla">
+            Atención comercial: respondemos en pocos minutos hábiles de lunes a sábados.
+          </p>
+        </div>
+
+        <!-- Right Form -->
+        <form class="form-block" id="whatsapp-cotizar-form" onsubmit="event.preventDefault(); submitWhatsAppCotizacion();">
+          
+          <div class="form-group">
+            <label for="input-name" class="form-label">Nombre y Apellido *</label>
+            <input
+              type="text"
+              id="input-name"
+              name="name"
+              placeholder="Ej: Martín Gómez"
+              required
+              class="input-control"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="input-business" class="form-label">Nombre de tu Comercio o Emprendimiento *</label>
+            <input
+              type="text"
+              id="input-business"
+              name="business"
+              placeholder="Ej: Calzados MDQ"
+              required
+              class="input-control"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="input-volume" class="form-label">Volumen estimado de envíos mensuales *</label>
+            <select id="input-volume" name="volume" required class="input-control">
+              <option value="" disabled selected>Seleccioná una opción...</option>
+              <option value="1 a 30 paquetes">1 a 30 paquetes / mes</option>
+              <option value="30 a 100 paquetes">30 a 100 paquetes / mes</option>
+              <option value="más de 100 paquetes">Más de 100 paquetes / mes (Tarifa especial)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit-whatsapp">
+            <svg class="svg-icon" viewBox="0 0 448 512" aria-hidden="true">
+              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+            </svg>
+            <span>Hablar por WhatsApp</span>
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    function submitWhatsAppCotizacion() {
+      const name = document.getElementById('input-name').value.trim();
+      const business = document.getElementById('input-business').value.trim();
+      const volume = document.getElementById('input-volume').value;
+
+      const message = `Hola, soy ${name} de ${business}. Me interesa cotizar envíos para ${volume}.`;
+      const url = `https://api.whatsapp.com/send/?phone=542236602699&text=${encodeURIComponent(message)}`;
+      
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  </script>
+
+</body>
+</html>

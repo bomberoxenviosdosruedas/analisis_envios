@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Componente Copiar Teléfono — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-600: #E6D400;
+
+      --color-white: #FFFFFF;
+
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #0F172A;
+      color: var(--color-white);
+      line-height: 1.5;
+      padding: 3rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .demo-card {
+      width: 100%;
+      max-width: 480px;
+      background-color: var(--color-brand-blue-500);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 12px 36px rgba(9, 80, 246, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .demo-title {
+      font-family: var(--font-subheading);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-white);
+    }
+
+    .demo-desc {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ========================================================================
+     * BOTÓN COPY PHONE (Exactamente como se usa en ContactHero)
+     * ======================================================================== */
+    .copy-phone-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 6px 14px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--color-white);
+      font-family: var(--font-mono);
+      font-size: 0.9375rem;
+      font-variant-numeric: tabular-nums;
+      cursor: pointer;
+      user-select: all;
+      transition: all var(--duration-feedback) var(--ease-out);
+      width: fit-content;
+    }
+
+    .copy-phone-button:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-yellow-500);
+    }
+
+    .copy-phone-button:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--color-brand-yellow-500);
+    }
+
+    .phone-icon {
+      color: var(--color-brand-yellow-500);
+      flex-shrink: 0;
+    }
+
+    .phone-number-text {
+      user-select: all;
+      font-weight: 500;
+    }
+
+    .status-disc {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--color-brand-yellow-500);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .copy-phone-button:hover .status-disc {
+      border-color: var(--color-brand-yellow-500);
+      background-color: rgba(255, 236, 1, 0.15);
+    }
+
+    .status-disc.is-copied {
+      background-color: var(--color-brand-yellow-500);
+      border-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+
+    /* Indicador visual de feedback */
+    .feedback-toast {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-brand-yellow-500);
+      min-height: 18px;
+    }
+
+    /* Screen reader only */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="demo-card">
+    <h1 class="demo-title">Línea Directa de la Base</h1>
+    <p class="demo-desc">
+      Hacé clic en el botón para copiar el número al portapapeles o seleccionarlo automáticamente.
+    </p>
+
+    <!-- Botón de Copiado Interactivo -->
+    <div>
+      <button
+        type="button"
+        id="copy-phone-btn"
+        class="copy-phone-button"
+        aria-label="Copiar número de teléfono: 223 660-2699"
+      >
+        <!-- Icono Teléfono Lucide -->
+        <svg class="phone-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+
+        <!-- Número de Teléfono -->
+        <span id="phone-number" class="phone-number-text">223 660-2699</span>
+
+        <!-- Disco con Icono Copy / Check -->
+        <span id="status-disc" class="status-disc" aria-hidden="true">
+          <svg id="icon-copy" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+          </svg>
+          <svg id="icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </span>
+      </button>
+
+      <!-- Mensaje accesible y feedback visible -->
+      <div id="feedback-display" class="feedback-toast" aria-hidden="true"></div>
+      <span id="copy-live-region" aria-live="polite" class="sr-only"></span>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const SUPPORT_PHONE = '223 660-2699';
+      const FEEDBACK_MS = 2000;
+
+      const btn = document.getElementById('copy-phone-btn');
+      const phoneSpan = document.getElementById('phone-number');
+      const statusDisc = document.getElementById('status-disc');
+      const iconCopy = document.getElementById('icon-copy');
+      const iconCheck = document.getElementById('icon-check');
+      const feedbackDisplay = document.getElementById('feedback-display');
+      const liveRegion = document.getElementById('copy-live-region');
+
+      let timer = null;
+
+      function legacyCopy(text) {
+        if (typeof document === 'undefined') return false;
+        const field = document.createElement('textarea');
+        field.value = text;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.top = '0';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        let ok = false;
+        try {
+          ok = document.execCommand('copy');
+        } catch (e) {
+          ok = false;
+        }
+        document.body.removeChild(field);
+        return ok;
+      }
+
+      function selectNode(node) {
+        if (!node || typeof window === 'undefined') return;
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        const selection = window.getSelection();
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+      }
+
+      async function handleCopy() {
+        let ok = false;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(SUPPORT_PHONE);
+            ok = true;
+          }
+        } catch (err) {
+          ok = false;
+        }
+
+        if (!ok) {
+          ok = legacyCopy(SUPPORT_PHONE);
+        }
+
+        if (!ok) {
+          selectNode(phoneSpan);
+        }
+
+        if (ok) {
+          iconCopy.style.display = 'none';
+          iconCheck.style.display = 'block';
+          statusDisc.classList.add('is-copied');
+          feedbackDisplay.textContent = 'Copiado al portapapeles';
+          liveRegion.textContent = 'Teléfono copiado al portapapeles.';
+        } else {
+          feedbackDisplay.textContent = 'Seleccioná y copiá con Ctrl+C';
+          liveRegion.textContent = 'No pudimos copiarlo: seleccioná el número y copialo.';
+        }
+
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function () {
+          iconCopy.style.display = 'block';
+          iconCheck.style.display = 'none';
+          statusDisc.classList.remove('is-copied');
+          feedbackDisplay.textContent = '';
+          liveRegion.textContent = '';
+        }, FEEDBACK_MS);
+      }
+
+      btn.addEventListener('click', handleCopy);
+    })();
+  </script>
+
+</body>
+</html>

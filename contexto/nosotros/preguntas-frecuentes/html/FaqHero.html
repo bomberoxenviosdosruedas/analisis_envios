@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Preguntas Frecuentes | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Centro de ayuda y preguntas frecuentes sobre envíos de mensajería, paquetería Flex y logística en Mar del Plata.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue: #0950F6;
+      --color-brand-blue-dark: #073ec2;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-yellow: #FFEC01;
+      --color-brand-yellow-hover: #FFF12E;
+      --color-brand-white: #FFFFFF;
+      --color-text-main: #FFFFFF;
+      --color-text-muted: rgba(255, 255, 255, 0.85);
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue);
+      color: var(--color-text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hero Container */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      min-height: 90vh;
+      min-height: 90dvh;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      background-color: var(--color-brand-blue);
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(255, 236, 1, 0.08) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    .hero-body {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Visual Graph Signature: "La forma de lo que se pregunta" */
+    .hero-graph-track {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 7rem;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @media (min-width: 640px) {
+      .hero-graph-track {
+        height: 9rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-graph-track {
+        height: 11rem;
+      }
+    }
+
+    .hero-graph-list {
+      display: flex;
+      height: 100%;
+      max-width: 48rem;
+      margin-inline: auto;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 1rem;
+      padding-inline: 1.5rem;
+      padding-top: 0.5rem;
+      list-style: none;
+    }
+
+    @media (min-width: 640px) {
+      .hero-graph-list {
+        gap: 2rem;
+      }
+    }
+
+    .hero-graph-col {
+      display: flex;
+      height: 100%;
+      width: 3.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-graph-col {
+        width: 4rem;
+      }
+    }
+
+    .hero-graph-count {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.85);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hero-graph-bar-wrapper {
+      display: flex;
+      width: 100%;
+      flex: 1;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .hero-graph-bar {
+      width: 100%;
+      height: 100%;
+      transform-origin: bottom;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.35);
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.45; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-graph-bar {
+        animation: none;
+        opacity: 0.7;
+      }
+    }
+
+    .hero-graph-label {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--color-brand-yellow);
+    }
+
+    /* Content Area */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 80rem;
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+      padding-top: 3.5rem;
+      padding-bottom: 8rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-content {
+        padding-top: 5rem;
+        padding-bottom: 10rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content {
+        padding-top: 6rem;
+        padding-bottom: 12rem;
+        padding-inline: 2rem;
+      }
+    }
+
+    .hero-card {
+      max-width: 48rem;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .hero-card {
+        gap: 2rem;
+      }
+    }
+
+    /* Illustration Icon */
+    .hero-badge-img {
+      height: 6rem;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));
+    }
+
+    @media (min-width: 640px) {
+      .hero-badge-img {
+        height: 8rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-badge-img {
+        height: 9rem;
+      }
+    }
+
+    /* Pill Badge */
+    .badge-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.125rem;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.9375rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(255, 236, 1, 0.35);
+      transform: rotate(-1deg);
+    }
+
+    /* Title */
+    .hero-title {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 0.92;
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 4.5rem;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .hero-title {
+        font-size: 5rem;
+      }
+    }
+
+    .hero-title-main {
+      display: block;
+    }
+
+    .knockout {
+      display: inline-block;
+      position: relative;
+      padding: 0.15em 0.35em;
+      margin-top: 0.2em;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      border-radius: 6px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+      transform: rotate(0.5deg);
+    }
+
+    /* Lead Text */
+    .hero-lead {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+      max-width: 56ch;
+      font-family: var(--font-sans);
+    }
+
+    @media (min-width: 640px) {
+      .hero-lead {
+        font-size: 1.125rem;
+      }
+    }
+
+    /* CTA Section */
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .cta-group {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+    }
+
+    .cta-pill-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 3.25rem;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta-pill-primary:hover {
+      background-color: var(--color-brand-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 236, 1, 0.4);
+    }
+
+    .cta-pill-primary:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--color-brand-yellow), 0 0 0 6px var(--color-brand-blue);
+    }
+
+    .cta-anchor-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 2.75rem;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #FFFFFF;
+      text-decoration: underline;
+      text-decoration-color: var(--color-brand-yellow);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      border-radius: 6px;
+      transition: color 0.15s ease;
+    }
+
+    .cta-anchor-link:hover {
+      color: var(--color-brand-yellow);
+    }
+
+    .cta-anchor-link:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--color-brand-yellow);
+    }
+
+    /* Meta text */
+    .hero-meta {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--color-text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media (min-width: 640px) {
+      .hero-meta {
+        font-size: 0.75rem;
+      }
+    }
+
+    .svg-icon {
+      width: 1.125rem;
+      height: 1.125rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section
+    id="faq-hero"
+    aria-label="Preguntas frecuentes de Envíos DosRuedas en Mar del Plata: 21 respuestas sobre servicios, tiempos, tarifas y confianza"
+    class="hero"
+  >
+    <div class="hero-body">
+
+      <!-- Visual signature: One bar per category, height = proportion of questions -->
+      <div aria-hidden="true" class="hero-graph-track">
+        <ul class="hero-graph-list">
+          
+          <!-- Servicios (8 Qs) scaleY = 0.86 -->
+          <li class="hero-graph-col">
+            <span class="hero-graph-count">8</span>
+            <span class="hero-graph-bar-wrapper">
+              <span class="hero-graph-bar" style="transform: scaleY(0.86); animation-delay: 0s;"></span>
+            </span>
+            <span class="hero-graph-label">Servicios</span>
+          </li>
+
+          <!-- Tiempos (5 Qs) scaleY = (5/8)*0.86 = 0.5375 -->
+          <li class="hero-graph-col">
+            <span class="hero-graph-count">5</span>
+            <span class="hero-graph-bar-wrapper">
+              <span class="hero-graph-bar" style="transform: scaleY(0.5375); animation-delay: 0.16s;"></span>
+            </span>
+            <span class="hero-graph-label">Tiempos</span>
+          </li>
+
+          <!-- Precios (5 Qs) scaleY = (5/8)*0.86 = 0.5375 -->
+          <li class="hero-graph-col">
+            <span class="hero-graph-count">5</span>
+            <span class="hero-graph-bar-wrapper">
+              <span class="hero-graph-bar" style="transform: scaleY(0.5375); animation-delay: 0.32s;"></span>
+            </span>
+            <span class="hero-graph-label">Precios</span>
+          </li>
+
+          <!-- Confianza (3 Qs) scaleY = (3/8)*0.86 = 0.3225 -->
+          <li class="hero-graph-col">
+            <span class="hero-graph-count">3</span>
+            <span class="hero-graph-bar-wrapper">
+              <span class="hero-graph-bar" style="transform: scaleY(0.3225); animation-delay: 0.48s;"></span>
+            </span>
+            <span class="hero-graph-label">Confianza</span>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="hero-content">
+        <div class="hero-card">
+          
+          <!-- Brand 3D element -->
+          <img
+            src="/elementos/dudas_transparent.webp"
+            alt="Pieza de marca de Envíos DosRuedas con signos de interrogación para el centro de preguntas frecuentes"
+            width="320"
+            height="280"
+            class="hero-badge-img"
+            onerror="this.style.display='none'"
+          >
+
+          <!-- Help Center Badge -->
+          <div class="badge-accent">
+            <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <span>Centro de ayuda · Mar del Plata</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero-title">
+            <span class="hero-title-main">¿Tenés dudas?</span>
+            <span class="knockout">acá la respondemos</span>
+          </h1>
+
+          <!-- Lead text -->
+          <p class="hero-lead">
+            21 respuestas sobre servicios, tiempos, tarifas y confianza, escritas por el equipo que opera en Mar del Plata. Buscá por palabra o elegí un tema; si tu duda no está, preguntanos y te la respondemos.
+          </p>
+
+          <!-- Action buttons -->
+          <div class="cta-group">
+            <a
+              href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Tengo%20una%20duda%20sobre%20los%20env%C3%ADos%20de%20DosRuedas"
+              id="faq-hero-cta-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-pill-primary"
+            >
+              <svg style="width:1.25rem;height:1.25rem;fill:currentColor;" viewBox="0 0 448 512" aria-hidden="true">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+              </svg>
+              <span>Preguntanos por WhatsApp</span>
+            </a>
+
+            <a href="#faq-categories" class="cta-anchor-link">
+              <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+              <span>Ver las 21 preguntas</span>
+            </a>
+          </div>
+
+          <!-- Stats meta footer -->
+          <p class="hero-meta">
+            21 preguntas · 4 categorías · 223 660-2699
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logística DosRuedas | Seguimiento y Portales Digitales - Mar del Plata</title>
+  <meta name="description" content="Rastreá tu paquete con tu código EDR e ingresá al panel comercial o de repartidores en Mar del Plata. Conexión de última milla con trazabilidad en tiempo real.">
+  <link rel="canonical" href="https://www.enviosdosruedas.com/logistica-dosruedas">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Logística DosRuedas | Seguimiento y Portales Operativos en MDQ">
+  <meta property="og:description" content="Trazabilidad en tiempo real con código EDR y acceso directo a portales para comercios y repartidores en Mar del Plata.">
+  <meta property="og:url" content="https://www.enviosdosruedas.com/logistica-dosruedas">
+  <meta property="og:image" content="https://www.enviosdosruedas.com/og-image.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Schema.org SoftwareApplication JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Logística DosRuedas",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "url": "https://www.logisticadosruedas.com",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Envíos DosRuedas",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Friuli 1972",
+        "addressLocality": "Mar del Plata",
+        "addressRegion": "Buenos Aires",
+        "postalCode": "B7600",
+        "addressCountry": "AR"
+      },
+      "telephone": "+54 223 660-2699"
+    },
+    "description": "Sistema de seguimiento y portales operativos de logística y última milla en Mar del Plata."
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-brand-blue: #0950F6;
+      --color-brand-blue-dark: #073ec2;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-yellow: #FFEC01;
+      --color-brand-yellow-hover: #FFF12E;
+      --color-brand-white: #FFFFFF;
+      --color-text-main: #0950F6;
+      --color-text-dark: #0f172a;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #FFFFFF;
+      color: var(--color-text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* 1. HERO */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-brand-blue);
+      color: #FFFFFF;
+      padding-top: 6rem;
+      padding-bottom: 5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background-image: 
+        radial-gradient(circle at 100% 0%, rgba(255, 236, 1, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(9, 80, 246, 0.2) 0%, transparent 50%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-section {
+        padding-top: 8rem;
+        padding-bottom: 6rem;
+      }
+    }
+
+    .container {
+      max-width: 80rem;
+      margin-inline: auto;
+      padding-inline: 1rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding-inline: 1.5rem;
+      }
+    }
+
+    .hero-body {
+      max-width: 56rem;
+      margin-inline: auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .eyebrow-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 236, 1, 0.3);
+      color: var(--color-brand-yellow);
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.94;
+      color: #FFFFFF;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 3.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 4.25rem;
+      }
+    }
+
+    .knockout-pill {
+      color: var(--color-brand-blue);
+      background-color: var(--color-brand-yellow);
+      padding: 0.15em 0.5em;
+      border-radius: 0.75rem;
+      display: inline-block;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-brand-blue-50);
+      max-width: 48rem;
+      margin-inline: auto;
+      font-weight: 300;
+    }
+
+    @media (min-width: 640px) {
+      .hero-subtitle {
+        font-size: 1.25rem;
+      }
+    }
+
+    .highlight-yellow {
+      font-weight: 700;
+      color: var(--color-brand-yellow);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+      padding-top: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-ctas {
+        flex-direction: row;
+      }
+    }
+
+    .cta-pill-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      min-height: 3.25rem;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .cta-pill-primary {
+        width: auto;
+      }
+    }
+
+    .cta-pill-primary:hover {
+      background-color: var(--color-brand-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 236, 1, 0.4);
+    }
+
+    .cta-pill-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.25rem;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      background-color: transparent;
+      color: #FFFFFF;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .cta-pill-outline {
+        width: auto;
+      }
+    }
+
+    .cta-pill-outline:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: rgba(230, 238, 254, 0.9);
+    }
+
+    .trust-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.75rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 2. TRACKING SECTION */
+    .tracking-section {
+      padding: 4rem 1rem;
+      background-color: rgba(230, 238, 254, 0.3);
+    }
+
+    @media (min-width: 640px) {
+      .tracking-section {
+        padding: 5rem 1.5rem;
+      }
+    }
+
+    .tracking-container {
+      max-width: 56rem;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-header-center {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-badge {
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-brand-blue);
+      font-weight: 700;
+      padding: 0.25rem 0.875rem;
+      background-color: var(--color-brand-blue-50);
+      border-radius: 9999px;
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .section-title-blue {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--color-brand-blue);
+    }
+
+    @media (min-width: 640px) {
+      .section-title-blue {
+        font-size: 2.5rem;
+      }
+    }
+
+    .section-subtitle-gray {
+      font-size: 0.9375rem;
+      color: #475569;
+      max-width: 36rem;
+    }
+
+    .bezel-outer {
+      background: linear-gradient(135deg, rgba(9, 80, 246, 0.12), rgba(255, 236, 1, 0.08));
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--color-brand-blue-100);
+      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.06);
+    }
+
+    .bezel-inner {
+      background-color: #FFFFFF;
+      border-radius: 1.125rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(9, 80, 246, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .bezel-inner {
+        padding: 2rem;
+      }
+    }
+
+    .search-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .search-row {
+        flex-direction: row;
+      }
+    }
+
+    .input-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.25rem;
+      height: 1.25rem;
+      color: rgba(9, 80, 246, 0.6);
+      pointer-events: none;
+    }
+
+    .tracking-input {
+      width: 100%;
+      height: 3.25rem;
+      padding-left: 3rem;
+      padding-right: 1rem;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      text-transform: uppercase;
+      background-color: rgba(230, 238, 254, 0.4);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 0.75rem;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .tracking-input:focus {
+      border-color: var(--color-brand-blue);
+      box-shadow: 0 0 0 3px rgba(9, 80, 246, 0.2);
+      background-color: #FFFFFF;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      height: 3.25rem;
+      padding-inline: 1.75rem;
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 236, 1, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--color-brand-yellow-hover);
+      transform: translateY(-1px);
+    }
+
+    .samples-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: #475569;
+    }
+
+    .sample-chip {
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+      border: 1px solid var(--color-brand-blue-100);
+      padding: 0.25rem 0.625rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+    }
+
+    .sample-chip:hover {
+      background-color: var(--color-brand-blue-100);
+    }
+
+    .error-alert {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background-color: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 0.75rem;
+      color: #B91C1C;
+      font-size: 0.8125rem;
+    }
+
+    .result-card {
+      display: none;
+      background-color: #FFFFFF;
+      border-radius: 1.25rem;
+      border: 1px solid var(--color-brand-blue-100);
+      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.08);
+      overflow: hidden;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .result-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+      }
+    }
+
+    .result-code {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-brand-blue);
+    }
+
+    .result-badge {
+      font-size: 0.6875rem;
+      font-family: var(--font-subheading);
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.25rem 0.625rem;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 0.25rem;
+    }
+
+    .result-last-update {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    .result-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-subheading);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #0f172a;
+    }
+
+    .status-pulse-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 9999px;
+      background-color: #10B981;
+      animation: pulseDot 2s infinite;
+    }
+
+    .timeline-body {
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .timeline-body {
+        padding: 2rem;
+      }
+    }
+
+    .timeline-title {
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(9, 80, 246, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-list {
+      position: relative;
+      padding-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-list::before {
+      content: '';
+      position: absolute;
+      left: 0.625rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 2px;
+      background-color: #CBD5E1;
+    }
+
+    .timeline-step {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .step-node {
+      position: absolute;
+      left: -2rem;
+      top: 0;
+      width: 1.375rem;
+      height: 1.375rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFFFFF;
+      border: 2px solid #CBD5E1;
+      color: #94a3b8;
+    }
+
+    .step-node.completed {
+      background-color: var(--color-brand-blue);
+      border-color: var(--color-brand-blue);
+      color: var(--color-brand-yellow);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .step-title {
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #0f172a;
+    }
+
+    .step-time {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.25rem;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+    }
+
+    .step-desc {
+      font-size: 0.8125rem;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    .result-footer {
+      padding: 1.5rem;
+      background-color: rgba(230, 238, 254, 0.4);
+      border-top: 1px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .result-footer {
+        flex-direction: row;
+        padding: 1.5rem 2rem;
+      }
+    }
+
+    .footer-help-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 0.8125rem;
+    }
+
+    .footer-help-sub {
+      font-size: 0.8125rem;
+      color: #475569;
+    }
+
+    .btn-whatsapp-query {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      border-radius: 0.75rem;
+      background-color: #059669;
+      color: #FFFFFF;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-whatsapp-query:hover {
+      background-color: #047857;
+    }
+
+    /* 3. PORTALS SECTION */
+    .portals-section {
+      padding: 5rem 1rem;
+      background-color: #FFFFFF;
+    }
+
+    @media (min-width: 640px) {
+      .portals-section {
+        padding: 6rem 1.5rem;
+      }
+    }
+
+    .portals-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      .portals-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card-bezel-outer {
+      background: linear-gradient(135deg, rgba(9, 80, 246, 0.1), rgba(255, 236, 1, 0.05));
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--color-brand-blue-100);
+      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-bezel-outer.dark-variant {
+      background: linear-gradient(135deg, rgba(9, 80, 246, 0.4), rgba(255, 236, 1, 0.15));
+      border-color: rgba(255, 236, 1, 0.3);
+      box-shadow: 0 20px 40px rgba(9, 80, 246, 0.2);
+    }
+
+    .card-bezel-inner {
+      background-color: #FFFFFF;
+      border-radius: 1.125rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(9, 80, 246, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      flex: 1;
+      gap: 1.5rem;
+    }
+
+    .card-bezel-outer.dark-variant .card-bezel-inner {
+      background-color: var(--color-brand-blue);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .card-icon-box {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      background-color: var(--color-brand-blue);
+      color: var(--color-brand-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.2);
+    }
+
+    .card-bezel-outer.dark-variant .card-icon-box {
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+      box-shadow: 0 4px 14px rgba(255, 236, 1, 0.35);
+    }
+
+    .portal-tag {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue);
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .card-bezel-outer.dark-variant .portal-tag {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--color-brand-yellow);
+      border-color: rgba(255, 236, 1, 0.3);
+    }
+
+    .portal-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--color-brand-blue);
+      margin-top: 1rem;
+    }
+
+    .card-bezel-outer.dark-variant .portal-title {
+      color: #FFFFFF;
+    }
+
+    .portal-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #475569;
+      margin-top: 0.375rem;
+    }
+
+    .card-bezel-outer.dark-variant .portal-desc {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .portal-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      padding-top: 1rem;
+    }
+
+    .portal-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: #334155;
+    }
+
+    .card-bezel-outer.dark-variant .portal-feature-item {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .feature-dot {
+      width: 0.375rem;
+      height: 0.375rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue);
+      margin-top: 0.375rem;
+      flex-shrink: 0;
+    }
+
+    .card-bezel-outer.dark-variant .feature-dot {
+      background-color: var(--color-brand-yellow);
+    }
+
+    .btn-portal-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.875rem 1.25rem;
+      border-radius: 0.75rem;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background-color: var(--color-brand-blue);
+      color: #FFFFFF;
+    }
+
+    .btn-portal-action:hover {
+      background-color: var(--color-brand-blue-dark);
+      transform: translateY(-2px);
+    }
+
+    .card-bezel-outer.dark-variant .btn-portal-action {
+      background-color: var(--color-brand-yellow);
+      color: var(--color-brand-blue);
+    }
+
+    .platform-banner {
+      padding: 1.5rem;
+      border-radius: 1.25rem;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .platform-banner {
+        flex-direction: row;
+        padding: 1.5rem 2rem;
+      }
+    }
+
+    .banner-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .banner-icon {
+      padding: 0.75rem;
+      background-color: var(--color-brand-blue);
+      color: var(--color-brand-yellow);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .banner-title {
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue);
+    }
+
+    .banner-desc {
+      font-size: 0.8125rem;
+      color: #475569;
+    }
+
+    .banner-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .svg-icon {
+      width: 1.125rem;
+      height: 1.125rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HERO SECTION -->
+  <header class="hero-section" aria-label="Logística DosRuedas: Seguimiento y Portales Operativos en Mar del Plata">
+    <div class="container">
+      <div class="hero-body">
+        
+        <div class="eyebrow-badge">
+          <svg class="svg-icon" style="width: 0.875rem; height: 0.875rem;" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+          <span>SISTEMA LOGÍSTICO DIGITAL · MAR DEL PLATA</span>
+        </div>
+
+        <h1 class="hero-title">
+          Seguí tu paquete en tiempo real e ingresá a tu <span class="knockout-pill">panel operativo</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Conectamos la última milla de Mar del Plata con trazabilidad total. Consultá el estado de tu envío con el código <strong class="highlight-yellow">EDR</strong> o gestioná las operaciones de tu negocio desde nuestros portales dedicados.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#rastreo" class="cta-pill-primary">
+            <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+            <span>Rastrear con Código EDR</span>
+          </a>
+
+          <a href="#portales" class="cta-pill-outline">
+            <span>Ver Portales Operativos</span>
+          </a>
+        </div>
+
+        <div class="trust-badges">
+          <span class="trust-badge-item">
+            <svg class="svg-icon" style="color: var(--color-brand-yellow);" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Base Central Friuli 1972</span>
+          </span>
+
+          <span class="trust-badge-item">
+            <svg class="svg-icon" style="color: var(--color-brand-yellow);" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Cobertura en los 5 radios de MDQ</span>
+          </span>
+
+          <span class="trust-badge-item">
+            <svg class="svg-icon" style="color: var(--color-brand-yellow);" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Trazabilidad en tiempo real</span>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+    <!-- 2. TRACKING SECTION -->
+    <section id="rastreo" class="tracking-section" aria-label="Seguimiento de envíos EDR en tiempo real">
+      <div class="tracking-container">
+        
+        <div class="section-header-center">
+          <span class="section-badge">Seguimiento en Vivo</span>
+          <h2 class="section-title-blue">Consultá el estado de tu paquete</h2>
+          <p class="section-subtitle-gray">
+            Ingresá el código de 4 a 12 dígitos que figura en tu etiqueta o remito.
+          </p>
+        </div>
+
+        <div class="bezel-outer">
+          <div class="bezel-inner">
+            <form id="tracking-form" class="search-row" onsubmit="event.preventDefault(); handleTrackingSearch();">
+              <div class="input-wrapper">
+                <svg class="input-icon svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+                <input
+                  id="tracking-input"
+                  type="text"
+                  placeholder="Ej: EDR-4820-MDQ o código numérico..."
+                  class="tracking-input"
+                  autocomplete="off"
+                >
+              </div>
+
+              <button type="submit" class="btn-submit">
+                <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Rastrear Envío</span>
+              </button>
+            </form>
+
+            <div id="tracking-error" class="error-alert">
+              <svg class="svg-icon" style="width: 1.125rem; height: 1.125rem;" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>Por favor, ingresá un código EDR o número de seguimiento.</span>
+            </div>
+
+            <div class="samples-row">
+              <span>Ejemplos para probar:</span>
+              <button type="button" class="sample-chip" data-code="EDR-4820-MDQ">EDR-4820-MDQ (En camino)</button>
+              <button type="button" class="sample-chip" data-code="EDR-999-OK">EDR-999-OK (Entregado)</button>
+              <button type="button" class="sample-chip" data-code="MELI-FLEX-MDQ">MELI-FLEX-MDQ (Flex)</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="tracking-result" class="result-card" role="region" aria-live="polite">
+          <div class="result-header">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.75rem;">
+                <span id="res-code" class="result-code">EDR-4820-MDQ</span>
+                <span id="res-type" class="result-badge">EDR</span>
+              </div>
+              <p id="res-update" class="result-last-update">Última actualización: Hace unos minutos</p>
+            </div>
+
+            <div class="result-status-pill">
+              <div class="status-pulse-dot" aria-hidden="true"></div>
+              <span id="res-status">En camino con cadete asignado</span>
+            </div>
+          </div>
+
+          <div class="timeline-body">
+            <h3 class="timeline-title">Trazabilidad de la Ruta</h3>
+
+            <div class="timeline-list">
+              <div class="timeline-step">
+                <div class="step-node completed">
+                  <svg class="svg-icon" style="width:0.75rem;height:0.75rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="step-header">
+                  <h4 class="step-title">Etiqueta generada y registrada</h4>
+                  <span class="step-time">09:15 hs</span>
+                </div>
+                <p class="step-desc">El comercio despachante ingresó el paquete al sistema logístico.</p>
+              </div>
+
+              <div class="timeline-step">
+                <div class="step-node completed">
+                  <svg class="svg-icon" style="width:0.75rem;height:0.75rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="step-header">
+                  <h4 class="step-title">Recolectado por cadetería DosRuedas</h4>
+                  <span class="step-time">11:40 hs</span>
+                </div>
+                <p class="step-desc">Retiro confirmado en local/depósito emisor.</p>
+              </div>
+
+              <div class="timeline-step">
+                <div class="step-node completed">
+                  <svg class="svg-icon" style="width:0.75rem;height:0.75rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="step-header">
+                  <h4 class="step-title">Clasificado en Hub Central Friuli 1972</h4>
+                  <span class="step-time">13:10 hs</span>
+                </div>
+                <p class="step-desc">Verificación de embalaje (máx. 5 kg / 40x40x30 cm) y asignación de zona.</p>
+              </div>
+
+              <div class="timeline-step">
+                <div class="step-node completed">
+                  <svg class="svg-icon" style="width:0.75rem;height:0.75rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="step-header">
+                  <h4 class="step-title">En camino con cadete en moto</h4>
+                  <span class="step-time">14:25 hs</span>
+                </div>
+                <p class="step-desc">Cadete transitando hacia el domicilio de entrega.</p>
+              </div>
+
+              <div class="timeline-step">
+                <div class="step-node" id="node-5">
+                  <span style="width: 6px; height: 6px; border-radius: 9999px; background-color: #94A3B8;"></span>
+                </div>
+                <div class="step-header">
+                  <h4 class="step-title">Entregado en mano</h4>
+                  <span class="step-time" id="time-5">Pendiente</span>
+                </div>
+                <p class="step-desc" id="desc-5">Pendiente de recepción por parte del cliente.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-footer">
+            <div>
+              <p class="footer-help-title">¿Tenés dudas sobre este paquete?</p>
+              <p class="footer-help-sub">Coordinamos directo desde la base de Friuli 1972.</p>
+            </div>
+
+            <a id="res-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-query">
+              <svg style="width: 1rem; height: 1rem; fill: currentColor;" viewBox="0 0 448 512" aria-hidden="true">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+              </svg>
+              <span>Consultar por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. PORTALS SECTION -->
+    <section id="portales" class="portals-section" aria-label="Portales dedicados de Logística DosRuedas">
+      <div class="container">
+        
+        <div class="section-header-center" style="align-items:flex-start; text-align:left;">
+          <span class="section-badge">Ecosistema Digital</span>
+          <h2 class="section-title-blue">Portales dedicados para cada integrante de la red</h2>
+          <p class="section-subtitle-gray">
+            Elegí la plataforma adecuada según tu rol en la operación logística de Mar del Plata.
+          </p>
+        </div>
+
+        <div class="portals-grid">
+          
+          <!-- Comercios -->
+          <article class="card-bezel-outer">
+            <div class="card-bezel-inner">
+              <div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <div class="card-icon-box" aria-hidden="true">
+                    <svg class="svg-icon" viewBox="0 0 24 24">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                  </div>
+                  <span class="portal-tag">Portal Web B2B</span>
+                </div>
+
+                <h3 class="portal-title">Panel para Comercios</h3>
+                <p class="portal-desc">
+                  Entorno exclusivo para locales comerciales y tiendas e-commerce. Generá etiquetas con código EDR, programá recolecciones en tu local y visualizá comprobantes de entrega.
+                </p>
+
+                <ul class="portal-features">
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Carga individual y masiva de remitos</span>
+                  </li>
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Seguimiento simultáneo de todos tus envíos</span>
+                  </li>
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Descarga de reportes para administración</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div style="padding-top:1.5rem;border-top:1px solid #E6EEFE;">
+                <a href="https://www.logisticadosruedas.com/" target="_blank" rel="noopener noreferrer" class="btn-portal-action">
+                  <span>Acceder al Panel Comercial</span>
+                  <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Repartidores -->
+          <article class="card-bezel-outer">
+            <div class="card-bezel-inner">
+              <div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <div class="card-icon-box" aria-hidden="true">
+                    <svg class="svg-icon" viewBox="0 0 24 24">
+                      <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                      <circle cx="18.5" cy="17.5" r="3.5"></circle>
+                      <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5L9 9l4.5-3 2 4.5h3.5"></path>
+                    </svg>
+                  </div>
+                  <span class="portal-tag">App de Reparto MDQ</span>
+                </div>
+
+                <h3 class="portal-title">Panel para Repartidores</h3>
+                <p class="portal-desc">
+                  Herramienta de campo para la flota de cadetes de Envíos DosRuedas. Ruteo inteligente por zonas, visualización de paradas y confirmación con firma digital y foto.
+                </p>
+
+                <ul class="portal-features">
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Hojas de ruta optimizadas por radio</span>
+                  </li>
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Notificación de estado en tiempo real</span>
+                  </li>
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Prueba de entrega con firma en pantalla</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div style="padding-top:1.5rem;border-top:1px solid #E6EEFE;">
+                <a href="https://www.logisticadosruedas.com/" target="_blank" rel="noopener noreferrer" class="btn-portal-action">
+                  <span>Ingreso Cadetería</span>
+                  <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Shop DosRuedas (Dark) -->
+          <article class="card-bezel-outer dark-variant">
+            <div class="card-bezel-inner">
+              <div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <div class="card-icon-box" aria-hidden="true">
+                    <svg class="svg-icon" viewBox="0 0 24 24">
+                      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                  </div>
+                  <span class="portal-tag">Ecosistema E-commerce</span>
+                </div>
+
+                <h3 class="portal-title">Shop DosRuedas</h3>
+                <p class="portal-desc">
+                  Creá tu tienda online con catálogo autogestionable y logística de última milla nativa integrada en Mar del Plata. Vendé online y despachá en un solo clic.
+                </p>
+
+                <ul class="portal-features">
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Catálogo online con carrito y WhatsApp</span>
+                  </li>
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Envíos DosRuedas integrados automáticamente</span>
+                  </li>
+                  <li class="portal-feature-item">
+                    <span class="feature-dot" aria-hidden="true"></span>
+                    <span>Tarifas unificadas sin intermediarios</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.15);">
+                <a href="https://shopdosruedas.com" target="_blank" rel="noopener noreferrer" class="btn-portal-action">
+                  <span>Conocer Shop DosRuedas</span>
+                  <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Banner -->
+        <div class="platform-banner">
+          <div class="banner-left">
+            <div class="banner-icon" aria-hidden="true">
+              <svg class="svg-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="banner-title">Plataforma oficial: logisticadosruedas.com</h4>
+              <p class="banner-desc">Centralizá tus despachos y sincronizá con tu base en Mar del Plata.</p>
+            </div>
+          </div>
+
+          <a href="https://www.logisticadosruedas.com/" target="_blank" rel="noopener noreferrer" class="banner-link">
+            <span>Visitar www.logisticadosruedas.com</span>
+            <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const inputEl = document.getElementById('tracking-input');
+    const errorEl = document.getElementById('tracking-error');
+    const resultEl = document.getElementById('tracking-result');
+    const resCode = document.getElementById('res-code');
+    const resType = document.getElementById('res-type');
+    const resStatus = document.getElementById('res-status');
+    const resWhatsapp = document.getElementById('res-whatsapp-link');
+
+    const node5 = document.getElementById('node-5');
+    const time5 = document.getElementById('time-5');
+    const desc5 = document.getElementById('desc-5');
+
+    function handleTrackingSearch() {
+      const code = inputEl.value.trim().toUpperCase();
+
+      if (!code) {
+        errorEl.style.display = 'flex';
+        resultEl.style.display = 'none';
+        return;
+      }
+
+      errorEl.style.display = 'none';
+      resultEl.style.display = 'block';
+
+      const isFlex = code.includes('FLEX') || code.includes('MELI');
+      const isDelivered = code.endsWith('OK') || code.includes('999');
+
+      const fullCode = code.startsWith('EDR') ? code : `EDR-${code}`;
+      resCode.textContent = fullCode;
+      resType.textContent = isFlex ? 'FLEX' : 'EDR';
+
+      if (isDelivered) {
+        resStatus.textContent = 'Entregado en destino';
+        node5.className = 'step-node completed';
+        node5.innerHTML = '<svg class="svg-icon" style="width:0.75rem;height:0.75rem;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        time5.textContent = '15:10 hs';
+        desc5.textContent = 'Entrega finalizada con firma y comprobante digital.';
+      } else {
+        resStatus.textContent = 'En camino con cadete asignado';
+        node5.className = 'step-node';
+        node5.innerHTML = '<span style="width: 6px; height: 6px; border-radius: 9999px; background-color: #94A3B8;"></span>';
+        time5.textContent = 'Pendiente';
+        desc5.textContent = 'Pendiente de recepción por parte del cliente.';
+      }
+
+      resWhatsapp.href = `https://api.whatsapp.com/send/?phone=542236602699&text=Hola%20Envíos%20DosRuedas!%20Quiero%20consultar%20por%20el%20paquete%20código%20${encodeURIComponent(fullCode)}`;
+
+      resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    document.querySelectorAll('.sample-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        inputEl.value = btn.getAttribute('data-code');
+        handleTrackingSearch();
+      });
+    });
+  </script>
+
+</body>
+</html>

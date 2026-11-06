@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestro Equipo en Calle — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+
+      --color-white: #FFFFFF;
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      line-height: 1.5;
+      padding: 4rem 1rem;
+      min-height: 100vh;
+    }
+
+    .team-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      max-width: 750px;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      width: fit-content;
+      padding: 6px 16px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 9999px;
+      transform: rotate(-1deg);
+      box-shadow: 0 0 16px rgba(255, 236, 1, 0.3);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--color-white);
+    }
+
+    .section-desc {
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 60ch;
+    }
+
+    /* Grilla de 4 Tarjetas */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .bezel-outer-white {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 20px;
+      padding: 8px;
+      height: 100%;
+      box-shadow: 0 10px 30px rgba(9, 80, 246, 0.15);
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .bezel-outer-white:hover { transform: translateY(-3px); }
+
+    .bezel-inner-white {
+      background-color: var(--color-white);
+      border: 1px solid rgba(186, 206, 253, 0.5);
+      border-radius: 14px;
+      padding: 24px;
+      color: var(--color-brand-blue-500);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      gap: 20px;
+    }
+
+    .watermark-card-icon {
+      position: absolute;
+      right: -16px;
+      bottom: -16px;
+      width: 110px;
+      height: 110px;
+      color: rgba(9, 80, 246, 0.04);
+      pointer-events: none;
+    }
+
+    .card-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .card-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tag-badge {
+      font-family: var(--font-subheading);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 2px 8px;
+      border-radius: 9999px;
+      transform: rotate(-1deg);
+    }
+
+    .stat-number {
+      font-family: var(--font-mono);
+      font-size: clamp(2.75rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+      display: block;
+    }
+
+    .stat-role {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 8px;
+    }
+
+    .stat-desc {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--color-brand-blue-500);
+    }
+
+    .card-footer {
+      padding-top: 14px;
+      border-top: 1px solid var(--color-brand-blue-100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-brand-blue-500);
+    }
+  </style>
+</head>
+<body>
+
+  <section id="about-team" class="team-container" aria-labelledby="team-heading">
+    <!-- Header Block -->
+    <header class="section-header">
+      <span class="section-badge">FUERZA OPERATIVA & EXPERIENCIA</span>
+      <h2 id="team-heading" class="section-title">
+        NUESTRO EQUIPO EN CALLE
+      </h2>
+      <p class="section-desc">
+        Una estructura humana consolidada con base física en la ciudad, lista para responder al ritmo de tu negocio.
+      </p>
+    </header>
+
+    <div class="team-grid">
+
+      <!-- Stat 1: +20 Repartidores en Calle -->
+      <article>
+        <div class="bezel-outer-white">
+          <div class="bezel-inner-white">
+            <svg class="watermark-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+
+            <div>
+              <div class="card-top-row">
+                <div class="card-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <span class="tag-badge">Flota Propia</span>
+              </div>
+
+              <span class="stat-number">+20</span>
+              <h3 class="stat-role">Repartidores en Calle</h3>
+              <p class="stat-desc">
+                Cadetes capacitados y uniformados que conocen cada atajo y zona de Mar del Plata para entregas veloces y seguras.
+              </p>
+            </div>
+
+            <footer class="card-footer">
+              <span>Envíos DosRuedas</span>
+              <span style="font-weight: 700;">MDQ 2026</span>
+            </footer>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stat 2: 100% Base Operativa -->
+      <article>
+        <div class="bezel-outer-white">
+          <div class="bezel-inner-white">
+            <svg class="watermark-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+
+            <div>
+              <div class="card-top-row">
+                <div class="card-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <span class="tag-badge">Base Friuli 1972</span>
+              </div>
+
+              <span class="stat-number">100%</span>
+              <h3 class="stat-role">Base Operativa en MDQ</h3>
+              <p class="stat-desc">
+                Depósito central en Friuli 1972 para recepción, almacenamiento, consolidación de paquetes y despacho diario.
+              </p>
+            </div>
+
+            <footer class="card-footer">
+              <span>Envíos DosRuedas</span>
+              <span style="font-weight: 700;">MDQ 2026</span>
+            </footer>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stat 3: < 2h Tiempo Promedio -->
+      <article>
+        <div class="bezel-outer-white">
+          <div class="bezel-inner-white">
+            <svg class="watermark-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+
+            <div>
+              <div class="card-top-row">
+                <div class="card-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/>
+                  </svg>
+                </div>
+                <span class="tag-badge">Máxima Velocidad</span>
+              </div>
+
+              <span class="stat-number">&lt; 2h</span>
+              <h3 class="stat-role">Tiempo Promedio Express</h3>
+              <p class="stat-desc">
+                Servicio prioritario punto a punto dentro del ejido urbano con monitoreo continuo de ruta.
+              </p>
+            </div>
+
+            <footer class="card-footer">
+              <span>Envíos DosRuedas</span>
+              <span style="font-weight: 700;">MDQ 2026</span>
+            </footer>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stat 4: +7 Años de Trayectoria -->
+      <article>
+        <div class="bezel-outer-white">
+          <div class="bezel-inner-white">
+            <svg class="watermark-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+
+            <div>
+              <div class="card-top-row">
+                <div class="card-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4l-2-2"/>
+                    <path d="m18 10 1-1a2 2 0 0 0 0-2.8l-2.2-2.2a2 2 0 0 0-2.8 0l-1 1"/>
+                    <path d="m2 18 3 3a1 1 0 0 0 1.4 0l6.6-6.6"/><path d="M8 8 3 3"/>
+                  </svg>
+                </div>
+                <span class="tag-badge">Confianza Local</span>
+              </div>
+
+              <span class="stat-number">+7</span>
+              <h3 class="stat-role">Años de Trayectoria</h3>
+              <p class="stat-desc">
+                Compromiso ininterrumpido con comerciantes, emprendedores y empresas marplatenses.
+              </p>
+            </div>
+
+            <footer class="card-footer">
+              <span>Envíos DosRuedas</span>
+              <span style="font-weight: 700;">MDQ 2026</span>
+            </footer>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+</html>

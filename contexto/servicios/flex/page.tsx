@@ -1,0 +1,160 @@
+import React from 'react';
+import { Metadata } from 'next';
+import FlexHero from '@/components/servicios/flex/FlexHero';
+import FlexFeatures from '@/components/servicios/flex/FlexFeatures';
+import FlexBenefits from '@/components/servicios/flex/FlexBenefits';
+import FlexPricing from '@/components/servicios/flex/FlexPricing';
+import FlexHowItWorks from '@/components/servicios/flex/FlexHowItWorks';
+import FlexRequirements from '@/components/servicios/flex/FlexRequirements';
+import FlexFAQ from '@/components/servicios/flex/FlexFAQ';
+import { FLEX_FAQS } from '@/components/servicios/flex/flexFaqData';
+
+const baseUrl = 'https://www.enviosdosruedas.com';
+
+export const metadata: Metadata = {
+  title: 'Mercado Envíos Flex en Mar del Plata | Envíos DosRuedas',
+  description:
+    'Servicio logístico para Mercado Envíos Flex en Mar del Plata. Entregas en el día para proteger tu reputación. Corte 15:00 hs (sábados 12:00 hs), distribución antes de las 20:00 hs y retiros sin mínimo.',
+  alternates: {
+    canonical: `${baseUrl}/servicios/enviosflex`,
+  },
+  openGraph: {
+    title: 'Mercado Envíos Flex en Mar del Plata | Envíos DosRuedas',
+    description:
+      'Logística Same-Day para Mercado Envíos Flex en Mar del Plata. Corte 15:00 hs (sábados 12:00 hs), entregas antes de las 20:00 hs y retiros bonificados desde 1 paquete.',
+    url: `${baseUrl}/servicios/enviosflex`,
+    type: 'website',
+    locale: 'es_AR',
+    images: [`${baseUrl}/og-image.jpg`],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mercado Envíos Flex en Mar del Plata | Envíos DosRuedas',
+    description:
+      'Logística Same-Day para Mercado Envíos Flex en Mar del Plata. Corte 15:00 hs (sábados 12:00 hs), entregas antes de las 20:00 hs y retiros bonificados desde 1 paquete.',
+    images: [`${baseUrl}/og-image.jpg`],
+    creator: '@enviosdosruedas',
+  },
+};
+
+const jsonLdSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Mercado Envíos Flex Same-Day en Mar del Plata',
+  description:
+    'Servicio logístico adaptado a Mercado Envíos Flex en Mar del Plata. Entregas en el día para cuidar la reputación de tu cuenta. Corte 15:00 hs (sábados 12:00 hs) y entregas antes de las 20:00 hs.',
+  url: `${baseUrl}/servicios/enviosflex`,
+  provider: {
+    '@type': 'LocalBusiness',
+    '@id': `${baseUrl}#localbusiness`,
+    name: 'Envíos DosRuedas',
+    telephone: '+54-223-660-2699',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Friuli 1972',
+      addressLocality: 'Mar del Plata',
+      addressRegion: 'Buenos Aires',
+      postalCode: '7600',
+      addressCountry: 'AR',
+    },
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Mar del Plata',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicios Flex para Vendedores ML',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Logística Flex Emprendedor',
+        description: 'Retiros diarios sin mínimos y 100% de entregas Same-Day antes de las 20:00 hs',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Reparto MercadoLibre Alto Volumen',
+        description: 'Múltiples retiros diarios y soporte dedicado vía WhatsApp para MercadoLíderes',
+        priceCurrency: 'ARS',
+        availability: 'https://schema.org/InStock',
+      },
+    ],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+    { '@type': 'ListItem', position: 2, name: 'Servicios', item: `${baseUrl}/#servicios` },
+    { '@type': 'ListItem', position: 3, name: 'Mercado Envíos Flex', item: `${baseUrl}/servicios/enviosflex` },
+  ],
+};
+
+const faqJsonLdSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FLEX_FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+
+export default function EnviosFlexPage() {
+  return (
+    <main className="min-h-dvh bg-white text-brand-blue-500 relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLdSchema) }}
+      />
+
+      {/* Hero — el propio FlexHero pinta su fondo azul de marca */}
+      <FlexHero />
+
+      {/* MercadoLibre expert key features — White Canvas */}
+      <section className="relative z-10 bg-white font-sans">
+        <FlexFeatures />
+      </section>
+
+      {/* Seller value-added benefits grid — Deep Midnight Navy (brand-blue-500) */}
+      <section className="relative z-10 bg-brand-blue-500 font-sans">
+        <FlexBenefits />
+      </section>
+
+      {/* Pricing levels and weather discounts — Electric Speed Blue (brand-blue-500) */}
+      <section className="relative z-10 bg-brand-blue-500">
+        <FlexPricing />
+      </section>
+
+      {/* Step by step streamlined workflow — White Canvas */}
+      <section className="relative z-10 bg-white font-sans">
+        <FlexHowItWorks />
+      </section>
+
+      {/* Active prerequisites for starting — White Canvas */}
+      <section className="relative z-10 bg-white font-sans">
+        <FlexRequirements />
+      </section>
+
+      {/* Frequently Asked Questions and WhatsApp CTA */}
+      <section className="relative z-10 bg-white font-sans">
+        <FlexFAQ />
+      </section>
+    </main>
+  );
+}

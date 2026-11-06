@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canales Oficiales — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+
+      --color-white: #FFFFFF;
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+      padding: 4rem 1rem;
+      min-height: 100vh;
+    }
+
+    .channels-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 9999px;
+      transform: rotate(-1deg);
+      box-shadow: 0 0 16px rgba(255, 236, 1, 0.3);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--color-brand-blue-500);
+    }
+
+    .section-desc {
+      font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+      line-height: 1.6;
+      color: var(--color-brand-blue-500);
+      max-width: 55ch;
+    }
+
+    .header-bar {
+      width: 64px;
+      height: 4px;
+      background-color: var(--color-brand-blue-500);
+      border-radius: 9999px;
+      margin-top: 4px;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .bento-grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+      }
+      .col-12 { grid-column: span 12; }
+      .col-6 { grid-column: span 6; }
+    }
+
+    /* Double Bezel */
+    .bezel-outer {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 24px;
+      padding: 8px;
+      height: 100%;
+      box-shadow: 0 4px 20px rgba(9, 80, 246, 0.05);
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .bezel-outer:hover { transform: translateY(-3px); }
+
+    .bezel-inner {
+      background-color: var(--color-white);
+      border: 1px solid rgba(186, 206, 253, 0.5);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) { .bezel-inner { padding: 32px; } }
+
+    /* Card WhatsApp Full Width */
+    .wa-card-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .wa-card-flex {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .icon-well {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-title-lg {
+      font-family: var(--font-subheading);
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+
+    .sub-phone {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      margin-top: 4px;
+      color: var(--color-brand-blue-500);
+      font-variant-numeric: tabular-nums;
+      display: block;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--color-brand-blue-500);
+    }
+
+    .followers-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-variant-numeric: tabular-nums;
+      transform: rotate(-1deg);
+      display: inline-block;
+    }
+
+    .badge-yellow {
+      background-color: rgba(255, 236, 1, 0.25);
+      border: 1px solid rgba(255, 236, 1, 0.5);
+      color: var(--color-brand-blue-500);
+    }
+
+    .badge-blue {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+    }
+
+    .cta-nested-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      padding: 0 10px 0 24px;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .pill-primary {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border: 1px solid var(--color-brand-yellow-500);
+      box-shadow: var(--shadow-accent-sm);
+    }
+
+    .pill-primary:hover {
+      background-color: var(--color-brand-yellow-400);
+      box-shadow: var(--shadow-cta-glow);
+      transform: translateY(-2px);
+    }
+
+    .pill-outline-blue {
+      width: 100%;
+      justify-content: center;
+      background-color: transparent;
+      color: var(--color-brand-blue-500);
+      border: 1.5px solid var(--color-brand-blue-100);
+    }
+
+    .pill-outline-blue:hover {
+      background-color: var(--color-brand-blue-50);
+      border-color: var(--color-brand-blue-300);
+      transform: translateY(-2px);
+    }
+
+    .pill-arrow-disc {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 12px;
+      transition: transform var(--duration-feedback) var(--ease-out);
+    }
+
+    .pill-primary:hover .pill-arrow-disc { transform: translateX(3px); }
+  </style>
+</head>
+<body>
+
+  <section id="redes-oficiales" class="channels-container" aria-labelledby="channels-heading">
+    <!-- Header Section -->
+    <header class="section-header">
+      <span class="section-badge">COMUNIDAD EN REDES</span>
+      <h2 id="channels-heading" class="section-title">
+        CANALES OFICIALES
+      </h2>
+      <p class="section-desc">
+        Conectate al instante con nuestras plataformas oficiales y formá parte de la mayor comunidad logística de Mar del Plata.
+      </p>
+      <div class="header-bar" aria-hidden="true"></div>
+    </header>
+
+    <div class="bento-grid">
+
+      <!-- 1. WHATSAPP DIRECTO (12 cols) -->
+      <article class="col-12">
+        <div class="bezel-outer">
+          <div class="bezel-inner">
+            <div class="wa-card-flex">
+              <div style="max-width: 800px;">
+                <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 12px;">
+                  <div class="icon-well" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366">
+                      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="card-title-lg">WHATSAPP DIRECTO</h3>
+                    <span class="sub-phone">+54 223 660-2699 | ATENCIÓN INMEDIATA</span>
+                  </div>
+                </div>
+                <p class="card-desc">
+                  Atención personalizada y sin demoras por WhatsApp. El canal más ágil para coordinar cotizaciones, retiros inmediatos, envíos FLEX y resolver dudas sobre nuestra operativa diaria.
+                </p>
+              </div>
+
+              <div style="flex-shrink: 0; width: 100%;" class="w-md-auto">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola%20Envios%20DosRuedas,%20vengo%20desde%20la%20web."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-nested-pill pill-primary"
+                >
+                  <span>CHATEÁ AHORA</span>
+                  <span class="pill-arrow-disc" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. INSTAGRAM (6 cols) -->
+      <article class="col-6">
+        <div class="bezel-outer">
+          <div class="bezel-inner">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <div class="icon-well" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  </svg>
+                </div>
+                <span class="followers-badge badge-yellow">+3.000 SEGUIDORES</span>
+              </div>
+
+              <div style="margin-bottom: 10px;">
+                <h3 class="card-title-lg">INSTAGRAM</h3>
+                <span style="font-size: 0.8125rem; color: var(--color-brand-blue-500); font-family: var(--font-sans);">@enviosdosruedas</span>
+              </div>
+
+              <p class="card-desc">
+                Mirá nuestro día a día, fotos reales de las entregas diarias de la flota y promociones especiales diseñadas para tu e-commerce.
+              </p>
+            </div>
+
+            <div style="padding-top: 16px; border-top: 1px solid var(--color-brand-blue-100);">
+              <a
+                href="https://www.instagram.com/enviosdosruedas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-nested-pill pill-outline-blue"
+              >
+                <span>SEGUINOS EN INSTAGRAM</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. FACEBOOK (6 cols) -->
+      <article class="col-6">
+        <div class="bezel-outer">
+          <div class="bezel-inner">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <div class="icon-well" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </div>
+                <span class="followers-badge badge-blue">+2.000 SEGUIDORES</span>
+              </div>
+
+              <div style="margin-bottom: 10px;">
+                <h3 class="card-title-lg">FACEBOOK</h3>
+                <span style="font-size: 0.8125rem; color: var(--color-brand-blue-500); font-family: var(--font-sans);">@enviosdosruedas</span>
+              </div>
+
+              <p class="card-desc">
+                Seguinos para enterarte de ofertas exclusivas y novedades logísticas sobre el tránsito y cadetería comercial local.
+              </p>
+            </div>
+
+            <div style="padding-top: 16px; border-top: 1px solid var(--color-brand-blue-100);">
+              <a
+                href="https://www.facebook.com/enviosdosruedas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-nested-pill pill-outline-blue"
+              >
+                <span>SEGUINOS EN FACEBOOK</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+</html>

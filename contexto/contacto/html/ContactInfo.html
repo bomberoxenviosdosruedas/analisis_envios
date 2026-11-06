@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canales de Contacto y Base Central — Envíos DosRuedas</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-200: #8EAFFB;
+      --color-brand-blue-300: #628FF9;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-500: #0950F6;
+
+      --color-brand-yellow-50: #FFFDE6;
+      --color-brand-yellow-100: #FFFAB8;
+      --color-brand-yellow-200: #FFF78A;
+      --color-brand-yellow-300: #FFF45C;
+      --color-brand-yellow-400: #FFF12E;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-600: #E6D400;
+
+      --color-white: #FFFFFF;
+
+      --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Anton SC", "Anton", Impact, sans-serif;
+      --font-subheading: "Bebas Neue", sans-serif;
+      --font-mono: "Geist Mono", monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+      --shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.25);
+      --shadow-cta-glow: 0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #F8FAFC;
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .contact-info-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* ========================================================================
+     * SECCIÓN 1: CANALES DIRECTOS (3 CARDS)
+     * ======================================================================== */
+    .section-header {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .section-header {
+        text-align: left;
+      }
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+      transform: rotate(-1deg);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--color-brand-blue-500);
+      margin-top: 0.5rem;
+    }
+
+    .channels-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .channels-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Double Bezel Card Light */
+    .bezel-outer-light {
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 20px;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 4px 16px rgba(9, 80, 246, 0.06);
+      transition: transform var(--duration-feedback) var(--ease-out), box-shadow var(--duration-feedback) var(--ease-out);
+    }
+
+    .bezel-outer-light:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(9, 80, 246, 0.12);
+    }
+
+    .bezel-inner-light {
+      background-color: var(--color-white);
+      border: 1px solid rgba(186, 206, 253, 0.5);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .card-top-tags {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag-pill {
+      font-family: var(--font-subheading);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+    }
+
+    .subtag-mono {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .card-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--color-brand-blue-500);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-description {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-cta-btn {
+      width: 100%;
+      min-height: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .btn-pill-primary {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border: 1px solid var(--color-brand-yellow-500);
+      box-shadow: var(--shadow-accent-sm);
+    }
+
+    .btn-pill-primary:hover {
+      background-color: var(--color-brand-yellow-400);
+      box-shadow: var(--shadow-cta-glow);
+      transform: translateY(-1px);
+    }
+
+    .btn-pill-elevated {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      border: 1.5px solid var(--color-brand-blue-100);
+      box-shadow: 0 2px 6px rgba(9, 80, 246, 0.06);
+    }
+
+    .btn-pill-elevated:hover {
+      background-color: var(--color-brand-blue-50);
+      border-color: var(--color-brand-blue-300);
+      transform: translateY(-1px);
+    }
+
+    /* ========================================================================
+     * SECCIÓN 2: BASE DE OPERACIONES MDQ (DOUBLE BEZEL DARK)
+     * ======================================================================== */
+    .bezel-outer-dark {
+      background-color: rgba(9, 80, 246, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 8px;
+      box-shadow: 0 16px 40px rgba(9, 80, 246, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bezel-inner-dark {
+      background-color: var(--color-brand-blue-500);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      padding: 24px;
+      color: var(--color-white);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 640px) {
+      .bezel-inner-dark {
+        padding: 32px;
+      }
+    }
+
+    /* Marca de agua SVG fondo */
+    .watermark-map-pin {
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 260px;
+      height: 260px;
+      color: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .base-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    @media (min-width: 768px) {
+      .base-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .base-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .pulse-dot-yellow {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-brand-yellow-500);
+      box-shadow: 0 0 8px #FFEC01;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .base-eyebrow-text {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-brand-yellow-500);
+    }
+
+    .base-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--color-white);
+    }
+
+    .city-chip {
+      display: inline-block;
+      width: fit-content;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-white);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Grilla de Datos y Horarios */
+    .base-content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    @media (min-width: 1024px) {
+      .base-content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* Lista de Datos */
+    .contact-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .detail-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .detail-icon-well {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .detail-label {
+      display: block;
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-white);
+    }
+
+    .detail-value {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-top: 2px;
+      font-variant-numeric: tabular-nums;
+      text-decoration: none;
+    }
+
+    a.detail-value:hover {
+      color: var(--color-brand-yellow-500);
+    }
+
+    /* Tarjeta de Horarios */
+    .schedule-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .schedule-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      margin-bottom: 16px;
+    }
+
+    .schedule-card-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--color-white);
+    }
+
+    .schedule-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .schedule-active-tag {
+      padding: 2px 10px;
+      font-size: 0.6875rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+    }
+
+    .schedule-footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Sección Mapa */
+    .map-section {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .map-header-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: 640px) {
+      .map-header-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .map-eyebrow {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-brand-yellow-500);
+      display: block;
+    }
+
+    .map-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--color-white);
+      margin-top: 2px;
+    }
+
+    .btn-maps-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background-color: rgba(255, 236, 1, 0.12);
+      border: 1px solid rgba(255, 236, 1, 0.4);
+      color: var(--color-brand-yellow-500);
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: background-color var(--duration-feedback) var(--ease-out);
+    }
+
+    .btn-maps-link:hover {
+      background-color: rgba(255, 236, 1, 0.22);
+    }
+
+    .map-frame-box {
+      width: 100%;
+      height: 280px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: var(--color-brand-blue-500);
+      position: relative;
+    }
+
+    @media (min-width: 640px) {
+      .map-frame-box {
+        height: 320px;
+      }
+    }
+
+    .map-frame-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-info-wrapper" id="contact-info">
+
+    <!-- ======================================================================
+     * 1. CANALES DE ATENCIÓN DIRECTA
+     * ====================================================================== -->
+    <section aria-labelledby="canales-atencion-heading">
+      <header class="section-header">
+        <span class="header-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+          Canales de Atención Directa
+        </span>
+        <h2 id="canales-atencion-heading" class="section-title">
+          Elegí cómo comunicarte
+        </h2>
+      </header>
+
+      <div class="channels-grid">
+
+        <!-- Card 1: WhatsApp Comercial -->
+        <article class="bezel-outer-light">
+          <div class="bezel-inner-light">
+            <div>
+              <div class="card-top-tags">
+                <span class="tag-pill">RESPUESTA &lt; 2 MIN</span>
+                <span class="subtag-mono">MAR DEL PLATA 2026</span>
+              </div>
+
+              <div class="card-title-row">
+                <div class="card-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                  </svg>
+                </div>
+                <h3 class="card-title">WhatsApp Comercial</h3>
+              </div>
+
+              <p class="card-description">
+                Cotizaciones instantáneas, consultas operativas y seguimiento en vivo por WhatsApp.
+              </p>
+            </div>
+
+            <a
+              href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Vengo%20desde%20la%20p%C3%A1gina%20de%20Contacto."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card-cta-btn btn-pill-primary"
+            >
+              <span>Chatear por WhatsApp</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: Instagram Oficial -->
+        <article class="bezel-outer-light">
+          <div class="bezel-inner-light">
+            <div>
+              <div class="card-top-tags">
+                <span class="tag-pill">@ENVIOSDOSRUEDAS</span>
+                <span class="subtag-mono">COMUNIDAD E-COMMERCE</span>
+              </div>
+
+              <div class="card-title-row">
+                <div class="card-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  </svg>
+                </div>
+                <h3 class="card-title">Instagram Oficial</h3>
+              </div>
+
+              <p class="card-description">
+                Novedades de la flota, consejos para tiendas online y fotos reales de nuestro día a día.
+              </p>
+            </div>
+
+            <a
+              href="https://instagram.com/enviosdosruedas"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card-cta-btn btn-pill-elevated"
+            >
+              <span>Seguir en Instagram</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3: Facebook Oficial -->
+        <article class="bezel-outer-light">
+          <div class="bezel-inner-light">
+            <div>
+              <div class="card-top-tags">
+                <span class="tag-pill">PÁGINA OFICIAL</span>
+                <span class="subtag-mono">MAR DEL PLATA</span>
+              </div>
+
+              <div class="card-title-row">
+                <div class="card-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </div>
+                <h3 class="card-title">Facebook Oficial</h3>
+              </div>
+
+              <p class="card-description">
+                Avisos de servicios, información de tránsito urbano y contacto para empresas.
+              </p>
+            </div>
+
+            <a
+              href="https://facebook.com/enviosdosruedas"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card-cta-btn btn-pill-elevated"
+            >
+              <span>Visitar Facebook</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+     * 2. BASE DE OPERACIONES MDQ (DOUBLE BEZEL CARD DARK)
+     * ====================================================================== -->
+    <section aria-labelledby="base-operaciones-heading">
+      <div class="bezel-outer-dark">
+        <!-- Marca de agua decorativa -->
+        <svg class="watermark-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+
+        <div class="bezel-inner-dark">
+          <!-- Cabecera de la Base -->
+          <header class="base-header">
+            <div>
+              <div class="base-eyebrow">
+                <span class="pulse-dot-yellow" aria-hidden="true"></span>
+                <span class="base-eyebrow-text">CENTRO DE DISTRIBUCIÓN Y BASE CENTRAL</span>
+              </div>
+              <h3 id="base-operaciones-heading" class="base-title">
+                BASE DE OPERACIONES MDQ
+              </h3>
+            </div>
+            <span class="city-chip">Mar del Plata</span>
+          </header>
+
+          <!-- Datos de Contacto y Horarios -->
+          <div class="base-content-grid">
+
+            <!-- Columna Izquierda: Datos Directos -->
+            <div class="contact-details-list">
+              <!-- Dirección -->
+              <div class="detail-card">
+                <div class="detail-icon-well" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="detail-label">Centro de Distribución</span>
+                  <span class="detail-value">Friuli 1972, Mar del Plata</span>
+                </div>
+              </div>
+
+              <!-- Teléfono Directo -->
+              <div class="detail-card">
+                <div class="detail-icon-well" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="detail-label">Línea Directa y WhatsApp</span>
+                  <a href="tel:+542236602699" class="detail-value">+54 223 660-2699</a>
+                </div>
+              </div>
+
+              <!-- Email Comercial -->
+              <div class="detail-card">
+                <div class="detail-icon-well" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="detail-label">Atención Comercial</span>
+                  <a href="mailto:matiascejas@enviosdosruedas.com" class="detail-value">matiascejas@enviosdosruedas.com</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Horarios de Despacho -->
+            <div class="schedule-card">
+              <div>
+                <div class="schedule-card-header">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--color-brand-yellow-500)">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  <h4 class="schedule-card-title">Horarios de Despacho (Base Central)</h4>
+                </div>
+
+                <div class="schedule-row">
+                  <span>Lunes a Viernes: 09:00 - 18:00 hs</span>
+                  <span class="schedule-active-tag">Activo</span>
+                </div>
+
+                <div class="schedule-row">
+                  <span>Sábados: 10:00 - 15:00 hs</span>
+                  <span class="schedule-active-tag">Activo</span>
+                </div>
+              </div>
+
+              <div class="schedule-footer">
+                <span>Atención presencial y retiro de cargas</span>
+                <span style="font-weight: 700;">Friuli 1972</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Mapa Embebido de Google Maps -->
+          <div class="map-section">
+            <div class="map-header-row">
+              <div>
+                <span class="map-eyebrow">UBICACIÓN EXACTA · GOOGLE MAPS</span>
+                <h4 class="map-title">BASE OPERATIVA EN MAR DEL PLATA</h4>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Friuli+1972,+Mar+del+Plata,+Buenos+Aires"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-maps-link"
+              >
+                <span>Abrir en Google Maps</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <div class="map-frame-box">
+              <iframe
+                title="Mapa interactivo con la ubicación de la base en Friuli 1972, Mar del Plata"
+                src="https://maps.google.com/maps?q=Friuli+1972,+Mar+del+Plata,+Buenos+Aires&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
