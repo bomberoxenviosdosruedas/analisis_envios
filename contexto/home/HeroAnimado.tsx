@@ -4,10 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'motion/react';
 import { ArrowRight, MapPin, Zap } from 'lucide-react';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
-import { Knockout } from '@/components/ui/Knockout';
-import Badge from '@/components/ui/Badge';
-import HeroProceduralBackground from '@/components/ui/HeroProceduralBackground';
+import { CTANestedPill } from '../components/ui/CTANestedPill';
+import { Knockout } from '../components/ui/Knockout';
+import Badge from '../components/ui/Badge';
+import HeroProceduralBackground from '../components/ui/HeroProceduralBackground';
 
 /** Diferenciales del ticker. La lista se repite dos veces para que el bucle no se vea. */
 const diferenciales = [

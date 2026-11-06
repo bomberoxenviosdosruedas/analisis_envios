@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import HeroAnimado from '@/components/home/HeroAnimado';
-import SegmentosHome from '@/components/home/SegmentosHome';
-import ServicesOverview from '@/components/home/ServicesOverview';
-import LogisticaHomeSection from '@/components/home/LogisticaHomeSection';
-import EmprendedoresHome from '@/components/home/EmprendedoresHome';
-import MarDeliveryHomeSection from '@/components/home/MarDeliveryHomeSection';
-import CtaSection from '@/components/home/CtaSection';
-import SocialProofSection from '@/components/home/SocialProofSection';
+import HeroAnimado from './HeroAnimado';
+import SegmentosHome from './SegmentosHome';
+import ServicesOverview from './ServicesOverview';
+import LogisticaHomeSection from './LogisticaHomeSection';
+import EmprendedoresHome from './EmprendedoresHome';
+import MarDeliveryHomeSection from './MarDeliveryHomeSection';
+import CtaSection from './CtaSection';
+import SocialProofSection from './SocialProofSection';
 
 const baseUrl = 'https://www.enviosdosruedas.com';
 

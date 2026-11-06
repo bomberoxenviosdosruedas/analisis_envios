@@ -1,13 +1,13 @@
 import React from 'react';
 import { Metadata } from 'next';
-import FlexHero from '@/components/servicios/flex/FlexHero';
-import FlexFeatures from '@/components/servicios/flex/FlexFeatures';
-import FlexBenefits from '@/components/servicios/flex/FlexBenefits';
-import FlexPricing from '@/components/servicios/flex/FlexPricing';
-import FlexHowItWorks from '@/components/servicios/flex/FlexHowItWorks';
-import FlexRequirements from '@/components/servicios/flex/FlexRequirements';
-import FlexFAQ from '@/components/servicios/flex/FlexFAQ';
-import { FLEX_FAQS } from '@/components/servicios/flex/flexFaqData';
+import FlexHero from './FlexHero';
+import FlexFeatures from './FlexFeatures';
+import FlexBenefits from './FlexBenefits';
+import FlexPricing from './FlexPricing';
+import FlexHowItWorks from './FlexHowItWorks';
+import FlexRequirements from './FlexRequirements';
+import FlexFAQ from './FlexFAQ';
+import { FLEX_FAQS } from './flexFaqData';
 
 const baseUrl = 'https://www.enviosdosruedas.com';
 

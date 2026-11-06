@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
+import { CTANestedPill } from '../../components/ui/CTANestedPill';
 import { FLEX_FAQS } from './flexFaqData';
 
 export default function FlexFAQ() {

@@ -3,9 +3,9 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { GitCompareArrows, MapPin, MessageCircle } from 'lucide-react';
-import HeroProceduralBackground from '@/components/ui/HeroProceduralBackground';
-import CTANestedPill from '@/components/ui/CTANestedPill';
-import Badge from '@/components/ui/Badge';
+import HeroProceduralBackground from '../components/ui/HeroProceduralBackground';
+import CTANestedPill from '../components/ui/CTANestedPill';
+import Badge from '../components/ui/Badge';
 
 /**
  * Hero de la guía, no de un servicio. No vende Express ni LowCost: explica que

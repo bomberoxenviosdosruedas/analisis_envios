@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Calculator, Clock, ShieldCheck, Truck, ScanBarcode, RotateCcw, MessageCircle } from 'lucide-react';
 import { calculateLowCostPrice, LOW_COST_TIERS, LOW_COST_PRICE_PER_KM } from '@/lib/pricing';
 import { FLEX_DELIVERY_DEADLINE, FLEX_CUTOFF_TIME } from '@/lib/promises';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
+import { CTANestedPill } from '../../components/ui/CTANestedPill';
 
 const formatArs = (val: number) => `$${val.toLocaleString('es-AR')}`;
 

@@ -1,6 +1,6 @@
 import { Tag, Clock, Receipt, MapPin } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { CTANestedPill } from '@/components/ui';
+import { CTANestedPill } from '../../components/ui';
 import DropoffCalculator from './DropoffCalculator';
 import { DROPOFF_DISCOUNT_PERCENT, OPERATING_HOURS } from '@/lib/promises';
 

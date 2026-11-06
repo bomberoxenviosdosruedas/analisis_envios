@@ -3,8 +3,8 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { User, Store, Briefcase, ShieldCheck, Zap } from 'lucide-react';
-import DoubleBezelCard from '@/components/ui/DoubleBezelCard';
-import CTANestedPill from '@/components/ui/CTANestedPill';
+import DoubleBezelCard from '../components/ui/DoubleBezelCard';
+import CTANestedPill from '../components/ui/CTANestedPill';
 
 const SEGMENTS = [
   {

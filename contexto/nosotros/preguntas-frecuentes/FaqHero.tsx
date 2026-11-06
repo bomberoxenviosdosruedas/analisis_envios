@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
-import { Knockout } from '@/components/ui/Knockout';
-import Badge from '@/components/ui/Badge';
-import HeroProceduralBackground from '@/components/ui/HeroProceduralBackground';
+import { CTANestedPill } from '../../components/ui/CTANestedPill';
+import { Knockout } from '../../components/ui/Knockout';
+import Badge from '../../components/ui/Badge';
+import HeroProceduralBackground from '../../components/ui/HeroProceduralBackground';
 import { SUPPORT_PHONE } from '@/lib/promises';
 import { FAQ_DATA } from './faqData';
 

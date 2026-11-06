@@ -9,11 +9,11 @@ import {
   CheckCircle2,
   AlertCircle,
 } from 'lucide-react';
-import DoubleBezelCard from '@/components/ui/DoubleBezelCard';
-import CTANestedPill from '@/components/ui/CTANestedPill';
+import DoubleBezelCard from '../components/ui/DoubleBezelCard';
+import CTANestedPill from '../components/ui/CTANestedPill';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import { trackAnalytics } from '@/lib/analytics';
-import InputField from '@/components/ui/InputField';
+import InputField from '../components/ui/InputField';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

@@ -11,7 +11,7 @@ import {
   Home, Zap, TrendingDown, Clock, Info, HelpCircle, Share2, Mail,
   LayoutGrid, Building2, Package, Store, Search, UtensilsCrossed
 } from 'lucide-react';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
+import { CTANestedPill } from '../components/ui/CTANestedPill';
 import { SUPPORT_PHONE } from '@/lib/promises';
 import { trackAnalytics } from '@/lib/analytics';
 

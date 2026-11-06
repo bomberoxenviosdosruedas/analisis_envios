@@ -1,6 +1,6 @@
 'use client';
 
-import ServicePricing, { type PricingFact, type PriceTier } from '@/components/ui/ServicePricing';
+import ServicePricing, { type PricingFact, type PriceTier } from '../../components/ui/ServicePricing';
 import {
   CONTRAREEMBOLSO_COMMISSION_PERCENT,
   RETRY_RULES,

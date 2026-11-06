@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { ChevronDown, MapPin, MessageCircle } from 'lucide-react';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
-import { DoubleBezelCard } from '@/components/ui/DoubleBezelCard';
-import { Knockout } from '@/components/ui/Knockout';
-import Badge from '@/components/ui/Badge';
-import HeroProceduralBackground from '@/components/ui/HeroProceduralBackground';
-import CopyPhone from '@/components/contacto/CopyPhone';
+import { CTANestedPill } from '../components/ui/CTANestedPill';
+import { DoubleBezelCard } from '../components/ui/DoubleBezelCard';
+import { Knockout } from '../components/ui/Knockout';
+import Badge from '../components/ui/Badge';
+import HeroProceduralBackground from '../components/ui/HeroProceduralBackground';
+import CopyPhone from './CopyPhone';
 import { WHATSAPP_PHONE } from '@/lib/whatsapp';
 import { OPERATING_HOURS } from '@/lib/promises';
 

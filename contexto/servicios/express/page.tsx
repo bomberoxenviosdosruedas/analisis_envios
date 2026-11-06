@@ -1,9 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
-import ExpressHero from '@/components/servicios/express/ExpressHero';
-import ExpressFeatures from '@/components/servicios/express/ExpressFeatures';
-import ExpressPricing from '@/components/servicios/express/ExpressPricing';
-import ExpressUseCases from '@/components/servicios/express/ExpressUseCases';
+import ExpressHero from './ExpressHero';
+import ExpressFeatures from './ExpressFeatures';
+import ExpressPricing from './ExpressPricing';
+import ExpressUseCases from './ExpressUseCases';
 import { EXPRESS_PRICE_PER_KM, EXPRESS_TIERS } from '@/lib/pricing';
 import { CONSULT_THRESHOLD_KM, EXPRESS_LEAD_TIME, EXPRESS_WINDOW, STANDARD_WEIGHT_KG } from '@/lib/promises';
 

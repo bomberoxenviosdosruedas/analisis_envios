@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clock, MapPinned, Package, Users } from 'lucide-react';
-import { DoubleBezelCard } from '@/components/ui';
+import { DoubleBezelCard } from '../../components/ui';
 import {
   CONSULT_THRESHOLD_KM,
   EXPRESS_LEAD_TIME,

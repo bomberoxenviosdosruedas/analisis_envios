@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { MessageSquare, User, Store, PackageSearch } from 'lucide-react';
 import { SUPPORT_PHONE } from '@/lib/promises';
 import { trackAnalytics } from '@/lib/analytics';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
+import { CTANestedPill } from '../components/ui/CTANestedPill';
 
 const WHATSAPP_NUMBER = SUPPORT_PHONE.replace(/\D/g, '');
 

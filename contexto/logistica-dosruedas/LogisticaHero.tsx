@@ -12,7 +12,7 @@ import {
   ArrowDown,
   Layers,
 } from 'lucide-react';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
+import { CTANestedPill } from '../components/ui/CTANestedPill';
 import { trackAnalytics } from '@/lib/analytics';
 
 export function LogisticaHero() {

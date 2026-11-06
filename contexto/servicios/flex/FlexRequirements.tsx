@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Package, Bike, QrCode, Sparkles } from 'lucide-react';
-import DoubleBezelCard from '@/components/ui/DoubleBezelCard';
+import DoubleBezelCard from '../../components/ui/DoubleBezelCard';
 
 export default function FlexRequirements() {
   const requirements = [

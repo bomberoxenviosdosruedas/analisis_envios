@@ -6,7 +6,7 @@ import CotizadorForm from './CotizadorForm';
 import CotizadorComparativa from './CotizadorComparativa';
 import CotizadorMapa from './CotizadorMapa';
 import CotizadorGuia from './CotizadorGuia';
-import Badge from '@/components/ui/Badge';
+import Badge from '../components/ui/Badge';
 import { useCotizadorUnificado } from '@/hooks/cotizador/useCotizadorUnified';
 
 /**

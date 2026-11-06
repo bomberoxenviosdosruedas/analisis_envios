@@ -1,10 +1,10 @@
 import React from 'react';
 import { Clock, Tag, TrendingDown } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
-import { DoubleBezelCard } from '@/components/ui/DoubleBezelCard';
-import { Knockout } from '@/components/ui/Knockout';
-import HeroProceduralBackground from '@/components/ui/HeroProceduralBackground';
+import { CTANestedPill } from '../../components/ui/CTANestedPill';
+import { DoubleBezelCard } from '../../components/ui/DoubleBezelCard';
+import { Knockout } from '../../components/ui/Knockout';
+import HeroProceduralBackground from '../../components/ui/HeroProceduralBackground';
 import { EXPRESS_TIERS, LOW_COST_TIERS } from '@/lib/pricing';
 import { LOWCOST_CUTOFF_TIME, LOWCOST_DELIVERY_DEADLINE } from '@/lib/promises';
 

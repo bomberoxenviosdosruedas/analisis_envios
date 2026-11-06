@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { ChevronDown, ChevronRight, Phone, X } from 'lucide-react';
-import { CTANestedPill } from '@/components/ui';
+import { CTANestedPill } from '../components/ui';
 import { SUPPORT_PHONE } from '@/lib/promises';
 import { trackAnalytics } from '@/lib/analytics';
 

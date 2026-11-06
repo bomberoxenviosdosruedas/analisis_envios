@@ -1,6 +1,6 @@
 'use client';
 
-import ServicePricing, { type PricingFact, type PriceTier } from '@/components/ui/ServicePricing';
+import ServicePricing, { type PricingFact, type PriceTier } from '../components/ui/ServicePricing';
 import {
   DROPOFF_DISCOUNT_PERCENT,
   ECOMMERCE_24HS_FREE_PICKUP_THRESHOLD,

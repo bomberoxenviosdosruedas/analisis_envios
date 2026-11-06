@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Minus, Plus } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import NumberFlow from '@number-flow/react';
-import DoubleBezelCard from '@/components/ui/DoubleBezelCard';
-import CTANestedPill from '@/components/ui/CTANestedPill';
+import DoubleBezelCard from '../../components/ui/DoubleBezelCard';
+import CTANestedPill from '../../components/ui/CTANestedPill';
 import { DROPOFF_DISCOUNT_PERCENT, EMPRENDEDORES_PLANS } from '@/lib/promises';
 
 /**

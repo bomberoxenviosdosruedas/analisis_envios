@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { MarDeliveryHero } from '@/components/mardelivery/MarDeliveryHero';
-import { CartaDigitalFeatures } from '@/components/mardelivery/CartaDigitalFeatures';
-import { RepartidoresOptions } from '@/components/mardelivery/RepartidoresOptions';
+import { MarDeliveryHero } from './MarDeliveryHero';
+import { CartaDigitalFeatures } from './CartaDigitalFeatures';
+import { RepartidoresOptions } from './RepartidoresOptions';
 
 const baseUrl = 'https://www.enviosdosruedas.com';
 

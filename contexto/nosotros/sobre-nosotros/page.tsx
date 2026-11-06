@@ -1,11 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
-import AboutHero from '@/components/nosotros/sobre-nosotros/AboutHero';
-import AboutAdvantages from '@/components/nosotros/sobre-nosotros/AboutAdvantages';
-import AboutValues from '@/components/nosotros/sobre-nosotros/AboutValues';
-import AboutTimeline from '@/components/nosotros/sobre-nosotros/AboutTimeline';
-import AboutTeam from '@/components/nosotros/sobre-nosotros/AboutTeam';
-import AboutMissionVision from '@/components/nosotros/sobre-nosotros/AboutMissionVision';
+import AboutHero from './AboutHero';
+import AboutAdvantages from './AboutAdvantages';
+import AboutValues from './AboutValues';
+import AboutTimeline from './AboutTimeline';
+import AboutTeam from './AboutTeam';
+import AboutMissionVision from './AboutMissionVision';
 
 const baseUrl = 'https://www.enviosdosruedas.com';
 

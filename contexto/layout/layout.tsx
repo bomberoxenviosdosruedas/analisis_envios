@@ -3,7 +3,7 @@ import { Outfit, Anton, Bebas_Neue, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
 import { MotionConfig } from 'motion/react';
 import './globals.css';
-import ClientLayout from '@/components/ClientLayout';
+import ClientLayout from './ClientLayout';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { CONTACT_EMAIL, SUPPORT_PHONE } from '@/lib/promises';
 

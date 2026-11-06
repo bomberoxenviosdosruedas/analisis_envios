@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import CTANestedPill from '@/components/ui/CTANestedPill';
+import CTANestedPill from '../../components/ui/CTANestedPill';
 
 export default function ContrareembolsoCTA() {
   return (

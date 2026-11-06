@@ -7,8 +7,8 @@ import {
   Send,
   Sparkles,
 } from 'lucide-react';
-import CTANestedPill from '@/components/ui/CTANestedPill';
-import { InputField } from '@/components/ui/InputField';
+import CTANestedPill from '../../components/ui/CTANestedPill';
+import { InputField } from '../../components/ui/InputField';
 import { trackAnalytics } from '@/lib/analytics';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 

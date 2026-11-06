@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Clock, FileText, Package } from 'lucide-react';
-import { DoubleBezelCard } from '@/components/ui';
+import { DoubleBezelCard } from '../../components/ui';
 
 const cases = [
   {

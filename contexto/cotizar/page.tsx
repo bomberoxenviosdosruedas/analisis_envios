@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import CotizadorHero from '@/components/cotizar/unified/CotizadorHero';
-import CotizadorUnificado from '@/components/cotizar/unified/CotizadorUnificado';
-import CotizadorRecargos from '@/components/cotizar/unified/CotizadorRecargos';
+import CotizadorHero from './CotizadorHero';
+import CotizadorUnificado from './CotizadorUnificado';
+import CotizadorRecargos from './CotizadorRecargos';
 import {
   EXPRESS_PRICE_PER_KM,
   EXPRESS_TIERS,

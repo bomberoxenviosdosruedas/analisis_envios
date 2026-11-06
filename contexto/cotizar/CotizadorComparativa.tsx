@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { AlertTriangle, Zap, Package, ArrowRight, CloudRain } from 'lucide-react';
 import { trackAnalytics } from '@/lib/analytics';
-import DoubleBezelCard from '@/components/ui/DoubleBezelCard';
-import CTANestedPill from '@/components/ui/CTANestedPill';
-import RadioCardGroup from '@/components/ui/RadioCardGroup';
+import DoubleBezelCard from '../components/ui/DoubleBezelCard';
+import CTANestedPill from '../components/ui/CTANestedPill';
+import RadioCardGroup from '../components/ui/RadioCardGroup';
 import type { ServiceKey, UseCotizadorUnificadoReturn } from '@/hooks/cotizador/useCotizadorUnified';
 import {
   EXPRESS_CUTOFF_TIME,

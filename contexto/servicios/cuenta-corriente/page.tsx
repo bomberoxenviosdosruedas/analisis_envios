@@ -1,7 +1,7 @@
 import React from 'react';
-import CuentaCorrienteHero from '@/components/servicios/cuenta-corriente/CuentaCorrienteHero';
-import CuentaCorrienteBenefits from '@/components/servicios/cuenta-corriente/CuentaCorrienteBenefits';
-import CuentaCorrienteRubros from '@/components/servicios/cuenta-corriente/CuentaCorrienteRubros';
+import CuentaCorrienteHero from './CuentaCorrienteHero';
+import CuentaCorrienteBenefits from './CuentaCorrienteBenefits';
+import CuentaCorrienteRubros from './CuentaCorrienteRubros';
 
 const baseUrl = 'https://www.enviosdosruedas.com';
 

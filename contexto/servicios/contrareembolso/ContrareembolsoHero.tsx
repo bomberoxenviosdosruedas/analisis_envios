@@ -6,7 +6,7 @@ import {
   Sparkles,
   Wallet,
 } from 'lucide-react';
-import CTANestedPill from '@/components/ui/CTANestedPill';
+import CTANestedPill from '../../components/ui/CTANestedPill';
 
 export default function ContrareembolsoHero() {
   return (

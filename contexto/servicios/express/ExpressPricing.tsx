@@ -1,6 +1,6 @@
 'use client';
 
-import ServicePricing, { type PricingFact, type PriceTier } from '@/components/ui/ServicePricing';
+import ServicePricing, { type PricingFact, type PriceTier } from '../../components/ui/ServicePricing';
 import { calculateExpressPrice, EXPRESS_PRICE_PER_KM, EXPRESS_TIERS } from '@/lib/pricing';
 import {
   CONSULT_THRESHOLD_KM,

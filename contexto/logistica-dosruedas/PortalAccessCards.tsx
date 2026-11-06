@@ -14,8 +14,8 @@ import {
   Smartphone,
   Sparkles,
 } from 'lucide-react';
-import { DoubleBezelCard } from '@/components/ui/DoubleBezelCard';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
+import { DoubleBezelCard } from '../components/ui/DoubleBezelCard';
+import { CTANestedPill } from '../components/ui/CTANestedPill';
 import { trackAnalytics } from '@/lib/analytics';
 
 export function PortalAccessCards() {

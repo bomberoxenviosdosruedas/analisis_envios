@@ -14,7 +14,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import DoubleBezelCard from '@/components/ui/DoubleBezelCard';
+import DoubleBezelCard from '../../components/ui/DoubleBezelCard';
 import { FAQ_DATA, type FaqCategoryGroup, type FaqQuestion } from './faqData';
 
 export { FAQ_DATA };

@@ -17,7 +17,7 @@ import {
 } from '@/lib/promises';
 import { EXPRESS_TIERS, LOW_COST_TIERS } from '@/lib/pricing';
 import { trackAnalytics } from '@/lib/analytics';
-import NetworkCanvasWrapper from '@/components/home/NetworkCanvasWrapper';
+import NetworkCanvasWrapper from './NetworkCanvasWrapper';
 
 const formatArs = (value: number) => `$${value.toLocaleString('es-AR')}`;
 

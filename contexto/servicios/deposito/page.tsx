@@ -1,9 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
-import EmprendedoresHero from '@/components/servicios/emprendedores/EmprendedoresHero';
-import EmprendedoresFeatures from '@/components/servicios/emprendedores/EmprendedoresFeatures';
-import EmprendedoresBenefits from '@/components/servicios/emprendedores/EmprendedoresBenefits';
-import EmprendedoresPricing from '@/components/servicios/emprendedores/EmprendedoresPricing';
+import EmprendedoresHero from '../emprendedores/EmprendedoresHero';
+import EmprendedoresFeatures from '../emprendedores/EmprendedoresFeatures';
+import EmprendedoresBenefits from '../emprendedores/EmprendedoresBenefits';
+import EmprendedoresPricing from '../emprendedores/EmprendedoresPricing';
 
 const baseUrl = 'https://www.enviosdosruedas.com';
 

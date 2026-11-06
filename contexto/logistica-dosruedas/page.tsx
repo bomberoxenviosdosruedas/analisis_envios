@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { LogisticaHero } from '@/components/logistica-dosruedas/LogisticaHero';
-import { TrackingWidget } from '@/components/logistica-dosruedas/TrackingWidget';
-import { PortalAccessCards } from '@/components/logistica-dosruedas/PortalAccessCards';
+import { LogisticaHero } from './LogisticaHero';
+import { TrackingWidget } from './TrackingWidget';
+import { PortalAccessCards } from './PortalAccessCards';
 
 const baseUrl = 'https://www.enviosdosruedas.com';
 

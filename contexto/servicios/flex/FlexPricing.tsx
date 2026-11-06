@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Zap, CreditCard } from 'lucide-react';
-import ServicePricing, { type PricingFact, type PriceTier } from '@/components/ui/ServicePricing';
+import ServicePricing, { type PricingFact, type PriceTier } from '../../components/ui/ServicePricing';
 import { FLEX_NIVEL_2_PRICE, FLEX_NIVEL_3_PRICE } from '@/lib/promises';
 import FlexZonePricingExplorer from './FlexZonePricingExplorer';
 

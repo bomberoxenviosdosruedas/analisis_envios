@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { MessageSquare, Truck, CheckSquare } from 'lucide-react';
-import DoubleBezelCard from '@/components/ui/DoubleBezelCard';
-import StepperVertical, { type VerticalStep } from '@/components/ui/StepperVertical';
+import DoubleBezelCard from '../../components/ui/DoubleBezelCard';
+import StepperVertical, { type VerticalStep } from '../../components/ui/StepperVertical';
 
 export default function LowCostHowItWorks() {
   const steps: VerticalStep[] = [

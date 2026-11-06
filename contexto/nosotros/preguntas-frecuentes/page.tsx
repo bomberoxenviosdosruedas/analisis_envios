@@ -1,9 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
-import FaqHero from '@/components/nosotros/preguntas-frecuentes/FaqHero';
-import { FaqCategories } from '@/components/nosotros/preguntas-frecuentes/Faq-categories';
-import { FAQ_DATA } from '@/components/nosotros/preguntas-frecuentes/faqData';
-import FaqCta from '@/components/nosotros/preguntas-frecuentes/FaqCta';
+import FaqHero from './FaqHero';
+import { FaqCategories } from './Faq-categories';
+import { FAQ_DATA } from './faqData';
+import FaqCta from './FaqCta';
 
 const baseUrl = 'https://www.enviosdosruedas.com';
 

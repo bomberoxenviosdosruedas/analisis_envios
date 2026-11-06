@@ -1,6 +1,6 @@
 'use client';
 
-import ServicePricing, { type PricingFact, type PriceTier } from '@/components/ui/ServicePricing';
+import ServicePricing, { type PricingFact, type PriceTier } from '../../components/ui/ServicePricing';
 import { calculateLowCostPrice, LOW_COST_PRICE_PER_KM, LOW_COST_TIERS } from '@/lib/pricing';
 import {
   CONSULT_THRESHOLD_KM,

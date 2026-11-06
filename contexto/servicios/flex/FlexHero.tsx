@@ -1,8 +1,8 @@
 import { BookOpen, PackageCheck, ShieldCheck, Tag, Timer } from 'lucide-react';
-import { CTANestedPill } from '@/components/ui/CTANestedPill';
-import { Knockout } from '@/components/ui/Knockout';
-import Badge from '@/components/ui/Badge';
-import HeroProceduralBackground from '@/components/ui/HeroProceduralBackground';
+import { CTANestedPill } from '../../components/ui/CTANestedPill';
+import { Knockout } from '../../components/ui/Knockout';
+import Badge from '../../components/ui/Badge';
+import HeroProceduralBackground from '../../components/ui/HeroProceduralBackground';
 import { FLEX_CUTOFF_TIME, FLEX_DELIVERY_DEADLINE } from '@/lib/promises';
 
 const chips = [
