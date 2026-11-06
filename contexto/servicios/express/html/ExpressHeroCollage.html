@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collage Visual Hero Express | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Collage visual representativo del servicio Express de Envíos DosRuedas en Mar del Plata.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-blue-500); padding: 2rem; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+
+    .collage-container {
+      position: relative;
+      width: 100%;
+      max-width: 52rem;
+      height: 38rem;
+    }
+
+    .collage-tile {
+      position: absolute;
+      transition: transform 0.35s var(--ease-out);
+    }
+    .collage-tile:hover {
+      transform: scale(1.03) !important;
+      z-index: 20;
+    }
+
+    .tile-moto {
+      left: 18%;
+      top: 4%;
+      width: 54%;
+      border-radius: 0.875rem;
+      overflow: hidden;
+      transform: rotate(-2deg);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+      background-color: var(--color-brand-blue-50);
+    }
+    .tile-moto img { width: 100%; height: auto; display: block; object-fit: cover; }
+
+    .tile-rider {
+      right: 4%;
+      top: 36%;
+      width: 46%;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      background-color: var(--color-brand-blue-400);
+      transform: rotate(3deg);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    }
+    .tile-rider img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(100%) contrast(105%);
+      mix-blend-mode: screen;
+    }
+
+    .tile-word {
+      left: 16%;
+      top: 58%;
+      width: 32%;
+      height: 12rem;
+      border-radius: 0.375rem;
+      background-color: var(--color-brand-blue-400);
+      color: var(--color-white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      line-height: 0.85;
+      text-transform: uppercase;
+      transform: rotate(-3deg);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .tile-desde {
+      left: 54%;
+      top: 78%;
+      height: 5.5rem;
+      width: 24%;
+      border-radius: 0.5rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-display);
+      font-size: 2.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      transform: rotate(4deg);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .tile-sticker {
+      right: 8%;
+      top: 10%;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.75rem 1.25rem;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transform: rotate(4deg);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .tile-note {
+      left: 24%;
+      top: 54%;
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.375rem;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.06em;
+      transform: rotate(1deg);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      z-index: 15;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="collage-container" aria-label="Collage visual Express">
+    <div class="collage-tile tile-moto">
+      <img src="/heroes/express-moto.webp" alt="Moto de reparto express en Mar del Plata">
+    </div>
+    <div class="collage-tile tile-rider">
+      <img src="/img/generales/repartidor.webp" alt="Cadete de mensajería Express">
+    </div>
+    <div class="collage-tile tile-word">
+      <span>Servicio</span>
+      <span>Express</span>
+    </div>
+    <div class="collage-tile tile-desde">
+      <span>Desde</span>
+    </div>
+    <div class="collage-tile tile-sticker">
+      <span>Corte 18:00 hs</span>
+    </div>
+    <div class="collage-tile tile-note">
+      <span>Retiro A &bull; Entrega B</span>
+    </div>
+  </div>
+
+</body>
+</html>

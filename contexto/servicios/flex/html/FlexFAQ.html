@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes Flex | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Preguntas frecuentes sobre Mercado Envíos Flex en Mar del Plata: mínimos de retiro, cobertura urbana, escaneo en el local y resolución de incidencias.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-white-50: #F8FAFC;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-ink: #0A1128;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-white); color: var(--color-brand-ink); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .section-faq {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-brand-blue-100);
+    }
+
+    .header-group {
+      text-align: center;
+      max-width: 38rem;
+      margin-inline: auto;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transform: rotate(-1deg);
+    }
+
+    .title-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+      color: var(--color-brand-blue-500);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--color-brand-ink);
+      line-height: 1.6;
+    }
+
+    .accent-bar {
+      width: 4rem;
+      height: 0.375rem;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.25rem;
+    }
+
+    /* FAQ Stack */
+    .faq-stack {
+      max-width: 48rem;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-accordion-item {
+      background-color: rgba(230, 238, 254, 0.4);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: background-color var(--duration-ui) var(--ease-out), border-color var(--duration-ui) var(--ease-out);
+    }
+    .faq-accordion-item[open] {
+      background-color: var(--color-white);
+      border-color: var(--color-brand-blue-500);
+      box-shadow: 0 10px 25px -5px rgba(9, 80, 246, 0.1);
+    }
+
+    .faq-summary {
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--color-brand-blue-500);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      user-select: none;
+      list-style: none;
+    }
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-chevron {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform var(--duration-ui) var(--ease-out);
+    }
+    .faq-accordion-item[open] .summary-chevron {
+      transform: rotate(180deg);
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+
+    .faq-answer-content {
+      padding: 0 1.5rem 1.25rem 1.5rem;
+      font-size: 0.9375rem;
+      color: #334155;
+      line-height: 1.6;
+      border-top: 1px solid var(--color-brand-blue-50);
+      padding-top: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="flex-faq" class="section-faq" aria-label="Preguntas Frecuentes Flex">
+    <div class="container">
+      
+      <header class="header-group">
+        <span class="badge-pill">DUDAS Y RESPUESTAS</span>
+        <h2 class="title-display">PREGUNTAS FRECUENTES FLEX</h2>
+        <p class="subtitle">Todo lo que necesitás saber antes de activar Mercado Envíos Flex con nosotros.</p>
+        <div class="accent-bar" aria-hidden="true"></div>
+      </header>
+
+      <div class="faq-stack">
+        
+        <!-- FAQ 1 -->
+        <details class="faq-accordion-item" open>
+          <summary class="faq-summary">
+            <span>¿Existe un mínimo de paquetes diarios para que retiren en mi local?</span>
+            <span class="summary-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </summary>
+          <div class="faq-answer-content">
+            <p>No, retiramos desde 1 solo paquete diario sin costo adicional de recolección en tu comercio o depósito. Podés comenzar a operar sin exigencias de volumen.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-accordion-item">
+          <summary class="faq-summary">
+            <span>¿Tienen cobertura en toda la ciudad?</span>
+            <span class="summary-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </summary>
+          <div class="faq-answer-content">
+            <p>Sí, las tarifas estándar de Mercado Envíos Flex cubren todo el ejido urbano de la ciudad de Mar del Plata. Las zonas y localidades periféricas fuera de la ciudad (Chapadmalal, Batán, Santa Clara del Mar, etc.) requieren consulta previa y se cotizan a $1.000 por kilómetro, calculado según la distancia entre el punto de retiro y el de entrega.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-accordion-item">
+          <summary class="faq-summary">
+            <span>¿El cadete escanea el paquete en mi local?</span>
+            <span class="summary-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </summary>
+          <div class="faq-answer-content">
+            <p>Sí, el repartidor escanea cada paquete directamente en tu comercio al momento de la recolección para que el estado se actualice al instante en la plataforma de Mercado Libre.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="faq-accordion-item">
+          <summary class="faq-summary">
+            <span>¿Se puede cobrar contra entrega?</span>
+            <span class="summary-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </summary>
+          <div class="faq-answer-content">
+            <p>No, el servicio de Mercado Libre Envíos Flex no admite cobros contra entrega. Todas las ventas deben estar previamente cobradas y gestionadas dentro del ecosistema de Mercado Libre.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="faq-accordion-item">
+          <summary class="faq-summary">
+            <span>¿Qué sucede ante roturas, extravíos o incidencias?</span>
+            <span class="summary-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+          </summary>
+          <div class="faq-answer-content">
+            <p>Ante cualquier inconveniente, cada caso particular se evalúa y se resuelve de forma directa, ágil y personalizada con el comercio a través de nuestro soporte por WhatsApp.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

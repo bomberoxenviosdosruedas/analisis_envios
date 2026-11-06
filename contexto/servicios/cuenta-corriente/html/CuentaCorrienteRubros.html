@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubros Comerciales con Cuenta Corriente | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Sectores y rubros comerciales con cuenta corriente activa en Mar del Plata: repuestos, farmacias, indumentaria, gastronomía, y más.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-white); color: var(--color-brand-blue-500); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .section-rubros {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      background-color: rgba(230, 238, 254, 0.4);
+      border-top: 1px solid var(--color-brand-blue-100);
+    }
+
+    .header-group {
+      text-align: center;
+      max-width: 36rem;
+      margin-inline: auto;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .title-display {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 1.75rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--color-brand-blue-500);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 0.875rem;
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+    }
+
+    .rubros-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .rubros-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .rubros-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    .rubro-card {
+      padding: 1rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-brand-blue-100);
+      text-align: center;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 4.5rem;
+      transition: border-color var(--duration-ui) var(--ease-out), transform var(--duration-ui) var(--ease-out);
+    }
+    .rubro-card:hover {
+      border-color: var(--color-brand-blue-400);
+      transform: translateY(-2px);
+    }
+
+    .rubro-title {
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="cuenta-corriente-rubros" class="section-rubros" aria-label="Rubros comerciales con cuenta corriente activa en Mar del Plata">
+    <div class="container">
+      <header class="header-group">
+        <h2 class="title-display">RUBROS CON CUENTA ACTIVA EN MAR DEL PLATA</h2>
+        <p class="subtitle">
+          Más de 7 años adaptando nuestros circuitos a los requerimientos de cada sector.
+        </p>
+      </header>
+
+      <div class="rubros-grid">
+        <div class="rubro-card">
+          <span class="rubro-title">Repuesteras y Autopartes</span>
+        </div>
+        <div class="rubro-card">
+          <span class="rubro-title">Farmacias, Ópticas y Salud</span>
+        </div>
+        <div class="rubro-card">
+          <span class="rubro-title">Estudios Contables y Gestorías</span>
+        </div>
+        <div class="rubro-card">
+          <span class="rubro-title">Indumentaria y Calzado</span>
+        </div>
+        <div class="rubro-card">
+          <span class="rubro-title">Gastronomía y Descartables</span>
+        </div>
+        <div class="rubro-card">
+          <span class="rubro-title">Tecnología y Servicio Técnico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

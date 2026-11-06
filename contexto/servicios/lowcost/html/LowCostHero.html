@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envíos LowCost en Mar del Plata | Envíos DosRuedas</title>
+  <meta name="description" content="Cortás el pedido y lo recibís hoy en Mar del Plata. Envíos LowCost con corte 13:00 hs y entrega garantizada antes de las 19:00 hs.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-600: #0840C4;
+      --color-brand-blue-700: #063198;
+      --color-brand-blue-50: #EFF4FF;
+      --color-brand-blue-100: #DBE8FE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF238;
+      --font-display: 'Anton SC', 'Bebas Neue', sans-serif;
+      --font-subheading: 'Bebas Neue', 'Outfit', sans-serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero-section {
+      position: relative;
+      isolation: isolate;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 4rem 1.5rem;
+      overflow: hidden;
+    }
+
+    /* Procedural subtle background grid */
+    .procedural-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(9, 80, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(9, 80, 246, 0.06) 0%, transparent 40%),
+        linear-gradient(rgba(9, 80, 246, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(9, 80, 246, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Visual Signature: Window Clock 13:00 -> 19:00 */
+    .clock-watermark {
+      position: absolute;
+      right: -8%;
+      bottom: -12%;
+      width: clamp(300px, 42vw, 600px);
+      height: clamp(300px, 42vw, 600px);
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-container {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    /* Left Copy Column */
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-copy {
+        text-align: left;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      align-self: center;
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      padding: 0.4rem 1.1rem;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      box-shadow: 0 4px 14px rgba(9, 80, 246, 0.25);
+    }
+
+    @media (min-width: 1024px) {
+      .hero-badge {
+        align-self: flex-start;
+      }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.75rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--color-brand-blue-500);
+    }
+
+    .hero-title span.block {
+      display: block;
+    }
+
+    .knockout-badge {
+      display: inline-block;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      padding: 0.1em 0.35em;
+      border-radius: 6px;
+      margin: 0.15em 0;
+      transform: rotate(-0.5deg);
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      line-height: 1.6;
+      max-width: 58ch;
+      margin: 0 auto;
+      font-weight: 400;
+      color: var(--color-brand-blue-500);
+      opacity: 0.92;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-description {
+        margin: 0;
+      }
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      padding-top: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-actions {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    .btn-cta-blue {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      padding: 0.9rem 2.25rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(9, 80, 246, 0.35);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .btn-cta-blue:hover {
+      background-color: var(--color-brand-blue-600);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(9, 80, 246, 0.45);
+    }
+
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-subheading);
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-brand-blue-500);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+      font-weight: 700;
+      transition: opacity 0.2s ease;
+    }
+
+    .whatsapp-link:hover {
+      opacity: 0.75;
+    }
+
+    /* Key Metric Chips */
+    .hero-chips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      list-style: none;
+      margin-top: 0.5rem;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-chips-grid {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    .chip-item {
+      background: rgba(255, 255, 255, 0.55);
+      border: 1.5px solid rgba(9, 80, 246, 0.25);
+      border-radius: 14px;
+      padding: 0.85rem 0.5rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .chip-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--color-brand-blue-500);
+    }
+
+    .chip-icon {
+      width: 18px;
+      height: 18px;
+      stroke: var(--color-brand-blue-500);
+      margin: 0 auto;
+      display: block;
+    }
+
+    .chip-value {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      margin-top: 0.35rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .chip-label {
+      display: block;
+      font-family: var(--font-subheading);
+      font-size: clamp(0.7rem, 1.2vw, 0.825rem);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      opacity: 0.85;
+      margin-top: 0.15rem;
+    }
+
+    /* Right Column: Double Bezel Card */
+    .hero-card-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .double-bezel-card {
+      width: 100%;
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1.5px solid rgba(9, 80, 246, 0.2);
+      border-radius: 24px;
+      padding: 8px;
+      box-shadow: 0 20px 40px -15px rgba(9, 80, 246, 0.2), 0 0 20px rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(12px);
+    }
+
+    .double-bezel-inner {
+      background: #FFFFFF;
+      border: 1px solid rgba(9, 80, 246, 0.12);
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.06);
+    }
+
+    .card-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .live-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-brand-blue-500);
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .card-title {
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+    }
+
+    .diff-badge {
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Timeline Day Bar */
+    .timeline-widget {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .timeline-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .timeline-title {
+      font-family: var(--font-subheading);
+      font-size: 0.825rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+    }
+
+    .timeline-span {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-brand-blue-500);
+      opacity: 0.75;
+      font-weight: 600;
+    }
+
+    .timeline-track-wrap {
+      overflow-x: auto;
+      padding-bottom: 0.25rem;
+    }
+
+    .timeline-track-inner {
+      min-width: 320px;
+    }
+
+    .timeline-bar {
+      position: relative;
+      height: 44px;
+      border-radius: 10px;
+      background-color: var(--color-brand-blue-50);
+      overflow: hidden;
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    /* Hatched loading period 8:00 to 13:00 (5/12 = 41.67%) */
+    .bar-intake {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 41.666%;
+      background: repeating-linear-gradient(90deg, #0950F6 0, #0950F6 3px, transparent 3px, transparent 7px);
+      opacity: 0.85;
+    }
+
+    /* Solid delivery block 13:00 to 19:00 (6/12 = 50%) */
+    .bar-dispatch {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 41.666%;
+      width: 50%;
+      background-color: var(--color-brand-blue-500);
+      animation: growRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transform-origin: left;
+    }
+
+    @keyframes growRight {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    /* Markers */
+    .bar-cutoff-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 41.666%;
+      width: 2px;
+      background-color: var(--color-brand-blue-700);
+      z-index: 2;
+    }
+
+    .bar-deadline-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 91.666%;
+      width: 2px;
+      background-color: var(--color-brand-blue-700);
+      z-index: 2;
+    }
+
+    .timeline-ticks {
+      position: relative;
+      margin-top: 0.5rem;
+      height: 18px;
+    }
+
+    .timeline-tick-label {
+      position: absolute;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--color-brand-blue-500);
+      opacity: 0.75;
+      font-weight: 600;
+    }
+
+    .timeline-legend {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      list-style: none;
+      font-size: 0.8125rem;
+      color: var(--color-brand-blue-500);
+      padding-top: 0.25rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legend-icon-hatch {
+      width: 22px;
+      height: 8px;
+      background: repeating-linear-gradient(90deg, #0950F6 0, #0950F6 2px, transparent 2px, transparent 5px);
+      border-radius: 2px;
+    }
+
+    .legend-icon-solid {
+      width: 22px;
+      height: 10px;
+      background-color: var(--color-brand-blue-500);
+      border-radius: 3px;
+    }
+
+    .card-footer-row {
+      border-top: 1px solid rgba(9, 80, 246, 0.12);
+      padding-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-brand-blue-500);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO LOWCOST COMPONENT -->
+  <section id="lowcost-hero" class="hero-section" aria-label="LowCost: paquetería y cadetería con entrega el mismo día en Mar del Plata">
+    
+    <!-- Procedural Background -->
+    <div class="procedural-bg" aria-hidden="true"></div>
+
+    <!-- Visual Signature: Window Clock 13:00 -> 19:00 SVG -->
+    <div class="clock-watermark" aria-hidden="true">
+      <svg viewBox="-150 -150 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 6 hours delivery arc in solid blue (13:00 to 19:00) -->
+        <path d="M 50 -86.6 A 100 100 0 1 1 -50 86.6" stroke="#0950F6" stroke-width="14" stroke-linecap="round"/>
+        <!-- Remaining 6 hours dashed -->
+        <path d="M -50 86.6 A 100 100 0 0 1 50 -86.6" stroke="#0950F6" stroke-width="14" stroke-linecap="round" stroke-dasharray="4 14" opacity="0.4"/>
+        <!-- Hour markers -->
+        <line x1="0" y1="-120" x2="0" y2="-132" stroke="#0950F6" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="-103.9" x2="66" y2="-114.3" stroke="#0950F6" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="103.9" y1="-60" x2="114.3" y2="-66" stroke="#0950F6" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="120" y1="0" x2="132" y2="0" stroke="#0950F6" stroke-width="3" stroke-linecap="round"/>
+        <line x1="103.9" y1="60" x2="114.3" y2="66" stroke="#0950F6" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="60" y1="103.9" x2="66" y2="114.3" stroke="#0950F6" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="0" y1="120" x2="0" y2="132" stroke="#0950F6" stroke-width="3" stroke-linecap="round"/>
+        <line x1="-60" y1="103.9" x2="-66" y2="114.3" stroke="#0950F6" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="-103.9" y1="60" x2="-114.3" y2="66" stroke="#0950F6" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="-120" y1="0" x2="-132" y2="0" stroke="#0950F6" stroke-width="3" stroke-linecap="round"/>
+        <line x1="-103.9" y1="-60" x2="-114.3" y2="-66" stroke="#0950F6" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="-60" y1="-103.9" x2="-66" y2="-114.3" stroke="#0950F6" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <!-- Needle pointing at 13:00 (1 o'clock) -->
+        <line x1="0" y1="0" x2="50" y2="-86.6" stroke="#0950F6" stroke-width="4" stroke-linecap="round"/>
+        <circle r="7" fill="#0950F6"/>
+      </svg>
+    </div>
+
+    <div class="hero-container">
+      
+      <!-- LEFT 7: Copy & Action CTAs -->
+      <article class="hero-copy">
+        <header>
+          <span class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+            Paquetería y cadetería · MDQ 2026
+          </span>
+
+          <h1 class="hero-title" style="margin-top: 1rem;">
+            <span class="block">Cortás el pedido</span>
+            <span class="knockout-badge">y lo recibís hoy</span>
+            <span class="block">en Mar del Plata</span>
+          </h1>
+        </header>
+
+        <p class="hero-description">
+          Paquetería e-commerce, cadetería y encomiendas programadas. Lo que cargás antes de las <strong>13:00 hs</strong> se entrega en el día, antes de las <strong>19:00 hs</strong>. Sin letra chica ni agrupamientos forzados.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+          <a href="/cotizar" class="btn-cta-blue" id="lowcost-hero-cta-cotizar">
+            Cotizá tu envío LowCost
+          </a>
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-10.416c-4.401 0-7.98 3.579-7.98 7.98 0 1.41.368 2.736 1.011 3.886l-1.074 3.923 4.025-1.055c1.109.605 2.375.946 3.722.946 4.401 0 7.98-3.579 7.98-7.98 0-4.401-3.579-7.98-7.98-7.98zm0 14.364c-1.223 0-2.366-.35-3.331-.954l-.239-.148-2.48.65.662-2.417-.162-.258c-.672-1.07-1.026-2.316-1.026-3.627 0-3.526 2.868-6.395 6.395-6.395 3.526 0 6.395 2.869 6.395 6.395 0 3.526-2.869 6.395-6.395 6.395z"/></svg>
+            O escribinos por WhatsApp
+          </a>
+        </div>
+
+        <!-- 3 Feature Chips -->
+        <ul class="hero-chips-grid">
+          <li class="chip-item">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span class="chip-value">13:00 hs</span>
+            <span class="chip-label">Corte de pedidos</span>
+          </li>
+          <li class="chip-item">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span class="chip-value">19:00 hs</span>
+            <span class="chip-label">Entrega el mismo día</span>
+          </li>
+          <li class="chip-item">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+            <span class="chip-value">$3.000</span>
+            <span class="chip-label">Base 0–3 km</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- RIGHT 5: Double Bezel Interactive Card with Day Timeline -->
+      <aside class="hero-card-container">
+        <div class="double-bezel-card">
+          <div class="double-bezel-inner">
+            
+            <div class="card-top-row">
+              <span class="live-status">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span class="card-title">Mismo día, sin agrupar</span>
+              </span>
+              <span class="diff-badge">−$500 vs Express</span>
+            </div>
+
+            <!-- Timeline Day Component -->
+            <div class="timeline-widget">
+              <div class="timeline-header">
+                <h3 class="timeline-title">Tu jornada LowCost</h3>
+                <span class="timeline-span">8 a 20 hs</span>
+              </div>
+
+              <div class="timeline-track-wrap">
+                <div class="timeline-track-inner">
+                  <div class="timeline-bar" role="img" aria-label="Línea de tiempo de 8:00 a 20:00 hs mostrando período de recepción hasta las 13:00 hs y ventana de reparto hasta las 19:00 hs">
+                    <!-- Intake hatched area 8:00 to 13:00 -->
+                    <div class="bar-intake" title="Carga de pedidos hasta las 13:00 hs"></div>
+                    <!-- Delivery solid area 13:00 to 19:00 -->
+                    <div class="bar-dispatch" title="Repartos en calle hasta las 19:00 hs"></div>
+                    <!-- Cutoff vertical line -->
+                    <div class="bar-cutoff-line" title="Corte: 13:00 hs"></div>
+                    <!-- Deadline vertical line -->
+                    <div class="bar-deadline-line" title="Límite entrega: 19:00 hs"></div>
+                  </div>
+
+                  <!-- Hour ticks from 08 to 20 -->
+                  <div class="timeline-ticks" aria-hidden="true">
+                    <span class="timeline-tick-label" style="left: 0%;">08</span>
+                    <span class="timeline-tick-label" style="left: 16.666%;">10</span>
+                    <span class="timeline-tick-label" style="left: 33.333%;">12</span>
+                    <span class="timeline-tick-label" style="left: 41.666%; font-weight: 700; color: var(--color-brand-blue-700);">13</span>
+                    <span class="timeline-tick-label" style="left: 50%;">14</span>
+                    <span class="timeline-tick-label" style="left: 66.666%;">16</span>
+                    <span class="timeline-tick-label" style="left: 83.333%;">18</span>
+                    <span class="timeline-tick-label" style="left: 91.666%; font-weight: 700; color: var(--color-brand-blue-700);">19</span>
+                    <span class="timeline-tick-label" style="left: 100%;">20</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Legend -->
+              <ul class="timeline-legend">
+                <li class="legend-item">
+                  <span class="legend-icon-hatch" aria-hidden="true"></span>
+                  <span><strong class="font-mono">13:00 hs</strong> cortás</span>
+                </li>
+                <li class="legend-item">
+                  <span class="legend-icon-solid" aria-hidden="true"></span>
+                  <span><strong class="font-mono">19:00 hs</strong> entregamos</span>
+                </li>
+                <li class="legend-item" style="opacity: 0.75;">
+                  <span>6 hs ventana en calle</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-footer-row">
+              <span>13:00 hs → 19:00 hs</span>
+              <span>Todo Mar del Plata</span>
+            </div>
+
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</body>
+</html>

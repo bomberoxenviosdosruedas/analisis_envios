@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paso a Paso Cobro Contra Reembolso | Envíos DosRuedas</title>
+  <meta name="description" content="Proceso paso a paso del servicio de envíos con cobro contra reembolso en Mar del Plata. Simple, rápido y seguro.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-white: #FFFFFF;
+      --color-ink: #0A0E1A;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: #FFFFFF; color: var(--color-ink); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .how-it-works-section {
+      padding-block: 5rem;
+      background-color: #FFFFFF;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 42rem;
+      margin-inline: auto;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 0.25rem 0.875rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+    @media (min-width: 640px) { .section-title { font-size: 2.75rem; } }
+
+    .section-desc {
+      font-size: 0.9375rem;
+      color: var(--color-brand-blue-500);
+      line-height: 1.6;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+    }
+
+    .step-card-outer {
+      background-color: rgba(230, 238, 254, 0.8);
+      border: 1px solid var(--color-brand-blue-100);
+      padding: 0.5rem;
+      border-radius: 1.25rem;
+      transition: transform var(--duration-ui) var(--ease-out);
+    }
+    .step-card-outer:hover {
+      transform: translateY(-4px);
+    }
+
+    .step-card-inner {
+      background-color: #FFFFFF;
+      padding: 1.75rem;
+      border-radius: 0.875rem;
+      border: 1px solid rgba(230, 238, 254, 0.6);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .step-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .step-icon-box {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-icon-box svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      letter-spacing: -0.01em;
+      margin-top: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--color-brand-blue-500);
+      margin-top: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="contrareembolso-how-it-works" class="how-it-works-section" aria-label="Cómo funciona el servicio de envíos contra reembolso">
+    <div class="container">
+      
+      <header class="section-header">
+        <span class="badge-pill">CÓMO FUNCIONA</span>
+        <h2 class="section-title">PASO A PASO SIMPLE Y TRANSPARENTE</h2>
+        <p class="section-desc">
+          Diseñado para que cobres rápido y sin preocupaciones en cada rincón de Mar del Plata.
+        </p>
+      </header>
+
+      <div class="steps-grid">
+
+        <!-- Paso 1 -->
+        <article class="step-card-outer">
+          <div class="step-card-inner">
+            <div>
+              <div class="step-top-row">
+                <div class="step-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <span class="step-number">01</span>
+              </div>
+              <h3 class="step-title">Retiramos tu pedido</h3>
+              <p class="step-desc">Pasamos a buscar el paquete por tu local, taller o domicilio en Mar del Plata con remito de entrega.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paso 2 -->
+        <article class="step-card-outer">
+          <div class="step-card-inner">
+            <div>
+              <div class="step-top-row">
+                <div class="step-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="12" x="2" y="6" rx="2"></rect>
+                    <circle cx="12" cy="12" r="2"></circle>
+                    <path d="M6 12h.01M18 12h.01"></path>
+                  </svg>
+                </div>
+                <span class="step-number">02</span>
+              </div>
+              <h3 class="step-title">Cobramos en destino</h3>
+              <p class="step-desc">Entregamos al comprador y cobramos el monto exacto en efectivo o mediante transferencia bancaria al instante.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paso 3 -->
+        <article class="step-card-outer">
+          <div class="step-card-inner">
+            <div>
+              <div class="step-top-row">
+                <div class="step-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path>
+                    <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                    <path d="M12 17V7"></path>
+                  </svg>
+                </div>
+                <span class="step-number">03</span>
+              </div>
+              <h3 class="step-title">Rendición acordada</h3>
+              <p class="step-desc">Te transferimos la recaudación a tu CBU/CVU o te entregamos el efectivo en mano con comprobante firmado, en el día, al día siguiente o semanal, según lo acordado.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

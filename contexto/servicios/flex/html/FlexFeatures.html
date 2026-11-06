@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Características Mercado Envíos Flex | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Recolección bonificada desde 1 paquete, cortes 15:00 hs y 12:00 hs, entregas antes de las 20:00 hs y cobertura urbana en Mar del Plata.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-white-50: #F8FAFC;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-ink: #0A1128;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-white-50); color: var(--color-brand-ink); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .section-features {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-brand-white-50);
+      border-top: 1px solid var(--color-brand-blue-100);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .features-grid {
+        grid-template-columns: 5fr 7fr;
+        gap: 3.5rem;
+      }
+    }
+
+    .badge-tag {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      margin-bottom: 1.25rem;
+    }
+
+    .title-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 1.25rem;
+    }
+
+    .title-highlight {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.1rem 0.5rem;
+      display: inline-block;
+      transform: rotate(-1deg);
+    }
+
+    .lead-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-brand-ink);
+      margin-bottom: 1.75rem;
+    }
+
+    /* Differentials list */
+    .diff-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .diff-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-brand-ink);
+    }
+
+    .diff-icon-wrap {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background-color: rgba(255, 236, 1, 0.3);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 236, 1, 0.5);
+    }
+
+    .info-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-50);
+      border: 1px solid var(--color-brand-blue-100);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+    }
+
+    /* Cards Side */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .feature-bezel {
+      background-color: rgba(230, 238, 254, 0.6);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 1.25rem;
+      padding: 0.375rem;
+      height: 100%;
+      transition: transform var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
+    }
+    .feature-bezel:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(9, 80, 246, 0.15);
+    }
+
+    .feature-bezel-inner {
+      background-color: var(--color-white);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(230, 238, 254, 0.5);
+    }
+
+    .card-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .icon-badge {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .micro-badge {
+      font-family: var(--font-subheading);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      line-height: 1.15;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--color-brand-ink);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="flex-features" class="section-features" aria-label="Características del Servicio Flex">
+    <div class="container">
+      <div class="features-grid">
+        
+        <!-- Left: Copy & Differentials -->
+        <div>
+          <span class="badge-tag">MERCADOLIBRE EXPERTS</span>
+          <h2 class="title-display">
+            DOMINÁ TUS VENTAS <br>
+            <span class="title-highlight">CON ENVÍOS FLEX</span>
+          </h2>
+          <p class="lead-text">
+            Somos el aliado estratégico para vendedores de Mercado Libre en Mar del Plata. Optimizamos tus entregas en el día con equipo propio para que vos te dediques a vender y potenciar tu reputación.
+          </p>
+
+          <ul class="diff-list">
+            <li class="diff-item">
+              <span class="diff-icon-wrap" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Atención humana directa por WhatsApp</span>
+            </li>
+            <li class="diff-item">
+              <span class="diff-icon-wrap" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Equipo propio, profesional y de confianza</span>
+            </li>
+            <li class="diff-item">
+              <span class="diff-icon-wrap" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Baja tasa de siniestralidad garantizada</span>
+            </li>
+            <li class="diff-item">
+              <span class="diff-icon-wrap" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>Sistema propio de seguimiento y control</span>
+            </li>
+          </ul>
+
+          <div class="info-banner">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Ejido urbano de Mar del Plata &bull; Periferia a $1.000/km</span>
+          </div>
+        </div>
+
+        <!-- Right: 4 Cards Grid -->
+        <div class="cards-grid">
+          
+          <!-- Card 1 -->
+          <article class="feature-bezel">
+            <div class="feature-bezel-inner">
+              <div class="card-top-row">
+                <div class="icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 17h4V5H2v12h3m11 0h2a2 2 0 0 0 2-2v-3.5L18.5 8H14v9Z"></path>
+                    <circle cx="7.5" cy="17.5" r="2.5"></circle>
+                    <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <span class="micro-badge">SIN MÍNIMO</span>
+              </div>
+              <div>
+                <h3 class="card-title">Recolección bonificada</h3>
+                <p class="card-desc">Retiramos tus paquetes sin costo adicional directamente por tu local o depósito. Sin mínimo diario: aplica desde 1 solo paquete.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-bezel">
+            <div class="feature-bezel-inner">
+              <div class="card-top-row">
+                <div class="icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <span class="micro-badge">L-V 15HS &bull; SÁB 12HS</span>
+              </div>
+              <div>
+                <h3 class="card-title">Horarios de corte</h3>
+                <p class="card-desc">Lunes a viernes hasta las 15:00 hs y sábados hasta las 12:00 hs. Recibimos y procesamos tus despachos del día con máxima puntualidad.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-bezel">
+            <div class="feature-bezel-inner">
+              <div class="card-top-row">
+                <div class="icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <span class="micro-badge">HASTA 20:00 HS</span>
+              </div>
+              <div>
+                <h3 class="card-title">Límite estricto: 20:00 hs</h3>
+                <p class="card-desc">Tus compradores reciben en el día. El límite de entrega es estrictamente hasta las 20:00 hs, protegiendo tu reputación de vendedor.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="feature-bezel">
+            <div class="feature-bezel-inner">
+              <div class="card-top-row">
+                <div class="icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <span class="micro-badge">EJIDO URBANO + KM</span>
+              </div>
+              <div>
+                <h3 class="card-title">Cobertura urbana y periferia</h3>
+                <p class="card-desc">Tarifas Flex estándar para todo el ejido urbano de Mar del Plata. Zonas periféricas se cotizan a $1.000 por kilómetro.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

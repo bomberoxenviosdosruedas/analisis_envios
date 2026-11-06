@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niveles y Tarifas Mercado Envíos Flex | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Escala de precios y niveles para Mercado Envíos Flex en Mar del Plata. Tarifas Nivel 1, Pro y Elite según tu volumen diario de ventas.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-blue-500); color: var(--color-white); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .pricing-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+
+    .header-group {
+      text-align: center;
+      max-width: 44rem;
+      margin-inline: auto;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-service {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 236, 1, 0.15);
+      border: 1px solid rgba(255, 236, 1, 0.3);
+      color: var(--color-brand-yellow-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .title-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-white);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--color-brand-blue-50);
+      line-height: 1.6;
+    }
+
+    /* 3 Tiers Grid */
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 768px) {
+      .tiers-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .tier-card {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+      border: 2px solid transparent;
+      transition: transform var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
+    }
+    .tier-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    .tier-card.featured {
+      border-color: var(--color-brand-yellow-500);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
+    }
+
+    .featured-ribbon {
+      position: absolute;
+      top: -0.875rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+
+    .tier-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .tier-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      line-height: 1.15;
+      margin-bottom: 0.25rem;
+    }
+
+    .tier-dist {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-brand-blue-400);
+    }
+
+    .price-wrap {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+
+    .price-value {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+
+    .price-period {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: #64748b;
+    }
+
+    .tier-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--color-brand-blue-50);
+      border-bottom: 1px solid var(--color-brand-blue-50);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .tier-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: #1e293b;
+    }
+
+    .tier-feature-item svg {
+      width: 0.95rem;
+      height: 0.95rem;
+      stroke: var(--color-brand-blue-500);
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .tier-note {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .btn-tier-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.875rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-family: var(--font-subheading);
+      font-size: 0.9375rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: background-color var(--duration-ui) var(--ease-out);
+    }
+    .btn-tier-cta:hover {
+      background-color: var(--color-brand-blue-400);
+    }
+    .tier-card.featured .btn-tier-cta {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+    .tier-card.featured .btn-tier-cta:hover {
+      background-color: var(--color-brand-yellow-400);
+    }
+
+    /* Facts Grid */
+    .facts-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 68rem;
+      margin-inline: auto;
+    }
+    @media (min-width: 768px) {
+      .facts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .fact-card {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .fact-icon-badge {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fact-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--color-white);
+    }
+
+    .fact-desc {
+      font-size: 0.875rem;
+      color: var(--color-brand-blue-50);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="flex-pricing" class="pricing-section" aria-label="Tarifario Mercado Envíos Flex">
+    <div class="container">
+      
+      <header class="header-group">
+        <span class="badge-service">TARIFAS Y ESCALAS POR VOLUMEN</span>
+        <h2 class="title-display">NIVELES Y TARIFAS FLEX</h2>
+        <p class="subtitle">
+          Escalá tus ventas con Mercado Envíos Flex. Cuanto mayor sea tu volumen diario de despachos, mejores beneficios y tarifas para tus entregas en el día.
+        </p>
+      </header>
+
+      <!-- 3 Tiers Grid -->
+      <div class="tiers-grid">
+        
+        <!-- Nivel 1 -->
+        <article class="tier-card">
+          <div class="tier-header">
+            <h3 class="tier-title">Nivel 1 &bull; Crecimiento</h3>
+            <span class="tier-dist">1 a 4 envíos / día</span>
+            <div class="price-wrap">
+              <span class="price-value">$3.000</span>
+              <span class="price-period">/ base Z1</span>
+            </div>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tarifa por zonas de distancia (Z1 a Z5)</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Desde $3.000 (Z1) hasta $7.000 (Z4)</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Segunda visita al 50% de la tarifa</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tercera visita como nuevo envío</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Recolección bonificada desde 1 paquete</span>
+            </li>
+          </ul>
+          <p class="tier-note">Tarifa base por distancia. Podés simular las zonas en el calculador interactivo.</p>
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20consultar%20por%20Mercado%20Env%C3%ADos%20Flex%20Nivel%201" class="btn-tier-cta" target="_blank" rel="noopener noreferrer">CONSULTAR NIVEL 1</a>
+        </article>
+
+        <!-- Nivel 2 (Featured) -->
+        <article class="tier-card featured">
+          <div class="featured-ribbon">RECOMENDADO PRO</div>
+          <div class="tier-header">
+            <h3 class="tier-title">Nivel 2 &bull; Pro</h3>
+            <span class="tier-dist">5 a 10 envíos / día</span>
+            <div class="price-wrap">
+              <span class="price-value">$3.500</span>
+              <span class="price-period">/ base</span>
+            </div>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Mantiene topes fijos en zonas lejanas (Z4 y Z5)</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Segunda visita en Z1 sin cargo; Z2-Z5 al 50%</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tercera visita como nuevo envío</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Recolección bonificada en tu local</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Atención prioritaria por WhatsApp</span>
+            </li>
+          </ul>
+          <p class="tier-note">Tope fijo en zonas lejanas y beneficios por volumen sostenido.</p>
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20consultar%20por%20Mercado%20Env%C3%ADos%20Flex%20Nivel%202" class="btn-tier-cta" target="_blank" rel="noopener noreferrer">ELEGIR NIVEL PRO</a>
+        </article>
+
+        <!-- Nivel 3 -->
+        <article class="tier-card">
+          <div class="tier-header">
+            <h3 class="tier-title">Nivel 3 &bull; Elite</h3>
+            <span class="tier-dist">+10 envíos / día mínimos</span>
+            <div class="price-wrap">
+              <span class="price-value">$3.000</span>
+              <span class="price-period">/ base</span>
+            </div>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Envíos cercanos hasta 5 km: $3.000 a $4.000</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tarifa plana al resto de la ciudad: $4.500</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Segunda visita 100% bonificada sin cargo</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tercera visita como nuevo envío</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Integración directa a nuestro sistema logístico</span>
+            </li>
+          </ul>
+          <p class="tier-note">Tarifa preferencial para cuentas de más de 10 envíos diarios mínimos.</p>
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20consultar%20por%20Mercado%20Env%C3%ADos%20Flex%20Nivel%203%20Elite" class="btn-tier-cta" target="_blank" rel="noopener noreferrer">CONSULTAR ELITE</a>
+        </article>
+
+      </div>
+
+      <!-- Facts Grid -->
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </div>
+          <h3 class="fact-title">Recolección bonificada</h3>
+          <p class="fact-desc">Retiramos en tu comercio sin costo extra desde 1 paquete diario. Múltiples pasadas para acelerar entregas.</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"></circle>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+            </svg>
+          </div>
+          <h3 class="fact-title">Entregas 100% aseguradas</h3>
+          <p class="fact-desc">Comprobantes y métricas en plataforma propia para respaldar y cuidar tu reputación de MercadoLíder.</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="fact-title">Condiciones climáticas</h3>
+          <p class="fact-desc">Aplica durante lluvia o calzada mojada con viento/llovizna. Te comunicamos el recargo exacto por WhatsApp.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

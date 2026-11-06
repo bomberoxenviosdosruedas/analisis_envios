@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cobro Contra Reembolso en Destino | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Servicio de envíos con cobro en destino en efectivo o transferencia bancaria en Mar del Plata. Rendición acordada, comprobantes y flota propia.">
+  <meta name="theme-color" content="#0950F6">
+  <link rel="canonical" href="https://www.enviosdosruedas.com/servicios/contrareembolso">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+      --color-ink: #0A0E1A;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: #FFFFFF; color: var(--color-ink); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    /* 1. HERO */
+    .hero-section {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      border-bottom: 1px solid var(--color-brand-blue-400);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) { .hero-grid { grid-template-columns: 7fr 5fr; } }
+
+    .badge-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 0.875rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 236, 1, 0.12);
+      border: 1px solid rgba(255, 236, 1, 0.4);
+      color: var(--color-brand-yellow-500);
+      font-size: 0.75rem;
+      font-family: var(--font-subheading);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+      color: var(--color-white);
+      margin-top: 1rem;
+    }
+    @media (min-width: 640px) { .hero-title { font-size: 3.75rem; } }
+
+    .hero-lead {
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--color-brand-blue-100);
+      max-width: 36rem;
+      margin-top: 1.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 640px) { .hero-actions { flex-direction: row; align-items: center; } }
+
+    .cta-pill-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.875rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(255, 236, 1, 0.35);
+      min-height: 48px;
+      transition: all var(--duration-ui) var(--ease-out);
+    }
+    .cta-pill-primary:hover {
+      background-color: var(--color-brand-yellow-400);
+      transform: translateY(-2px);
+    }
+
+    .cta-pill-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.875rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      min-height: 48px;
+      transition: all var(--duration-ui) var(--ease-out);
+    }
+    .cta-pill-outline:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .double-bezel-outer {
+      background-color: rgba(230, 238, 254, 0.8);
+      border: 1px solid var(--color-brand-blue-100);
+      padding: 0.5rem;
+      border-radius: 1.25rem;
+    }
+    .double-bezel-inner {
+      background-color: #FFFFFF;
+      padding: 1.75rem;
+      border-radius: 0.875rem;
+      color: var(--color-brand-blue-500);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* 2. BENEFITS */
+    .benefits-section {
+      padding-block: 5rem;
+      background-color: rgba(230, 238, 254, 0.45);
+      border-block: 1px solid var(--color-brand-blue-100);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .benefit-card {
+      background-color: #FFFFFF;
+      padding: 1.75rem;
+      border-radius: 1rem;
+      border: 1px solid var(--color-brand-blue-100);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+    .benefit-icon-box {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefit-icon-box svg { width: 1.5rem; height: 1.5rem; }
+
+    /* 3. HOW IT WORKS */
+    .how-it-works-section {
+      padding-block: 5rem;
+      background-color: #FFFFFF;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* 4. CTA */
+    .cta-section {
+      padding-block: 5rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section id="contrareembolso-hero" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="badge-accent">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"></path></svg>
+            <span>Cobranzas Seguras en Mar del Plata</span>
+          </div>
+
+          <h1 class="hero-title">
+            ENVÍOS CON <span style="color:var(--color-brand-yellow-500);">COBRO EN DESTINO</span>
+          </h1>
+
+          <p class="hero-lead">
+            Vendé más en Mar del Plata brindándole a tus clientes la tranquilidad de pagar al recibir el paquete. Cobramos en efectivo o transferencia y te rendimos el dinero en el día, al día siguiente o semanal, según lo acordado.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20consultar%20por%20env%C3%ADos%20contra%20reembolso%20en%20Mar%20del%20Plata." target="_blank" rel="noopener noreferrer" class="cta-pill-primary">
+              <span>Pedí por WhatsApp</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+
+            <a href="/cotizar" class="cta-pill-outline">
+              <span>Cotizá tu envío</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--color-brand-blue-100);">
+            <span>✓ Rendición acordada</span>
+            <span>✓ Efectivo y Transferencia</span>
+            <span>✓ Flota propia verificada</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="double-bezel-outer">
+            <div class="double-bezel-inner">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--color-brand-blue-100);padding-bottom:0.75rem;">
+                <span style="font-family:var(--font-subheading);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">MODALIDAD CONTRA REEMBOLSO</span>
+                <span style="font-family:var(--font-mono);font-size:0.75rem;background:rgba(255,236,1,0.2);padding:0.2rem 0.5rem;border-radius:0.25rem;font-weight:700;">2026 MDQ</span>
+              </div>
+              <div style="padding:1rem;background:rgba(230,238,254,0.6);border-radius:0.75rem;">
+                <strong style="font-family:var(--font-subheading);font-size:0.875rem;text-transform:uppercase;display:block;">Cobranza en efectivo</strong>
+                <p style="font-size:0.8125rem;margin-top:0.25rem;">El cadete recibe los billetes, verifica autenticidad y firma el remito correspondiente.</p>
+              </div>
+              <div style="padding:1rem;background:rgba(230,238,254,0.6);border-radius:0.75rem;">
+                <strong style="font-family:var(--font-subheading);font-size:0.875rem;text-transform:uppercase;display:block;">Cobranza por transferencia</strong>
+                <p style="font-size:0.8125rem;margin-top:0.25rem;">El comprador transfiere en el momento con comprobante validado antes de entregar el paquete.</p>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.75rem;border-top:1px solid var(--color-brand-blue-100);padding-top:0.75rem;">
+                <span>Base central</span>
+                <strong>Friuli 1972, MDQ</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="contrareembolso-benefits" class="benefits-section">
+    <div class="container">
+      <div style="text-align:center;max-width:38rem;margin:0 auto 3rem;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+        <span style="display:inline-block;padding:0.25rem 0.875rem;border-radius:9999px;background:var(--color-brand-yellow-500);color:var(--color-brand-blue-500);font-family:var(--font-subheading);font-size:0.8125rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">CONFIANZA TOTAL</span>
+        <h2 style="font-family:var(--font-display);font-size:2.5rem;text-transform:uppercase;color:var(--color-brand-blue-500);line-height:1;">POR QUÉ ELEGIR NUESTRO COBRO EN DESTINO</h2>
+        <p style="font-size:0.9375rem;color:var(--color-brand-blue-500);">Más de 7 años recorriendo Mar del Plata garantizan seguridad, puntualidad y trazabilidad.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <div class="benefit-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <div>
+            <h3 style="font-family:var(--font-display);font-size:1.25rem;text-transform:uppercase;color:var(--color-brand-blue-500);">Rendición acordada</h3>
+            <p style="font-size:0.875rem;color:var(--color-brand-blue-500);margin-top:0.25rem;">El dinero de tus ventas no queda retenido semanas. Te transferimos o rendimos en mano en el día, al día siguiente o semanal, según lo acordado.</p>
+          </div>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+          <div>
+            <h3 style="font-family:var(--font-display);font-size:1.25rem;text-transform:uppercase;color:var(--color-brand-blue-500);">Flota propia identificada</h3>
+            <p style="font-size:0.875rem;color:var(--color-brand-blue-500);margin-top:0.25rem;">Nuestros cadetes están capacitados y registrados. Sin intermediarios anónimos custodiando tus cobranzas.</p>
+          </div>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
+          <div>
+            <h3 style="font-family:var(--font-display);font-size:1.25rem;text-transform:uppercase;color:var(--color-brand-blue-500);">Cero fricción para tu cliente</h3>
+            <p style="font-size:0.875rem;color:var(--color-brand-blue-500);margin-top:0.25rem;">Tu comprador paga recién cuando tiene el producto en sus manos, aumentando tus conversiones de venta en MDQ.</p>
+          </div>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 18V6"></path></svg></div>
+          <div>
+            <h3 style="font-family:var(--font-display);font-size:1.25rem;text-transform:uppercase;color:var(--color-brand-blue-500);">Comprobante y trazabilidad</h3>
+            <p style="font-size:0.875rem;color:var(--color-brand-blue-500);margin-top:0.25rem;">Notificación inmediata vía WhatsApp apenas se efectiviza la cobranza con foto del remito o comprobante bancario.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="contrareembolso-how-it-works" class="how-it-works-section">
+    <div class="container">
+      <div style="text-align:center;max-width:38rem;margin:0 auto 3rem;display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+        <span style="display:inline-block;padding:0.25rem 0.875rem;border-radius:9999px;background:var(--color-brand-blue-50);color:var(--color-brand-blue-500);font-family:var(--font-subheading);font-size:0.8125rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;border:1px solid var(--color-brand-blue-100);">CÓMO FUNCIONA</span>
+        <h2 style="font-family:var(--font-display);font-size:2.5rem;text-transform:uppercase;color:var(--color-brand-blue-500);line-height:1;">PASO A PASO SIMPLE Y TRANSPARENTE</h2>
+        <p style="font-size:0.9375rem;color:var(--color-brand-blue-500);">Diseñado para que cobres rápido y sin preocupaciones en cada rincón de Mar del Plata.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="double-bezel-outer">
+          <div class="double-bezel-inner">
+            <span style="font-family:var(--font-display);font-size:2rem;color:var(--color-brand-blue-500);">01</span>
+            <h3 style="font-family:var(--font-display);font-size:1.35rem;text-transform:uppercase;color:var(--color-brand-blue-500);">Retiramos tu pedido</h3>
+            <p style="font-size:0.875rem;color:var(--color-brand-blue-500);">Pasamos a buscar el paquete por tu local, taller o domicilio en Mar del Plata con remito de entrega.</p>
+          </div>
+        </div>
+        <div class="double-bezel-outer">
+          <div class="double-bezel-inner">
+            <span style="font-family:var(--font-display);font-size:2rem;color:var(--color-brand-blue-500);">02</span>
+            <h3 style="font-family:var(--font-display);font-size:1.35rem;text-transform:uppercase;color:var(--color-brand-blue-500);">Cobramos en destino</h3>
+            <p style="font-size:0.875rem;color:var(--color-brand-blue-500);">Entregamos al comprador y cobramos el monto exacto en efectivo o mediante transferencia bancaria al instante.</p>
+          </div>
+        </div>
+        <div class="double-bezel-outer">
+          <div class="double-bezel-inner">
+            <span style="font-family:var(--font-display);font-size:2rem;color:var(--color-brand-blue-500);">03</span>
+            <h3 style="font-family:var(--font-display);font-size:1.35rem;text-transform:uppercase;color:var(--color-brand-blue-500);">Rendición acordada</h3>
+            <p style="font-size:0.875rem;color:var(--color-brand-blue-500);">Te transferimos la recaudación a tu CBU/CVU o te entregamos el efectivo en mano con comprobante firmado, en el día, al día siguiente o semanal, según lo acordado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contrareembolso-cta" class="cta-section">
+    <div class="container" style="max-width:48rem;display:flex;flex-direction:column;align-items:center;gap:1.25rem;">
+      <h2 style="font-family:var(--font-display);font-size:3rem;text-transform:uppercase;line-height:1;">¿QUERÉS EMPEZAR A COBRAR EN DESTINO HOY?</h2>
+      <p style="font-size:1.0625rem;color:var(--color-brand-blue-100);max-width:34rem;">Escribinos por WhatsApp y coordinamos tu primer retiro contra reembolso en minutos. Sin contratos forzosos ni comisiones ocultas.</p>
+      <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20activar%20env%C3%ADos%20con%20cobro%20contra%20reembolso%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="cta-pill-primary" style="margin-top:0.5rem;">
+        <span>Pedí por WhatsApp</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

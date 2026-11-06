@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Móvil (MobileNav) | Envíos DosRuedas</title>
+  <meta name="description" content="Navegación móvil accesible y fluida para Envíos DosRuedas en Mar del Plata.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+      --color-ink: #0A0E1A;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-feedback: 160ms;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #0c1a3b;
+      color: var(--color-white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    /* Demo trigger card for previewing drawer */
+    .preview-card {
+      background-color: var(--color-brand-blue-500);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1.5rem;
+      padding: 2.5rem 2rem;
+      max-width: 28rem;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .preview-badge {
+      display: inline-block;
+      padding: 0.25rem 0.875rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+    }
+
+    .preview-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .preview-desc {
+      font-size: 0.875rem;
+      color: var(--color-brand-blue-50);
+      line-height: 1.5;
+    }
+
+    .btn-open-drawer {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border: 0;
+      padding: 0.875rem 1.75rem;
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(255, 236, 1, 0.35);
+      transition: all var(--duration-feedback) var(--ease-out);
+      min-height: 48px;
+    }
+
+    .btn-open-drawer:hover {
+      background-color: var(--color-brand-yellow-400);
+      transform: translateY(-2px);
+    }
+
+    /* MobileNav Dialog & Backdrop */
+    .mobile-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(9, 80, 246, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 340px;
+      height: 100vh;
+      height: 100dvh;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      box-shadow: -10px 0 35px rgba(0, 0, 0, 0.4);
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      overscroll-behavior: contain;
+    }
+
+    .mobile-nav-drawer.open {
+      transform: translateX(0);
+    }
+
+    /* Drawer Header */
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+      height: 4.5rem;
+    }
+
+    .drawer-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    .logo-word-envios { color: #FFFFFF; }
+    .logo-word-dosruedas { color: var(--color-brand-yellow-500); }
+
+    .btn-close-drawer {
+      width: 44px;
+      height: 44px;
+      border-radius: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .btn-close-drawer:hover {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      transform: scale(1.05);
+    }
+
+    /* Drawer Scrollable Body */
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .nav-item-wrapper {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.625rem;
+    }
+
+    .nav-item-wrapper:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* Direct link item */
+    .nav-direct-link {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.625rem 0.75rem;
+      border-radius: 0.75rem;
+      font-family: var(--font-subheading);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      text-decoration: none;
+      min-height: 48px;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .nav-direct-link:hover,
+    .nav-direct-link:focus-visible {
+      color: var(--color-brand-yellow-500);
+      background-color: rgba(255, 255, 255, 0.08);
+      outline: none;
+    }
+
+    /* Dropdown Toggle Button */
+    .nav-dropdown-toggle {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.625rem 0.75rem;
+      border-radius: 0.75rem;
+      font-family: var(--font-subheading);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      min-height: 48px;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .nav-dropdown-toggle:hover,
+    .nav-dropdown-toggle:focus-visible {
+      background-color: rgba(255, 255, 255, 0.08);
+      outline: none;
+    }
+
+    .toggle-left {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+    }
+
+    .nav-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--color-brand-yellow-500);
+      flex-shrink: 0;
+    }
+
+    .chevron-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--color-brand-yellow-500);
+      flex-shrink: 0;
+      transition: transform 0.25s var(--ease-out);
+    }
+
+    .nav-dropdown-toggle[aria-expanded="true"] .chevron-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Submenu Accordion */
+    .nav-submenu {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      visibility: hidden;
+      transition: grid-template-rows 0.25s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .nav-submenu.open {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .submenu-inner {
+      overflow: hidden;
+      padding-left: 1.25rem;
+      padding-right: 0.25rem;
+      padding-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .submenu-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.75rem;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      text-decoration: none;
+      min-height: 42px;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .submenu-link:hover,
+    .submenu-link:focus-visible {
+      color: var(--color-brand-yellow-500);
+      background-color: rgba(0, 0, 0, 0.2);
+      outline: none;
+    }
+
+    .sub-icon-box {
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sub-icon-box svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Drawer Footer */
+    .drawer-footer {
+      padding: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      flex-shrink: 0;
+      background-color: var(--color-brand-blue-500);
+    }
+
+    .drawer-phone-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      min-height: 44px;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .drawer-phone-btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: var(--color-brand-yellow-500);
+    }
+
+    .drawer-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(255, 236, 1, 0.3);
+      min-height: 48px;
+      transition: all var(--duration-feedback) var(--ease-out);
+    }
+
+    .drawer-cta-btn:hover {
+      background-color: var(--color-brand-yellow-400);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preview Card with Drawer Trigger -->
+  <main class="preview-card">
+    <span class="preview-badge">Componente de Navegación</span>
+    <h1 class="preview-title">Menú Móvil Oficial</h1>
+    <p class="preview-desc">
+      Menú lateral deslizable accesible (WCAG 2.1 AA) con trampa de foco, atajos por teclado (Esc), desplegables táctiles y llamadas directas.
+    </p>
+    <button type="button" id="open-menu-demo-btn" class="btn-open-drawer" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobile-navigation-dialog">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+      </svg>
+      <span>Abrir Menú Móvil</span>
+    </button>
+  </main>
+
+  <!-- MobileNav Backdrop Overlay -->
+  <div id="mobile-nav-backdrop" class="mobile-backdrop" aria-hidden="true"></div>
+
+  <!-- MobileNav Drawer Panel -->
+  <dialog id="mobile-navigation-dialog" class="mobile-nav-drawer" aria-modal="true" aria-label="Menú principal de navegación">
+    
+    <!-- Drawer Header -->
+    <header class="drawer-header">
+      <a href="/" class="drawer-logo" aria-label="Envíos DosRuedas - Ir a Inicio">
+        <span class="logo-word-envios">Envíos</span>
+        <span class="logo-word-dosruedas">DosRuedas</span>
+      </a>
+
+      <button type="button" id="close-menu-btn" class="btn-close-drawer" aria-label="Cerrar menú móvil">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Drawer Navigation Content -->
+    <div class="drawer-body">
+      <nav class="nav-list" aria-label="Enlaces móviles">
+
+        <!-- 1. INICIO -->
+        <div class="nav-item-wrapper">
+          <a href="/" class="nav-direct-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Inicio</span>
+          </a>
+        </div>
+
+        <!-- 2. SERVICIOS (DROPDOWN) -->
+        <div class="nav-item-wrapper">
+          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-servicios" id="toggle-servicios">
+            <span class="toggle-left">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="18.5" cy="17.5" r="3.5"></circle>
+                <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <path d="M12 17.5V14l-3-3 4-3 2 3h2"></path>
+              </svg>
+              <span>Servicios</span>
+            </span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <div id="submenu-servicios" class="nav-submenu" role="region" aria-labelledby="toggle-servicios">
+            <div class="submenu-inner">
+              <a href="/servicios/envios-express" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <span>Envíos Express</span>
+              </a>
+
+              <a href="/servicios/envios-lowcost" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                    <polyline points="17 18 23 18 23 12"></polyline>
+                  </svg>
+                </div>
+                <span>Envíos LowCost</span>
+              </a>
+
+              <a href="/servicios/enviosflex" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <span>Envíos Flex (MeLi)</span>
+              </a>
+
+              <a href="/servicios/empresas-cuenta-corriente" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                    <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                    <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                  </svg>
+                </div>
+                <span>Cuenta Corriente Flexible</span>
+              </a>
+
+              <a href="/servicios#ecommerce-24hs" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m7.5 4.27 9 5.15"></path>
+                    <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                    <path d="m3.3 7 8.7 5 8.7-5"></path>
+                    <path d="M12 22V12"></path>
+                  </svg>
+                </div>
+                <span>E-commerce 24HS</span>
+              </a>
+
+              <a href="/servicios/deposito-fulfillment" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path>
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path>
+                  </svg>
+                </div>
+                <span>E-commerce Same Day</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. PLATAFORMAS (DROPDOWN) -->
+        <div class="nav-item-wrapper">
+          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-plataformas" id="toggle-plataformas">
+            <span class="toggle-left">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="7" height="7" x="3" y="3" rx="1"></rect>
+                <rect width="7" height="7" x="14" y="3" rx="1"></rect>
+                <rect width="7" height="7" x="14" y="14" rx="1"></rect>
+                <rect width="7" height="7" x="3" y="14" rx="1"></rect>
+              </svg>
+              <span>Plataformas</span>
+            </span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <div id="submenu-plataformas" class="nav-submenu" role="region" aria-labelledby="toggle-plataformas">
+            <div class="submenu-inner">
+              <a href="/logistica-dosruedas" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+                <span>Logística DosRuedas</span>
+              </a>
+
+              <a href="/mardelivery" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"></path>
+                    <path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"></path>
+                    <path d="m2.1 21.8 6.4-6.3"></path>
+                    <path d="m19 5-7 7"></path>
+                  </svg>
+                </div>
+                <span>MarDelivery Gastronomía</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. NOSOTROS (DROPDOWN) -->
+        <div class="nav-item-wrapper">
+          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="submenu-nosotros" id="toggle-nosotros">
+            <span class="toggle-left">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+              <span>Nosotros</span>
+            </span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <div id="submenu-nosotros" class="nav-submenu" role="region" aria-labelledby="toggle-nosotros">
+            <div class="submenu-inner">
+              <a href="/nosotros/sobre-nosotros" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4"></path>
+                    <path d="M12 8h.01"></path>
+                  </svg>
+                </div>
+                <span>Sobre Nosotros</span>
+              </a>
+
+              <a href="/nosotros/preguntas-frecuentes" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+                <span>Preguntas Frecuentes</span>
+              </a>
+
+              <a href="/nosotros/nuestras-redes" class="submenu-link">
+                <div class="sub-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                  </svg>
+                </div>
+                <span>Nuestras Redes</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. CONTACTO -->
+        <div class="nav-item-wrapper">
+          <a href="/contacto" class="nav-direct-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L1 7"></path>
+            </svg>
+            <span>Contacto</span>
+          </a>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- Drawer Footer Actions -->
+    <footer class="drawer-footer">
+      <a href="tel:+542236602699" class="drawer-phone-btn" aria-label="Llamar al teléfono +54 223 660-2699">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--color-brand-yellow-500);">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>+54 223 660-2699</span>
+      </a>
+
+      <a href="/cotizar" class="drawer-cta-btn">
+        <span>Cotizá tu envío</span>
+      </a>
+    </footer>
+
+  </dialog>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    (function () {
+      const openBtn = document.getElementById('open-menu-demo-btn');
+      const closeBtn = document.getElementById('close-menu-btn');
+      const drawer = document.getElementById('mobile-navigation-dialog');
+      const backdrop = document.getElementById('mobile-nav-backdrop');
+
+      let isOpen = false;
+
+      function openDrawer() {
+        isOpen = true;
+        drawer.classList.add('open');
+        drawer.setAttribute('open', '');
+        backdrop.classList.add('open');
+        openBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function closeDrawer() {
+        isOpen = false;
+        drawer.classList.remove('open');
+        drawer.removeAttribute('open');
+        backdrop.classList.remove('open');
+        openBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        openBtn.focus();
+      }
+
+      openBtn.addEventListener('click', openDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+      backdrop.addEventListener('click', closeDrawer);
+
+      // Accordion dropdown logic
+      const dropdownToggles = drawer.querySelectorAll('.nav-dropdown-toggle');
+      dropdownToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+          const targetSubmenuId = btn.getAttribute('aria-controls');
+          const submenu = document.getElementById(targetSubmenuId);
+
+          // Close all other submenus for clean accordion behavior
+          dropdownToggles.forEach(otherBtn => {
+            if (otherBtn !== btn) {
+              otherBtn.setAttribute('aria-expanded', 'false');
+              const otherSubmenu = document.getElementById(otherBtn.getAttribute('aria-controls'));
+              if (otherSubmenu) otherSubmenu.classList.remove('open');
+            }
+          });
+
+          // Toggle current
+          if (isExpanded) {
+            btn.setAttribute('aria-expanded', 'false');
+            if (submenu) submenu.classList.remove('open');
+          } else {
+            btn.setAttribute('aria-expanded', 'true');
+            if (submenu) submenu.classList.add('open');
+          }
+        });
+      });
+
+      // Escape key listener & Focus Trap
+      window.addEventListener('keydown', (e) => {
+        if (!isOpen) return;
+
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          closeDrawer();
+          return;
+        }
+
+        if (e.key === 'Tab') {
+          const focusables = drawer.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+          if (focusables.length === 0) return;
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

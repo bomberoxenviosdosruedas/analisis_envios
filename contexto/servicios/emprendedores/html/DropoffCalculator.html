@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Ahorro DropOFF | Envíos DosRuedas</title>
+  <meta name="description" content="Calculá tu ahorro mensual trayendo tus paquetes a Friuli 1972 con 20% de descuento automático.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-300: #6292F9;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: #F1F5F9; color: var(--color-brand-blue-500); padding: 1.5rem; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+
+    .calculator-card-outer {
+      background-color: rgba(230, 238, 254, 0.8);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 1.25rem;
+      padding: 0.5rem;
+      max-width: 28rem;
+      width: 100%;
+      box-shadow: 0 20px 40px -15px rgba(9, 80, 246, 0.2);
+    }
+
+    .calculator-card-inner {
+      background-color: var(--color-white);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(230, 238, 254, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Ticket Header */
+    .ticket-header-band {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.625rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .ticket-band-title {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .ticket-band-badge {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    /* Ticket Perforation */
+    .ticket-divider {
+      border-top: 2px dashed var(--color-brand-blue-100);
+      margin: 0.25rem 0;
+    }
+
+    /* Input Controls */
+    .control-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .control-title {
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue-500);
+    }
+
+    .control-range-hint {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: #64748b;
+    }
+
+    .counter-box {
+      display: flex;
+      align-items: stretch;
+      border: 2px solid var(--color-brand-blue-100);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: border-color var(--duration-ui) var(--ease-out);
+    }
+    .counter-box:focus-within {
+      border-color: var(--color-brand-blue-500);
+    }
+
+    .btn-step {
+      width: 3rem;
+      min-height: 2.75rem;
+      background: none;
+      border: none;
+      color: var(--color-brand-blue-500);
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color var(--duration-ui) var(--ease-out);
+    }
+    .btn-step:hover {
+      background-color: var(--color-brand-blue-50);
+    }
+
+    .counter-input {
+      width: 100%;
+      border: none;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      outline: none;
+    }
+
+    /* Presets */
+    .presets-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-preset {
+      flex: 1;
+      min-height: 2.25rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      border: 2px solid var(--color-brand-blue-100);
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all var(--duration-ui) var(--ease-out);
+    }
+    .btn-preset:hover {
+      border-color: var(--color-brand-blue-500);
+    }
+    .btn-preset.active {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-color: var(--color-brand-blue-500);
+    }
+
+    /* Calculation breakdown */
+    .ticket-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: #334155;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    /* Total Pill */
+    .total-box {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .total-label {
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .total-amount {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-brand-yellow-500);
+    }
+
+    /* CTA WhatsApp */
+    .btn-wa-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-radius: 0.5rem;
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color var(--duration-ui) var(--ease-out);
+    }
+    .btn-wa-action:hover {
+      background-color: var(--color-brand-yellow-400);
+    }
+
+    /* Decorative barcode */
+    .barcode-strip {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 3px;
+      height: 1.75rem;
+      opacity: 0.45;
+      margin-top: 0.25rem;
+    }
+    .bar {
+      background-color: var(--color-brand-blue-500);
+      height: 100%;
+      border-radius: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Calculator Component Widget -->
+  <div class="calculator-card-outer">
+    <div class="calculator-card-inner">
+      
+      <!-- Top Band -->
+      <div class="ticket-header-band">
+        <span class="ticket-band-title">Ticket DropOFF &bull; Ahorro estimado</span>
+        <span class="ticket-band-badge">-20%</span>
+      </div>
+
+      <div class="ticket-divider" aria-hidden="true"></div>
+
+      <!-- Controls -->
+      <div>
+        <div class="control-label-row">
+          <label for="envios-input" class="control-title">Envíos por mes</label>
+          <span class="control-range-hint">1 - 1000 envíos</span>
+        </div>
+
+        <div class="counter-box">
+          <button type="button" class="btn-step" id="btn-minus" aria-label="Restar un envío">&minus;</button>
+          <input type="number" id="envios-input" class="counter-input" min="1" max="1000" value="30">
+          <button type="button" class="btn-step" id="btn-plus" aria-label="Sumar un envío">&plus;</button>
+        </div>
+
+        <div class="presets-row">
+          <button type="button" class="btn-preset" data-val="10">10/mes</button>
+          <button type="button" class="btn-preset active" data-val="30">30/mes</button>
+          <button type="button" class="btn-preset" data-val="50">50/mes</button>
+          <button type="button" class="btn-preset" data-val="100">100/mes</button>
+        </div>
+      </div>
+
+      <!-- Breakdown Lines -->
+      <dl class="ticket-breakdown">
+        <div class="breakdown-row">
+          <dt>Tarifa base / envío (MDQ)</dt>
+          <dd><strong>$2.900</strong></dd>
+        </div>
+        <div class="breakdown-row">
+          <dt>Descuento DropOFF (-20%)</dt>
+          <dd><strong style="color: var(--color-brand-blue-500);">- $580</strong></dd>
+        </div>
+        <div class="breakdown-row">
+          <dt>Cantidad despachos / mes</dt>
+          <dd id="breakdown-qty">30</dd>
+        </div>
+      </dl>
+
+      <!-- Total Output -->
+      <div class="total-box">
+        <span class="total-label">Tu ahorro estimado mensual</span>
+        <span class="total-amount" id="savings-display">$17.400</span>
+      </div>
+
+      <!-- WhatsApp CTA -->
+      <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Manejo%20aprox.%2030%20env%C3%ADos%20por%20mes%20y%20quiero%20activar%20la%20modalidad%20DropOFF%20(20%25%20off)%20en%20Mar%20del%20Plata." id="cta-link" class="btn-wa-action" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.42C8.94 7.42 8.68 7.49 8.45 7.74C8.23 7.99 7.6 8.58 7.6 9.79C7.6 11 8.48 12.17 8.6 12.33C8.73 12.49 10.33 14.96 12.78 16.03C13.36 16.29 13.82 16.44 14.17 16.55C14.76 16.74 15.3 16.71 15.72 16.65C16.19 16.58 17.17 16.06 17.38 15.48C17.58 14.9 17.58 14.4 17.52 14.3C17.46 14.2 17.31 14.14 17.08 14.03C16.86 13.92 15.77 13.38 15.57 13.31C15.36 13.24 15.21 13.2 15.06 13.43C14.91 13.66 14.48 14.17 14.35 14.32C14.22 14.47 14.09 14.49 13.86 14.38C13.64 14.27 12.91 14.03 12.05 13.26C11.38 12.66 10.92 11.92 10.79 11.7C10.66 11.47 10.78 11.35 10.89 11.24C10.99 11.14 11.12 10.97 11.23 10.84C11.35 10.71 11.39 10.61 11.46 10.46C11.54 10.31 11.5 10.18 11.44 10.07C11.39 9.96 10.94 8.85 10.75 8.4C10.57 7.96 10.38 8.02 10.24 8.01C10.11 8.01 9.96 8.01 9.81 8.01C9.66 8.01 9.42 8.07 9.21 8.29C9.01 8.52 8.45 9.04 8.45 10.12C8.45 11.2 9.23 12.25 9.34 12.4C9.46 12.55 10.88 14.73 13.06 15.68C13.58 15.91 13.98 16.05 14.3 16.15C14.82 16.32 15.3 16.29 15.68 16.24C16.1 16.17 16.97 15.71 17.15 15.19C17.33 14.67 17.33 14.23 17.28 14.14C17.22 14.05 17.09 13.99 16.89 13.89L9.11 7.42Z"/>
+        </svg>
+        <span>ACTIVAR DROPOFF POR WHATSAPP</span>
+      </a>
+
+      <!-- Barcode Decorative -->
+      <div class="barcode-strip" aria-hidden="true">
+        <span class="bar" style="width: 2px;"></span>
+        <span class="bar" style="width: 4px;"></span>
+        <span class="bar" style="width: 1px;"></span>
+        <span class="bar" style="width: 3px;"></span>
+        <span class="bar" style="width: 5px;"></span>
+        <span class="bar" style="width: 2px;"></span>
+        <span class="bar" style="width: 1px;"></span>
+        <span class="bar" style="width: 4px;"></span>
+        <span class="bar" style="width: 3px;"></span>
+        <span class="bar" style="width: 2px;"></span>
+        <span class="bar" style="width: 1px;"></span>
+        <span class="bar" style="width: 5px;"></span>
+        <span class="bar" style="width: 2px;"></span>
+        <span class="bar" style="width: 3px;"></span>
+        <span class="bar" style="width: 4px;"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const SAVINGS_PER_UNIT = 580; // 20% de $2.900 base
+      const MIN = 1;
+      const MAX = 1000;
+
+      const input = document.getElementById('envios-input');
+      const btnMinus = document.getElementById('btn-minus');
+      const btnPlus = document.getElementById('btn-plus');
+      const breakdownQty = document.getElementById('breakdown-qty');
+      const savingsDisplay = document.getElementById('savings-display');
+      const ctaLink = document.getElementById('cta-link');
+      const presetBtns = document.querySelectorAll('.btn-preset');
+
+      function formatArs(val) {
+        return '$' + Math.round(val).toLocaleString('es-AR');
+      }
+
+      function update(val) {
+        let num = parseInt(val, 10);
+        if (isNaN(num)) num = MIN;
+        num = Math.max(MIN, Math.min(MAX, num));
+        
+        input.value = num;
+        breakdownQty.textContent = num;
+
+        const total = num * SAVINGS_PER_UNIT;
+        savingsDisplay.textContent = formatArs(total);
+
+        // Update WhatsApp href
+        const msg = encodeURIComponent(`Hola! Manejo aprox. ${num} envíos por mes y quiero activar la modalidad DropOFF (20% off) en Mar del Plata.`);
+        ctaLink.href = `https://api.whatsapp.com/send/?phone=542236602699&text=${msg}`;
+
+        // Update presets active class
+        presetBtns.forEach(btn => {
+          if (parseInt(btn.getAttribute('data-val'), 10) === num) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+
+      btnMinus.addEventListener('click', () => update(parseInt(input.value, 10) - 1));
+      btnPlus.addEventListener('click', () => update(parseInt(input.value, 10) + 1));
+      input.addEventListener('input', () => update(input.value));
+      input.addEventListener('blur', () => update(input.value));
+
+      presetBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          update(btn.getAttribute('data-val'));
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

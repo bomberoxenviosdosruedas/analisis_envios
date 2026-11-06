@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beneficios Mercado Envíos Flex | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Devoluciones al local sin cargo, entregas aseguradas al 100%, protocolo de cliente ausente con foto de respaldo y soporte humano por WhatsApp.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-blue-500); color: var(--color-white); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .section-benefits {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .header-group {
+      text-align: center;
+      max-width: 38rem;
+      margin-inline: auto;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transform: rotate(-1deg);
+    }
+
+    .title-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+      color: var(--color-white);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--color-brand-blue-50);
+      line-height: 1.6;
+    }
+
+    .accent-bar {
+      width: 4rem;
+      height: 0.375rem;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.25rem;
+    }
+
+    /* Bento Grid (2 top cards 6 cols, 3 bottom cards 4 cols) */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .bento-grid {
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .col-span-6 { grid-column: span 6; }
+      .col-span-4 { grid-column: span 4; }
+    }
+
+    .benefit-bezel {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1.5rem;
+      padding: 0.375rem;
+      height: 100%;
+      transition: transform var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
+    }
+    .benefit-bezel:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    .benefit-bezel-inner {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .icon-badge {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .micro-badge {
+      font-family: var(--font-subheading);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      line-height: 1.15;
+      margin-bottom: 0.35rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: #334155;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="flex-benefits" class="section-benefits" aria-label="Beneficios para vendedores Flex">
+    <div class="container">
+      
+      <header class="header-group">
+        <span class="badge-pill">SOCIOS ESTRATÉGICOS</span>
+        <h2 class="title-display">BENEFICIOS PARA VENDEDORES</h2>
+        <p class="subtitle">La solución definitiva para proteger tu reputación en Mercado Libre y brindar una experiencia de entrega intachable.</p>
+        <div class="accent-bar" aria-hidden="true"></div>
+      </header>
+
+      <div class="bento-grid">
+        
+        <!-- Benefit 1 (span 6) -->
+        <article class="benefit-bezel col-span-6">
+          <div class="benefit-bezel-inner">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                  <path d="M21 3v5h-5"></path>
+                  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                  <path d="M8 16H3v5"></path>
+                </svg>
+              </div>
+              <span class="micro-badge">SIN CARGO</span>
+            </div>
+            <div>
+              <h3 class="card-title">Devoluciones al local sin cargo</h3>
+              <p class="card-desc">Si el comprador rechaza o no recibe el paquete, te lo devolvemos sin cargo durante el mismo día o al día siguiente a más tardar.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Benefit 2 (span 6) -->
+        <article class="benefit-bezel col-span-6">
+          <div class="benefit-bezel-inner">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"></circle>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                </svg>
+              </div>
+              <span class="micro-badge">REPUTACIÓN PROTEGIDA</span>
+            </div>
+            <div>
+              <h3 class="card-title">Entregas aseguradas al 100%</h3>
+              <p class="card-desc">Cuidamos la reputación de tu cuenta con entregas aseguradas. Accedés a remitos digitales y métricas en tiempo real desde nuestro panel.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Benefit 3 (span 4) -->
+        <article class="benefit-bezel col-span-4">
+          <div class="benefit-bezel-inner">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <span class="micro-badge">FOTO DE RESPALDO</span>
+            </div>
+            <div>
+              <h3 class="card-title">Protocolo cliente ausente</h3>
+              <p class="card-desc">El cadete llama al cliente para concretar la entrega. Si no lo logra, marca "No entregado" adjuntando foto como prueba de visita.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Benefit 4 (span 4) -->
+        <article class="benefit-bezel col-span-4">
+          <div class="benefit-bezel-inner">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <span class="micro-badge">INTEGRACIÓN DIRECTA</span>
+            </div>
+            <div>
+              <h3 class="card-title">Beneficios por volumen</h3>
+              <p class="card-desc">Integración directa a nuestro sistema logístico para recibir tus órdenes automáticamente y acceder a tarifas escalonadas.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Benefit 5 (span 4) -->
+        <article class="benefit-bezel col-span-4">
+          <div class="benefit-bezel-inner">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="micro-badge">SOPORTE WHATSAPP</span>
+            </div>
+            <div>
+              <h3 class="card-title">Equipo propio</h3>
+              <p class="card-desc">Atención humana directa por WhatsApp en tiempo real. Cadetes propios, profesionales y de plena confianza en Mar del Plata.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

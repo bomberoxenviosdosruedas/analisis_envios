@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Cómo Funciona el Envío LowCost? | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Proceso paso a paso del servicio LowCost: Solicitud por WhatsApp, retiro en el transcurso del día y entrega segura antes de las 19:00 hs.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-600: #0840C4;
+      --color-brand-blue-700: #063198;
+      --color-brand-blue-50: #EFF4FF;
+      --color-brand-blue-100: #DBE8FE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-ink: #1E293B;
+      --font-display: 'Anton SC', 'Bebas Neue', sans-serif;
+      --font-subheading: 'Bebas Neue', 'Outfit', sans-serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .how-section {
+      position: relative;
+      padding: 6rem 1.5rem;
+      background-color: var(--color-brand-blue-50);
+      border-top: 1px solid var(--color-brand-blue-100);
+      overflow: hidden;
+    }
+
+    .how-container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Header Block */
+    .how-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 4rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .badge-pill {
+      padding: 0.4rem 1.1rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.15);
+    }
+
+    .how-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      color: var(--color-brand-blue-500);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+    }
+
+    .how-lead {
+      color: var(--color-brand-ink);
+      font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+      line-height: 1.6;
+      max-width: 540px;
+      font-weight: 400;
+    }
+
+    .yellow-divider {
+      width: 64px;
+      height: 6px;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.5rem;
+    }
+
+    /* Steps Layout */
+    .steps-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .steps-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    /* Step Card Double Bezel */
+    .step-card-outer {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1.5px solid var(--color-brand-blue-100);
+      border-radius: 24px;
+      padding: 8px;
+      box-shadow: 0 10px 30px -10px rgba(9, 80, 246, 0.08);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .step-card-outer:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(9, 80, 246, 0.15), 0 0 20px rgba(255, 236, 1, 0.2);
+    }
+
+    .step-card-inner {
+      background: #FFFFFF;
+      border: 1px solid rgba(9, 80, 246, 0.08);
+      border-radius: 16px;
+      padding: 2.25rem 1.75rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Giant step number watermark */
+    .step-watermark-number {
+      position: absolute;
+      top: -0.75rem;
+      right: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(9, 80, 246, 0.06);
+      pointer-events: none;
+      user-select: none;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .step-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-number-tag {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      background-color: var(--color-brand-blue-50);
+      padding: 0.3rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .step-icon-box {
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.15);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .step-card-outer:hover .step-icon-box {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--color-brand-blue-500);
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-brand-ink);
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HOW IT WORKS LOWCOST COMPONENT -->
+  <section id="lowcost-how-it-works" class="how-section" aria-label="Cómo Funciona el Envío LowCost">
+    <div class="how-container">
+      
+      <!-- Header Block -->
+      <header class="how-header">
+        <span class="badge-pill">Paso a Paso</span>
+        <h2 class="how-title">¿Cómo Funciona?</h2>
+        <p class="how-lead">
+          Un proceso simple, transparente y diseñado milimétricamente para maximizar tu productividad logística.
+        </p>
+        <div class="yellow-divider" aria-hidden="true"></div>
+      </header>
+
+      <!-- Steps Grid -->
+      <div class="steps-wrapper">
+        
+        <!-- Step 01 -->
+        <article class="step-card-outer">
+          <div class="step-card-inner">
+            <span class="step-watermark-number" aria-hidden="true">01</span>
+            
+            <div class="step-badge-row">
+              <span class="step-number-tag">PASO 01</span>
+              <div class="step-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+            </div>
+
+            <h3 class="step-title">Solicitud</h3>
+            <p class="step-description">
+              Nos solicitás el envío fácilmente por WhatsApp enviando origen, destino y datos del receptor antes de las 13:00 hs.
+            </p>
+          </div>
+        </article>
+
+        <!-- Step 02 -->
+        <article class="step-card-outer">
+          <div class="step-card-inner">
+            <span class="step-watermark-number" aria-hidden="true">02</span>
+            
+            <div class="step-badge-row">
+              <span class="step-number-tag">PASO 02</span>
+              <div class="step-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              </div>
+            </div>
+
+            <h3 class="step-title">Retiro</h3>
+            <p class="step-description">
+              Retiramos el paquete por tu local, taller o depósito en el transcurso del día según el ruteo urbano planificado.
+            </p>
+          </div>
+        </article>
+
+        <!-- Step 03 -->
+        <article class="step-card-outer">
+          <div class="step-card-inner">
+            <span class="step-watermark-number" aria-hidden="true">03</span>
+            
+            <div class="step-badge-row">
+              <span class="step-number-tag">PASO 03</span>
+              <div class="step-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              </div>
+            </div>
+
+            <h3 class="step-title">Entrega</h3>
+            <p class="step-description">
+              Entregamos de forma segura en manos de tu destinatario antes de las 19:00 hs con aviso inmediato de conformidad.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

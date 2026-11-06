@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifas 2026 Envíos LowCost | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Tabla oficial de tarifas 2026 para envíos LowCost en Mar del Plata. De 0 a 10 km y cálculo excedente por km. Entrega garantizada en el día.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-600: #0840C4;
+      --color-brand-blue-700: #063198;
+      --color-brand-blue-900: #021443;
+      --color-brand-blue-50: #EFF4FF;
+      --color-brand-blue-100: #DBE8FE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF238;
+      --color-brand-ink: #1E293B;
+      --font-display: 'Anton SC', 'Bebas Neue', sans-serif;
+      --font-subheading: 'Bebas Neue', 'Outfit', sans-serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .pricing-section {
+      position: relative;
+      padding: 6rem 1.5rem;
+      background-color: var(--color-brand-blue-500);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+
+    .pricing-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Header Block */
+    .pricing-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 4rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .badge-pill {
+      padding: 0.4rem 1.25rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      box-shadow: 0 0 25px rgba(255, 236, 1, 0.35);
+    }
+
+    .pricing-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 4rem);
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+    }
+
+    .pricing-subtitle {
+      color: var(--color-brand-blue-50);
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .yellow-divider {
+      width: 64px;
+      height: 6px;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.25rem;
+    }
+
+    /* Cards Grid (4 columns) */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .pricing-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Plan Card */
+    .plan-card {
+      background: #FFFFFF;
+      color: var(--color-brand-ink);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Featured Tier: Zona 2 */
+    .plan-card.featured {
+      outline: 3px solid var(--color-brand-yellow-500);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 236, 1, 0.35);
+    }
+
+    .featured-ribbon {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      white-space: nowrap;
+    }
+
+    .plan-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .plan-zone-name {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      line-height: 1;
+    }
+
+    .plan-distance-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      background-color: var(--color-brand-blue-50);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      width: fit-content;
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .plan-price-wrap {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+
+    .plan-price {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .plan-unit {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #64748B;
+      text-transform: uppercase;
+    }
+
+    .plan-note {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: #64748B;
+      min-height: 2.5rem;
+    }
+
+    .plan-features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      border-top: 1px solid rgba(9, 80, 246, 0.08);
+      padding-top: 1rem;
+    }
+
+    .plan-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.825rem;
+      line-height: 1.45;
+      color: var(--color-brand-ink);
+    }
+
+    .plan-feature-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-brand-blue-500);
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .btn-plan-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .btn-plan-action:hover {
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .plan-card.featured .btn-plan-action {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-color: var(--color-brand-blue-500);
+      box-shadow: 0 4px 14px rgba(9, 80, 246, 0.25);
+    }
+
+    .plan-card.featured .btn-plan-action:hover {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+
+    /* Zona 5 Excedente Banner */
+    .excedente-banner {
+      margin-top: 2.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      backdrop-filter: blur(10px);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .excedente-banner {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    .excedente-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      color: var(--color-brand-yellow-500);
+      margin-bottom: 0.35rem;
+    }
+
+    .excedente-desc {
+      font-size: 0.95rem;
+      color: var(--color-brand-blue-50);
+      line-height: 1.6;
+    }
+
+    .excedente-box {
+      background: #FFFFFF;
+      color: var(--color-brand-blue-500);
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .excedente-price {
+      font-family: var(--font-mono);
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+
+    .excedente-sub {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748B;
+      text-transform: uppercase;
+    }
+
+    /* Facts Bottom Row */
+    .facts-grid {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .facts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .fact-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .fact-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .fact-icon-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fact-title {
+      font-family: var(--font-subheading);
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .fact-body {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--color-brand-blue-50);
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRICING LOWCOST COMPONENT -->
+  <section id="lowcost-pricing" class="pricing-section" aria-label="Tarifario Oficial LowCost 2026">
+    <div class="pricing-container">
+      
+      <!-- Header -->
+      <header class="pricing-header">
+        <span class="badge-pill">Tarifas Oficiales 2026</span>
+        <h2 class="pricing-title">Tarifas 2026 Envíos LowCost</h2>
+        <p class="pricing-subtitle">
+          Ruteo por zona optimizado. Garantizamos entregas antes de las 19:00 hs para pedidos cargados antes de las 13:00 hs.
+        </p>
+        <div class="yellow-divider" aria-hidden="true"></div>
+      </header>
+
+      <!-- 4 Zones Pricing Grid -->
+      <div class="pricing-grid">
+        
+        <!-- Tier 1: Zona 1 -->
+        <article class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-zone-name">Zona 1</h3>
+            <span class="plan-distance-badge">0–3 km</span>
+            <div class="plan-price-wrap">
+              <span class="plan-price">$3.000</span>
+              <span class="plan-unit">/ envío</span>
+            </div>
+            <p class="plan-note">La mejor tarifa para despacho diario de cercanía urbana.</p>
+          </div>
+
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de carga 13:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Entrega antes de las 19:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Hasta 5 kg / 40x30x20 cm</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Ruteo por zona optimizado</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Entrega puntual garantizada en el día</span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost%20Zona%201" class="btn-plan-action" target="_blank" rel="noopener noreferrer">
+            VER ZONA 1
+          </a>
+        </article>
+
+        <!-- Tier 2: Zona 2 (Featured) -->
+        <article class="plan-card featured">
+          <div class="featured-ribbon">Recomendado PyME</div>
+          <div class="plan-header">
+            <h3 class="plan-zone-name">Zona 2</h3>
+            <span class="plan-distance-badge">3–5 km</span>
+            <div class="plan-price-wrap">
+              <span class="plan-price">$4.000</span>
+              <span class="plan-unit">/ envío</span>
+            </div>
+            <p class="plan-note">Cobertura intermedia económica ideal para despachos PyME.</p>
+          </div>
+
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de carga 13:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Entrega antes de las 19:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Hasta 5 kg / 40x30x20 cm</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Ruteo por zona optimizado</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Entrega puntual garantizada en el día</span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost%20Zona%202" class="btn-plan-action" target="_blank" rel="noopener noreferrer">
+            VER ZONA 2
+          </a>
+        </article>
+
+        <!-- Tier 3: Zona 3 -->
+        <article class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-zone-name">Zona 3</h3>
+            <span class="plan-distance-badge">5–7 km</span>
+            <div class="plan-price-wrap">
+              <span class="plan-price">$5.300</span>
+              <span class="plan-unit">/ envío</span>
+            </div>
+            <p class="plan-note">Llegamos a distancias medias con el mejor costo operativo.</p>
+          </div>
+
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de carga 13:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Entrega antes de las 19:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Hasta 5 kg / 40x30x20 cm</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Ruteo por zona optimizado</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Entrega puntual garantizada en el día</span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost%20Zona%203" class="btn-plan-action" target="_blank" rel="noopener noreferrer">
+            VER ZONA 3
+          </a>
+        </article>
+
+        <!-- Tier 4: Zona 4 -->
+        <article class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-zone-name">Zona 4</h3>
+            <span class="plan-distance-badge">7–10 km</span>
+            <div class="plan-price-wrap">
+              <span class="plan-price">$7.000</span>
+              <span class="plan-unit">/ envío</span>
+            </div>
+            <p class="plan-note">Máximo ahorro para traslados y repartos urbanos largos.</p>
+          </div>
+
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de carga 13:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Entrega antes de las 19:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Hasta 5 kg / 40x30x20 cm</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Ruteo por zona optimizado</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Entrega puntual garantizada en el día</span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost%20Zona%204" class="btn-plan-action" target="_blank" rel="noopener noreferrer">
+            VER ZONA 4
+          </a>
+        </article>
+
+      </div>
+
+      <!-- Zona 5 (Más de 10 km) Excedente Banner -->
+      <aside class="excedente-banner">
+        <div>
+          <h3 class="excedente-title">Zona 5 (más de 10 km)</h3>
+          <p class="excedente-desc">
+            Base fija de <strong>$7.000</strong> correspondiente a Zona 4 + <strong>$700</strong> por cada kilómetro adicional entero de distancia entre retiro y entrega.
+            Para trayectos que superen los 20 km cotizamos de forma personalizada vía WhatsApp.
+          </p>
+        </div>
+        <div class="excedente-box">
+          <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Ejemplo 12 km</span>
+          <span class="excedente-price">$8.400</span>
+          <span class="excedente-sub">($7.000 + 2 × $700)</span>
+        </div>
+      </aside>
+
+      <!-- Facts Bottom Grid -->
+      <div class="facts-grid">
+        
+        <div class="fact-card">
+          <div class="fact-header">
+            <div class="fact-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+            </div>
+            <h4 class="fact-title">Ruteo por zona optimizado</h4>
+          </div>
+          <p class="fact-body">
+            Planificamos el recorrido por zonas para maximizar la eficiencia y bajar el costo por despacho sin intermediarios.
+          </p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-header">
+            <div class="fact-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h4 class="fact-title">Corte 13:00 · Entrega &lt; 19:00</h4>
+          </div>
+          <p class="fact-body">
+            Pedidos cargados antes de las 13:00 hs se entregan el mismo día, antes de las 19:00 hs con aviso directo.
+          </p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-header">
+            <div class="fact-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
+            <h4 class="fact-title">Tarifa fija por distancia</h4>
+          </div>
+          <p class="fact-body">
+            El precio sale de los kilómetros exactos entre retiro y entrega calculados en mapa. Sin recargos sorpresa.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

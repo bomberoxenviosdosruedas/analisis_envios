@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifario Envíos Express por Distancia | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Tarifas fijas por distancia para envíos Express en moto en Mar del Plata. Sabés el precio antes de confirmar según los kilómetros exactos.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-blue-500); color: var(--color-white); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .pricing-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+
+    .header-group {
+      text-align: center;
+      max-width: 44rem;
+      margin-inline: auto;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-service {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 236, 1, 0.15);
+      border: 1px solid rgba(255, 236, 1, 0.3);
+      color: var(--color-brand-yellow-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .title-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-white);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--color-brand-blue-50);
+      line-height: 1.6;
+    }
+
+    /* 4-Tier Grid */
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 640px) {
+      .tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .tiers-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .tier-card {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+      border: 2px solid transparent;
+      transition: transform var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
+    }
+    .tier-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    .tier-card.featured {
+      border-color: var(--color-brand-yellow-500);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
+    }
+
+    .featured-ribbon {
+      position: absolute;
+      top: -0.875rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+
+    .tier-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .tier-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      line-height: 1.15;
+      margin-bottom: 0.25rem;
+    }
+
+    .tier-dist {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-brand-blue-400);
+    }
+
+    .price-wrap {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+
+    .price-value {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+
+    .price-period {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: #64748b;
+    }
+
+    .tier-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--color-brand-blue-50);
+      border-bottom: 1px solid var(--color-brand-blue-50);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .tier-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: #1e293b;
+    }
+
+    .tier-feature-item svg {
+      width: 0.95rem;
+      height: 0.95rem;
+      stroke: var(--color-brand-blue-500);
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .tier-note {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .btn-tier-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-family: var(--font-subheading);
+      font-size: 0.9375rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: background-color var(--duration-ui) var(--ease-out);
+    }
+    .btn-tier-cta:hover {
+      background-color: var(--color-brand-blue-400);
+    }
+    .tier-card.featured .btn-tier-cta {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+    .tier-card.featured .btn-tier-cta:hover {
+      background-color: var(--color-brand-yellow-400);
+    }
+
+    /* Facts Grid */
+    .facts-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 68rem;
+      margin-inline: auto;
+    }
+    @media (min-width: 768px) {
+      .facts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .fact-card {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .fact-icon-badge {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fact-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--color-white);
+    }
+
+    .fact-desc {
+      font-size: 0.875rem;
+      color: var(--color-brand-blue-50);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="express-pricing" class="pricing-section" aria-label="Tarifario Oficial Envíos Express">
+    <div class="container">
+      
+      <header class="header-group">
+        <span class="badge-service">TARIFAS FIJAS POR DISTANCIA REAL</span>
+        <h2 class="title-display">PAGÁS POR DISTANCIA, NO POR APURO</h2>
+        <p class="subtitle">
+          Tarifa fija según los kilómetros exactos entre retiro y entrega. Sabés el precio del viaje antes de confirmar. Lluvia, espera en puerta o bulto sobredimensionado se informan con monto claro.
+        </p>
+      </header>
+
+      <!-- 4 Tiers Grid -->
+      <div class="tiers-grid">
+        
+        <!-- Zona 1 -->
+        <article class="tier-card">
+          <div class="tier-header">
+            <h3 class="tier-title">Zona 1 &bull; Microcentro</h3>
+            <span class="tier-dist">0 a 3 km</span>
+            <div class="price-wrap">
+              <span class="price-value">$3.500</span>
+              <span class="price-period">/ envío</span>
+            </div>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>3 hs a elección</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Mínimo 2 hs de anticipación</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Hasta 5 kg / 40x30x30 cm</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de carga 18:00 hs</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Notificación digital de estado</span>
+            </li>
+          </ul>
+          <p class="tier-note">Mandados rápidos dentro del barrio o a zonas aledañas.</p>
+          <a href="/cotizar" class="btn-tier-cta">COTIZAR ZONA 1</a>
+        </article>
+
+        <!-- Zona 2 -->
+        <article class="tier-card">
+          <div class="tier-header">
+            <h3 class="tier-title">Zona 2 &bull; Interbarrial</h3>
+            <span class="tier-dist">3 a 6 km</span>
+            <div class="price-wrap">
+              <span class="price-value">$4.200</span>
+              <span class="price-period">/ envío</span>
+            </div>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>3 hs a elección</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Mínimo 2 hs de anticipación</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Hasta 5 kg / 40x30x30 cm</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de carga 18:00 hs</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Notificación digital de estado</span>
+            </li>
+          </ul>
+          <p class="tier-note">Cruces cortos entre zonas y barrios consolidados.</p>
+          <a href="/cotizar" class="btn-tier-cta">COTIZAR ZONA 2</a>
+        </article>
+
+        <!-- Zona 3 (Featured) -->
+        <article class="tier-card featured">
+          <div class="featured-ribbon">TARIFA INTERMEDIA RECOMENDADA</div>
+          <div class="tier-header">
+            <h3 class="tier-title">Zona 3 &bull; Trayecto medio</h3>
+            <span class="tier-dist">6 a 10 km</span>
+            <div class="price-wrap">
+              <span class="price-value">$5.000</span>
+              <span class="price-period">/ envío</span>
+            </div>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>3 hs a elección</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Mínimo 2 hs de anticipación</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Hasta 5 kg / 40x30x30 cm</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de carga 18:00 hs</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Notificación digital de estado</span>
+            </li>
+          </ul>
+          <p class="tier-note">De una punta a la otra de la ciudad sin demoras.</p>
+          <a href="/cotizar" class="btn-tier-cta">COTIZAR AHORA</a>
+        </article>
+
+        <!-- Zona 4 -->
+        <article class="tier-card">
+          <div class="tier-header">
+            <h3 class="tier-title">Zona 4 &bull; Perímetro</h3>
+            <span class="tier-dist">10 a 15 km</span>
+            <div class="price-wrap">
+              <span class="price-value">$6.200</span>
+              <span class="price-period">/ envío</span>
+            </div>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>3 hs a elección</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Mínimo 2 hs de anticipación</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Hasta 5 kg / 40x30x30 cm</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de carga 18:00 hs</span>
+            </li>
+            <li class="tier-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>$550 / km excedente (+10 km)</span>
+            </li>
+          </ul>
+          <p class="tier-note">Recorridos extensos dentro del ejido urbano de MDQ.</p>
+          <a href="/cotizar" class="btn-tier-cta">COTIZAR ZONA 4</a>
+        </article>
+
+      </div>
+
+      <!-- Pricing Facts -->
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="19" r="3"></circle>
+              <path d="M9 19h8.5a4.5 4.5 0 0 0 0-9H15"></path>
+              <circle cx="18" cy="5" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="fact-title">Distancia real por calle</h3>
+          <p class="fact-desc">Medimos el recorrido en el mapa, punto a punto entre retiro y entrega, sin sorpresas.</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="fact-title">Entrega en 3 hs a elección</h3>
+          <p class="fact-desc">Cadetería prioritaria con entrega asegurada dentro de la franja que coordinamos con vos.</p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="fact-title">Tabla pública, sin letra chica</h3>
+          <p class="fact-desc">Los tramos de la tabla y los adicionales están a la vista. El precio sale de esos números.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casos de Uso Envíos Express | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="¿Cuándo te conviene Express? Documentos y trámites urgentes, repuestos e insumos para comercios, y entregas con horario asegurado en Mar del Plata.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-white-50: #F8FAFC;
+      --color-brand-yellow-500: #FFEC01;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-white-50); color: var(--color-brand-blue-500); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .section-use-cases {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-brand-white-50);
+      border-top: 1px solid var(--color-brand-blue-50);
+    }
+
+    .header-group {
+      text-align: center;
+      max-width: 38rem;
+      margin-inline: auto;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transform: rotate(-1deg);
+    }
+
+    .title-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+
+    .subtitle {
+      font-size: 1.0625rem;
+      color: var(--color-brand-blue-500);
+      line-height: 1.6;
+    }
+
+    .accent-bar {
+      width: 4rem;
+      height: 0.375rem;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.25rem;
+    }
+
+    /* 3-Cards Grid */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    @media (min-width: 1024px) {
+      .cases-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .double-bezel {
+      background-color: rgba(230, 238, 254, 0.7);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 1.25rem;
+      padding: 0.375rem;
+      height: 100%;
+      transition: transform var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
+    }
+    .double-bezel:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(9, 80, 246, 0.15);
+    }
+
+    .double-bezel-inner {
+      background-color: var(--color-white);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(230, 238, 254, 0.6);
+    }
+
+    .watermark-icon {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      width: 8rem;
+      height: 8rem;
+      color: rgba(9, 80, 246, 0.04);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .card-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .icon-badge {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .badge-pill-micro {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid var(--color-brand-blue-100);
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+    }
+
+    .case-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      line-height: 1.15;
+      margin-bottom: 0.35rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .case-desc {
+      font-size: 0.875rem;
+      color: var(--color-brand-blue-500);
+      line-height: 1.55;
+      position: relative;
+      z-index: 2;
+    }
+
+    .examples-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-brand-blue-50);
+      position: relative;
+      z-index: 2;
+    }
+
+    .example-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--color-brand-blue-500);
+    }
+
+    .example-item svg {
+      width: 1rem;
+      height: 1rem;
+      stroke: var(--color-brand-blue-500);
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="express-use-cases" class="section-use-cases" aria-label="Casos de uso para Envíos Express">
+    <div class="container">
+      
+      <header class="header-group">
+        <span class="badge-tag">Casos de uso</span>
+        <h2 class="title-display">¿CUÁNDO TE CONVIENE EXPRESS?</h2>
+        <p class="subtitle">Cuando esperar al día siguiente te cuesta plata, un cliente o un trámite.</p>
+        <div class="accent-bar" aria-hidden="true"></div>
+      </header>
+
+      <ul class="cases-grid">
+        
+        <!-- Case 1 -->
+        <li class="double-bezel">
+          <div class="double-bezel-inner">
+            <svg class="watermark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+
+            <div class="card-top-row">
+              <div class="icon-badge" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <span class="badge-pill-micro">Legal y trámites</span>
+            </div>
+
+            <div>
+              <h3 class="case-title">Documentos y trámites</h3>
+              <p class="case-desc">Contratos, escrituras y papeles que tienen que llegar firmados hoy, entregados en mano con remito firmado.</p>
+            </div>
+
+            <ul class="examples-list">
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Documentación para escribanías y estudios contables</span>
+              </li>
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Contratos comerciales firmados y remitos oficiales</span>
+              </li>
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Certificados, cheques y habilitaciones municipales</span>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Case 2 -->
+        <li class="double-bezel">
+          <div class="double-bezel-inner">
+            <svg class="watermark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            </svg>
+
+            <div class="card-top-row">
+              <div class="icon-badge" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                  <path d="M3.3 7 12 12l8.7-5"></path>
+                  <path d="M12 22V12"></path>
+                </svg>
+              </div>
+              <span class="badge-pill-micro">Insumos y repuestos</span>
+            </div>
+
+            <div>
+              <h3 class="case-title">Insumos y repuestos</h3>
+              <p class="case-desc">Lo que frena tu trabajo o taller si no llega a tiempo: repuestos mecánicos, insumos de local, tecnología y piezas clave.</p>
+            </div>
+
+            <ul class="examples-list">
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Repuestos para talleres mecánicos y service</span>
+              </li>
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Insumos para locales, descartables y gastronomía</span>
+              </li>
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Equipos, cables y accesorios urgentes de tecnología</span>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Case 3 -->
+        <li class="double-bezel">
+          <div class="double-bezel-inner">
+            <svg class="watermark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+            </svg>
+
+            <div class="card-top-row">
+              <div class="icon-badge" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <span class="badge-pill-micro">Con horario</span>
+            </div>
+
+            <div>
+              <h3 class="case-title">Entregas con horario</h3>
+              <p class="case-desc">Cuando el paquete tiene que estar sí o sí a una hora pactada: un regalo de cumpleaños, un evento o una obra que arranca.</p>
+            </div>
+
+            <ul class="examples-list">
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Regalos y sorpresas para entregar en el día</span>
+              </li>
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Pedidos para eventos, presentaciones y catering</span>
+              </li>
+              <li class="example-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>Entregas coordinadas en obras y oficinas corporativas</span>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+</body>
+</html>

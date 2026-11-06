@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beneficios de Envíos LowCost | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Ventajas clave del servicio de paquetería y cadetería LowCost en Mar del Plata: entregas same day, corte 13:00 hs y máxima rentabilidad para tu negocio.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-600: #0840C4;
+      --color-brand-blue-700: #063198;
+      --color-brand-blue-50: #EFF4FF;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-ink: #1E293B;
+      --font-display: 'Anton SC', 'Bebas Neue', sans-serif;
+      --font-subheading: 'Bebas Neue', 'Outfit', sans-serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .benefits-section {
+      position: relative;
+      padding: 6rem 1.5rem;
+      background-color: var(--color-brand-blue-500);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+
+    .benefits-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Header Block */
+    .benefits-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 4rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .badge-pill {
+      padding: 0.4rem 1.1rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      box-shadow: 0 0 20px rgba(255, 236, 1, 0.35);
+    }
+
+    .benefits-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+    }
+
+    .benefits-lead {
+      color: var(--color-brand-blue-50);
+      font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+      line-height: 1.6;
+      max-width: 540px;
+      font-weight: 300;
+    }
+
+    .yellow-divider {
+      width: 64px;
+      height: 6px;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.5rem;
+    }
+
+    /* Benefits Grid (2 cols desktop) */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Double Bezel Outer */
+    .benefit-card-outer {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      border-radius: 28px;
+      padding: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .benefit-card-outer:hover {
+      transform: translateY(-5px) scale(1.005);
+      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Inner White Card */
+    .benefit-card-inner {
+      background-color: #FFFFFF;
+      color: var(--color-brand-blue-500);
+      border-radius: 20px;
+      padding: 2.25rem 2rem;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: inset 0 0 0 1px rgba(9, 80, 246, 0.08);
+    }
+
+    /* Giant Watermark */
+    .benefit-watermark {
+      position: absolute;
+      right: -1.5rem;
+      bottom: -1.5rem;
+      width: 140px;
+      height: 140px;
+      color: rgba(9, 80, 246, 0.05);
+      pointer-events: none;
+      transition: transform 0.5s ease;
+    }
+
+    .benefit-card-outer:hover .benefit-watermark {
+      transform: scale(1.12) rotate(6deg);
+    }
+
+    .benefit-icon-badge {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1.5px solid var(--color-brand-blue-500);
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    .benefit-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--color-brand-blue-500);
+      line-height: 1.2;
+      position: relative;
+      z-index: 2;
+    }
+
+    .benefit-desc {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--color-brand-ink);
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BENEFITS LOWCOST COMPONENT -->
+  <section id="lowcost-benefits" class="benefits-section" aria-label="Beneficios Clave del Servicio LowCost">
+    <div class="benefits-container">
+      
+      <!-- Header Block -->
+      <header class="benefits-header">
+        <span class="badge-pill">Ventajas Clave</span>
+        <h2 class="benefits-title">Beneficios LowCost</h2>
+        <p class="benefits-lead">
+          La combinación perfecta entre economía inteligente y máxima eficiencia logística para la consolidación de tu negocio.
+        </p>
+        <div class="yellow-divider" aria-hidden="true"></div>
+      </header>
+
+      <!-- Benefits Bento Grid -->
+      <div class="benefits-grid">
+        
+        <!-- Benefit 1 -->
+        <article class="benefit-card-outer">
+          <div class="benefit-card-inner">
+            <svg class="benefit-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="m7 6 1 1-1 1"></path><path d="m17 16 1 1-1 1"></path></svg>
+            <div class="benefit-icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="m7 6 1 1-1 1"></path><path d="m17 16 1 1-1 1"></path></svg>
+            </div>
+            <h3 class="benefit-title">Entregas a valores LowCost con las condiciones de express</h3>
+            <p class="benefit-desc">
+              Disfrutá del mejor precio de la ciudad con un servicio confiable, trazabilidad y entrega el mismo día que se adapta a tu ritmo comercial.
+            </p>
+          </div>
+        </article>
+
+        <!-- Benefit 2 -->
+        <article class="benefit-card-outer">
+          <div class="benefit-card-inner">
+            <svg class="benefit-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div class="benefit-icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3 class="benefit-title">Horario de corte extendido hasta 13hs</h3>
+            <p class="benefit-desc">
+              Ingresá tus envíos del día hasta las 13:00 hs y los entregamos en la misma jornada antes de las 19:00 hs sin que tengas que correr.
+            </p>
+          </div>
+        </article>
+
+        <!-- Benefit 3 -->
+        <article class="benefit-card-outer">
+          <div class="benefit-card-inner">
+            <svg class="benefit-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+            <div class="benefit-icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+            </div>
+            <h3 class="benefit-title">Ruteo Urbano Eficiente</h3>
+            <p class="benefit-desc">
+              Ruteo continuo optimizado que permite la máxima densidad de entrega por kilómetro en todos los barrios de Mar del Plata.
+            </p>
+          </div>
+        </article>
+
+        <!-- Benefit 4 -->
+        <article class="benefit-card-outer">
+          <div class="benefit-card-inner">
+            <svg class="benefit-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+            <div class="benefit-icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+            </div>
+            <h3 class="benefit-title">Ahorro de costos logísticos</h3>
+            <p class="benefit-desc">
+              Maximizá tu rentabilidad pagando tarifas súper económicas por cada entrega. Tu margen de ganancia crece en cada paquete enviado.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

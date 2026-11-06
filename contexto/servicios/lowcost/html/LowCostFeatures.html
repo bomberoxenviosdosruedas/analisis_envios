@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Características del Servicio LowCost | Envíos DosRuedas</title>
+  <meta name="description" content="Eficiencia en ruteo urbano diario, corte de recepción 13:00 hs y tarifas económicas sin letra chica en Mar del Plata.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-600: #0840C4;
+      --color-brand-blue-700: #063198;
+      --color-brand-blue-50: #EFF4FF;
+      --color-brand-blue-100: #DBE8FE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-ink: #1E293B;
+      --font-display: 'Anton SC', 'Bebas Neue', sans-serif;
+      --font-subheading: 'Bebas Neue', 'Outfit', sans-serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .features-section {
+      position: relative;
+      padding: 6rem 1.5rem;
+      background-color: var(--color-brand-blue-50);
+      border-top: 1px solid var(--color-brand-blue-100);
+      overflow: hidden;
+    }
+
+    .features-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .features-container {
+        grid-template-columns: 5fr 7fr;
+      }
+    }
+
+    /* Left Header Column */
+    .features-header-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .badge-pill {
+      align-self: flex-start;
+      padding: 0.4rem 1.1rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.15);
+    }
+
+    .features-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      color: var(--color-brand-blue-500);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+    }
+
+    .highlight-label {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.1rem 0.5rem;
+      display: inline-block;
+      margin-top: 0.25rem;
+      transform: rotate(-1deg);
+      border-radius: 4px;
+    }
+
+    .features-lead {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--color-brand-ink);
+      font-weight: 400;
+    }
+
+    .business-lock {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      font-family: var(--font-subheading);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-brand-blue-500);
+      padding-top: 0.5rem;
+    }
+
+    .business-lock svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--color-brand-yellow-500);
+      stroke: var(--color-brand-blue-500);
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+
+    /* Right Column: Bento Grid with Double-Bezel Cards */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .bento-grid {
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .bento-col-12 {
+        grid-column: span 12;
+      }
+      .bento-col-7 {
+        grid-column: span 7;
+      }
+      .bento-col-5 {
+        grid-column: span 5;
+      }
+    }
+
+    .bento-card-outer {
+      background: rgba(239, 244, 255, 0.85);
+      border: 1.5px solid var(--color-brand-blue-100);
+      border-radius: 20px;
+      padding: 8px;
+      box-shadow: 0 10px 30px -10px rgba(9, 80, 246, 0.08);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bento-card-outer:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(9, 80, 246, 0.15), 0 0 25px -5px rgba(255, 236, 1, 0.25);
+    }
+
+    .bento-card-inner {
+      background: #FFFFFF;
+      border: 1px solid rgba(9, 80, 246, 0.08);
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .bento-col-12 .bento-card-inner {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+    }
+
+    /* Giant Watermark in background */
+    .bento-watermark {
+      position: absolute;
+      right: -1.5rem;
+      bottom: -1.5rem;
+      width: 140px;
+      height: 140px;
+      color: rgba(9, 80, 246, 0.05);
+      pointer-events: none;
+      transition: transform 0.5s ease;
+    }
+
+    .bento-card-outer:hover .bento-watermark {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .bento-icon-wrapper {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1.5px solid var(--color-brand-blue-500);
+      box-shadow: 0 4px 12px rgba(9, 80, 246, 0.2);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bento-card-outer:hover .bento-icon-wrapper {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+
+    .bento-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .bento-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--color-brand-blue-500);
+      line-height: 1.2;
+    }
+
+    .bento-desc {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-brand-ink);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FEATURES LOWCOST COMPONENT -->
+  <section id="lowcost-features" class="features-section" aria-label="Características del Servicio LowCost">
+    <div class="features-container">
+      
+      <!-- Left Header -->
+      <article class="features-header-col">
+        <span class="badge-pill">Máxima Rentabilidad</span>
+
+        <h2 class="features-title">
+          Envíos LowCost:<br>
+          <span class="highlight-label">Máxima Eficiencia</span>
+        </h2>
+
+        <p class="features-lead">
+          Nuestro servicio LowCost está diseñado para el ruteo diario masivo. Optimizamos nuestras rutas agrupando despachos para ofrecer la tarifa más competitiva, garantizando la entrega en el día para pedidos ingresados antes del horario de corte.
+        </p>
+
+        <div class="business-lock">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18v-2H3v2zm3-4h12v-2H6v2zm2-4h8v-2H8v2zm-4-6v2h16V7l-8-5-8 5z"/></svg>
+          <span>Logística Predecible para Negocios</span>
+        </div>
+      </article>
+
+      <!-- Right Bento Grid -->
+      <div class="bento-grid">
+        
+        <!-- Feature 1: Eficiencia en Ruteo (Span 12) -->
+        <article class="bento-card-outer bento-col-12">
+          <div class="bento-card-inner">
+            <svg class="bento-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+            <div class="bento-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+            </div>
+            <div class="bento-content">
+              <h3 class="bento-title">Eficiencia en Ruteo</h3>
+              <p class="bento-desc">
+                Ruteo diario masivo optimizado de última milla. No se elige rango horario para maximizar la eficiencia logística urbana y bajar drásticamente los costos operativos por cada despacho.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 2: Corte y Entrega (Span 7) -->
+        <article class="bento-card-outer bento-col-7">
+          <div class="bento-card-inner">
+            <svg class="bento-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div class="bento-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="bento-content">
+              <h3 class="bento-title">Corte 13:00 hs y Entrega Hoy</h3>
+              <p class="bento-desc">
+                Pedidos ingresados antes de las 13:00 hs se entregan en el transcurso del día, siempre antes de las 19:00 hs de manera coordinada.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 3: Tarifa Económica (Span 5) -->
+        <article class="bento-card-outer bento-col-5">
+          <div class="bento-card-inner">
+            <svg class="bento-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="m7 6 1 1-1 1"></path><path d="m17 16 1 1-1 1"></path></svg>
+            <div class="bento-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="m7 6 1 1-1 1"></path><path d="m17 16 1 1-1 1"></path></svg>
+            </div>
+            <div class="bento-content">
+              <h3 class="bento-title">Tarifa Económica</h3>
+              <p class="bento-desc">
+                Más barato que Express, sobre todo en distancias largas. Pensado para emprendedores y tiendas online.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

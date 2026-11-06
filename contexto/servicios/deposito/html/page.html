@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depósito y Fulfillment para PyMEs | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Depósito y fulfillment logístico en Friuli 1972, Mar del Plata. Picking, empaque, opción Drop-Off y entregas en el día con stock seguro para tu negocio.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.enviosdosruedas.com/servicios/deposito-fulfillment">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Depósito y Fulfillment para PyMEs | Envíos DosRuedas">
+  <meta property="og:description" content="Soluciones integrales de logística para e-commerce en Mar del Plata. Depósito en Friuli 1972, preparación y despacho directo.">
+  <meta property="og:url" content="https://www.enviosdosruedas.com/servicios/deposito-fulfillment">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Depósito, Fulfillment y Logística E-Commerce en Mar del Plata",
+    "description": "Servicio integral de almacenamiento y logística e-commerce en Mar del Plata. Incluye E-Commerce Same Day desde Friuli 1972 con picking QR, E-Commerce Next Day 24hs, opción DropOFF con 20% de descuento y cobro contrareembolso sin cargo extra.",
+    "url": "https://www.enviosdosruedas.com/servicios/deposito-fulfillment",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.enviosdosruedas.com#localbusiness",
+      "name": "Envíos DosRuedas",
+      "telephone": "+54-223-660-2699",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Friuli 1972",
+        "addressLocality": "Mar del Plata",
+        "addressRegion": "Buenos Aires",
+        "postalCode": "7600",
+        "addressCountry": "AR"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Mar del Plata"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Planes de Depósito, Fulfillment y Paquetería E-Commerce",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "E-Commerce Same Day",
+          "description": "Stock almacenado en Friuli 1972, despachado inmediatamente con picking QR y empaquetado",
+          "priceCurrency": "ARS",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "E-Commerce Next Day (24hs)",
+          "description": "Retiro programado para entrega al día siguiente. Recolección gratis para más de 10 envíos",
+          "priceCurrency": "ARS",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Opción DropOFF (-20% OFF)",
+          "description": "Despacho directo en Friuli 1972 con un 20% de descuento en la tarifa final",
+          "priceCurrency": "ARS",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.enviosdosruedas.com" },
+      { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://www.enviosdosruedas.com/#servicios" },
+      { "@type": "ListItem", "position": 3, "name": "Depósito & Fulfillment", "item": "https://www.enviosdosruedas.com/servicios/deposito-fulfillment" }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-white-50: #F8FAFC;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-white); color: var(--color-brand-blue-500); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    /* Site Header */
+    .site-header {
+      background-color: var(--color-brand-blue-500);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.5rem;
+    }
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--color-white);
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+    }
+    .brand-tag {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+    }
+    .nav-links a {
+      color: var(--color-brand-blue-50);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color var(--duration-ui) var(--ease-out);
+    }
+    .nav-links a:hover {
+      color: var(--color-brand-yellow-500);
+    }
+    .btn-header {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color var(--duration-ui) var(--ease-out);
+    }
+    .btn-header:hover {
+      background-color: var(--color-brand-yellow-400);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs-bar {
+      background-color: var(--color-brand-blue-50);
+      border-bottom: 1px solid var(--color-brand-blue-100);
+      padding: 0.625rem 0;
+      font-size: 0.75rem;
+    }
+    .breadcrumbs-list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+    .breadcrumbs-list a {
+      color: var(--color-brand-blue-500);
+      text-decoration: none;
+    }
+    .breadcrumbs-list a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumbs-separator {
+      color: var(--color-brand-blue-400);
+    }
+
+    /* Hero Emprendedores & Depósito */
+    .hero-section {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding-top: 4.5rem;
+      padding-bottom: 5.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+      }
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      transform: rotate(-1deg);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      color: var(--color-brand-blue-500);
+    }
+    .knockout-pill {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      padding: 0.1rem 0.5rem;
+      display: inline-block;
+      border-radius: 0.25rem;
+    }
+    .hero-desc {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      max-width: 48ch;
+      margin-bottom: 1.75rem;
+      color: var(--color-brand-blue-500);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color var(--duration-ui) var(--ease-out), transform var(--duration-ui) var(--ease-out);
+    }
+    .btn-hero-primary:hover {
+      background-color: var(--color-brand-blue-400);
+      transform: translateY(-2px);
+    }
+    .link-hero-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue-500);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 700;
+    }
+
+    /* Steps list */
+    .steps-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -16px rgba(9, 80, 246, 0.25);
+      max-width: 36rem;
+    }
+    @media (min-width: 640px) {
+      .steps-box {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .step-item {
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      border-bottom: 1px dashed var(--color-brand-blue-50);
+    }
+    @media (min-width: 640px) {
+      .step-item {
+        border-bottom: none;
+        border-left: 1px dashed var(--color-brand-blue-100);
+      }
+      .step-item:first-child {
+        border-left: none;
+      }
+    }
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+    }
+    .step-title {
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+    .step-text {
+      font-size: 0.8125rem;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    /* Photo column */
+    .hero-image-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 28rem;
+      margin-inline: auto;
+    }
+    .hero-image-backdrop {
+      position: absolute;
+      inset: 6% 4% 4% 6%;
+      background-color: var(--color-white);
+      opacity: 0.55;
+      border-radius: 1.5rem;
+      transform: rotate(3deg);
+      z-index: 1;
+    }
+    .hero-img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: auto;
+      border-radius: 1.25rem;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+    }
+    .offer-stamp-1 {
+      position: absolute;
+      top: 8%;
+      left: -2%;
+      z-index: 3;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      padding: 0.5rem 0.875rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 14px 30px rgba(9, 80, 246, 0.3);
+      transform: rotate(-3deg);
+      display: flex;
+      flex-direction: column;
+    }
+    .offer-stamp-2 {
+      position: absolute;
+      bottom: 10%;
+      right: -2%;
+      z-index: 3;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      padding: 0.5rem 0.875rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 14px 30px rgba(9, 80, 246, 0.3);
+      transform: rotate(2deg);
+      display: flex;
+      flex-direction: column;
+    }
+    .stamp-val {
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .stamp-txt {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      color: var(--color-white);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Features Section */
+    .section-features {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-brand-blue-100);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .features-grid {
+        grid-template-columns: 5fr 7fr;
+      }
+    }
+    .feature-card {
+      background-color: rgba(230, 238, 254, 0.4);
+      border: 1px solid var(--color-brand-blue-100);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .feature-icon-badge {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 0.25rem;
+    }
+    .feature-card p {
+      font-size: 0.875rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* Deposito Pricing Section */
+    .section-pricing-deposito {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+    .tier-box {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      border-radius: 1.5rem;
+      padding: 2.25rem;
+      max-width: 40rem;
+      margin-inline: auto;
+      border: 3px solid var(--color-brand-yellow-500);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    }
+    .tier-title-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .tier-price-val {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+    .tier-check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--color-brand-blue-50);
+      border-bottom: 1px solid var(--color-brand-blue-50);
+      margin-bottom: 1.5rem;
+    }
+    .tier-check-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+      color: #1e293b;
+    }
+    .btn-tier-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      border-radius: 0.75rem;
+      text-decoration: none;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      transition: background-color var(--duration-ui) var(--ease-out);
+    }
+    .btn-tier-cta:hover {
+      background-color: var(--color-brand-blue-400);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      border-top: 1px solid var(--color-brand-blue-400);
+      padding: 3rem 0;
+      font-size: 0.875rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+    }
+    .footer-links a {
+      color: var(--color-brand-blue-50);
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: var(--color-brand-yellow-500);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="header-nav" aria-label="Navegación principal">
+        <a href="/" class="brand-logo">
+          <span>ENVÍOS DOSRUEDAS</span>
+          <span class="brand-tag">3PL DEPÓSITO</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/#servicios">Servicios</a></li>
+          <li><a href="/servicios/envios-flex">Flex</a></li>
+          <li><a href="/servicios/contrareembolso">Cobranza</a></li>
+          <li><a href="/servicios/empresas-cuenta-corriente">Cuenta Corriente</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+        <a href="https://wa.me/5492236602699?text=Hola,%20quisiera%20consultar%20por%20dep%C3%B3sito%20y%20fulfillment%20en%20Friuli%201972" class="btn-header" target="_blank" rel="noopener noreferrer">CONSULTAR HUB</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs Bar -->
+  <nav class="breadcrumbs-bar" aria-label="Miga de pan">
+    <div class="container">
+      <ol class="breadcrumbs-list">
+        <li><a href="/">Inicio</a></li>
+        <li class="breadcrumbs-separator" aria-hidden="true">/</li>
+        <li><a href="/#servicios">Servicios</a></li>
+        <li class="breadcrumbs-separator" aria-hidden="true">/</li>
+        <li aria-current="page"><strong>Depósito &amp; Fulfillment</strong></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section" aria-label="Depósito y Fulfillment para PyMEs">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="hero-badge">FULFILLMENT 3PL E-COMMERCE</span>
+            <h1 class="hero-title">
+              VOS VENDÉS, NOSOTROS <br>
+              <span class="knockout-pill">LO ENTREGAMOS HOY</span> <br>
+              EN MAR DEL PLATA
+            </h1>
+            <p class="hero-desc">
+              Guardamos tu stock en Friuli 1972, armamos cada pedido con picking por código QR y lo entregamos en el día. Si preferís traerlo vos, la modalidad DropOFF te bonifica un 20% sobre la tarifa final.
+            </p>
+            <div class="hero-actions">
+              <a href="/contacto" class="btn-hero-primary">ACTIVÁ PLAN EMPRENDEDORES</a>
+              <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20armar%20un%20Plan%203PL%20Dep%C3%B3sito" class="link-hero-wa" target="_blank" rel="noopener noreferrer">
+                <span>O ESCRIBINOS POR WHATSAPP</span>
+              </a>
+            </div>
+
+            <!-- Steps -->
+            <ol class="steps-box" aria-label="Cómo funciona el depósito y fulfillment">
+              <li class="step-item">
+                <span class="step-num">01</span>
+                <span class="step-title">ALMACENAMOS</span>
+                <span class="step-text">Tu stock seguro en Friuli 1972.</span>
+              </li>
+              <li class="step-item">
+                <span class="step-num">02</span>
+                <span class="step-title">PREPARAMOS</span>
+                <span class="step-text">Picking y embalaje por pedido.</span>
+              </li>
+              <li class="step-item">
+                <span class="step-num">03</span>
+                <span class="step-title">ENTREGAMOS</span>
+                <span class="step-text">En el día en todo Mar del Plata.</span>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Hero Image & Stamps -->
+          <div class="hero-image-wrap">
+            <div class="hero-image-backdrop" aria-hidden="true"></div>
+            <img src="/heroes/deposito-local.webp" alt="Local de Envíos DosRuedas en Friuli 1972, Mar del Plata" class="hero-img">
+            <div class="offer-stamp-1">
+              <span class="stamp-val">-20%</span>
+              <span class="stamp-txt">Con DropOFF</span>
+            </div>
+            <div class="offer-stamp-2">
+              <span class="stamp-val">$0</span>
+              <span class="stamp-txt">Comisión cobranza</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-features" aria-label="Soluciones paquetería e-commerce">
+      <div class="container">
+        <div class="features-grid">
+          <div>
+            <span style="font-family: var(--font-subheading); font-size: 0.8125rem; font-weight: 700; color: var(--color-brand-blue-500); text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">SOLUCIONES PAQUETERÍA E-COMMERCE</span>
+            <h2 style="font-family: var(--font-display); font-size: 2.5rem; text-transform: uppercase; color: var(--color-brand-blue-500); line-height: 1; margin-bottom: 1rem;">
+              LOGÍSTICA 3PL Y PAQUETERÍA EN MAR DEL PLATA
+            </h2>
+            <p style="font-size: 1rem; color: #334155; line-height: 1.6;">
+              Almacenamos tus productos en Friuli 1972, realizamos control de inventario por QR y despachamos en el día con la flota más ágil de la ciudad.
+            </p>
+          </div>
+          <div>
+            <div class="feature-card">
+              <div class="feature-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path></svg>
+              </div>
+              <div>
+                <h4>E-Commerce Same Day (Friuli 1972)</h4>
+                <p>Tu producto sale inmediatamente empaquetado con picking por código QR en cuanto se registra la venta.</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div>
+                <h4>Opción DropOFF (-20% OFF)</h4>
+                <p>Acercá tus paquetes directamente al depósito y obtené un 20% de descuento automático en la tarifa final.</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+              </div>
+              <div>
+                <h4>Contrareembolso Sin Cargo Extra</h4>
+                <p>Cobramos en efectivo o QR al cliente en el momento de la entrega sin ninguna comisión oculta.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deposito Pricing Section -->
+    <section class="section-pricing-deposito" aria-label="Planes y Tarifas de Depósito">
+      <div class="container">
+        <header style="text-align: center; max-width: 42rem; margin-inline: auto; margin-bottom: 3.5rem;">
+          <span style="font-family: var(--font-subheading); font-size: 0.8125rem; font-weight: 700; color: var(--color-brand-yellow-500); text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">TARIFARIO OFICIAL 3PL</span>
+          <h2 style="font-family: var(--font-display); font-size: 2.75rem; text-transform: uppercase; color: var(--color-white); line-height: 1;">PLAN 3PL SAME DAY</h2>
+          <p style="font-size: 1rem; color: var(--color-brand-blue-50); margin-top: 0.5rem;">Almacenamiento sin cargo + picking QR + despacho Same Day en todo Mar del Plata.</p>
+        </header>
+
+        <div class="tier-box">
+          <div class="tier-title-head">
+            <div>
+              <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase; color: var(--color-brand-blue-500);">E-COMMERCE SAME DAY</h3>
+              <p style="font-size: 0.875rem; font-weight: 600; color: var(--color-brand-blue-400);">Depósito central Friuli 1972</p>
+            </div>
+            <div style="text-align: right;">
+              <span class="tier-price-val">$2.900</span>
+              <p style="font-family: var(--font-mono); font-size: 0.8125rem; color: #64748b;">fijo / envío</p>
+            </div>
+          </div>
+
+          <ul class="tier-check-list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0950F6" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg> Tarifa plana $2.900 a todo Mar del Plata</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0950F6" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg> Stock gratis y seguro en Friuli 1972</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0950F6" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg> Picking por código QR instantáneo</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0950F6" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg> Despacho Same Day 9:00 a 20:00 hs</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0950F6" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg> 2da visita 100% bonificada</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0950F6" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg> Cobro contrareembolso sin recargo</li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20solicitar%20el%20Plan%203PL%20Same%20Day" class="btn-tier-cta" target="_blank" rel="noopener noreferrer">
+            <span>SOLICITAR PLAN 3PL POR WHATSAPP</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <p><strong>Envíos DosRuedas</strong> &bull; Friuli 1972, Mar del Plata</p>
+          <p style="color: var(--color-brand-blue-100); font-size: 0.8125rem; margin-top: 0.25rem;">WhatsApp: +54 223 660-2699 &bull; Mar del Plata, Argentina</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/privacidad">Privacidad</a></li>
+          <li><a href="/terminos">Términos</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes E-Commerce 24HS (Next Day) | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Distribución programada Next Day en Mar del Plata con costos fijos escalonados. Retiro diario bonificado y DropOFF -20% en Friuli 1972.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-600: #0840C4;
+      --color-brand-blue-700: #063198;
+      --color-brand-blue-900: #021443;
+      --color-brand-blue-50: #EFF4FF;
+      --color-brand-blue-100: #DBE8FE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF238;
+      --color-brand-ink: #1E293B;
+      --font-display: 'Anton SC', 'Bebas Neue', sans-serif;
+      --font-subheading: 'Bebas Neue', 'Outfit', sans-serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .pricing-24hs-section {
+      position: relative;
+      padding: 6rem 1.5rem;
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .pricing-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Header Block */
+    .pricing-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 4rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .badge-pill-yellow {
+      padding: 0.4rem 1.25rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      box-shadow: 0 0 25px rgba(255, 236, 1, 0.35);
+    }
+
+    .pricing-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 4rem);
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+    }
+
+    .pricing-subtitle {
+      color: var(--color-brand-blue-50);
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .yellow-divider {
+      width: 64px;
+      height: 6px;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+      margin-top: 0.25rem;
+    }
+
+    /* Plans Grid (4 columns) */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .plans-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Plan Card */
+    .plan-card {
+      background: #FFFFFF;
+      color: var(--color-brand-ink);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Featured Plan: Pro */
+    .plan-card.featured {
+      outline: 3px solid var(--color-brand-yellow-500);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 236, 1, 0.35);
+    }
+
+    .featured-ribbon {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      white-space: nowrap;
+    }
+
+    .plan-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .plan-name {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      line-height: 1;
+    }
+
+    .plan-vol-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      background-color: var(--color-brand-blue-50);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      width: fit-content;
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .plan-price-wrap {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+
+    .plan-price {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .plan-unit {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #64748B;
+      text-transform: uppercase;
+    }
+
+    .plan-note {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: #64748B;
+      min-height: 2.5rem;
+    }
+
+    .plan-features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      border-top: 1px solid rgba(9, 80, 246, 0.08);
+      padding-top: 1rem;
+    }
+
+    .plan-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.825rem;
+      line-height: 1.45;
+      color: var(--color-brand-ink);
+    }
+
+    .plan-feature-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-brand-blue-500);
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .btn-plan-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      border: 1px solid var(--color-brand-blue-100);
+    }
+
+    .btn-plan-action:hover {
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .plan-card.featured .btn-plan-action {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      border-color: var(--color-brand-blue-500);
+      box-shadow: 0 4px 14px rgba(9, 80, 246, 0.25);
+    }
+
+    .plan-card.featured .btn-plan-action:hover {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+
+    /* Facts Row */
+    .facts-grid {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .facts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .fact-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .fact-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .fact-icon-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fact-title {
+      font-family: var(--font-subheading);
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .fact-body {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--color-brand-blue-50);
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ECOMMERCE 24HS PRICING COMPONENT -->
+  <section id="ecommerce-24hs-pricing" class="pricing-24hs-section" aria-label="Tarifario Planes E-Commerce 24HS">
+    <div class="pricing-container">
+      
+      <!-- Header -->
+      <header class="pricing-header">
+        <span class="badge-pill-yellow">Distribución Next Day</span>
+        <h2 class="pricing-title">Planes E-Commerce 24HS (Next Day)</h2>
+        <p class="pricing-subtitle">
+          Distribución programada Next Day con costos fijos escalonados. DropOFF -20% trayendo paquetes a Friuli 1972.
+        </p>
+        <div class="yellow-divider" aria-hidden="true"></div>
+      </header>
+
+      <!-- 4 Plans Grid -->
+      <div class="plans-grid">
+        
+        <!-- Plan 1: Inicial -->
+        <article class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-name">Inicial</h3>
+            <span class="plan-vol-badge">1–30 envíos / mes</span>
+            <div class="plan-price-wrap">
+              <span class="plan-price">$2.800</span>
+              <span class="plan-unit">/ envío</span>
+            </div>
+            <p class="plan-note">Ideal para empezar con volúmenes iniciales en Mar del Plata.</p>
+          </div>
+
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tarifa plana todo MDQ</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Retiro gratis desde 10 paquetes</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>2da visita 100% bonificada</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Contrareembolso gratis (0% comisión)</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>DropOFF -20% en Friuli 1972</span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20elegir%20el%20Plan%2024HS%20Inicial" class="btn-plan-action" target="_blank" rel="noopener noreferrer">
+            ELEGIR PLAN INICIAL
+          </a>
+        </article>
+
+        <!-- Plan 2: Pro (Featured) -->
+        <article class="plan-card featured">
+          <div class="featured-ribbon">Recomendado PyME</div>
+          <div class="plan-header">
+            <h3 class="plan-name">Pro</h3>
+            <span class="plan-vol-badge">31–100 envíos / mes</span>
+            <div class="plan-price-wrap">
+              <span class="plan-price">$2.600</span>
+              <span class="plan-unit">/ envío</span>
+            </div>
+            <p class="plan-note">El equilibrio ideal para PyMEs y marcas en crecimiento sostenido.</p>
+          </div>
+
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tarifa plana todo MDQ</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Retiro gratis desde 10 paquetes</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>2da visita 100% bonificada</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Contrareembolso gratis (0% comisión)</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>DropOFF -20% en Friuli 1972</span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20elegir%20el%20Plan%2024HS%20Pro" class="btn-plan-action" target="_blank" rel="noopener noreferrer">
+            ELEGIR PLAN PRO
+          </a>
+        </article>
+
+        <!-- Plan 3: Elite -->
+        <article class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-name">Elite</h3>
+            <span class="plan-vol-badge">101–300 envíos / mes</span>
+            <div class="plan-price-wrap">
+              <span class="plan-price">$2.400</span>
+              <span class="plan-unit">/ envío</span>
+            </div>
+            <p class="plan-note">Para volúmenes consolidados con máxima conveniencia por despacho.</p>
+          </div>
+
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tarifa plana todo MDQ</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Retiro gratis desde 10 paquetes</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>2da visita 100% bonificada</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Contrareembolso gratis (0% comisión)</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>DropOFF -20% en Friuli 1972</span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20elegir%20el%20Plan%2024HS%20Elite" class="btn-plan-action" target="_blank" rel="noopener noreferrer">
+            ELEGIR PLAN ELITE
+          </a>
+        </article>
+
+        <!-- Plan 4: Partner -->
+        <article class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-name">Partner</h3>
+            <span class="plan-vol-badge">301+ envíos / mes</span>
+            <div class="plan-price-wrap">
+              <span class="plan-price">$2.200</span>
+              <span class="plan-unit">/ envío</span>
+            </div>
+            <p class="plan-note">Tarifa preferencial plana para grandes cuentas comerciales e-commerce.</p>
+          </div>
+
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tarifa plana todo MDQ</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Retiro gratis desde 10 paquetes</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>2da visita 100% bonificada</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Contrareembolso gratis (0% comisión)</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>DropOFF -20% en Friuli 1972</span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20elegir%20el%20Plan%2024HS%20Partner" class="btn-plan-action" target="_blank" rel="noopener noreferrer">
+            ELEGIR PLAN PARTNER
+          </a>
+        </article>
+
+      </div>
+
+      <!-- Facts Bottom Grid -->
+      <div class="facts-grid">
+        
+        <div class="fact-card">
+          <div class="fact-header">
+            <div class="fact-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h4 class="fact-title">DropOFF -20% en Friuli 1972</h4>
+          </div>
+          <p class="fact-body">
+            Trayendo tus paquetes directamente a nuestro depósito central ahorrás un 20% adicional en cada envío y evitás el costo de retiro.
+          </p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-header">
+            <div class="fact-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
+            <h4 class="fact-title">2da Visita y Contrareembolso Gratis</h4>
+          </div>
+          <p class="fact-body">
+            En todos los planes 24HS la segunda visita en caso de ausencia y la gestión de cobro contrareembolso son 100% bonificadas.
+          </p>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-header">
+            <div class="fact-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <h4 class="fact-title">Retiro Gratis desde 10 Paquetes/Día</h4>
+          </div>
+          <p class="fact-body">
+            Superando los 10 paquetes diarios el retiro en tu local o depósito es sin cargo; con menor volumen se cotiza pase moto según tu zona.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

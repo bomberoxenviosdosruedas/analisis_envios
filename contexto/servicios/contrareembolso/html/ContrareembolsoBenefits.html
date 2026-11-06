@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beneficios de Cobro Contra Reembolso | Envíos DosRuedas</title>
+  <meta name="description" content="Ventajas y beneficios de cobrar en destino con Envíos DosRuedas: rendición acordada, comprobante instantáneo y cero fricción.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+      --color-ink: #0A0E1A;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: #FAFAFB; color: var(--color-ink); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .benefits-section {
+      padding-block: 5rem;
+      background-color: rgba(230, 238, 254, 0.5);
+      border-block: 1px solid var(--color-brand-blue-100);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 42rem;
+      margin-inline: auto;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-yellow {
+      display: inline-block;
+      padding: 0.25rem 0.875rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+    @media (min-width: 640px) { .section-title { font-size: 2.75rem; } }
+
+    .section-desc {
+      font-size: 0.9375rem;
+      color: var(--color-brand-blue-500);
+      line-height: 1.6;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .benefit-card {
+      background-color: #FFFFFF;
+      padding: 1.75rem;
+      border-radius: 1rem;
+      border: 1px solid var(--color-brand-blue-100);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      transition: transform var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(9, 80, 246, 0.12);
+    }
+
+    .benefit-icon-box {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefit-icon-box svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .benefit-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      letter-spacing: -0.01em;
+    }
+
+    .benefit-desc {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--color-brand-blue-500);
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="contrareembolso-benefits" class="benefits-section" aria-label="Ventajas de elegir nuestro cobro contra reembolso en destino">
+    <div class="container">
+      
+      <header class="section-header">
+        <span class="badge-yellow">CONFIANZA TOTAL</span>
+        <h2 class="section-title">POR QUÉ ELEGIR NUESTRO COBRO EN DESTINO</h2>
+        <p class="section-desc">
+          Más de 7 años recorriendo Mar del Plata garantizan seguridad, puntualidad y trazabilidad.
+        </p>
+      </header>
+
+      <div class="benefits-grid">
+
+        <article class="benefit-card">
+          <div class="benefit-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h3 class="benefit-title">Rendición acordada</h3>
+            <p class="benefit-desc">El dinero de tus ventas no queda retenido semanas. Te transferimos o rendimos en mano en el día, al día siguiente o semanal, según lo acordado.</p>
+          </div>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="benefit-title">Flota propia identificada</h3>
+            <p class="benefit-desc">Nuestros cadetes están capacitados y registrados. Sin intermediarios anónimos custodiando tus cobranzas.</p>
+          </div>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h3 class="benefit-title">Cero fricción para tu cliente</h3>
+            <p class="benefit-desc">Tu comprador paga recién cuando tiene el producto en sus manos, aumentando tus conversiones de venta en MDQ.</p>
+          </div>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+              <path d="M12 18V6"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="benefit-title">Comprobante y trazabilidad</h3>
+            <p class="benefit-desc">Notificación inmediata vía WhatsApp apenas se efectiviza la cobranza con foto del remito o comprobante bancario.</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

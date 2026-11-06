@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Plan Emprendedores &amp; 3PL | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Plan Emprendedores y Fulfillment 3PL: almacenamiento en Friuli 1972, picking por QR y entregas Same-Day en Mar del Plata.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-yellow-500); color: var(--color-brand-blue-500); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .hero-emprendedores {
+      position: relative;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding-top: 4.5rem;
+      padding-bottom: 6rem;
+      overflow: hidden;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+      }
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      transform: rotate(-1deg);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6.5vw, 4.75rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: var(--color-brand-blue-500);
+    }
+
+    .knockout-badge {
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      padding: 0.15rem 0.6rem;
+      display: inline-block;
+      border-radius: 0.35rem;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 54ch;
+      margin-bottom: 2rem;
+      color: var(--color-brand-blue-500);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .btn-pill-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      border-radius: 9999px;
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color var(--duration-ui) var(--ease-out), transform var(--duration-ui) var(--ease-out);
+    }
+    .btn-pill-cta:hover {
+      background-color: var(--color-brand-blue-400);
+      transform: translateY(-2px);
+    }
+
+    .btn-wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-brand-blue-500);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 700;
+    }
+
+    /* Circuit Steps Box */
+    .steps-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -16px rgba(9, 80, 246, 0.25);
+      max-width: 36rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .steps-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .step-cell {
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      border-bottom: 1px dashed var(--color-brand-blue-50);
+    }
+    @media (min-width: 640px) {
+      .step-cell {
+        border-bottom: none;
+        border-left: 1px dashed var(--color-brand-blue-100);
+      }
+      .step-cell:first-child {
+        border-left: none;
+      }
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-brand-blue-500);
+    }
+
+    .step-heading {
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+
+    .step-description {
+      font-size: 0.8125rem;
+      color: rgba(9, 80, 246, 0.85);
+      line-height: 1.4;
+    }
+
+    .hub-hours {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    /* Right visual column */
+    .visual-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 27rem;
+      margin-inline: auto;
+    }
+
+    .photo-shadow-box {
+      position: absolute;
+      inset: 6% 4% 4% 6%;
+      background-color: var(--color-white);
+      opacity: 0.55;
+      border-radius: 1.5rem;
+      transform: rotate(3deg);
+      z-index: 1;
+    }
+
+    .local-photo {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: auto;
+      border-radius: 1.25rem;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+    }
+
+    .offer-badge-left {
+      position: absolute;
+      top: 8%;
+      left: -2%;
+      z-index: 3;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 14px 30px rgba(9, 80, 246, 0.3);
+      transform: rotate(-3deg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .offer-badge-right {
+      position: absolute;
+      bottom: 10%;
+      right: -2%;
+      z-index: 3;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-brand-yellow-500);
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 14px 30px rgba(9, 80, 246, 0.3);
+      transform: rotate(2deg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .offer-badge-value {
+      font-family: var(--font-mono);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .offer-badge-text {
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      color: var(--color-white);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-top: 0.2rem;
+    }
+
+    .hub-footer-strip {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(9, 80, 246, 0.2);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-brand-blue-500);
+    }
+
+    /* Shelf Rack Signature at the bottom */
+    .rack-signature {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 4rem;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .rack-beam {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      border-top: 1px dashed rgba(9, 80, 246, 0.5);
+    }
+
+    .rack-bins {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 100%;
+      max-width: 42rem;
+      margin-inline: auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-inline: 1.5rem;
+      gap: 0.75rem;
+    }
+
+    .rack-cell {
+      position: relative;
+      height: 2.75rem;
+      width: 2.75rem;
+      border-radius: 0.375rem;
+      border: 1px dashed rgba(9, 80, 246, 0.5);
+    }
+
+    .rack-fill {
+      position: absolute;
+      inset-inline: 0.25rem;
+      bottom: 0.25rem;
+      background-color: rgba(9, 80, 246, 0.2);
+      border-radius: 0.25rem;
+    }
+
+    .rack-cell-active {
+      border: 2px solid var(--color-brand-blue-500);
+      background-color: rgba(9, 80, 246, 0.1);
+    }
+
+    .rack-picked-package {
+      position: absolute;
+      top: -0.875rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.6rem;
+      height: 0.9rem;
+      background-color: var(--color-brand-blue-500);
+      border-radius: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 12px rgba(9, 80, 246, 0.3);
+    }
+
+    .rack-package-tape {
+      width: 1rem;
+      height: 0.15rem;
+      background-color: var(--color-brand-yellow-500);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="plan-emprendedores-hero" class="hero-emprendedores" aria-label="Plan Emprendedores y Fulfillment 3PL: almacenamiento en Friuli 1972, picking por QR y entregas Same-Day en Mar del Plata">
+    
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div>
+          <span class="badge-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+              <path d="m3.3 7 8.7 5 8.7-5"></path>
+              <path d="M12 22V12"></path>
+            </svg>
+            FULFILLMENT 3PL E-COMMERCE
+          </span>
+
+          <h1 class="hero-title">
+            <span>VOS VENDÉS, NOSOTROS</span> <br>
+            <span class="knockout-badge">LO ENTREGAMOS HOY</span> <br>
+            <span>EN MAR DEL PLATA</span>
+          </h1>
+
+          <p class="hero-desc">
+            Guardamos tu stock en Friuli 1972, armamos cada pedido con picking por código QR y lo entregamos en el día. Si preferís traerlo vos, la modalidad DropOFF te bonifica un 20% sobre la tarifa final.
+          </p>
+
+          <div class="cta-row">
+            <a href="/contacto" class="btn-pill-cta" id="emprendedores-hero-cta-contacto">
+              <span>ACTIVÁ PLAN EMPRENDEDORES</span>
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20armar%20un%20Plan%20Emprendedores" class="btn-wa-link" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.42C8.94 7.42 8.68 7.49 8.45 7.74C8.23 7.99 7.6 8.58 7.6 9.79C7.6 11 8.48 12.17 8.6 12.33C8.73 12.49 10.33 14.96 12.78 16.03C13.36 16.29 13.82 16.44 14.17 16.55C14.76 16.74 15.3 16.71 15.72 16.65C16.19 16.58 17.17 16.06 17.38 15.48C17.58 14.9 17.58 14.4 17.52 14.3C17.46 14.2 17.31 14.14 17.08 14.03C16.86 13.92 15.77 13.38 15.57 13.31C15.36 13.24 15.21 13.2 15.06 13.43C14.91 13.66 14.48 14.17 14.35 14.32C14.22 14.47 14.09 14.49 13.86 14.38C13.64 14.27 12.91 14.03 12.05 13.26C11.38 12.66 10.92 11.92 10.79 11.7C10.66 11.47 10.78 11.35 10.89 11.24C10.99 11.14 11.12 10.97 11.23 10.84C11.35 10.71 11.39 10.61 11.46 10.46C11.54 10.31 11.5 10.18 11.44 10.07C11.39 9.96 10.94 8.85 10.75 8.4C10.57 7.96 10.38 8.02 10.24 8.01C10.11 8.01 9.96 8.01 9.81 8.01C9.66 8.01 9.42 8.07 9.21 8.29C9.01 8.52 8.45 9.04 8.45 10.12C8.45 11.2 9.23 12.25 9.34 12.4C9.46 12.55 10.88 14.73 13.06 15.68C13.58 15.91 13.98 16.05 14.3 16.15C14.82 16.32 15.3 16.29 15.68 16.24C16.1 16.17 16.97 15.71 17.15 15.19C17.33 14.67 17.33 14.23 17.28 14.14C17.22 14.05 17.09 13.99 16.89 13.89L9.11 7.42Z"/>
+              </svg>
+              <span>O escribinos por WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Circuit steps -->
+          <ol class="steps-container" aria-label="Cómo funciona el depósito y fulfillment">
+            <li class="step-cell">
+              <span class="step-number">01</span>
+              <span class="step-heading">Almacenamos</span>
+              <span class="step-description">Tu stock seguro en Friuli 1972.</span>
+            </li>
+            <li class="step-cell">
+              <span class="step-number">02</span>
+              <span class="step-heading">Preparamos</span>
+              <span class="step-description">Picking y embalaje por pedido.</span>
+            </li>
+            <li class="step-cell">
+              <span class="step-number">03</span>
+              <span class="step-heading">Entregamos</span>
+              <span class="step-description">En el día en todo Mar del Plata.</span>
+            </li>
+          </ol>
+
+          <p class="hub-hours">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>
+            <span>Atención en el hub: Lunes a Viernes 08:00 a 18:00 hs</span>
+          </p>
+        </div>
+
+        <!-- Right Column: Visual Photo & Offers -->
+        <div class="visual-wrapper">
+          <div class="photo-shadow-box" aria-hidden="true"></div>
+          <img
+            src="/heroes/deposito-local.webp"
+            alt="Local de Envíos DosRuedas en Mar del Plata con toldo azul y mercadería preparada para despacho"
+            class="local-photo"
+          >
+
+          <div class="offer-badge-left">
+            <span class="offer-badge-value">-20%</span>
+            <span class="offer-badge-text">Con DropOFF</span>
+          </div>
+
+          <div class="offer-badge-right">
+            <span class="offer-badge-value">$0</span>
+            <span class="offer-badge-text">Comisión cobranza</span>
+          </div>
+
+          <div class="hub-footer-strip">
+            <span>Hub Friuli 1972</span>
+            <span>Stock + Same Day</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Rack Signature at the bottom -->
+    <div class="rack-signature" aria-hidden="true">
+      <div class="rack-beam"></div>
+      <div class="rack-bins">
+        <div class="rack-cell"><span class="rack-fill" style="height: 45%;"></span></div>
+        <div class="rack-cell"><span class="rack-fill" style="height: 70%;"></span></div>
+        <div class="rack-cell"><span class="rack-fill" style="height: 30%;"></span></div>
+        <!-- Picked Cell -->
+        <div class="rack-cell rack-cell-active">
+          <div class="rack-picked-package">
+            <span class="rack-package-tape"></span>
+          </div>
+        </div>
+        <div class="rack-cell"><span class="rack-fill" style="height: 85%;"></span></div>
+        <div class="rack-cell"><span class="rack-fill" style="height: 40%;"></span></div>
+        <div class="rack-cell"><span class="rack-fill" style="height: 60%;"></span></div>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>

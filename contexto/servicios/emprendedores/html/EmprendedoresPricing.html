@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifario Plan Emprendedores y Fulfillment 3PL | Envíos DosRuedas Mar del Plata</title>
+  <meta name="description" content="Planes y tarifas de paquetería e-commerce, almacenamiento 3PL y escala Next Day 24hs en Mar del Plata. Descuento DropOFF y contrareembolso $0 comisión.">
+
+  <!-- Google Fonts Preconnect & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-blue-500: #0950F6;
+      --color-brand-blue-400: #3570F8;
+      --color-brand-blue-100: #BACEFD;
+      --color-brand-blue-50: #E6EEFE;
+      --color-brand-yellow-500: #FFEC01;
+      --color-brand-yellow-400: #FFF12E;
+      --color-white: #FFFFFF;
+
+      --font-display: 'Anton SC', sans-serif;
+      --font-subheading: 'Bebas Neue', sans-serif;
+      --font-sans: 'Outfit', sans-serif;
+      --font-mono: 'Geist Mono', monospace;
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --duration-ui: 180ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background-color: var(--color-brand-blue-500); color: var(--color-white); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .container { max-width: 80rem; margin-inline: auto; padding-inline: 1rem; }
+    @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+
+    .pricing-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+    }
+
+    .header-group {
+      text-align: center;
+      max-width: 44rem;
+      margin-inline: auto;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .badge-service {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 236, 1, 0.15);
+      border: 1px solid rgba(255, 236, 1, 0.3);
+      color: var(--color-brand-yellow-500);
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .title-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-white);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--color-brand-blue-50);
+      line-height: 1.6;
+    }
+
+    /* 3-Col Main Tier Grid */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+    @media (min-width: 768px) {
+      .plans-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .plan-card {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+      border: 2px solid transparent;
+      transition: transform var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
+    }
+    .plan-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    .plan-card.featured {
+      border-color: var(--color-brand-yellow-500);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
+    }
+
+    .plan-ribbon {
+      position: absolute;
+      top: -0.875rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      font-family: var(--font-subheading);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+
+    .plan-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      color: var(--color-brand-blue-500);
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+
+    .plan-dist {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-brand-blue-400);
+    }
+
+    .price-wrap {
+      margin-top: 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+
+    .price-value {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+    }
+
+    .price-period {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: #64748b;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--color-brand-blue-50);
+      border-bottom: 1px solid var(--color-brand-blue-50);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .plan-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: #1e293b;
+    }
+
+    .plan-feature-item svg {
+      width: 1rem;
+      height: 1rem;
+      stroke: var(--color-brand-blue-500);
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .btn-plan-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.875rem;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-family: var(--font-subheading);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: background-color var(--duration-ui) var(--ease-out);
+    }
+    .btn-plan-cta:hover {
+      background-color: var(--color-brand-blue-400);
+    }
+    .plan-card.featured .btn-plan-cta {
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+    }
+    .plan-card.featured .btn-plan-cta:hover {
+      background-color: var(--color-brand-yellow-400);
+    }
+
+    /* 4-Col Scale Section */
+    .scale-box {
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 1.5rem;
+      padding: 2.5rem 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+    @media (min-width: 640px) {
+      .scale-box { padding: 3rem 2rem; }
+    }
+
+    .scale-header {
+      text-align: center;
+      max-width: 36rem;
+      margin-inline: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    .scale-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      color: var(--color-brand-yellow-500);
+      margin-bottom: 0.25rem;
+    }
+
+    .scale-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .scale-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .scale-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .scale-card {
+      background-color: var(--color-white);
+      color: var(--color-brand-blue-500);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid transparent;
+    }
+    .scale-card.featured {
+      border-color: var(--color-brand-yellow-500);
+    }
+
+    .scale-card-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+    }
+
+    .scale-card-vol {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+    }
+
+    .scale-card-price {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      line-height: 1;
+      color: var(--color-brand-blue-500);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Component Root -->
+  <section id="emprendedores-pricing" class="pricing-section" aria-label="Tarifario Plan Emprendedores y Fulfillment 3PL">
+    <div class="container">
+      
+      <!-- Top Header -->
+      <header class="header-group">
+        <span class="badge-service">TARIFAS CLARAS PARA PYMES</span>
+        <h2 class="title-display">PLANES EMPRENDEDORES &amp; 3PL</h2>
+        <p class="subtitle">
+          Almacenamiento en Friuli 1972, picking por código QR y distribución ágil con o sin retiro a domicilio.
+        </p>
+      </header>
+
+      <!-- Main 3 Plans -->
+      <div class="plans-grid">
+        
+        <!-- Plan 1: DropOFF -->
+        <article class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-title">Plan Inicial DropOFF</h3>
+            <span class="plan-dist">Todo Mar del Plata</span>
+            <div class="price-wrap">
+              <span class="price-value">$2.320</span>
+              <span class="price-period">/ envío</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Corte de recepción 13:00 hs</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Descuento del 20% ya aplicado</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Ruteo same-day garantizado</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Contrareembolso: 0% comisión</span>
+            </li>
+          </ul>
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20activar%20el%20Plan%20Inicial%20DropOFF" class="btn-plan-cta" target="_blank" rel="noopener noreferrer">
+            <span>ELEGIR PLAN DROPOFF</span>
+          </a>
+        </article>
+
+        <!-- Plan 2: 3PL Same Day (Featured) -->
+        <article class="plan-card featured">
+          <div class="plan-ribbon">3PL MÁS ELEGIDO</div>
+          <div class="plan-header">
+            <h3 class="plan-title">Plan E-Commerce 3PL</h3>
+            <span class="plan-dist">Todo Mar del Plata</span>
+            <div class="price-wrap">
+              <span class="price-value">$2.900</span>
+              <span class="price-period">/ envío</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Almacenamiento de stock sin costo</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Picking por código QR instantáneo</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Reparto same-day en Mar del Plata</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Seguimiento y remito digital</span>
+            </li>
+          </ul>
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20solicitar%20el%20Plan%20E-Commerce%203PL" class="btn-plan-cta" target="_blank" rel="noopener noreferrer">
+            <span>SOLICITAR PLAN 3PL</span>
+          </a>
+        </article>
+
+        <!-- Plan 3: Corporativo -->
+        <article class="plan-card">
+          <div class="plan-header">
+            <h3 class="plan-title">Plan PyME Corporativo</h3>
+            <span class="plan-dist">Volumen escalonado</span>
+            <div class="price-wrap">
+              <span class="price-value">A cotizar</span>
+              <span class="price-period">según volumen</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Retiro programado en tu local/fábrica</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Liquidaciones semanales o mensuales</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Atención prioritaria y asesor propio</span>
+            </li>
+            <li class="plan-feature-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Tarifa corporativa escalonada fija</span>
+            </li>
+          </ul>
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quisiera%20cotizar%20el%20Plan%20PyME%20Corporativo" class="btn-plan-cta" target="_blank" rel="noopener noreferrer">
+            <span>COTIZAR A MEDIDA</span>
+          </a>
+        </article>
+
+      </div>
+
+      <!-- Scale 24hs Next Day -->
+      <div class="scale-box">
+        <div class="scale-header">
+          <h3 class="scale-title">Escalas E-Commerce 24HS (Next Day)</h3>
+          <p style="font-size: 0.875rem; color: var(--color-brand-blue-50);">Retiro diario gratis a partir de 10 paquetes. Si traés tus paquetes a Friuli 1972 aplicás DropOFF -20% adicional.</p>
+        </div>
+
+        <div class="scale-grid">
+          <!-- Inicial -->
+          <div class="scale-card">
+            <div>
+              <h4 class="scale-card-name">Inicial</h4>
+              <p class="scale-card-vol">1 a 30 envíos / mes</p>
+              <div class="scale-card-price">$2.800</div>
+            </div>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20elegir%20el%20Plan%2024HS%20Inicial" class="btn-plan-cta" style="font-size: 0.8125rem; padding: 0.625rem;" target="_blank" rel="noopener noreferrer">ELEGIR INICIAL</a>
+          </div>
+
+          <!-- Pro (Featured) -->
+          <div class="scale-card featured">
+            <div>
+              <div style="font-family: var(--font-subheading); font-size: 0.6875rem; font-weight: 700; color: var(--color-brand-blue-500); background-color: var(--color-brand-yellow-500); width: fit-content; padding: 0.15rem 0.5rem; border-radius: 9999px; margin-bottom: 0.25rem;">RECOMENDADO</div>
+              <h4 class="scale-card-name">Pro</h4>
+              <p class="scale-card-vol">31 a 100 envíos / mes</p>
+              <div class="scale-card-price">$2.600</div>
+            </div>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20elegir%20el%20Plan%2024HS%20Pro" class="btn-plan-cta" style="background-color: var(--color-brand-yellow-500); color: var(--color-brand-blue-500); font-size: 0.8125rem; padding: 0.625rem;" target="_blank" rel="noopener noreferrer">ELEGIR PRO</a>
+          </div>
+
+          <!-- Elite -->
+          <div class="scale-card">
+            <div>
+              <h4 class="scale-card-name">Elite</h4>
+              <p class="scale-card-vol">101 a 300 envíos / mes</p>
+              <div class="scale-card-price">$2.400</div>
+            </div>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20elegir%20el%20Plan%2024HS%20Elite" class="btn-plan-cta" style="font-size: 0.8125rem; padding: 0.625rem;" target="_blank" rel="noopener noreferrer">ELEGIR ELITE</a>
+          </div>
+
+          <!-- Partner -->
+          <div class="scale-card">
+            <div>
+              <h4 class="scale-card-name">Partner</h4>
+              <p class="scale-card-vol">301+ envíos / mes</p>
+              <div class="scale-card-price">$2.200</div>
+            </div>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20elegir%20el%20Plan%2024HS%20Partner" class="btn-plan-cta" style="font-size: 0.8125rem; padding: 0.625rem;" target="_blank" rel="noopener noreferrer">ELEGIR PARTNER</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
