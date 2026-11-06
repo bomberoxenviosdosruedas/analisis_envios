@@ -128,10 +128,7 @@
       --font-sans: 'Outfit', sans-serif;
       --font-mono: 'Geist Mono', monospace;
 
-      /* Layout & Main Container */
-    .min-h-screen { min-height: 100vh; }
-
-    /* Transitions & Shadows */
+      /* Transitions & Shadows */
       --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
       --duration-feedback: 160ms;
       --shadow-float: 0 25px 50px -12px rgba(9, 80, 246, 0.15);
@@ -239,6 +236,288 @@
       background-color: rgba(255, 255, 255, 0.15);
       border-color: #FFFFFF;
       transform: translateY(-2px);
+    }
+
+    /* =========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================= */
+    .header-fixed {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      width: 100%;
+      background-color: var(--color-brand-blue-500);
+      color: var(--color-white);
+      padding-block: 0.875rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background-color 0.25s ease, padding 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .header-fixed.scrolled {
+      background-color: rgba(9, 80, 246, 0.96);
+      backdrop-filter: blur(12px);
+      padding-block: 0.625rem;
+      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.2);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-logo-bubble {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    .brand-text-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+    }
+
+    .brand-slogan {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-brand-yellow-500);
+      font-weight: 600;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .desktop-nav {
+        display: flex;
+      }
+    }
+
+    .nav-item-rel {
+      position: relative;
+    }
+
+    .nav-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: var(--font-subheading);
+      font-size: 1.0625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 0.875rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .nav-link-btn:hover,
+    .nav-link-btn.active {
+      color: var(--color-brand-yellow-500);
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-chevron {
+      width: 0.875rem;
+      height: 0.875rem;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item-rel:hover .nav-chevron {
+      transform: rotate(180deg);
+    }
+
+    .desktop-dropdown-flyout {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding-top: 0.5rem;
+      display: none;
+      z-index: 60;
+      min-width: 16rem;
+    }
+
+    .nav-item-rel:hover .desktop-dropdown-flyout {
+      display: block;
+    }
+
+    .dropdown-box-inner {
+      background-color: #FFFFFF;
+      border: 1px solid var(--color-brand-blue-100);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .dropdown-flyout-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.625rem 0.875rem;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      color: var(--color-brand-blue-500);
+      transition: background-color 0.15s ease;
+    }
+
+    .dropdown-flyout-link:hover {
+      background-color: var(--color-brand-blue-50);
+    }
+
+    .flyout-icon-box {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.5rem;
+      background-color: var(--color-brand-blue-50);
+      color: var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .flyout-icon-box svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+
+    .desktop-actions {
+      display: none;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      .desktop-actions {
+        display: flex;
+      }
+    }
+
+    .phone-direct-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .phone-direct-link:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: var(--color-brand-yellow-500);
+    }
+
+    .mobile-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .mobile-controls {
+        display: none;
+      }
+    }
+
+    .btn-mobile-quick {
+      width: 2.625rem;
+      height: 2.625rem;
+      border-radius: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-mobile-quick svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    /* Mobile Drawer */
+    .drawer-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(9, 80, 246, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 90;
+    }
+
+    .drawer-backdrop.open {
+      display: block;
+    }
+
+    .drawer-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 85%;
+      max-width: 22rem;
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      z-index: 100;
+      transform: translateX(100%);
+      transition: transform 0.3s var(--ease-out);
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .drawer-panel.open {
+      transform: translateX(0);
     }
 
     /* =========================================================================
@@ -2095,6 +2374,112 @@
       box-shadow: 0 0 0 3px rgba(9, 80, 246, 0.15);
     }
 
+    /* =========================================================================
+       FOOTER (OptimizedFooter)
+       ========================================================================= */
+    .footer-section {
+      background-color: var(--color-brand-blue-500);
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+    }
+
+    .footer-top-strip {
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--color-brand-yellow-500), #FFFFFF, var(--color-brand-yellow-500));
+    }
+
+    .footer-content {
+      padding-block: 4rem 2rem;
+    }
+
+    .footer-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid-3 {
+        grid-template-columns: 2fr 1.5fr 1.5fr;
+        gap: 3.5rem;
+      }
+    }
+
+    .footer-heading {
+      font-family: var(--font-subheading);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      color: var(--color-brand-yellow-500);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-list a {
+      color: var(--color-brand-blue-50);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-list a:hover {
+      color: var(--color-brand-yellow-500);
+      text-decoration: underline;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--color-brand-blue-100);
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom-bar {
+        flex-direction: row;
+      }
+    }
+
+    .btn-scroll-top {
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      border: 2px solid var(--color-brand-blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-scroll-top:hover {
+      transform: translateX(-50%) translateY(-3px);
+    }
+
     /* Universal SVG utility */
     .svg-icon {
       width: 1.125rem;
@@ -2114,7 +2499,7 @@
   <!-- =========================================================================
        MAIN (ALL 8 SECTIONS FROM contexto/home/page.tsx)
        ========================================================================= -->
-  <main id="home-page-container" class="min-h-screen">
+  <main id="home-page-container">
 
     <!-- 1. HERO ANIMADO -->
     <section id="hero-animado" aria-label="Mensajería urbana y logística de última milla en todo Mar del Plata"
@@ -3417,6 +3802,69 @@
        SCRIPTS (INTERACTIONS, CANVASES, 3D CAROUSEL, DRAWER, FORMS)
        ========================================================================= -->
   <script>
+    /* Sticky Header scrolled state */
+    (function () {
+      const header = document.getElementById('site-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    })();
+
+    /* Mobile Drawer */
+    (function () {
+      const toggle = document.getElementById('mobile-menu-toggle');
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const backdrop = document.getElementById('mobile-drawer-backdrop');
+      const closeBtn = document.getElementById('close-drawer-btn');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) toggle.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+    })();
+
+    /* Scroll to top button */
+    (function () {
+      const btn = document.getElementById('btn-scroll-top');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+
+    /* Marquee pause/play toggle */
+    (function () {
+      const btn = document.getElementById('toggle-marquee-btn');
+      const strip = document.getElementById('marquee-strip');
+      const label = document.getElementById('marquee-toggle-label');
+      let isPaused = false;
+
+      if (btn && strip && label) {
+        btn.addEventListener('click', () => {
+          isPaused = !isPaused;
+          strip.classList.toggle('paused', isPaused);
+          btn.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+          label.textContent = isPaused ? 'Reanudar' : 'Pausar';
+        });
+      }
+    })();
+
     /* WhatsApp Cotización Form */
     function submitWhatsAppCotizacion() {
       const name = document.getElementById('cta-name').value.trim();
@@ -3425,7 +3873,7 @@
 
       const message = `Hola, soy ${name} de ${business}. Me interesa cotizar envíos para ${volume}.`;
       const url = `https://api.whatsapp.com/send/?phone=542236602699&text=${encodeURIComponent(message)}`;
-      
+
       const conf = document.getElementById('cta-confirmation');
       const link = document.getElementById('cta-whatsapp-link');
       if (conf && link) {
@@ -3436,340 +3884,233 @@
       window.open(url, '_blank', 'noopener,noreferrer');
     }
 
-    /* Marquee pause/play toggle */
-    (function () {
-      const marquee = document.getElementById('marquee-track');
-      const btn = document.getElementById('marquee-toggle');
-      if (marquee && btn) {
-        let isPaused = false;
-        btn.addEventListener('click', () => {
-          isPaused = !isPaused;
-          marquee.style.animationPlayState = isPaused ? 'paused' : 'running';
-          btn.textContent = isPaused ? 'Reanudar' : 'Pausar';
-          btn.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
-        });
-      }
-    })();
-
     /* ServicesOverview 3D Carousel & Network Canvas */
     (function () {
-      const services = [
+      const SERVICES_DATA = [
         {
-          id: 'express',
-          name: 'Express en Moto',
-          sub: 'Franja cerrada de 3 hs',
-          tag: 'Alta Prioridad',
-          desc: 'Servicio urgente puerta a puerta en Mar del Plata. Recolección y entrega punto a punto con trazabilidad GPS en tiempo real.',
-          badge: 'Urgente',
-          details: 'Especial para farmacia, gastronomía, repuestos y paquetería crítica. Cobertura en todo el radio urbano y periurbano de Mar del Plata.',
-          specs: [
-            { label: 'Tiempo de entrega', val: 'Hasta 3 horas' },
-            { label: 'Peso máximo', val: 'Hasta 15 kg en moto' },
-            { label: 'Seguimiento', val: 'GPS en vivo con link directo' },
-            { label: 'Disponibilidad', val: 'Lunes a Sábado de 8:00 a 20:00' }
-          ],
-          price: 'Tarifa plana por zonas radiales',
-          color: '#0950F6',
-          cta: 'https://api.whatsapp.com/send/?phone=542236602699&text=Hola%20Envíos%20DosRuedas,%20necesito%20cotizar%20un%20Envío%20Express%20en%203hs.'
+          id: 'express', title: 'Envíos Express', meta: '+7 Años de Trayectoria · Todo Mar del Plata',
+          summary: 'Servicio de mensajería urbana con horario a elección, ideal para trámites urgentes, despacho de encomiendas y entrega de documentación. Coordinás la franja horaria que te conviene y se asigna un repartidor exclusivo para tu envío.',
+          features: ['Tarifa base de $3.500 hasta 5 km.', 'Entrega en franja de 3 hs a elección, pedido con anticipación mínima.', 'Notificación automática de entrega por WhatsApp.'],
+          stats: { time: '3 horas', price: '$3.500 Base', weight: 'Hasta 5 kg' }, ctaText: 'COTIZÁ TU EXPRESS', ctaHref: '/cotizar',
+          iconSvg: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="none" stroke="currentColor" stroke-width="2.5"></polygon>'
         },
         {
-          id: 'flex',
-          name: 'Mercado Envíos Flex',
-          sub: 'Entregas en el día (Meli)',
-          tag: 'E-commerce Oficial',
-          desc: 'Logística homologada para vendedores de Mercado Libre. Despacho garantizado en el día para mantener y subir tu reputación verde oscuro.',
-          badge: 'Meli Flex',
-          details: 'Retiro en tu depósito o domicilio antes de las 14:00 hs y distribución integral en el día hasta las 21:00 hs en todo el cordón de Mar del Plata.',
-          specs: [
-            { label: 'Integración', val: 'Escaneo directo de etiquetas Flex' },
-            { label: 'Horario corte retiro', val: '13:30 - 14:00 hs' },
-            { label: 'Tasa de cumplimiento', val: '99.8% a tiempo' },
-            { label: 'Reputación', val: 'Garantía MercadoLíder' }
-          ],
-          price: 'Liquidación automática quincenal',
-          color: '#0950F6',
-          cta: 'https://api.whatsapp.com/send/?phone=542236602699&text=Hola,%20vendo%20por%20Mercado%20Libre%20y%20quiero%20activar%20Envíos%20Flex%20con%20ustedes.'
+          id: 'lowcost', title: 'Envíos LowCost', meta: 'Tarifa Fija Especial · Todo Gral. Pueyrredón',
+          summary: 'La alternativa ideal para comercios y e-commerce que buscan optimizar costos de envío. Es un reparto económico programado para el día: lo pedís antes del corte de las 13:00 hs y se entrega a lo largo de la jornada antes de las 20:00 hs.',
+          features: ['Tarifa base de $2.800 hasta 5 km.', 'Pedí antes del horario de corte y se entrega en el día.', 'Sin elección de franja horaria: la tarifa más baja de la ciudad.'],
+          stats: { time: 'En el día', price: '$2.800 Base', weight: 'Hasta 5 kg' }, ctaText: 'PROBÁ EL LOWCOST', ctaHref: '/cotizar',
+          iconSvg: '<path d="m7.5 4.27 9 5.15" fill="none" stroke="currentColor" stroke-width="2.5"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" fill="none" stroke="currentColor" stroke-width="2.5"></path><path d="m3.3 7 8.7 5 8.7-5" fill="none" stroke="currentColor" stroke-width="2.5"></path><path d="M12 22V12" fill="none" stroke="currentColor" stroke-width="2.5"></path>'
         },
         {
-          id: 'lowcost',
-          name: 'Reparto LowCost',
-          sub: 'Máxima economía programada',
-          tag: 'Optimización de Costos',
-          desc: 'Tarifas reducidas para entregas agrupadas en franja de 24 horas. Ideal para reposición comercial, e-commerce propio y envíos no urgentes.',
-          badge: 'Económico',
-          details: 'Planificación de ruteo inteligente nocturno que permite rebajar hasta un 40% el costo de logística de última milla para tu negocio.',
-          specs: [
-            { label: 'Plazo de entrega', val: '24 a 48 hs hábiles' },
-            { label: 'Volumen', val: 'Paquetes de hasta 20 kg' },
-            { label: 'Ruteo', val: 'Optimización por clúster zonal' },
-            { label: 'Ahorro', val: 'Hasta 40% vs. envío tradicional' }
-          ],
-          price: 'Escalas por volumen mensual',
-          color: '#2ECC85',
-          cta: 'https://api.whatsapp.com/send/?phone=542236602699&text=Hola,%20me%20interesa%20conocer%20las%20tarifas%20del%20servicio%20LowCost.'
+          id: 'flex', title: 'Envíos Flex', meta: 'Corte extendido 14:00 · Mar del Plata urbana',
+          summary: 'Habilitá Envíos Flex en tu cuenta de MercadoLibre y despachá todas tus ventas en el mismo día. Mejorá tu reputación y convertite en vendedor destacado con recolección bonificada en tu local.',
+          features: ['Visitas bonificadas según tu volumen diario de entregas.', 'Reparto coordinado antes de las 21:00 hs con firma digital.', 'Recolección a domicilio sin cargo extra por nuestro equipo.'],
+          stats: { time: 'En el día', price: 'Zonificado', weight: 'Moto / Auto' }, ctaText: 'CONFIGURAR FLEX', ctaHref: '/servicios/enviosflex',
+          iconSvg: '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" fill="none" stroke="currentColor" stroke-width="2.5"></path><path d="M15 18H9" fill="none" stroke="currentColor" stroke-width="2.5"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" fill="none" stroke="currentColor" stroke-width="2.5"></path><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2.5"></circle><circle cx="7" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2.5"></circle>'
         },
         {
-          id: 'contra-reembolso',
-          name: 'Contra Reembolso',
-          sub: 'Cobranza segura en destino',
-          tag: 'Cobro en Puerta',
-          desc: 'Cobramos en efectivo o mediante QR / transferencia al entregar tu producto. Rendición inmediata o acreditación en cuenta corriente.',
-          badge: 'Cobranza',
-          details: 'Tu cliente no paga hasta ver el producto en su puerta. Vos recibís el dinero rendido con comprobante digital firmado y trazado en panel.',
-          specs: [
-            { label: 'Medios de cobro', val: 'Efectivo, QR Mercado Pago, Transferencia' },
-            { label: 'Rendición', val: 'En el día o quincenal según convenio' },
-            { label: 'Seguridad', val: 'Comprobante digital y firma' },
-            { label: 'Comisión', val: 'Mínima sobre monto recaudado' }
-          ],
-          price: 'Fijo por envío + arancel de cobranza',
-          color: '#FFEC01',
-          cta: 'https://api.whatsapp.com/send/?phone=542236602699&text=Hola,%20quiero%20operar%20con%20Contra%20Reembolso%20en%20efectivo%20o%20transferencia.'
-        },
-        {
-          id: 'cuenta-corriente',
-          name: 'Cuenta Corriente',
-          sub: 'Facturación quincenal B2B',
-          tag: 'Empresas & Pymes',
-          desc: 'Centralizá todos los envíos de tu empresa o comercio con resumen unificado, factura electrónica A o B y crédito operativo flexible.',
-          badge: 'Corporativo',
-          details: 'Sin costos fijos de apertura ni mantenimiento. Asignación de ejecutivo de cuenta y soporte vía WhatsApp directo con base central Friuli.',
-          specs: [
-            { label: 'Facturación', val: 'Quincenal o mensual consolidada' },
-            { label: 'Tipo de comprobante', val: 'Factura A o B discriminada' },
-            { label: 'Acceso', val: 'Panel web con reportes descargables' },
-            { label: 'Soporte', val: 'Canal directo y prioritario' }
-          ],
-          price: 'Liquidación a mes vencido / quincena',
-          color: '#0950F6',
-          cta: 'https://api.whatsapp.com/send/?phone=542236602699&text=Hola,%20quiero%20abrir%20una%20Cuenta%20Corriente%20corporativa%20para%20mi%20empresa.'
-        },
-        {
-          id: 'deposito',
-          name: 'Depósito & Fulfillment',
-          sub: 'Guarda y preparación en Friuli',
-          tag: 'Stock & Logística',
-          desc: 'Almacenamiento de stock de alta rotación en nuestra base operativa central. Pick & pack profesional y despacho inmediato a las calles.',
-          badge: 'Fulfillment',
-          details: 'Ahorrá tiempo y espacio físico. Cuando entra un pedido en tu tienda, nosotros lo empaquetamos y lo entregamos en tiempo récord.',
-          specs: [
-            { label: 'Ubicación de base', val: 'Friuli 1972, Mar del Plata' },
-            { label: 'Servicios', val: 'Recepción, control de stock, embalaje' },
-            { label: 'Despacho', val: 'Salida directa a ruta sin esperas' },
-            { label: 'Seguridad', val: 'Monitoreo 24/7 y seguro de mercadería' }
-          ],
-          price: 'Costo por m³ o posición + costo por pick',
-          color: '#0950F6',
-          cta: 'https://api.whatsapp.com/send/?phone=542236602699&text=Hola,%20quiero%20consultar%20por%20el%20servicio%20de%20Depósito%20y%20Fulfillment.'
+          id: '3pl', title: 'E-Commerce Same Day', meta: 'Stock guardado · Depósito Friuli 1972',
+          summary: 'Almacená tus productos en nuestro depósito central de Friuli 1972 y olvidate del empaque y los despachos. Nosotros nos encargamos de todo el proceso logístico para que te dediques a vender.',
+          features: ['E-Commerce Same Day con tarifa fija a toda la ciudad.', 'Descuento especial DropOFF si traés los envíos listos al depósito.', 'Control de stock digital por código de barras y picking profesional.'],
+          stats: { time: 'Same Day', price: '$2.900 Fijo', weight: 'Sin límite' }, ctaText: 'CONSULTAR PLANES', ctaHref: '/servicios/deposito-fulfillment',
+          iconSvg: '<path d="M3 21h18" fill="none" stroke="currentColor" stroke-width="2.5"></path><path d="M5 21V7l8-4v18" fill="none" stroke="currentColor" stroke-width="2.5"></path><path d="M19 21V11l-6-4" fill="none" stroke="currentColor" stroke-width="2.5"></path>'
         }
       ];
 
-      /* 3D Carousel State */
-      let currentIdx = 0;
-      let isPaused = false;
-      const count = services.length;
-      const cards = document.querySelectorAll('.service-card-3d');
-      const dots = document.querySelectorAll('.carousel-dot');
-      const prevBtn = document.getElementById('carousel-prev');
-      const nextBtn = document.getElementById('carousel-next');
-      const pauseBtn = document.getElementById('carousel-pause');
+      const canvas = document.getElementById('network-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const parentSection = document.getElementById('services-overview');
+      let width = 0, height = 0, mousePos = { x: -1000, y: -1000 };
+      const nodeDefs = [
+        { id: 'cd', label: 'Sede Central (Friuli)', size: 6, xRatio: 0.45, yRatio: 0.60 },
+        { id: 'centro', label: 'Centro', size: 4, xRatio: 0.68, yRatio: 0.42 },
+        { id: 'la_perla', label: 'La Perla', size: 4, xRatio: 0.65, yRatio: 0.30 },
+        { id: 'constitucion', label: 'Constitución', size: 4, xRatio: 0.52, yRatio: 0.18 },
+        { id: 'guemes', label: 'Zona Güemes', size: 4, xRatio: 0.73, yRatio: 0.52 },
+        { id: 'playa_grande', label: 'Playa Grande', size: 4, xRatio: 0.77, yRatio: 0.63 },
+        { id: 'puerto', label: 'Puerto', size: 4, xRatio: 0.72, yRatio: 0.76 },
+        { id: 'bosque', label: 'Bosque Peralta Ramos', size: 4, xRatio: 0.64, yRatio: 0.88 },
+        { id: 'martillo', label: 'El Martillo / P. Ind.', size: 5, xRatio: 0.22, yRatio: 0.72 }
+      ];
+      const connections = [
+        { from: 'cd', to: 'martillo' }, { from: 'cd', to: 'centro' }, { from: 'cd', to: 'guemes' },
+        { from: 'cd', to: 'puerto' }, { from: 'cd', to: 'constitucion' }, { from: 'constitucion', to: 'la_perla' },
+        { from: 'constitucion', to: 'centro' }, { from: 'la_perla', to: 'centro' }, { from: 'centro', to: 'guemes' },
+        { from: 'guemes', to: 'playa_grande' }, { from: 'playa_grande', to: 'puerto' }, { from: 'puerto', to: 'bosque' }
+      ];
+      const particles = [
+        { connIndex: 0, speed: 0.0035, size: 2.8, color: '#FFEC01', progress: 0.1 },
+        { connIndex: 1, speed: 0.0028, size: 3.2, color: '#FFFFFF', progress: 0.3 },
+        { connIndex: 2, speed: 0.0042, size: 2.5, color: '#FFFFFF', progress: 0.5 },
+        { connIndex: 3, speed: 0.0031, size: 3.0, color: '#FFEC01', progress: 0.7 },
+        { connIndex: 4, speed: 0.0038, size: 2.7, color: '#FFFFFF', progress: 0.2 },
+        { connIndex: 5, speed: 0.0025, size: 3.3, color: '#FFEC01', progress: 0.4 },
+        { connIndex: 6, speed: 0.0045, size: 2.4, color: '#FFFFFF', progress: 0.6 },
+        { connIndex: 7, speed: 0.0032, size: 2.9, color: '#FFFFFF', progress: 0.8 },
+        { connIndex: 8, speed: 0.0037, size: 2.6, color: '#FFEC01', progress: 0.05 },
+        { connIndex: 9, speed: 0.0029, size: 3.1, color: '#FFFFFF', progress: 0.25 }
+      ];
+      let nodeMap = new Map();
+      function resizeCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = canvas.offsetWidth; height = canvas.offsetHeight;
+        canvas.width = Math.max(1, Math.round(width * dpr)); canvas.height = Math.max(1, Math.round(height * dpr));
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        nodeMap.clear();
+        nodeDefs.forEach(def => {
+          nodeMap.set(def.id, { id: def.id, x: width * def.xRatio, y: height * def.yRatio, label: def.label, size: def.size });
+        });
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+      if (parentSection) {
+        parentSection.addEventListener('mousemove', (e) => {
+          const rect = canvas.getBoundingClientRect(); mousePos = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+        });
+        parentSection.addEventListener('mouseleave', () => { mousePos = { x: -1000, y: -1000 }; });
+      }
+      let lastTime = 0;
+      function animateNetwork(timestamp) {
+        if (!lastTime) lastTime = timestamp;
+        const dt = Math.min((timestamp - lastTime) / 1000, 0.1);
+        lastTime = timestamp;
+        ctx.clearRect(0, 0, width, height);
+        ctx.lineWidth = 1.0;
+        connections.forEach(conn => {
+          const from = nodeMap.get(conn.from); const to = nodeMap.get(conn.to);
+          if (!from || !to) return;
+          const midX = (from.x + to.x) / 2; const midY = (from.y + to.y) / 2;
+          const dx = midX - mousePos.x; const dy = midY - mousePos.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          ctx.strokeStyle = dist < 180 ? `rgba(255, 236, 1, ${0.15 + (1 - dist / 180) * 0.3})` : 'rgba(255, 255, 255, 0.14)';
+          ctx.beginPath(); ctx.moveTo(from.x, from.y); ctx.lineTo(to.x, to.y); ctx.stroke();
+        });
+        particles.forEach(p => {
+          p.progress += p.speed * 60 * dt; if (p.progress >= 1) p.progress %= 1;
+          const conn = connections[p.connIndex % connections.length];
+          const from = nodeMap.get(conn.from); const to = nodeMap.get(conn.to);
+          if (!from || !to) return;
+          const px = from.x + (to.x - from.x) * p.progress; const py = from.y + (to.y - from.y) * p.progress;
+          ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(px, py, p.size, 0, Math.PI * 2); ctx.fill();
+        });
+        nodeMap.forEach(node => {
+          const dx = node.x - mousePos.x; const dy = node.y - mousePos.y;
+          const dist = Math.sqrt(dx * dx + dy * dy); const isNear = dist < 140;
+          if (isNear) { ctx.fillStyle = 'rgba(255, 236, 1, 0.4)'; ctx.beginPath(); ctx.arc(node.x, node.y, node.size * 2.5, 0, Math.PI * 2); ctx.fill(); }
+          ctx.fillStyle = isNear ? '#FFEC01' : '#FFFFFF'; ctx.beginPath(); ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2); ctx.fill();
+          if (isNear || node.id === 'cd') { ctx.fillStyle = isNear ? '#FFEC01' : '#FFFFFF'; ctx.font = '500 10px Outfit, sans-serif'; ctx.fillText(node.label.toUpperCase(), node.x + 10, node.y + 3); }
+        });
+        requestAnimationFrame(animateNetwork);
+      }
+      requestAnimationFrame(animateNetwork);
+
+      let activeIndex = 0; let isAutoRotate = true; let autoRotateTimer = null; const totalServices = 4;
+      const cardElements = document.querySelectorAll('.service-card-wrapper');
+      const indicatorBtns = document.querySelectorAll('.indicator-btn');
+      const toggleRotateBtn = document.getElementById('toggle-rotate');
+      const prevBtn = document.getElementById('prev-service');
+      const nextBtn = document.getElementById('next-service');
 
       function updateCarousel() {
-        cards.forEach((card, i) => {
-          card.classList.remove('active', 'prev', 'next', 'hidden-left', 'hidden-right');
-          const diff = (i - currentIdx + count) % count;
-
-          if (diff === 0) {
-            card.classList.add('active');
-            card.setAttribute('aria-hidden', 'false');
-          } else if (diff === 1 || (diff === - (count - 1))) {
-            card.classList.add('next');
-            card.setAttribute('aria-hidden', 'true');
-          } else if (diff === count - 1 || diff === -1) {
-            card.classList.add('prev');
-            card.setAttribute('aria-hidden', 'true');
-          } else if (diff > 1 && diff <= Math.floor(count / 2)) {
-            card.classList.add('hidden-right');
-            card.setAttribute('aria-hidden', 'true');
-          } else {
-            card.classList.add('hidden-left');
-            card.setAttribute('aria-hidden', 'true');
-          }
+        const isMobile = window.innerWidth < 640;
+        cardElements.forEach((card, index) => {
+          const offset = ((((index - activeIndex + totalServices / 2) % totalServices) + totalServices) % totalServices) - Math.floor(totalServices / 2);
+          const absOffset = Math.abs(offset); const isCenter = offset === 0;
+          const rotateY = isMobile ? 0 : offset * -28; const translateZ = isMobile ? 0 : isCenter ? 120 : -absOffset * 180;
+          const translateX = offset * (isMobile ? 140 : 260); const scale = isCenter ? 1.05 : Math.max(0.65, 1 - absOffset * 0.18);
+          const opacity = isCenter ? 1 : Math.max(0.35, 1 - absOffset * 0.35);
+          card.style.transform = `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+          card.style.opacity = opacity; card.style.zIndex = totalServices - absOffset;
+          if (isCenter) { card.setAttribute('tabindex', '0'); card.style.pointerEvents = 'auto'; } else { card.setAttribute('tabindex', '-1'); }
         });
-
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === currentIdx);
-          dot.setAttribute('aria-selected', i === currentIdx ? 'true' : 'false');
+        indicatorBtns.forEach((btn, i) => {
+          if (i === activeIndex) { btn.classList.add('active'); btn.setAttribute('aria-current', 'true'); }
+          else { btn.classList.remove('active'); btn.setAttribute('aria-current', 'false'); }
         });
       }
-
-      function nextSlide() {
-        currentIdx = (currentIdx + 1) % count;
-        updateCarousel();
+      function goToService(index) { activeIndex = (index + totalServices) % totalServices; updateCarousel(); }
+      function startAutoRotate() {
+        if (autoRotateTimer) clearInterval(autoRotateTimer);
+        autoRotateTimer = setInterval(() => { if (isAutoRotate) goToService(activeIndex + 1); }, 4500);
       }
-
-      function prevSlide() {
-        currentIdx = (currentIdx - 1 + count) % count;
-        updateCarousel();
-      }
-
-      let interval = setInterval(() => {
-        if (!isPaused) nextSlide();
-      }, 5000);
-
-      if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); });
-      if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); });
-
-      if (pauseBtn) {
-        pauseBtn.addEventListener('click', () => {
-          isPaused = !isPaused;
-          pauseBtn.textContent = isPaused ? '▶ Reanudar' : '⏸ Pausar';
-          pauseBtn.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+      if (toggleRotateBtn) {
+        toggleRotateBtn.addEventListener('click', () => {
+          isAutoRotate = !isAutoRotate;
+          toggleRotateBtn.classList.toggle('active', isAutoRotate);
+          toggleRotateBtn.innerText = isAutoRotate ? 'ROTACIÓN AUTOMÁTICA' : 'ROTACIÓN PAUSADA';
         });
       }
-
-      dots.forEach((dot) => {
-        dot.addEventListener('click', () => {
-          const idx = parseInt(dot.getAttribute('data-index'), 10);
-          if (!isNaN(idx)) {
-            currentIdx = idx;
-            updateCarousel();
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          isAutoRotate = false;
+          if (toggleRotateBtn) { toggleRotateBtn.classList.remove('active'); toggleRotateBtn.innerText = 'ROTACIÓN PAUSADA'; }
+          goToService(activeIndex - 1);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          isAutoRotate = false;
+          if (toggleRotateBtn) { toggleRotateBtn.classList.remove('active'); toggleRotateBtn.innerText = 'ROTACIÓN PAUSADA'; }
+          goToService(activeIndex + 1);
+        });
+      }
+      indicatorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-index'), 10);
+          isAutoRotate = false;
+          if (toggleRotateBtn) { toggleRotateBtn.classList.remove('active'); toggleRotateBtn.innerText = 'ROTACIÓN PAUSADA'; }
+          goToService(idx);
+        });
+      });
+      cardElements.forEach(card => {
+        card.addEventListener('click', () => {
+          const idx = parseInt(card.getAttribute('data-index'), 10);
+          if (idx === activeIndex) openModal(idx);
+          else {
+            isAutoRotate = false;
+            if (toggleRotateBtn) { toggleRotateBtn.classList.remove('active'); toggleRotateBtn.innerText = 'ROTACIÓN PAUSADA'; }
+            goToService(idx);
           }
         });
       });
+      updateCarousel();
+      startAutoRotate();
 
-      /* Interactive Network Canvas */
-      const canvas = document.getElementById('network-canvas');
-      if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width = canvas.width = canvas.parentElement.offsetWidth;
-        let height = canvas.height = canvas.parentElement.offsetHeight;
-
-        window.addEventListener('resize', () => {
-          if (!canvas.parentElement) return;
-          width = canvas.width = canvas.parentElement.offsetWidth;
-          height = canvas.height = canvas.parentElement.offsetHeight;
-        });
-
-        const hub = { x: width * 0.5, y: height * 0.5, radius: 10, label: 'Base Friuli' };
-        const numNodes = 14;
-        const nodes = [];
-
-        for (let i = 0; i < numNodes; i++) {
-          const angle = (i / numNodes) * Math.PI * 2 + (Math.random() * 0.2);
-          const dist = 60 + Math.random() * (Math.min(width, height) * 0.38);
-          nodes.push({
-            x: hub.x + Math.cos(angle) * dist,
-            y: hub.y + Math.sin(angle) * dist,
-            vx: (Math.random() - 0.5) * 0.4,
-            vy: (Math.random() - 0.5) * 0.4,
-            baseX: hub.x + Math.cos(angle) * dist,
-            baseY: hub.y + Math.sin(angle) * dist,
-            pulse: Math.random() * Math.PI * 2,
-            radius: 3 + Math.random() * 3
-          });
-        }
-
-        let animationFrame;
-        function renderNetwork() {
-          ctx.clearRect(0, 0, width, height);
-
-          hub.x = width * 0.5;
-          hub.y = height * 0.5;
-
-          // Lines to hub
-          ctx.lineWidth = 1;
-          nodes.forEach((node) => {
-            node.x += node.vx;
-            node.y += node.vy;
-            if (Math.abs(node.x - node.baseX) > 15) node.vx *= -1;
-            if (Math.abs(node.y - node.baseY) > 15) node.vy *= -1;
-
-            node.pulse += 0.04;
-            const alpha = 0.15 + Math.sin(node.pulse) * 0.1;
-
-            ctx.strokeStyle = `rgba(9, 80, 246, ${Math.max(0.05, alpha)})`;
-            ctx.beginPath();
-            ctx.moveTo(hub.x, hub.y);
-            ctx.lineTo(node.x, node.y);
-            ctx.stroke();
-
-            // Inter-node connections
-            nodes.forEach((other) => {
-              const dx = node.x - other.x;
-              const dy = node.y - other.y;
-              const dist = Math.sqrt(dx * dx + dy * dy);
-              if (dist < 90) {
-                ctx.strokeStyle = `rgba(255, 236, 1, ${(1 - dist / 90) * 0.12})`;
-                ctx.beginPath();
-                ctx.moveTo(node.x, node.y);
-                ctx.lineTo(other.x, other.y);
-                ctx.stroke();
-              }
-            });
-
-            // Node dot
-            ctx.fillStyle = '#0950F6';
-            ctx.beginPath();
-            ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-            ctx.fill();
-          });
-
-          // Central Hub
-          ctx.fillStyle = '#FFEC01';
-          ctx.beginPath();
-          ctx.arc(hub.x, hub.y, hub.radius, 0, Math.PI * 2);
-          ctx.fill();
-
-          ctx.strokeStyle = 'rgba(255, 236, 1, 0.4)';
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-          ctx.arc(hub.x, hub.y, hub.radius + 6 + Math.sin(Date.now() * 0.003) * 3, 0, Math.PI * 2);
-          ctx.stroke();
-
-          animationFrame = requestAnimationFrame(renderNetwork);
-        }
-
-        renderNetwork();
-      }
-
-      /* Modal Sheet Details */
       const modal = document.getElementById('service-modal');
-      const modalBack = document.getElementById('modal-backdrop');
-      const modalClose = document.getElementById('modal-close-btn');
-      const modalBadge = document.getElementById('modal-badge');
+      const modalClose = document.getElementById('modal-close');
+      const modalBack = document.getElementById('modal-back');
       const modalTitle = document.getElementById('modal-title');
-      const modalSub = document.getElementById('modal-subtitle');
-      const modalDesc = document.getElementById('modal-desc');
-      const modalDetails = document.getElementById('modal-details');
-      const modalSpecs = document.getElementById('modal-specs');
-      const modalPrice = document.getElementById('modal-price');
+      const modalMeta = document.getElementById('modal-meta');
+      const modalSummary = document.getElementById('modal-summary');
+      const modalFeatures = document.getElementById('modal-features');
+      const statTime = document.getElementById('stat-time');
+      const statPrice = document.getElementById('stat-price');
+      const statWeight = document.getElementById('stat-weight');
       const modalCta = document.getElementById('modal-cta');
+      const modalCtaText = document.getElementById('modal-cta-text');
       let lastActiveTrigger = null;
 
-      function openModal(serviceId, triggerElem) {
-        const item = services.find(s => s.id === serviceId);
+      function openModal(index) {
+        const item = SERVICES_DATA[index];
         if (!item || !modal) return;
-        lastActiveTrigger = triggerElem || document.activeElement;
-
-        modalBadge.textContent = item.tag;
-        modalTitle.textContent = item.name;
-        modalSub.textContent = item.sub;
-        modalDesc.textContent = item.desc;
-        modalDetails.textContent = item.details;
-        modalPrice.textContent = item.price;
-        modalCta.href = item.cta;
-
-        modalSpecs.innerHTML = item.specs.map(s => `
-          <li class="modal-spec-item">
-            <span class="modal-spec-label">${s.label}</span>
-            <span class="modal-spec-val">${s.val}</span>
-          </li>
-        `).join('');
-
+        lastActiveTrigger = document.activeElement;
+        modalTitle.innerText = item.title;
+        modalMeta.innerText = item.meta;
+        modalSummary.innerText = item.summary;
+        statTime.innerText = item.stats.time;
+        statPrice.innerText = item.stats.price;
+        statWeight.innerText = item.stats.weight;
+        modalCtaText.innerText = item.ctaText;
+        modalCta.setAttribute('href', item.ctaHref);
+        modalFeatures.innerHTML = item.features.map(f => `
+          <div class="modal-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-4"></path></svg>
+            <span>${f}</span>
+          </div>`).join('');
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
-        modalClose.focus();
+        if (modalClose) modalClose.focus();
       }
 
       function closeModal() {
@@ -3778,14 +4119,6 @@
         document.body.style.overflow = '';
         if (lastActiveTrigger) lastActiveTrigger.focus();
       }
-
-      document.querySelectorAll('.open-modal-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const sid = btn.getAttribute('data-service');
-          openModal(sid, btn);
-        });
-      });
 
       if (modalClose) modalClose.addEventListener('click', closeModal);
       if (modalBack) modalBack.addEventListener('click', closeModal);
@@ -3801,3 +4134,4 @@
 </body>
 
 </html>
+`

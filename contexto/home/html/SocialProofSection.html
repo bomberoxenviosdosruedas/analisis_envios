@@ -1,527 +1,221 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opiniones y Testimonios | Envíos DosRuedas Mar del Plata</title>
-  <meta name="description" content="Testimonios verificados en Google de clientes particulares, comercios y empresas sobre Envíos DosRuedas en Mar del Plata.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SocialProofSection — Envíos DosRuedas Mar del Plata</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <style>
-    :root {
-      --color-brand-blue: #0950F6;
-      --color-brand-blue-dark: #073ec2;
-      --color-brand-blue-50: #E6EEFE;
-      --color-brand-blue-100: #BACEFD;
-      --color-brand-yellow: #FFEC01;
-      --color-brand-yellow-hover: #FFF12E;
-      --color-brand-white: #FFFFFF;
-      --color-text-main: #0950F6;
-      --color-text-dark: #0f172a;
-
-      --font-display: 'Anton SC', sans-serif;
-      --font-subheading: 'Bebas Neue', sans-serif;
-      --font-sans: 'Outfit', sans-serif;
-      --font-mono: 'Geist Mono', monospace;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      background-color: #FAFAFB;
-      color: var(--color-text-dark);
-      padding: 4rem 1rem;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 80rem;
-      margin-inline: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-    }
-
-    /* Section Header */
-    .header-box {
-      text-align: center;
-      max-width: 48rem;
-      margin-inline: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .header-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-family: var(--font-subheading);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--color-brand-blue);
-      font-weight: 700;
-      padding: 0.25rem 0.875rem;
-      background-color: var(--color-brand-blue-50);
-      border-radius: 9999px;
-      border: 1px solid var(--color-brand-blue-100);
-    }
-
-    .stars-row {
-      color: #EAB308;
-      display: flex;
-      gap: 0.125rem;
-    }
-
-    .title {
-      font-family: var(--font-display);
-      font-size: 2.25rem;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      line-height: 1.05;
-      color: var(--color-brand-blue);
-    }
-
-    @media (min-width: 640px) {
-      .title {
-        font-size: 3rem;
-      }
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #475569;
-      font-weight: 300;
-    }
-
-    /* 3-Column Reviews Grid */
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    @media (min-width: 640px) {
-      .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .reviews-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* Review Card Variants */
-    .review-card {
-      border-radius: 1.25rem;
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.25rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
-    }
-
-    .review-card:hover {
-      transform: translateY(-4px);
-    }
-
-    /* Blue Card */
-    .review-card.theme-blue {
-      background-color: var(--color-brand-blue);
-      color: #FFFFFF;
-      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.2);
-    }
-
-    .theme-blue .card-badge {
-      background-color: var(--color-brand-yellow);
-      color: var(--color-brand-blue);
-    }
-
-    .theme-blue .quote-headline {
-      color: #FFFFFF;
-    }
-
-    .theme-blue .review-text {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .theme-blue .card-footer {
-      border-top-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .theme-blue .avatar-box {
-      background-color: var(--color-brand-yellow);
-      color: var(--color-brand-blue);
-    }
-
-    .theme-blue .author-name {
-      color: #FFFFFF;
-    }
-
-    .theme-blue .author-meta {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    /* White Card */
-    .review-card.theme-white {
-      background-color: #FFFFFF;
-      color: var(--color-brand-blue);
-      border: 2px solid var(--color-brand-yellow);
-      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.06);
-    }
-
-    .theme-white .card-badge {
-      background-color: var(--color-brand-blue-50);
-      color: var(--color-brand-blue);
-    }
-
-    .theme-white .quote-headline {
-      color: var(--color-brand-blue);
-    }
-
-    .theme-white .review-text {
-      color: #334155;
-    }
-
-    .theme-white .card-footer {
-      border-top-color: #F1F5F9;
-    }
-
-    .theme-white .avatar-box {
-      background-color: var(--color-brand-blue);
-      color: #FFFFFF;
-    }
-
-    .theme-white .author-name {
-      color: var(--color-brand-blue);
-    }
-
-    .theme-white .author-meta {
-      color: #64748b;
-    }
-
-    /* Yellow Card */
-    .review-card.theme-yellow {
-      background-color: var(--color-brand-yellow);
-      color: var(--color-brand-blue);
-      box-shadow: 0 16px 36px rgba(255, 236, 1, 0.3);
-    }
-
-    .theme-yellow .card-badge {
-      background-color: #FFFFFF;
-      color: var(--color-brand-blue);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    }
-
-    .theme-yellow .quote-headline {
-      color: var(--color-brand-blue);
-    }
-
-    .theme-yellow .review-text {
-      color: var(--color-brand-blue);
-    }
-
-    .theme-yellow .card-footer {
-      border-top-color: rgba(9, 80, 246, 0.2);
-    }
-
-    .theme-yellow .avatar-box {
-      background-color: var(--color-brand-blue);
-      color: #FFFFFF;
-    }
-
-    .theme-yellow .author-name {
-      color: var(--color-brand-blue);
-    }
-
-    .theme-yellow .author-meta {
-      color: rgba(9, 80, 246, 0.7);
-    }
-
-    .card-top {
-      display: flex;
-      flex-direction: column;
-      gap: 0.875rem;
-    }
-
-    .card-header-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .card-badge {
-      font-size: 0.6875rem;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      padding: 0.25rem 0.625rem;
-      border-radius: 9999px;
-    }
-
-    .quote-headline {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: -0.01em;
-      line-height: 1.15;
-    }
-
-    .review-text {
-      font-size: 0.875rem;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    .card-footer {
-      padding-top: 1rem;
-      border-top: 1px solid;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .avatar-box {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 9999px;
-      font-family: var(--font-subheading);
-      font-size: 1.125rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .author-name {
-      font-family: var(--font-subheading);
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      line-height: 1.1;
-    }
-
-    .author-meta {
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-    }
-
-    /* Footer link */
-    .google-reviews-link {
-      margin-inline: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-subheading);
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 700;
-      color: var(--color-brand-blue);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      transition: color 0.15s ease;
-    }
-
-    .google-reviews-link:hover {
-      color: var(--color-brand-blue-dark);
-    }
-
-    .svg-icon {
-      width: 1rem;
-      height: 1rem;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-  </style>
+  <!-- Estilos Modulares -->
+  <link rel="stylesheet" href="./css/globals.css" />
+  <link rel="stylesheet" href="./css/social-proof.css" />
 </head>
 <body>
 
-  <section id="testimonios-clientes" class="container" aria-label="Opiniones de clientes de Envíos DosRuedas">
-    
-    <!-- Header -->
-    <div class="header-box">
-      <div class="header-badge">
-        <div class="stars-row" aria-hidden="true">
-          <svg style="width:0.875rem;height:0.875rem;fill:currentColor;" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          <svg style="width:0.875rem;height:0.875rem;fill:currentColor;" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          <svg style="width:0.875rem;height:0.875rem;fill:currentColor;" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          <svg style="width:0.875rem;height:0.875rem;fill:currentColor;" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          <svg style="width:0.875rem;height:0.875rem;fill:currentColor;" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-        </div>
-        <span>Google Reviews · Calificación 5.0</span>
-      </div>
+<section
+    id="social-proof"
+    aria-labelledby="social-proof-title"
+    class="social-proof-section"
+  >
+    <div class="section-container">
 
-      <h2 class="title">Lo que dicen nuestros clientes en Mar del Plata</h2>
-      <p class="subtitle">
-        Comentarios reales y verificados de comerciantes, particulares y empresas que eligen nuestra cadetería todos los días.
-      </p>
+      <!-- Header -->
+      <header class="header-box">
+        <div class="badge-trust">
+          <span>5.0 / 5.0 EN GOOGLE · +120 VALORACIONES</span>
+        </div>
+
+        <div class="header-content-row">
+          <h2 id="social-proof-title" class="section-title">
+            LA PALABRA DE QUIENES
+            <span class="title-pill-yellow">VENDEN Y ENVÍAN</span>
+            EN MDQ
+          </h2>
+
+          <a
+            href="https://www.google.com/maps?q=Friuli+1972,+Mar+del+Plata"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-maps"
+            aria-label="Ver todas las opiniones en Google Maps"
+          >
+            <span>VER EN GOOGLE MAPS</span>
+            <!-- Icono ExternalLink -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Grilla de Testimonios (6 reseñas reales) -->
+      <ul class="reviews-grid">
+        <!-- Review 1: Karen Herrera (Blue) -->
+        <li class="flex">
+          <article class="review-card card-blue">
+            <div>
+              <div class="card-top-row">
+                <div role="img" aria-label="Calificación: 5 de 5 estrellas" class="stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 13 semanas</span>
+              </div>
+              <h3 class="quote-heading">RESOLVIERON MI PROBLEMA CON LA MEJOR PREDISPOSICIÓN</h3>
+              <p class="review-body">
+                Excelente el servicio, rápidos, muy atentos, resolvieron mi problema con la mejor predisposición, los recomiendo ampliamente.
+              </p>
+            </div>
+            <div class="author-row">
+              <div aria-hidden="true" class="avatar">K</div>
+              <span class="author-name">Karen Herrera</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Review 2: Agustin Torres (White) -->
+        <li class="flex">
+          <article class="review-card card-white">
+            <div>
+              <div class="card-top-row">
+                <div role="img" aria-label="Calificación: 5 de 5 estrellas" class="stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 48 semanas</span>
+              </div>
+              <h3 class="quote-heading">IMPECABLE PARA LLEVAR PEDIDOS A NUESTROS CLIENTES</h3>
+              <p class="review-body">
+                Lo usé varias veces para llevar pedidos a nuestros clientes. Impecable el servicio. Además hacen depósitos en cajeros sin problemas. Unos genios.
+              </p>
+            </div>
+            <div class="author-row">
+              <div aria-hidden="true" class="avatar">A</div>
+              <span class="author-name">Agustin Torres</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Review 3: Alexis Bogarin (Yellow) -->
+        <li class="flex">
+          <article class="review-card card-yellow">
+            <div>
+              <div class="card-top-row">
+                <div role="img" aria-label="Calificación: 5 de 5 estrellas" class="stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 37 semanas</span>
+              </div>
+              <h3 class="quote-heading">EL MEJOR SERVICIO PREMIUM DE LA ZONA</h3>
+              <p class="review-body">
+                El mejor servicio premium de la zona en Mar del Plata. 100% recomendable por puntualidad y trato.
+              </p>
+            </div>
+            <div class="author-row">
+              <div aria-hidden="true" class="avatar">A</div>
+              <span class="author-name">Alexis Bogarin</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Review 4: Lorenzo Elizagoyen (White) -->
+        <li class="flex">
+          <article class="review-card card-white">
+            <div>
+              <div class="card-top-row">
+                <div role="img" aria-label="Calificación: 5 de 5 estrellas" class="stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 32 semanas</span>
+              </div>
+              <h3 class="quote-heading">ATENCIÓN DE PRIMERA, RÁPIDO, CONFIABLE Y SEGURO</h3>
+              <p class="review-body">
+                Excelente servicio, atención de primera, rápido, confiable y seguro. Recomendado 100% para envíos puntuales.
+              </p>
+            </div>
+            <div class="author-row">
+              <div aria-hidden="true" class="avatar">L</div>
+              <span class="author-name">Lorenzo Elizagoyen</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Review 5: Emiliano Garri (Blue) -->
+        <li class="flex">
+          <article class="review-card card-blue">
+            <div>
+              <div class="card-top-row">
+                <div role="img" aria-label="Calificación: 5 de 5 estrellas" class="stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 48 semanas</span>
+              </div>
+              <h3 class="quote-heading">¡LA MEJOR MENSAJERÍA DE MDP!</h3>
+              <p class="review-body">
+                La mejor mensajería de Mar del Plata. Cumplen siempre con lo prometido y no te dejan tirado.
+              </p>
+            </div>
+            <div class="author-row">
+              <div aria-hidden="true" class="avatar">E</div>
+              <span class="author-name">Emiliano Garri</span>
+            </div>
+          </article>
+        </li>
+
+        <!-- Review 6: NahuAri (White) -->
+        <li class="flex">
+          <article class="review-card card-white">
+            <div>
+              <div class="card-top-row">
+                <div role="img" aria-label="Calificación: 5 de 5 estrellas" class="stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
+                <span class="date-badge">Hace 48 semanas</span>
+              </div>
+              <h3 class="quote-heading">10 DE 10, RESPONSABLES POR SOBRE TODAS LAS COSAS</h3>
+              <p class="review-body">
+                10 de 10 muy buenos en lo que hacen, responsables por sobre todas las cosas, super recomendable para tu negocio.
+              </p>
+            </div>
+            <div class="author-row">
+              <div aria-hidden="true" class="avatar">N</div>
+              <span class="author-name">NahuAri</span>
+            </div>
+          </article>
+        </li>
+      </ul>
+
     </div>
-
-    <!-- 6 Reviews Grid -->
-    <div class="reviews-grid">
-
-      <!-- Review 1 (Blue) -->
-      <article class="review-card theme-blue">
-        <div class="card-top">
-          <div class="card-header-row">
-            <span class="card-badge">Hace 13 semanas</span>
-            <div class="stars-row" style="color:var(--color-brand-yellow);" aria-label="5 estrellas">★★★★★</div>
-          </div>
-          <h3 class="quote-headline">RESOLVIERON MI PROBLEMA CON LA MEJOR PREDISPOSICIÓN</h3>
-          <p class="review-text">
-            Excelente el servicio, rápidos, muy atentos, resolvieron mi problema con la mejor predisposición, los recomiendo ampliamente.
-          </p>
-        </div>
-
-        <div class="card-footer">
-          <div class="avatar-box">K</div>
-          <div>
-            <h4 class="author-name">Karen Herrera</h4>
-            <span class="author-meta">Cliente particular</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Review 2 (White) -->
-      <article class="review-card theme-white">
-        <div class="card-top">
-          <div class="card-header-row">
-            <span class="card-badge">Hace 48 semanas</span>
-            <div class="stars-row" style="color:#EAB308;" aria-label="5 estrellas">★★★★★</div>
-          </div>
-          <h3 class="quote-headline">IMPECABLE PARA LLEVAR PEDIDOS A NUESTROS CLIENTES</h3>
-          <p class="review-text">
-            Lo usé varias veces para llevar pedidos a nuestros clientes. Impecable el servicio. Además hacen depósitos en cajeros sin problemas. Unos genios.
-          </p>
-        </div>
-
-        <div class="card-footer">
-          <div class="avatar-box">A</div>
-          <div>
-            <h4 class="author-name">Agustin Torres</h4>
-            <span class="author-meta">Comercio minorista</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Review 3 (Yellow) -->
-      <article class="review-card theme-yellow">
-        <div class="card-top">
-          <div class="card-header-row">
-            <span class="card-badge">Hace 37 semanas</span>
-            <div class="stars-row" style="color:var(--color-brand-blue);" aria-label="5 estrellas">★★★★★</div>
-          </div>
-          <h3 class="quote-headline">EL MEJOR SERVICIO PREMIUM DE LA ZONA</h3>
-          <p class="review-text">
-            El mejor servicio premium de la zona en Mar del Plata. 100% recomendable por puntualidad y trato.
-          </p>
-        </div>
-
-        <div class="card-footer">
-          <div class="avatar-box">A</div>
-          <div>
-            <h4 class="author-name">Alexis Bogarin</h4>
-            <span class="author-meta">Emprendedor local</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Review 4 (White) -->
-      <article class="review-card theme-white">
-        <div class="card-top">
-          <div class="card-header-row">
-            <span class="card-badge">Hace 32 semanas</span>
-            <div class="stars-row" style="color:#EAB308;" aria-label="5 estrellas">★★★★★</div>
-          </div>
-          <h3 class="quote-headline">ATENCIÓN DE PRIMERA, RÁPIDO, CONFIABLE Y SEGURO</h3>
-          <p class="review-text">
-            Excelente servicio, atención de primera, rápido, confiable y seguro. Recomendado 100% para envíos puntuales.
-          </p>
-        </div>
-
-        <div class="card-footer">
-          <div class="avatar-box">L</div>
-          <div>
-            <h4 class="author-name">Lorenzo Elizagoyen</h4>
-            <span class="author-meta">Cliente corporativo</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Review 5 (Blue) -->
-      <article class="review-card theme-blue">
-        <div class="card-top">
-          <div class="card-header-row">
-            <span class="card-badge">Hace 48 semanas</span>
-            <div class="stars-row" style="color:var(--color-brand-yellow);" aria-label="5 estrellas">★★★★★</div>
-          </div>
-          <h3 class="quote-headline">¡LA MEJOR MENSAJERÍA DE MDP!</h3>
-          <p class="review-text">
-            La mejor mensajería de Mar del Plata. Cumplen siempre con lo prometido y no te dejan tirado.
-          </p>
-        </div>
-
-        <div class="card-footer">
-          <div class="avatar-box">E</div>
-          <div>
-            <h4 class="author-name">Emiliano Garri</h4>
-            <span class="author-meta">Usuario recurrente</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Review 6 (White) -->
-      <article class="review-card theme-white">
-        <div class="card-top">
-          <div class="card-header-row">
-            <span class="card-badge">Hace 48 semanas</span>
-            <div class="stars-row" style="color:#EAB308;" aria-label="5 estrellas">★★★★★</div>
-          </div>
-          <h3 class="quote-headline">10 DE 10, RESPONSABLES POR SOBRE TODAS LAS COSAS</h3>
-          <p class="review-text">
-            10 de 10 muy buenos en lo que hacen, responsables por sobre todas las cosas, super recomendable para tu negocio.
-          </p>
-        </div>
-
-        <div class="card-footer">
-          <div class="avatar-box">N</div>
-          <div>
-            <h4 class="author-name">NahuAri</h4>
-            <span class="author-meta">Comercio e-commerce</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- Google link -->
-    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="google-reviews-link">
-      <span>Ver todas las reseñas en Google Maps</span>
-      <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-    </a>
-
   </section>
+
 
 </body>
 </html>
