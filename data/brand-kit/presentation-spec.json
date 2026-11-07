@@ -1,0 +1,53 @@
+{
+  "brand": "Envíos DosRuedas",
+  "tagline": "Somos la solución a tus envíos",
+  "brief": "Rediseño integral de identidad para empresa de mensajería en moto y logística e-commerce en Mar del Plata. Un sistema visual ágil, confiable y moderno que conecta con particulares y comercios fijos.",
+  "adjectives": [
+    "veloz",
+    "confiable",
+    "urbano",
+    "preciso"
+  ],
+  "criteria": "Éxito: distinción en el mercado local, legibilidad impecable a 16px (favicon) y gran formato, reproducción perfecta en una tinta y coherencia absoluta con la flota propia.",
+  "industry": "services",
+  "mockups": [
+    "business-card",
+    "website",
+    "signage",
+    "social",
+    "app-icon",
+    "sticker"
+  ],
+  "nav": [
+    "Inicio",
+    "Servicios",
+    "Cotizador",
+    "Nosotros",
+    "Contacto"
+  ],
+  "brand_color": "#0950F6",
+  "tile_color": "#0950F6",
+  "greyscale": false,
+  "final": true,
+  "round": 2,
+  "concepts": [
+    {
+      "name": "Dos Ruedas Dinámico",
+      "symbol": "envios-dosruedas-symbol.svg",
+      "lockup": "envios-dosruedas-horizontal.svg",
+      "avatar": "envios-dosruedas-favicon.svg",
+      "idea": "Dos ruedas en movimiento con flecha de envío integrada y geometría precisa.",
+      "rationale": [
+        "Respeta el activo visual histórico (las dos ruedas) pero lo purifica en un vector impecable.",
+        "Resuelve con éxito la escala a 16px y formatos de aplicación móvil o web.",
+        "Utiliza la paleta oficial de marca: Azul Canónico (#0950F6) y Amarillo Alta Visibilidad (#FFEC01)."
+      ]
+    }
+  ],
+  "recommendation": "Concepto A (Dos Ruedas Dinámico) — la síntesis perfecta entre tradición local y modernidad digital para dominar la logística en Mar del Plata.",
+  "next_steps": [
+    "Aprobación del kit completo de marca",
+    "Implementación del nuevo sistema visual en el sitio web institucional y app",
+    "Actualización de uniformes, flota y soportes digitales"
+  ]
+}

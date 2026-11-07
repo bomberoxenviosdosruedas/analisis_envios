@@ -470,7 +470,14 @@
     }
 
     /* Card Body */
-    .card-/* body base defined in globals.css */
+    .card-body {
+      position: relative;
+      z-index: 10;
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
     .card-city {
       font-size: 0.75rem;

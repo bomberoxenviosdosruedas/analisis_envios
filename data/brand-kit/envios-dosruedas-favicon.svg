@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Envios DosRuedas - Favicon / App Icon</title>
+  <rect width="64" height="64" rx="14" fill="#0950F6"/>
+  <!-- Monograma DR simplificado para tamaño pequeño -->
+  <path fill="#FFEC01" d="M 16 18 H 36 C 44 18 48 22 48 28 C 48 34 44 38 36 38 H 24 V 46 H 16 V 18 Z M 24 25 V 31 H 35 C 39 31 40 29 40 28 C 40 27 39 25 35 25 H 24 Z"/>
+  <circle cx="44" cy="46" r="6" fill="#FFEC01"/>
+</svg>

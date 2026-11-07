@@ -39,7 +39,9 @@
     }
 
     /* Section Header */
-    .section-header {
+    .section-header,
+    .header-center,
+    .section-header-center {
       text-align: center;
       max-width: 48rem;
       margin-inline: auto;
@@ -51,7 +53,9 @@
     }
 
     @media (min-width: 640px) {
-      .section-header { margin-bottom: 4rem; }
+      .section-header,
+      .header-center,
+      .section-header-center { margin-bottom: 4rem; }
     }
 
     .kicker {
@@ -81,7 +85,8 @@
       font-weight: 700;
     }
 
-    .section-heading {
+    .section-heading,
+    .section-title {
       font-family: var(--font-display);
       font-size: 2rem;
       text-transform: uppercase;
@@ -93,13 +98,16 @@
     }
 
     @media (min-width: 640px) {
-      .section-heading {
+      .section-heading,
+      .section-title {
         font-size: 3rem;
         line-height: 0.95;
       }
     }
 
-    .section-heading .highlight {
+    .section-heading .highlight,
+    .section-title .title-highlight,
+    .title-highlight {
       color: var(--color-brand-yellow-500);
     }
 
@@ -142,11 +150,13 @@
     }
 
     /* Double Bezel Outer Container (DoubleBezelCard.tsx) */
-    .double-bezel-outer {
+    .double-bezel-outer,
+    .bezel-outer,
+    .bezel-card-outer {
       background-color: rgba(230, 238, 254, 0.8); /* bg-brand-blue-50/80 */
       border: 1px solid var(--color-brand-blue-100);
-      border-radius: 1rem; /* rounded-2xl */
-      padding: 0.5rem; /* p-2 */
+      border-radius: 1.5rem;
+      padding: 0.5rem;
       box-shadow: 0 10px 25px -5px rgba(9, 80, 246, 0.08), 0 8px 10px -6px rgba(9, 80, 246, 0.04);
       display: flex;
       flex-direction: column;
@@ -158,7 +168,9 @@
                   border-color 300ms ease;
     }
 
-    .double-bezel-outer:hover {
+    .double-bezel-outer:hover,
+    .bezel-outer:hover,
+    .bezel-card-outer:hover {
       transform: translateY(-4px);
       border-color: var(--color-brand-blue-300);
       box-shadow: 0 20px 40px -10px rgba(9, 80, 246, 0.16);
@@ -166,7 +178,9 @@
 
     /* Stagger entrance motion */
     @media (prefers-reduced-motion: no-preference) {
-      .double-bezel-outer {
+      .double-bezel-outer,
+      .bezel-outer,
+      .bezel-card-outer {
         opacity: 0;
         transform: translateY(16px);
         transition: opacity 0.4s ease-out,
@@ -175,35 +189,51 @@
                     border-color 300ms ease;
       }
 
-      .double-bezel-outer.is-animated {
+      .double-bezel-outer.is-animated,
+      .bezel-outer.is-animated,
+      .bezel-card-outer.is-animated {
         opacity: 1;
         transform: translateY(0);
       }
 
-      .double-bezel-outer.is-animated:hover {
+      .double-bezel-outer.is-animated:hover,
+      .bezel-outer.is-animated:hover,
+      .bezel-card-outer.is-animated:hover {
         transform: translateY(-4px);
       }
 
-      .double-bezel-outer:nth-child(1) { transition-delay: 0s; }
-      .double-bezel-outer:nth-child(2) { transition-delay: 0.1s; }
-      .double-bezel-outer:nth-child(3) { transition-delay: 0.2s; }
+      .double-bezel-outer:nth-child(1),
+      .bezel-outer:nth-child(1),
+      .bezel-card-outer:nth-child(1) { transition-delay: 0s; }
+      .double-bezel-outer:nth-child(2),
+      .bezel-outer:nth-child(2),
+      .bezel-card-outer:nth-child(2) { transition-delay: 0.1s; }
+      .double-bezel-outer:nth-child(3),
+      .bezel-outer:nth-child(3),
+      .bezel-card-outer:nth-child(3) { transition-delay: 0.2s; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .double-bezel-outer {
+      .double-bezel-outer,
+      .bezel-outer,
+      .bezel-card-outer {
         opacity: 1;
         transform: none;
       }
-      .double-bezel-outer:hover {
+      .double-bezel-outer:hover,
+      .bezel-outer:hover,
+      .bezel-card-outer:hover {
         transform: translateY(-2px);
       }
     }
 
     /* Double Bezel Inner Card (DoubleBezelCard.tsx) */
-    .double-bezel-inner {
+    .double-bezel-inner,
+    .bezel-inner,
+    .bezel-card-inner {
       background-color: var(--color-white);
-      border-radius: 0.75rem; /* rounded-xl */
-      border: 1px solid rgba(230, 238, 254, 0.5); /* border-brand-blue-50/50 */
+      border-radius: 1.125rem;
+      border: 1px solid rgba(230, 238, 254, 0.5);
       color: var(--color-brand-blue-500);
       padding: 1.25rem;
       display: flex;
@@ -218,15 +248,21 @@
     }
 
     @media (min-width: 640px) {
-      .double-bezel-inner { padding: 1.75rem; }
+      .double-bezel-inner,
+      .bezel-inner,
+      .bezel-card-inner { padding: 1.75rem; }
     }
 
     @media (min-width: 1024px) {
-      .double-bezel-inner { padding: 2rem; }
+      .double-bezel-inner,
+      .bezel-inner,
+      .bezel-card-inner { padding: 2rem; }
     }
 
     /* Background Watermark Index Number */
-    .watermark-index {
+    .watermark-index,
+    .watermark-number,
+    .watermark-num {
       position: absolute;
       right: 1.25rem;
       top: 1rem;
@@ -241,10 +277,14 @@
     }
 
     @media (min-width: 640px) {
-      .watermark-index { font-size: 3.5rem; }
+      .watermark-index,
+      .watermark-number,
+      .watermark-num { font-size: 3.5rem; }
     }
 
-    .double-bezel-outer:hover .watermark-index {
+    .double-bezel-outer:hover .watermark-index,
+    .bezel-outer:hover .watermark-number,
+    .bezel-card-outer:hover .watermark-num {
       color: rgba(9, 80, 246, 0.2);
     }
 
@@ -319,7 +359,8 @@
     }
 
     /* Key Benefit Pill */
-    .benefit-pill {
+    .benefit-pill,
+    .benefit-tag {
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -350,7 +391,8 @@
       margin-top: auto;
     }
 
-    .cta-nested-pill {
+    .cta-nested-pill,
+    .cta-button {
       display: inline-flex;
       align-items: center;
       justify-content: space-between;
@@ -371,7 +413,8 @@
       transition: transform 160ms ease-out, background-color 160ms ease-out, border-color 160ms ease-out, box-shadow 160ms ease-out;
     }
 
-    .cta-nested-pill:active {
+    .cta-nested-pill:active,
+    .cta-button:active {
       transform: scale(0.97);
     }
 
@@ -386,7 +429,8 @@
       transition: transform 160ms ease-out, background-color 160ms ease-out, color 160ms ease-out;
     }
 
-    .cta-nested-pill:hover .cta-nested-icon {
+    .cta-nested-pill:hover .cta-nested-icon,
+    .cta-button:hover .cta-nested-icon {
       transform: translateX(4px);
     }
 
@@ -401,50 +445,68 @@
     }
 
     /* Variant: Primary (Card 1 - Particulares) */
-    .cta-pill-primary {
+    .cta-pill-primary,
+    .cta-primary {
       background-color: var(--color-brand-yellow-500);
       color: var(--color-brand-blue-500);
       border-color: var(--color-brand-yellow-500);
       box-shadow: 0 2px 8px rgba(255, 236, 1, 0.35);
     }
 
-    .cta-pill-primary:hover {
+    .cta-pill-primary:hover,
+    .cta-primary:hover {
       background-color: var(--color-brand-yellow-400);
       box-shadow: 0 0 20px rgba(255, 236, 1, 0.55);
     }
 
-    .cta-pill-primary:focus-visible {
+    .cta-pill-primary:focus-visible,
+    .cta-primary:focus-visible {
       outline: none;
       box-shadow: 0 0 0 2px var(--color-brand-blue-500), 0 0 0 4px var(--color-brand-yellow-500);
     }
 
-    .cta-pill-primary .cta-nested-icon {
+    .cta-pill-primary .cta-nested-icon,
+    .cta-primary .cta-nested-icon {
       color: var(--color-brand-blue-500);
       background-color: transparent;
     }
 
-    .cta-pill-primary:hover .cta-nested-icon {
+    .cta-pill-primary:hover .cta-nested-icon,
+    .cta-primary:hover .cta-nested-icon {
       background-color: var(--color-brand-blue-500);
       color: var(--color-brand-yellow-500);
     }
 
     /* Variant: Elevated (Cards 2 & 3 - Comercios & Empresas) */
-    .cta-pill-elevated {
+    .cta-pill-elevated,
+    .cta-secondary {
       background-color: var(--color-white);
       color: var(--color-brand-blue-500);
       border-color: var(--color-brand-blue-100);
       box-shadow: 0 2px 6px rgba(9, 80, 246, 0.08);
     }
 
-    .cta-pill-elevated:hover {
+    .cta-pill-elevated:hover,
+    .cta-secondary:hover {
       border-color: var(--color-brand-blue-300);
       box-shadow: 0 6px 16px rgba(9, 80, 246, 0.14);
       color: var(--color-brand-blue-500);
     }
 
-    .cta-pill-elevated:focus-visible {
+    .cta-pill-elevated:focus-visible,
+    .cta-secondary:focus-visible {
       outline: none;
       box-shadow: 0 0 0 2px var(--color-brand-blue-500), 0 0 0 4px var(--color-brand-yellow-500);
+    }
+
+    .svg-icon {
+      width: 1.125rem;
+      height: 1.125rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .cta-pill-elevated .cta-nested-icon {

@@ -1,0 +1,241 @@
+/* =========================================================================
+   ENVÍOS DOSRUEDAS — OFFICIAL DESIGN SYSTEM TOKENS
+   Design Division: agency-ui-designer (Lead), agency-brand-guardian, agency-ux-architect
+   Source of Truth: Reverse-engineered from production code (Mar del Plata, Argentina)
+   ========================================================================= */
+
+:root {
+  /* -----------------------------------------------------------------------
+   * 1. CHROMATIC PALETTE: BRAND PRIMARIES (AZUL CANÓNICO DOSRUEDAS)
+   * ----------------------------------------------------------------------- */
+  --ds-color-blue-50:  #E6EEFE;
+  --ds-color-blue-100: #BACEFD;
+  --ds-color-blue-200: #8EAFFB;
+  --ds-color-blue-300: #628FF9;
+  --ds-color-blue-400: #3570F8;
+  --ds-color-blue-500: #0950F6; /* Canonical Brand Primary */
+  --ds-color-blue-600: #073EC2; /* Hover / Pressed State */
+  --ds-color-blue-700: #063198; /* Active / Border Depth */
+  --ds-color-blue-800: #05236D;
+  /* Prohibited/Deprecated: --ds-color-blue-900 (#0A1128 Midnight) has been banished from the design system.
+     Aliased to Deep Blue 700 to prevent broken legacy references. */
+  --ds-color-blue-900: var(--ds-color-blue-700);
+  --ds-color-blue-950: #070B1A;
+
+  /* -----------------------------------------------------------------------
+   * 2. CHROMATIC PALETTE: BRAND ACCENTS (AMARILLO ALTA VISIBILIDAD)
+   * ----------------------------------------------------------------------- */
+  --ds-color-yellow-50:  #FFFDE6;
+  --ds-color-yellow-100: #FFFAB8;
+  --ds-color-yellow-200: #FFF78A;
+  --ds-color-yellow-300: #FFF45C;
+  --ds-color-yellow-400: #FFF12E; /* CTA Hover Accent */
+  --ds-color-yellow-500: #FFEC01; /* Canonical High-Visibility Accent */
+  --ds-color-yellow-600: #E6D400; /* Pressed / Contrast Accent */
+  --ds-color-yellow-700: #B3A500;
+  --ds-color-yellow-800: #807600;
+  --ds-color-yellow-900: #4D4700;
+
+  /* -----------------------------------------------------------------------
+   * 3. CHROMATIC PALETTE: SPECIALIZED VERTICAL (MARDELIVERY GASTRONOMÍA)
+   * ----------------------------------------------------------------------- */
+  --ds-color-md-bg:        #031811; /* Deep Emerald Canvas */
+  --ds-color-md-bg-inner:  rgba(3, 24, 17, 0.92);
+  --ds-color-md-banner-bg: #111B17;
+  --ds-color-md-green:     #2ECC85; /* Mint Green Accent */
+  --ds-color-md-green-hover: #27B374;
+  --ds-color-md-green-deep:  #1B8756;
+  --ds-color-md-amber:     #F5B938; /* Warning / Badge Accent */
+
+  /* -----------------------------------------------------------------------
+   * 4. CHROMATIC PALETTE: FUNCTIONAL & COMMUNICATION
+   * ----------------------------------------------------------------------- */
+  --ds-color-whatsapp:       #25D366;
+  --ds-color-whatsapp-deep:  #128C7E;
+  --ds-color-whatsapp-dark:  #075E54;
+  --ds-color-success:        #2ECC85;
+  --ds-color-success-bg:     #EEF6F2;
+  --ds-color-warning:        #F5B938;
+  --ds-color-warning-bg:     #FEF9E7;
+  --ds-color-error:          #EF4444;
+  --ds-color-error-bg:       #FEF2F2;
+  --ds-color-info:           #0950F6;
+  --ds-color-info-bg:        #E6EEFE;
+
+  /* -----------------------------------------------------------------------
+   * 5. CHROMATIC PALETTE: NEUTRALS & SURFACES
+   * ----------------------------------------------------------------------- */
+  --ds-color-white:       #FFFFFF;
+  --ds-color-slate-50:    #F8FAFC;
+  --ds-color-slate-100:   #F1F5F9;
+  --ds-color-slate-200:   #E2E8F0;
+  --ds-color-slate-300:   #CBD5E1;
+  --ds-color-slate-400:   #94A3B8;
+  --ds-color-slate-500:   #64748B;
+  --ds-color-slate-600:   #475569;
+  --ds-color-slate-700:   #334155;
+  --ds-color-slate-800:   #1E293B;
+  --ds-color-slate-900:   #0F172A;
+  --ds-color-slate-950:   #020617;
+
+  /* Alpha overlays for glassmorphism */
+  --ds-glass-white-subtle: rgba(255, 255, 255, 0.08);
+  --ds-glass-white-card:   rgba(255, 255, 255, 0.12);
+  --ds-glass-white-border: rgba(255, 255, 255, 0.22);
+  --ds-glass-blue-overlay: rgba(9, 80, 246, 0.88);
+  --ds-glass-dark-overlay: rgba(10, 17, 40, 0.85);
+
+  /* -----------------------------------------------------------------------
+   * 6. TYPOGRAPHY TOKENS
+   * ----------------------------------------------------------------------- */
+  /* Font Families */
+  --ds-font-display: "Anton SC", "Anton", Impact, sans-serif;
+  --ds-font-subhead: "Bebas Neue", sans-serif;
+  --ds-font-sans:    "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ds-font-mono:    "Geist Mono", monospace;
+
+  /* Font Weights */
+  --ds-weight-light:    300;
+  --ds-weight-regular:  400;
+  --ds-weight-medium:   500;
+  --ds-weight-semibold: 600;
+  --ds-weight-bold:     700;
+  --ds-weight-black:    900;
+
+  /* Typographic Scale (Desktop & Fluid) */
+  --ds-text-hero:    clamp(2.5rem, 5.5vw, 4rem);    /* 40px - 64px */
+  --ds-text-4xl:     clamp(2rem, 4vw, 3rem);         /* 32px - 48px */
+  --ds-text-3xl:     clamp(1.75rem, 3.2vw, 2.25rem); /* 28px - 36px */
+  --ds-text-2xl:     1.5rem;                         /* 24px */
+  --ds-text-xl:      1.25rem;                        /* 20px */
+  --ds-text-lg:      1.125rem;                       /* 18px */
+  --ds-text-base:    1rem;                           /* 16px */
+  --ds-text-sm:      0.875rem;                       /* 14px */
+  --ds-text-xs:      0.75rem;                        /* 12px */
+  --ds-text-2xs:     0.6875rem;                      /* 11px */
+
+  /* Line Heights */
+  --ds-leading-none:    0.92;
+  --ds-leading-tight:   1.05;
+  --ds-leading-snug:    1.25;
+  --ds-leading-normal:  1.5;
+  --ds-leading-relaxed: 1.65;
+
+  /* Letter Spacing */
+  --ds-tracking-tighter: -0.03em;
+  --ds-tracking-tight:   -0.015em;
+  --ds-tracking-normal:   0;
+  --ds-tracking-wide:     0.05em;
+  --ds-tracking-wider:    0.08em;
+  --ds-tracking-widest:   0.12em;
+
+  /* -----------------------------------------------------------------------
+   * 7. SPACING SCALE & LAYOUT GRID
+   * ----------------------------------------------------------------------- */
+  --ds-space-1:  0.25rem;  /* 4px */
+  --ds-space-2:  0.5rem;   /* 8px */
+  --ds-space-3:  0.75rem;  /* 12px */
+  --ds-space-4:  1rem;     /* 16px */
+  --ds-space-5:  1.25rem;  /* 20px */
+  --ds-space-6:  1.5rem;   /* 24px */
+  --ds-space-8:  2rem;     /* 32px */
+  --ds-space-10: 2.5rem;   /* 40px */
+  --ds-space-12: 3rem;     /* 48px */
+  --ds-space-16: 4rem;     /* 64px */
+  --ds-space-20: 5rem;     /* 80px */
+  --ds-space-24: 6rem;     /* 96px */
+
+  /* Layout Boundaries */
+  --ds-layout-max-width: 1280px;
+  --ds-layout-pad: clamp(16px, 4vw, 56px);
+  --ds-header-height: 82px;
+
+  /* -----------------------------------------------------------------------
+   * 8. BORDER RADIUS (SHAPES & BEZELS)
+   * ----------------------------------------------------------------------- */
+  --ds-radius-sm:   0.375rem; /* 6px */
+  --ds-radius-md:   0.5rem;   /* 8px */
+  --ds-radius-lg:   0.75rem;  /* 12px */
+  --ds-radius-xl:   1rem;     /* 16px */
+  --ds-radius-2xl:  1.25rem;  /* 20px */
+  --ds-radius-3xl:  1.5rem;   /* 24px */
+  --ds-radius-pill: 9999px;   /* Canonical CTA & Badge pill */
+  --ds-radius-full: 50%;     /* Circular discs & action icons */
+
+  /* -----------------------------------------------------------------------
+   * 9. ELEVATION, SHADOWS & GLOWS
+   * ----------------------------------------------------------------------- */
+  --ds-shadow-sm:        0 2px 4px rgba(9, 80, 246, 0.08);
+  --ds-shadow-md:        0 8px 24px rgba(9, 80, 246, 0.14);
+  --ds-shadow-lg:        0 16px 40px rgba(9, 80, 246, 0.20);
+  --ds-shadow-float:     0 25px 50px -12px rgba(9, 80, 246, 0.25);
+  --ds-shadow-dropdown:  0 20px 48px -8px rgba(9, 80, 246, 0.45);
+  --ds-shadow-cta:       0 8px 24px rgba(255, 236, 1, 0.32);
+  --ds-shadow-cta-glow:  0 0 28px rgba(255, 236, 1, 0.45), 0 8px 24px rgba(9, 80, 246, 0.18);
+  --ds-shadow-accent-sm: 0 2px 6px rgba(255, 236, 1, 0.24);
+  --ds-shadow-accent-md: 0 4px 14px rgba(255, 236, 1, 0.32);
+
+  /* -----------------------------------------------------------------------
+   * 10. MOTION & TIMING FUNCTIONS
+   * ----------------------------------------------------------------------- */
+  --ds-ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ds-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ds-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ds-ease-ui:     cubic-bezier(0.16, 1, 0.3, 1);
+
+  --ds-duration-fast:   150ms;
+  --ds-duration-normal: 250ms;
+  --ds-duration-slow:   400ms;
+
+  /* -----------------------------------------------------------------------
+   * 11. SEMANTIC COMPATIBILITY LAYER (LEGACY ALIASES)
+   * ----------------------------------------------------------------------- */
+  --color-brand-blue-50:  var(--ds-color-blue-50);
+  --color-brand-blue-100: var(--ds-color-blue-100);
+  --color-brand-blue-200: var(--ds-color-blue-200);
+  --color-brand-blue-300: var(--ds-color-blue-300);
+  --color-brand-blue-400: var(--ds-color-blue-400);
+  --color-brand-blue-500: var(--ds-color-blue-500);
+  --color-brand-blue-600: var(--ds-color-blue-600);
+  --color-brand-blue-900: var(--ds-color-blue-900);
+
+  --color-brand-yellow-50:  var(--ds-color-yellow-50);
+  --color-brand-yellow-100: var(--ds-color-yellow-100);
+  --color-brand-yellow-200: var(--ds-color-yellow-200);
+  --color-brand-yellow-300: var(--ds-color-yellow-300);
+  --color-brand-yellow-400: var(--ds-color-yellow-400);
+  --color-brand-yellow-500: var(--ds-color-yellow-500);
+  --color-brand-yellow-600: var(--ds-color-yellow-600);
+
+  --color-white:       var(--ds-color-white);
+  --color-brand-white: var(--ds-color-white);
+  --color-brand-ink:   var(--ds-color-slate-900);
+
+  --blue:         var(--ds-color-blue-500);
+  --blue-surface: var(--ds-color-blue-50);
+  --yellow:       var(--ds-color-yellow-500);
+  --yellow-soft:  var(--ds-color-yellow-400);
+  --white:        var(--ds-color-white);
+  --muted:        rgba(255, 255, 255, 0.88);
+  --border-subtle: rgba(255, 255, 255, 0.22);
+
+  --font-display:    var(--ds-font-display);
+  --font-subhead:    var(--ds-font-subhead);
+  --font-subheading: var(--ds-font-subhead);
+  --font-sans:       var(--ds-font-sans);
+  --font-body:       var(--ds-font-sans);
+  --font-mono:       var(--ds-font-mono);
+
+  --pad:             var(--ds-layout-pad);
+  --header-h:        var(--ds-header-height);
+  --ease-out-ui:     var(--ds-ease-out);
+  --duration-feedback: var(--ds-duration-fast);
+
+  --shadow-sm:       var(--ds-shadow-sm);
+  --shadow-md:       var(--ds-shadow-md);
+  --shadow-dropdown: var(--ds-shadow-dropdown);
+  --shadow-accent-sm: var(--ds-shadow-accent-sm);
+  --shadow-accent-md: var(--ds-shadow-accent-md);
+  --shadow-cta:      var(--ds-shadow-cta);
+  --shadow-cta-glow: var(--ds-shadow-cta-glow);
+}

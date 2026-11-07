@@ -1,0 +1,422 @@
+/* =========================================================================
+   LOGISTICA HOME SECTION — SISTEMA LOGÍSTICO DIGITAL (BLANCO & AZUL ELÉCTRICO)
+   ========================================================================= */
+
+.logistica-section {
+  position: relative;
+  background-color: var(--color-white, #FFFFFF);
+  color: var(--color-brand-blue-900, #0a1b3f);
+  padding: 4rem 1rem;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(230, 238, 254, 0.8);
+  font-family: var(--font-sans, "Outfit", sans-serif);
+}
+
+@media (min-width: 640px) {
+  .logistica-section {
+    padding: 6rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logistica-section {
+    padding: 7rem 2rem;
+  }
+}
+
+/* Halos decorativos de fondo */
+.logistica-glow-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24rem;
+  height: 24rem;
+  background-color: rgba(9, 80, 246, 0.05);
+  border-radius: 9999px;
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logistica-glow-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20rem;
+  height: 20rem;
+  background-color: rgba(255, 236, 1, 0.10);
+  border-radius: 9999px;
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logistica-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Cabecera */
+.logistica-header {
+  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.logistica-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.875rem;
+  background-color: rgba(9, 80, 246, 0.1);
+  color: var(--color-brand-blue-500, #0950F6);
+  border: 1px solid rgba(9, 80, 246, 0.2);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-family: var(--font-subheading, "Bebas Neue", sans-serif);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.logistica-title {
+  font-family: var(--font-display, "Anton SC", sans-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-brand-blue-500, #0950F6);
+}
+
+.logistica-pill-highlight {
+  color: var(--color-brand-yellow-500, #FFEC01);
+  background-color: var(--color-brand-blue-500, #0950F6);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.logistica-desc {
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.625;
+  color: rgba(10, 27, 63, 0.8);
+  max-width: 46rem;
+}
+
+.logistica-desc strong {
+  font-weight: 700;
+  color: var(--color-brand-blue-500, #0950F6);
+}
+
+/* Grilla de 4 Cards (DoubleBezelCard Light) */
+.logistica-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .logistica-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .logistica-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.logistica-card-outer {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(230, 238, 254, 0.6);
+  border: 1px solid rgba(186, 206, 253, 0.6);
+  box-shadow: 0 4px 16px -2px rgba(9, 80, 246, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s var(--ease-out, ease), transform 0.3s var(--ease-out, ease), box-shadow 0.3s var(--ease-out, ease);
+}
+
+.logistica-card-outer:hover {
+  border-color: var(--color-brand-blue-300, #628FF9);
+  box-shadow: 0 12px 28px -4px rgba(9, 80, 246, 0.12);
+  transform: translateY(-4px);
+}
+
+.logistica-card-inner {
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background-color: var(--color-white, #FFFFFF);
+  border: 1px solid rgba(186, 206, 253, 0.5);
+  color: var(--color-brand-blue-900, #0a1b3f);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1.25rem;
+  transition: background-color 0.2s var(--ease-out, ease);
+}
+
+.logistica-card-outer:hover .logistica-card-inner {
+  background-color: rgba(230, 238, 254, 0.3);
+}
+
+.logistica-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logistica-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logistica-icon-box {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-brand-blue-500, #0950F6);
+  color: var(--color-brand-yellow-500, #FFEC01);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(9, 80, 246, 0.2);
+  transition: transform 0.2s var(--ease-spring, ease);
+}
+
+.logistica-card-outer:hover .logistica-icon-box {
+  transform: scale(1.08);
+}
+
+.logistica-icon-box svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 2.2;
+}
+
+.logistica-card-badge {
+  font-size: 0.6875rem;
+  font-family: var(--font-subheading, "Bebas Neue", sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  color: rgba(9, 80, 246, 0.7);
+  background-color: var(--color-brand-blue-50, #E6EEFE);
+  border: 1px solid var(--color-brand-blue-100, #BACEFD);
+}
+
+.logistica-card-title {
+  font-family: var(--font-display, "Anton SC", sans-serif);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-brand-blue-500, #0950F6);
+  line-height: 1.1;
+}
+
+.logistica-card-desc {
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  font-size: 0.875rem;
+  color: rgba(10, 27, 63, 0.75);
+  line-height: 1.6;
+}
+
+.logistica-card-footer {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(230, 238, 254, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 500;
+  color: var(--color-brand-blue-500, #0950F6);
+}
+
+.logistica-card-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.logistica-card-highlight svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--color-brand-yellow-500, #FFEC01);
+  stroke-width: 2.2;
+}
+
+/* Banner de Acciones Azul Eléctrico */
+.logistica-banner {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--color-brand-blue-500, #0950F6), var(--color-brand-blue-600, #0842ca));
+  color: var(--color-white, #FFFFFF);
+  box-shadow: 0 20px 25px -5px rgba(9, 80, 246, 0.25), 0 8px 10px -6px rgba(9, 80, 246, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .logistica-banner {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logistica-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.logistica-banner-text {
+  max-width: 36rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .logistica-banner-text {
+    text-align: left;
+  }
+}
+
+.logistica-banner-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-brand-yellow-500, #FFEC01);
+  font-size: 0.75rem;
+  font-family: var(--font-subheading, "Bebas Neue", sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .logistica-banner-kicker {
+    justify-content: flex-start;
+  }
+}
+
+.logistica-banner-kicker svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2.2;
+}
+
+.logistica-banner-title {
+  font-family: var(--font-display, "Anton SC", sans-serif);
+  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-white, #FFFFFF);
+  line-height: 1.1;
+}
+
+.logistica-banner-desc {
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  font-size: 0.875rem;
+  color: var(--color-brand-blue-50, #E6EEFE);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.logistica-banner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .logistica-banner-actions {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+}
+
+.logistica-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1.75rem;
+  background-color: var(--color-brand-yellow-500, #FFEC01);
+  color: var(--color-brand-blue-500, #0950F6);
+  font-family: var(--font-subheading, "Bebas Neue", sans-serif);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 12px 40px -6px rgba(255, 236, 1, 0.3);
+  transition: background-color var(--duration-feedback, 160ms) var(--ease-out, ease), transform var(--duration-feedback, 160ms) var(--ease-out, ease);
+  min-height: 48px;
+}
+
+.logistica-btn-primary:hover {
+  background-color: var(--color-brand-yellow-400, #FFF12E);
+  transform: translateY(-1px);
+}
+
+.logistica-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1.75rem;
+  background-color: transparent;
+  color: var(--color-white, #FFFFFF);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: var(--font-subheading, "Bebas Neue", sans-serif);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all var(--duration-feedback, 160ms) var(--ease-out, ease);
+  min-height: 48px;
+}
+
+.logistica-btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-white, #FFFFFF);
+  transform: translateY(-1px);
+}
+
+.logistica-icon-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

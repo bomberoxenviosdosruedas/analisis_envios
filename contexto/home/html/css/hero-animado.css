@@ -24,7 +24,8 @@
     /* =========================================================================
        HERO ANIMADO SECTION (Fiel a HeroAnimado.tsx)
        ========================================================================= */
-    .hero-animado-section {
+    .hero-animado-section,
+    .hero-section {
       position: relative;
       isolation: isolate;
       display: flex;
@@ -35,6 +36,11 @@
       overflow: hidden;
       background-color: var(--color-brand-blue-500);
       color: var(--color-white);
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 236, 1, 0.1) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 36px 36px, 36px 36px;
     }
 
     /* Container Utility */
@@ -159,7 +165,8 @@
     /* =========================================================================
        COPY 7 — LEFT-ALIGNED ALWAYS (never centered)
        ========================================================================= */
-    .hero-copy-col {
+    .hero-copy-col,
+    .hero-copy {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -167,19 +174,36 @@
     }
 
     @media (min-width: 1024px) {
-      .hero-copy-col {
+      .hero-copy-col,
+      .hero-copy {
         grid-column: span 7 / span 7;
       }
     }
 
     /* Badge Component (variant="accent", size="lg") */
-    .hero-badge-wrap {
+    .hero-badge-wrap,
+    .hero-badge,
+    .badge-accent {
       display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       align-self: flex-start;
+      border-radius: 9999px;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      padding: 0.375rem 1rem;
+      font-family: var(--font-subheading);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: var(--shadow-glow-yellow);
       transition: transform var(--duration-ui) var(--ease-spring);
     }
 
-    .hero-badge-wrap:hover {
+    .hero-badge-wrap:hover,
+    .hero-badge:hover,
+    .badge-accent:hover {
       transform: scale(1.02);
     }
 
@@ -209,7 +233,8 @@
     }
 
     /* Main Title & Knockout Capsule */
-    .hero-heading {
+    .hero-heading,
+    .hero-title {
       font-family: var(--font-display);
       text-transform: uppercase;
       line-height: 0.92;
@@ -221,13 +246,16 @@
     }
 
     @media (min-width: 640px) {
-      .hero-heading { font-size: 3rem; }
+      .hero-heading,
+      .hero-title { font-size: 3rem; }
     }
     @media (min-width: 1024px) {
-      .hero-heading { font-size: 3.75rem; }
+      .hero-heading,
+      .hero-title { font-size: 3.75rem; }
     }
     @media (min-width: 1280px) {
-      .hero-heading { font-size: 4.5rem; }
+      .hero-heading,
+      .hero-title { font-size: 4.5rem; }
     }
 
     .hero-heading-block {
@@ -235,13 +263,23 @@
     }
 
     /* Knockout Component (tone="yellow" sobre azul de marca) */
-    .ui-knockout {
+    .ui-knockout,
+    .knockout {
       display: inline-block;
       transform: rotate(-1deg);
-      border-radius: 9999px;
-      padding: 0.25rem 0.875rem;
-      margin-block: 0.25rem;
+      border-radius: 6px;
+      padding: 0.1em 0.35em;
+      margin-inline: 0.1em;
       font-family: var(--font-display);
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      vertical-align: baseline;
+      white-space: nowrap;
+      background-color: var(--color-brand-yellow-500);
+      color: var(--color-brand-blue-500);
+      box-shadow: 0 0 28px rgba(255, 236, 1, 0.45);
+    }
       text-transform: uppercase;
       line-height: 1.1;
       letter-spacing: -0.02em;
@@ -253,7 +291,8 @@
     }
 
     /* Description paragraph */
-    .hero-lead-text {
+    .hero-lead-text,
+    .hero-lead {
       font-family: var(--font-sans);
       font-size: 1rem;
       font-weight: 300;
@@ -263,11 +302,13 @@
     }
 
     @media (min-width: 640px) {
-      .hero-lead-text { font-size: 1.125rem; }
+      .hero-lead-text,
+      .hero-lead { font-size: 1.125rem; }
     }
 
     /* CTAs actions group */
-    .hero-actions-group {
+    .hero-actions-group,
+    .hero-actions {
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -275,24 +316,26 @@
     }
 
     @media (min-width: 640px) {
-      .hero-actions-group {
+      .hero-actions-group,
+      .hero-actions {
         flex-direction: row;
         align-items: center;
       }
     }
 
-    /* CTANestedPill (variant="primary", size="large") */
-    .cta-nested-pill {
+    /* CTANestedPill (variant="primary", size="large") and Universal CTA Pill */
+    .cta-nested-pill,
+    .cta-pill-primary {
       display: inline-flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       gap: 0.75rem;
       border-radius: 9999px;
       font-family: var(--font-subheading);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.0625rem;
       min-height: 3.25rem;
       padding: 0.75rem 2rem;
       text-decoration: none;
@@ -301,21 +344,25 @@
       border: 1px solid var(--color-brand-yellow-500);
       background-color: var(--color-brand-yellow-500);
       color: var(--color-brand-blue-500);
-      box-shadow: 0 2px 10px rgba(255, 236, 1, 0.35);
+      box-shadow: 0 4px 14px rgba(255, 236, 1, 0.35);
       transition: transform 160ms ease-out, background-color 160ms ease-out, box-shadow 160ms ease-out;
+      white-space: nowrap;
     }
 
-    .cta-nested-pill:hover {
+    .cta-nested-pill:hover,
+    .cta-pill-primary:hover {
       background-color: var(--color-brand-yellow-400);
-      box-shadow: 0 0 24px rgba(255, 236, 1, 0.6);
+      box-shadow: var(--shadow-glow-yellow);
       transform: translateY(-2px);
     }
 
-    .cta-nested-pill:active {
+    .cta-nested-pill:active,
+    .cta-pill-primary:active {
       transform: scale(0.97);
     }
 
-    .cta-nested-pill:focus-visible {
+    .cta-nested-pill:focus-visible,
+    .cta-pill-primary:focus-visible {
       outline: none;
       box-shadow: 0 0 0 2px var(--color-brand-blue-500), 0 0 0 4px var(--color-brand-yellow-500);
     }
@@ -340,16 +387,17 @@
     }
 
     /* Secondary services link */
-    .hero-services-link {
+    .hero-services-link,
+    .cta-link {
       display: inline-flex;
       min-height: 2.75rem;
-      width: 100%;
       justify-content: center;
       align-items: center;
       gap: 0.5rem;
       border-radius: 0.375rem;
+      padding: 0.5rem 1rem;
       font-family: var(--font-subheading);
-      font-size: 0.875rem;
+      font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--color-white);
@@ -358,6 +406,11 @@
       text-decoration-thickness: 2px;
       text-underline-offset: 4px;
       transition: color var(--duration-ui) ease;
+    }
+
+    .hero-services-link:hover,
+    .cta-link:hover {
+      color: var(--color-brand-yellow-500);
     }
 
     @media (min-width: 640px) {
@@ -389,7 +442,8 @@
       }
     }
 
-    .hero-map-frame {
+    .hero-map-frame,
+    .hero-map-wrapper {
       position: relative;
       margin-inline: auto;
       aspect-ratio: 1 / 1;
@@ -411,10 +465,12 @@
       pointer-events: none;
     }
 
+    .pulse-ring:nth-child(2),
     .pulse-ring-2 {
       animation-delay: 1.06s;
     }
 
+    .pulse-ring:nth-child(3),
     .pulse-ring-3 {
       animation-delay: 2.13s;
     }
@@ -437,7 +493,8 @@
       }
     }
 
-    .hero-map-image {
+    .hero-map-image,
+    .hero-map-img {
       position: relative;
       z-index: 2;
       width: 100%;
@@ -447,7 +504,8 @@
     }
 
     /* Floating map chips */
-    .hero-map-chip {
+    .hero-map-chip,
+    .map-chip {
       position: absolute;
       z-index: 3;
       display: inline-flex;
@@ -464,29 +522,34 @@
       user-select: none;
     }
 
-    .hero-map-chip:hover {
+    .hero-map-chip:hover,
+    .map-chip:hover {
       transform: scale(1.03);
     }
 
-    .chip-base-friuli {
+    .chip-base-friuli,
+    .chip-base {
       left: 0.5rem;
       bottom: 0.5rem;
     }
 
     @media (min-width: 640px) {
-      .chip-base-friuli {
+      .chip-base-friuli,
+      .chip-base {
         left: -4%;
         bottom: 14%;
       }
     }
 
-    .chip-entrega-dia {
+    .chip-entrega-dia,
+    .chip-delivery {
       right: 0.5rem;
       top: 0.5rem;
     }
 
     @media (min-width: 640px) {
-      .chip-entrega-dia {
+      .chip-entrega-dia,
+      .chip-delivery {
         right: -2%;
         top: 10%;
       }
@@ -499,9 +562,17 @@
       color: var(--color-brand-blue-500);
     }
 
-    .chip-/* body base defined in globals.css */
+    .chip-body,
+    .chip-text {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      line-height: 1.25;
+      display: flex;
+      flex-direction: column;
+    }
 
-    .chip-title-bold {
+    .chip-title-bold,
+    .chip-title {
       display: block;
       font-family: var(--font-subheading);
       font-size: 0.75rem;
@@ -513,7 +584,8 @@
     /* =========================================================================
        TICKER DE DIFERENCIALES (Bucle infinito transparente)
        ========================================================================= */
-    .hero-ticker-bar {
+    .hero-ticker-bar,
+    .ticker-wrapper {
       position: relative;
       z-index: 10;
       border-top: 1px solid rgba(255, 255, 255, 0.18);
@@ -522,7 +594,8 @@
       padding-block: 0.875rem;
     }
 
-    .ticker-viewport {
+    .ticker-viewport,
+    .ticker-track {
       display: flex;
       width: max-content;
       animation: tickerLoop 28s linear infinite;
@@ -534,7 +607,8 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .ticker-viewport {
+      .ticker-viewport,
+      .ticker-track {
         animation: none;
         width: 100%;
         justify-content: space-around;
@@ -542,14 +616,16 @@
       }
     }
 
-    .ticker-group {
+    .ticker-group,
+    .ticker-list {
       display: flex;
       align-items: center;
       list-style: none;
       flex-shrink: 0;
     }
 
-    .ticker-node {
+    .ticker-node,
+    .ticker-item {
       display: flex;
       align-items: center;
       gap: 2.25rem;
@@ -563,15 +639,19 @@
     }
 
     @media (min-width: 640px) {
-      .ticker-node { font-size: 1.0625rem; }
+      .ticker-node,
+      .ticker-item { font-size: 1.0625rem; }
     }
 
-    .ticker-diamond-dot {
+    .ticker-diamond-dot,
+    .ticker-diamond {
       width: 0.4375rem;
       height: 0.4375rem;
       transform: rotate(45deg);
       border-radius: 1px;
       background-color: var(--color-brand-yellow-500);
+      display: inline-block;
+    }
       display: inline-block;
     }
 

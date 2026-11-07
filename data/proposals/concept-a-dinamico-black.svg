@@ -1,0 +1,30 @@
+<svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256"><title>Envios DosRuedas</title>
+  
+  <!-- Rueda Trasera (Donut con corte real en negativo) -->
+  <path fill-rule="evenodd" fill="#000000" d="
+    M 68 116 
+    A 44 44 0 1 0 68 204 
+    A 44 44 0 1 0 68 116 Z 
+    M 68 138 
+    A 22 22 0 1 1 68 182 
+    A 22 22 0 1 1 68 138 Z" />
+  <circle cx="68" cy="160" r="10" fill="#000000" />
+
+  <!-- Rueda Delantera (Donut con corte real en negativo) -->
+  <path fill-rule="evenodd" fill="#000000" d="
+    M 188 116 
+    A 44 44 0 1 0 188 204 
+    A 44 44 0 1 0 188 116 Z 
+    M 188 138 
+    A 22 22 0 1 1 188 182 
+    A 22 22 0 1 1 188 138 Z" />
+  <circle cx="188" cy="160" r="10" fill="#000000" />
+
+  <!-- Chasis y flecha aerodinamica de envio (Angulos exactos de 45 grados) -->
+  <path fill="#000000" d="M 40 102 L 138 102 L 176 64 L 78 64 Z" />
+  <path fill="#000000" d="M 124 64 L 186 64 L 224 102 L 162 102 Z" />
+  
+  <!-- Estela inferior / impulso de cadeteria (Angulos exactos de 45 grados) -->
+  <path fill="#000000" d="M 80 128 L 176 128 L 156 148 L 60 148 Z" />
+  <path fill="#000000" d="M 166 128 L 216 128 L 196 148 L 146 148 Z" />
+</svg>

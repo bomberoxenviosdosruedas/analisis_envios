@@ -174,7 +174,7 @@
     .card-blue .stars { color: var(--color-brand-yellow-500); }
     .card-blue .date-badge { background-color: var(--color-brand-yellow-500); color: var(--color-brand-blue-500); }
     .card-blue .quote-heading { color: var(--color-white); }
-    .card-blue .review-/* body base defined in globals.css */
+    .card-blue .review-body { color: rgba(255, 255, 255, 0.9); }
     .card-blue .author-row { border-top: 1px solid rgba(255, 255, 255, 0.2); }
     .card-blue .avatar { background-color: var(--color-brand-yellow-500); color: var(--color-brand-blue-500); }
     .card-blue .author-name { color: var(--color-white); }
@@ -189,7 +189,7 @@
     .card-white .stars { color: var(--color-brand-blue-500); }
     .card-white .date-badge { background-color: var(--color-brand-blue-50); color: var(--color-brand-blue-500); }
     .card-white .quote-heading { color: var(--color-brand-blue-500); }
-    .card-white .review-/* body base defined in globals.css */
+    .card-white .review-body { color: rgba(9, 80, 246, 0.8); }
     .card-white .author-row { border-top: 1px solid rgba(186, 206, 253, 0.4); }
     .card-white .avatar { background-color: var(--color-brand-blue-500); color: var(--color-white); }
     .card-white .author-name { color: var(--color-brand-blue-500); }
@@ -203,7 +203,7 @@
     .card-yellow .stars { color: var(--color-brand-blue-500); }
     .card-yellow .date-badge { background-color: var(--color-white); color: var(--color-brand-blue-500); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
     .card-yellow .quote-heading { color: var(--color-brand-blue-500); }
-    .card-yellow .review-/* body base defined in globals.css */
+    .card-yellow .review-body { color: rgba(9, 80, 246, 0.9); }
     .card-yellow .author-row { border-top: 1px solid rgba(9, 80, 246, 0.2); }
     .card-yellow .avatar { background-color: var(--color-brand-blue-500); color: var(--color-white); }
     .card-yellow .author-name { color: var(--color-brand-blue-500); }
@@ -239,7 +239,13 @@
       letter-spacing: 0.025em;
     }
 
-    .review-/* body base defined in globals.css */
+    .review-body {
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      line-height: 1.625;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
 
     .author-row {
       padding-top: 1.5rem;

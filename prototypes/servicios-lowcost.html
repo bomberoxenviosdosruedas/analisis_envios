@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadetería y Envíos en el Día en Mar del Plata | Envíos DosRuedas</title>
+  <meta name="description" content="Paquetería y cadetería programada con entrega en el día en Mar del Plata. Pedidos antes de las 13:00 hs se entregan antes de las 19:00 hs con tarifa fija y ruteo optimizado.">
+  <link rel="canonical" href="https://www.enviosdosruedas.com/servicios-lowcost.html">
+
+  <!-- Google Fonts Preconnect & Font Swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Design System Universal Tokens & Base Stylesheets -->
+  <link rel="stylesheet" href="../design-system/tokens.css">
+  <link rel="stylesheet" href="./css/globals.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/servicios-lowcost.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  
+  <!-- ========================================================================
+   * 1. NAVEGADOR MODULAR CANÓNICO (SITE-HEADER)
+   * ======================================================================== -->
+  <header class="site-header" id="site-header">
+    <a class="brand" href="index.html" aria-label="Envíos DosRuedas, inicio">
+      <img src="../public/logo.webp" onerror="this.src='../public/img/generales/logo.png'" alt="Envíos DosRuedas" class="brand-logo-img" width="44" height="44" decoding="async" />
+      <span class="brand-name">
+        ENVÍOS DOSRUEDAS
+        <small>MENSAJERÍA · LOGÍSTICA MDP</small>
+      </span>
+    </a>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Navegación principal">
+      
+      <div class="nav-item">
+        <a href="index.html" class="nav-link">Inicio</a>
+      </div>
+      <div class="nav-item">
+        <button type="button" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color:var(--ds-color-yellow-500);">
+          <span>Servicios</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          
+          <a href="servicios-express.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <span>Envíos Express (< 3 hs)</span>
+          </a>
+          <a href="servicios-lowcost.html" class="dropdown-link" role="menuitem" aria-current="page" style="color:var(--ds-color-yellow-500);">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline>
+              </svg>
+            </div>
+            <span>Envíos LowCost (24-48 hs)</span>
+          </a>
+          <a href="servicios-flex.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <span>Mercado Envíos Flex</span>
+          </a>
+          <a href="servicios-cuenta-corriente.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+              </svg>
+            </div>
+            <span>Cuenta Corriente PyME</span>
+          </a>
+          <a href="servicios-emprendedores.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              </svg>
+            </div>
+            <span>Plan Emprendedores MDQ</span>
+          </a>
+          <a href="servicios-contrareembolso.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Cobro Contra Reembolso</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button type="button" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <span>Plataformas</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          
+          <a href="logistica-dosruedas.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path>
+              </svg>
+            </div>
+            <span>Logística DosRuedas (B2B)</span>
+          </a>
+          <a href="mardelivery.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8Z"></path><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"></path>
+              </svg>
+            </div>
+            <span>MarDelivery Gastronomía</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button type="button" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <span>Nosotros</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          
+          <a href="sobre-nosotros.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>
+              </svg>
+            </div>
+            <span>Sobre Nosotros</span>
+          </a>
+          <a href="preguntas-frecuentes.html" class="dropdown-link" role="menuitem">
+            <div class="dropdown-icon-pill" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path>
+              </svg>
+            </div>
+            <span>Preguntas Frecuentes</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+5492236025348" aria-label="Llamar al 223 602-5348">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>223 602-5348</span>
+      </a>
+
+      <a class="header-cta" href="cotizar.html">
+        <span>Cotizá tu envío</span>
+        <span class="arrow-disc" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+   * DRAWER MÓVIL RESPONSIVO
+   * ======================================================================== -->
+  <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+    <div class="mobile-drawer-box" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navegación móvil">
+      <div class="drawer-top-bar">
+        <span class="drawer-title">MENÚ PRINCIPAL</span>
+        <button class="drawer-close-btn" id="drawer-close-btn" type="button" aria-label="Cerrar menú">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-list" aria-label="Menú móvil">
+        <a href="index.html" class="mobile-nav-link">Inicio</a>
+
+        <div class="mobile-nav-heading">Servicios</div>
+        <a href="servicios-express.html" class="mobile-nav-link">Envíos Express</a>
+        <a href="servicios-lowcost.html" class="mobile-nav-link">Envíos LowCost</a>
+        <a href="servicios-flex.html" class="mobile-nav-link">Envíos Flex (MeLi)</a>
+        <a href="servicios-cuenta-corriente.html" class="mobile-nav-link">Cuenta Corriente</a>
+        <a href="servicios-emprendedores.html" class="mobile-nav-link">Plan Emprendedores</a>
+        <a href="servicios-contrareembolso.html" class="mobile-nav-link">Contra Reembolso</a>
+
+        <div class="mobile-nav-heading">Plataformas</div>
+        <a href="logistica-dosruedas.html" class="mobile-nav-link">Logística DosRuedas</a>
+        <a href="mardelivery.html" class="mobile-nav-link">MarDelivery Gastronomía</a>
+
+        <div class="mobile-nav-heading">Institucional</div>
+        <a href="sobre-nosotros.html" class="mobile-nav-link">Sobre Nosotros</a>
+        <a href="preguntas-frecuentes.html" class="mobile-nav-link">Preguntas Frecuentes</a>
+        <a href="cotizar.html" class="mobile-nav-link">Cotizador Online</a>
+        <a href="contacto.html" class="mobile-nav-link">Contacto</a>
+      </nav>
+
+      <div class="mobile-footer-box">
+        <a href="tel:+5492236025348" class="mobile-footer-phone">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>223 602-5348</span>
+        </a>
+        <span class="mobile-footer-address">Friuli 1972 · Mar del Plata</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    
+    <!-- SECTION 1: HERO LOWCOST -->
+    <section id="lowcost-hero" class="hero-section" aria-label="LowCost: paquetería y cadetería con entrega el mismo día en Mar del Plata">
+      <div class="procedural-bg" aria-hidden="true"></div>
+
+      <!-- Visual Signature: Window Clock SVG -->
+      <div class="clock-watermark" aria-hidden="true">
+        <svg viewBox="-150 -150 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 50 -86.6 A 100 100 0 1 1 -50 86.6" stroke="#0950F6" stroke-width="14" stroke-linecap="round"/>
+          <path d="M -50 86.6 A 100 100 0 0 1 50 -86.6" stroke="#0950F6" stroke-width="14" stroke-linecap="round" stroke-dasharray="4 14" opacity="0.4"/>
+          <line x1="0" y1="-120" x2="0" y2="-132" stroke="#0950F6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="120" y1="0" x2="132" y2="0" stroke="#0950F6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="0" y1="120" x2="0" y2="132" stroke="#0950F6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="-120" y1="0" x2="-132" y2="0" stroke="#0950F6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="50" y2="-86.6" stroke="#0950F6" stroke-width="4" stroke-linecap="round"/>
+          <circle r="7" fill="#0950F6"/>
+        </svg>
+      </div>
+
+      <div class="hero-container">
+        <article class="hero-copy">
+          <header>
+            <span class="hero-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+              Paquetería y cadetería · MDQ 2026
+            </span>
+
+            <h1 class="hero-title" style="margin-top: 1rem;">
+              <span class="block">Cortás el pedido</span>
+              <span class="knockout-badge">y lo recibís hoy</span>
+              <span class="block">en Mar del Plata</span>
+            </h1>
+          </header>
+
+          <p class="hero-description">
+            Paquetería e-commerce, cadetería y encomiendas programadas. Lo que cargás antes de las <strong>13:00 hs</strong> se entrega en el día, antes de las <strong>19:00 hs</strong>. Sin letra chica ni agrupamientos forzados.
+          </p>
+
+          <div class="hero-actions">
+            <a href="cotizar.html" class="btn-cta-blue" id="lowcost-hero-cta-cotizar">
+              Cotizá tu envío LowCost
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-10.416c-4.401 0-7.98 3.579-7.98 7.98 0 1.41.368 2.736 1.011 3.886l-1.074 3.923 4.025-1.055c1.109.605 2.375.946 3.722.946 4.401 0 7.98-3.579 7.98-7.98 0-4.401-3.579-7.98-7.98-7.98zm0 14.364c-1.223 0-2.366-.35-3.331-.954l-.239-.148-2.48.65.662-2.417-.162-.258c-.672-1.07-1.026-2.316-1.026-3.627 0-3.526 2.868-6.395 6.395-6.395 3.526 0 6.395 2.869 6.395 6.395 0 3.526-2.869 6.395-6.395 6.395z"/></svg>
+              O escribinos por WhatsApp
+            </a>
+          </div>
+
+          <ul class="hero-chips-grid">
+            <li class="chip-item">
+              <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span class="chip-value">13:00 hs</span>
+              <span class="chip-label">Corte de pedidos</span>
+            </li>
+            <li class="chip-item">
+              <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span class="chip-value">19:00 hs</span>
+              <span class="chip-label">Entrega el mismo día</span>
+            </li>
+            <li class="chip-item">
+              <svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+              <span class="chip-value">$3.000</span>
+              <span class="chip-label">Base 0–3 km</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Right: Bezel Card with Timeline -->
+        <aside class="hero-card-container">
+          <div class="double-bezel-card">
+            <div class="double-bezel-inner">
+              
+              <div class="card-top-row">
+                <span class="live-status">
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span class="card-title">Mismo día, sin agrupar</span>
+                </span>
+                <span class="diff-badge">−$500 vs Express</span>
+              </div>
+
+              <div class="timeline-widget">
+                <div class="timeline-header">
+                  <h3 class="timeline-title">Tu jornada LowCost</h3>
+                  <span class="timeline-span">8 a 20 hs</span>
+                </div>
+
+                <div class="timeline-track-wrap">
+                  <div class="timeline-track-inner">
+                    <div class="timeline-bar" role="img" aria-label="Timeline de recepción hasta las 13 hs y entrega hasta las 19 hs">
+                      <div class="bar-intake" title="Carga hasta las 13:00 hs"></div>
+                      <div class="bar-dispatch" title="Repartos en calle hasta las 19:00 hs"></div>
+                      <div class="bar-cutoff-line"></div>
+                      <div class="bar-deadline-line"></div>
+                    </div>
+
+                    <div class="timeline-ticks" aria-hidden="true">
+                      <span class="timeline-tick-label" style="left: 0%;">08</span>
+                      <span class="timeline-tick-label" style="left: 16.666%;">10</span>
+                      <span class="timeline-tick-label" style="left: 33.333%;">12</span>
+                      <span class="timeline-tick-label" style="left: 41.666%; font-weight: 700; color: var(--color-brand-blue-700);">13</span>
+                      <span class="timeline-tick-label" style="left: 50%;">14</span>
+                      <span class="timeline-tick-label" style="left: 66.666%;">16</span>
+                      <span class="timeline-tick-label" style="left: 83.333%;">18</span>
+                      <span class="timeline-tick-label" style="left: 91.666%; font-weight: 700; color: var(--color-brand-blue-700);">19</span>
+                      <span class="timeline-tick-label" style="left: 100%;">20</span>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="timeline-legend">
+                  <li class="legend-item">
+                    <span class="legend-icon-hatch" aria-hidden="true"></span>
+                    <span><strong class="font-mono">13:00 hs</strong> cortás</span>
+                  </li>
+                  <li class="legend-item">
+                    <span class="legend-icon-solid" aria-hidden="true"></span>
+                    <span><strong class="font-mono">19:00 hs</strong> entregamos</span>
+                  </li>
+                  <li class="legend-item" style="opacity: 0.75;">
+                    <span>6 hs ventana en calle</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-footer-row">
+                <span>13:00 hs → 19:00 hs</span>
+                <span>Todo Mar del Plata</span>
+              </div>
+
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FEATURES -->
+    <section id="lowcost-features" class="features-section" aria-label="Características del Servicio LowCost">
+      <div class="features-container">
+        
+        <article class="features-header-col">
+          <span class="badge-pill-blue">Máxima Rentabilidad</span>
+
+          <h2 class="features-title">
+            Envíos LowCost:<br>
+            <span class="highlight-label">Máxima Eficiencia</span>
+          </h2>
+
+          <p class="features-lead">
+            Nuestro servicio LowCost está diseñado para el ruteo diario masivo. Optimizamos nuestras rutas agrupando despachos para ofrecer la tarifa más competitiva, garantizando la entrega en el día para pedidos ingresados antes del horario de corte.
+          </p>
+
+          <div class="business-lock">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18v-2H3v2zm3-4h12v-2H6v2zm2-4h8v-2H8v2zm-4-6v2h16V7l-8-5-8 5z"/></svg>
+            <span>Logística Predecible para Negocios</span>
+          </div>
+        </article>
+
+        <div class="bento-grid">
+          <article class="bento-card-outer bento-col-12">
+            <div class="bento-card-inner">
+              <svg class="bento-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+              <div class="bento-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+              </div>
+              <div class="bento-content">
+                <h3 class="bento-title">Eficiencia en Ruteo</h3>
+                <p class="bento-desc">
+                  Ruteo diario masivo optimizado de última milla. No se elige rango horario para maximizar la eficiencia logística urbana y bajar drásticamente los costos operativos por cada despacho.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="bento-card-outer bento-col-7">
+            <div class="bento-card-inner">
+              <svg class="bento-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div class="bento-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="bento-content">
+                <h3 class="bento-title">Corte 13:00 hs y Entrega Hoy</h3>
+                <p class="bento-desc">
+                  Pedidos ingresados antes de las 13:00 hs se entregan en el transcurso del día, siempre antes de las 19:00 hs de manera coordinada.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="bento-card-outer bento-col-5">
+            <div class="bento-card-inner">
+              <svg class="bento-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="m7 6 1 1-1 1"></path><path d="m17 16 1 1-1 1"></path></svg>
+              <div class="bento-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="m7 6 1 1-1 1"></path><path d="m17 16 1 1-1 1"></path></svg>
+              </div>
+              <div class="bento-content">
+                <h3 class="bento-title">Tarifa Económica</h3>
+                <p class="bento-desc">
+                  Más barato que Express, sobre todo en distancias largas. Pensado para emprendedores y tiendas online.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PRICING -->
+    <section id="lowcost-pricing" class="pricing-section" aria-label="Tarifario Oficial LowCost 2026">
+      <div class="pricing-container">
+        
+        <header class="pricing-header">
+          <span class="badge-pill-yellow">Tarifas Oficiales 2026</span>
+          <h2 class="pricing-title">Tarifas 2026 Envíos LowCost</h2>
+          <p class="pricing-subtitle">
+            Ruteo por zona optimizado. Garantizamos entregas antes de las 19:00 hs para pedidos cargados antes de las 13:00 hs.
+          </p>
+          <div class="yellow-divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="pricing-grid">
+          <!-- Zona 1 -->
+          <article class="plan-card">
+            <div class="plan-header">
+              <h3 class="plan-zone-name">Zona 1</h3>
+              <span class="plan-distance-badge">0–3 km</span>
+              <div class="plan-price-wrap">
+                <span class="plan-price">$3.000</span>
+                <span class="plan-unit">/ envío</span>
+              </div>
+              <p class="plan-note">La mejor tarifa para despacho diario de cercanía urbana.</p>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Corte de carga 13:00 hs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Entrega antes de las 19:00 hs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Hasta 5 kg / 40x30x20 cm</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Ruteo por zona optimizado</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Entrega puntual garantizada en el día</span>
+              </li>
+            </ul>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost%20Zona%201" class="btn-plan-action" target="_blank" rel="noopener noreferrer">VER ZONA 1</a>
+          </article>
+
+          <!-- Zona 2 -->
+          <article class="plan-card featured">
+            <div class="featured-ribbon">Recomendado PyME</div>
+            <div class="plan-header">
+              <h3 class="plan-zone-name">Zona 2</h3>
+              <span class="plan-distance-badge">3–5 km</span>
+              <div class="plan-price-wrap">
+                <span class="plan-price">$4.000</span>
+                <span class="plan-unit">/ envío</span>
+              </div>
+              <p class="plan-note">Cobertura intermedia económica ideal para despachos PyME.</p>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Corte de carga 13:00 hs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Entrega antes de las 19:00 hs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Hasta 5 kg / 40x30x20 cm</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Ruteo por zona optimizado</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Entrega puntual garantizada en el día</span>
+              </li>
+            </ul>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost%20Zona%202" class="btn-plan-action" target="_blank" rel="noopener noreferrer">VER ZONA 2</a>
+          </article>
+
+          <!-- Zona 3 -->
+          <article class="plan-card">
+            <div class="plan-header">
+              <h3 class="plan-zone-name">Zona 3</h3>
+              <span class="plan-distance-badge">5–7 km</span>
+              <div class="plan-price-wrap">
+                <span class="plan-price">$5.300</span>
+                <span class="plan-unit">/ envío</span>
+              </div>
+              <p class="plan-note">Llegamos a distancias medias con el mejor costo operativo.</p>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Corte de carga 13:00 hs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Entrega antes de las 19:00 hs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Hasta 5 kg / 40x30x20 cm</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Ruteo por zona optimizado</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Entrega puntual garantizada en el día</span>
+              </li>
+            </ul>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost%20Zona%203" class="btn-plan-action" target="_blank" rel="noopener noreferrer">VER ZONA 3</a>
+          </article>
+
+          <!-- Zona 4 -->
+          <article class="plan-card">
+            <div class="plan-header">
+              <h3 class="plan-zone-name">Zona 4</h3>
+              <span class="plan-distance-badge">7–10 km</span>
+              <div class="plan-price-wrap">
+                <span class="plan-price">$7.000</span>
+                <span class="plan-unit">/ envío</span>
+              </div>
+              <p class="plan-note">Máximo ahorro para traslados y repartos urbanos largos.</p>
+            </div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Corte de carga 13:00 hs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Entrega antes de las 19:00 hs</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Hasta 5 kg / 40x30x20 cm</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Ruteo por zona optimizado</span>
+              </li>
+              <li class="plan-feature-item">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Entrega puntual garantizada en el día</span>
+              </li>
+            </ul>
+            <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20hacer%20un%20env%C3%ADo%20LowCost%20Zona%204" class="btn-plan-action" target="_blank" rel="noopener noreferrer">VER ZONA 4</a>
+          </article>
+        </div>
+
+        <aside class="excedente-banner">
+          <div>
+            <h3 class="excedente-title">Zona 5 (más de 10 km)</h3>
+            <p class="excedente-desc">
+              Base fija de <strong>$7.000</strong> correspondiente a Zona 4 + <strong>$700</strong> por cada kilómetro adicional entero de distancia entre retiro y entrega.
+            </p>
+          </div>
+          <div class="excedente-box">
+            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Ejemplo 12 km</span>
+            <span class="excedente-price">$8.400</span>
+            <span class="excedente-sub">($7.000 + 2 × $700)</span>
+          </div>
+        </aside>
+
+        <div class="facts-grid">
+          <div class="fact-card">
+            <div class="fact-header">
+              <div class="fact-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+              </div>
+              <h4 class="fact-title">Ruteo por zona optimizado</h4>
+            </div>
+            <p class="fact-body">Planificamos el recorrido por zonas para maximizar la eficiencia y bajar el costo por despacho.</p>
+          </div>
+
+          <div class="fact-card">
+            <div class="fact-header">
+              <div class="fact-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <h4 class="fact-title">Corte 13:00 · Entrega &lt; 19:00</h4>
+            </div>
+            <p class="fact-body">Pedidos cargados antes de las 13:00 hs se entregan el mismo día antes de las 19:00 hs.</p>
+          </div>
+
+          <div class="fact-card">
+            <div class="fact-header">
+              <div class="fact-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+              </div>
+              <h4 class="fact-title">Tarifa fija por distancia</h4>
+            </div>
+            <p class="fact-body">El precio sale de los kilómetros exactos entre retiro y entrega. Sin sorpresas.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: BENEFITS -->
+    <section id="lowcost-benefits" class="benefits-section" aria-label="Beneficios Clave del Servicio LowCost">
+      <div class="benefits-container">
+        
+        <header class="benefits-header">
+          <span class="badge-pill-yellow">Ventajas Clave</span>
+          <h2 class="benefits-title">Beneficios LowCost</h2>
+          <p class="benefits-lead">
+            La combinación perfecta entre economía inteligente y máxima eficiencia logística para la consolidación de tu negocio.
+          </p>
+          <div class="yellow-divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="benefits-grid">
+          <article class="benefit-card-outer">
+            <div class="benefit-card-inner">
+              <svg class="benefit-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="m7 6 1 1-1 1"></path><path d="m17 16 1 1-1 1"></path></svg>
+              <div class="benefit-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="m7 6 1 1-1 1"></path><path d="m17 16 1 1-1 1"></path></svg>
+              </div>
+              <h3 class="benefit-title">Entregas a valores LowCost con las condiciones de express</h3>
+              <p class="benefit-desc">Disfrutá del mejor precio de la ciudad con un servicio confiable, trazabilidad y entrega el mismo día.</p>
+            </div>
+          </article>
+
+          <article class="benefit-card-outer">
+            <div class="benefit-card-inner">
+              <svg class="benefit-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div class="benefit-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <h3 class="benefit-title">Horario de corte extendido hasta 13hs</h3>
+              <p class="benefit-desc">Ingresá tus envíos del día hasta las 13:00 hs y los entregamos en la misma jornada antes de las 19:00 hs.</p>
+            </div>
+          </article>
+
+          <article class="benefit-card-outer">
+            <div class="benefit-card-inner">
+              <svg class="benefit-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+              <div class="benefit-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+              </div>
+              <h3 class="benefit-title">Ruteo Urbano Eficiente</h3>
+              <p class="benefit-desc">Ruteo continuo optimizado que permite la máxima densidad de entrega por kilómetro en Mar del Plata.</p>
+            </div>
+          </article>
+
+          <article class="benefit-card-outer">
+            <div class="benefit-card-inner">
+              <svg class="benefit-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+              <div class="benefit-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+              </div>
+              <h3 class="benefit-title">Ahorro de costos logísticos</h3>
+              <p class="benefit-desc">Maximizá tu rentabilidad pagando tarifas súper económicas por cada entrega. Tu margen de ganancia crece en cada paquete.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: HOW IT WORKS -->
+    <section id="lowcost-how-it-works" class="how-section" aria-label="Cómo Funciona el Envío LowCost">
+      <div class="how-container">
+        
+        <header class="how-header">
+          <span class="badge-pill-blue">Paso a Paso</span>
+          <h2 class="how-title">¿Cómo Funciona?</h2>
+          <p class="how-lead">
+            Un proceso simple, transparente y diseñado milimétricamente para maximizar tu productividad logística.
+          </p>
+          <div class="yellow-divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="steps-wrapper">
+          <article class="step-card-outer">
+            <div class="step-card-inner">
+              <span class="step-watermark-number" aria-hidden="true">01</span>
+              <div class="step-badge-row">
+                <span class="step-number-tag">PASO 01</span>
+                <div class="step-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+              </div>
+              <h3 class="step-title">Solicitud</h3>
+              <p class="step-description">Nos solicitás el envío fácilmente por WhatsApp enviando origen, destino y receptor antes de las 13:00 hs.</p>
+            </div>
+          </article>
+
+          <article class="step-card-outer">
+            <div class="step-card-inner">
+              <span class="step-watermark-number" aria-hidden="true">02</span>
+              <div class="step-badge-row">
+                <span class="step-number-tag">PASO 02</span>
+                <div class="step-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                </div>
+              </div>
+              <h3 class="step-title">Retiro</h3>
+              <p class="step-description">Retiramos el paquete por tu local, taller o depósito en el transcurso del día según el ruteo urbano planificado.</p>
+            </div>
+          </article>
+
+          <article class="step-card-outer">
+            <div class="step-card-inner">
+              <span class="step-watermark-number" aria-hidden="true">03</span>
+              <div class="step-badge-row">
+                <span class="step-number-tag">PASO 03</span>
+                <div class="step-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                </div>
+              </div>
+              <h3 class="step-title">Entrega</h3>
+              <p class="step-description">Entregamos de forma segura en manos de tu destinatario antes de las 19:00 hs con aviso inmediato de conformidad.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="cta-banner-section" aria-label="Llamado a la acción final">
+      <div class="cta-banner-inner">
+        <h2 class="cta-banner-title">¿Listo para optimizar tus envíos urbanos?</h2>
+        <p class="cta-banner-p">
+          Empezá a enviar hoy con la tarifa más competitiva de Mar del Plata. Escribinos directamente y coordinamos tu retiro.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 0.5rem;">
+          <a href="https://api.whatsapp.com/send/?phone=542236602699&text=Hola!%20Quiero%20coordinar%20un%20env%C3%ADo%20LowCost" target="_blank" rel="noopener noreferrer" class="btn-cta-blue">
+            Hablar por WhatsApp
+          </a>
+          <a href="cotizar.html" class="btn-cta-blue" style="background-color: transparent; color: var(--color-brand-blue-500); border: 2px solid var(--color-brand-blue-500); box-shadow: none;">
+            Cotizar Online
+          </a>
+        </div>
+      </div>
+    </section>
+  
+  </main>
+
+  
+  <!-- ========================================================================
+   * 3. FOOTER INTEGRAL Y OPTIMIZADO (CANÓNICO)
+   * ======================================================================== -->
+  <footer class="site-footer" id="contacto">
+    <div class="footer-yellow-top-bar" aria-hidden="true"></div>
+    <div class="ambient-glow-center" aria-hidden="true"></div>
+    <div class="ambient-glow-corner" aria-hidden="true"></div>
+
+    <div class="footer-container">
+      <div class="footer-banner-cta">
+        <div class="banner-copy">
+          <div class="banner-badge-live">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span>Atención Comercial Activa</span>
+          </div>
+          <h3 class="banner-heading">Cotizá tu Envío en el Acto <span>en Mar del Plata</span></h3>
+          <p class="banner-subtext">
+            Asesoramiento inmediato para empresas, comercios y particulares. Tu consulta es bienvenida.
+          </p>
+        </div>
+        <div class="banner-actions">
+          <a href="cotizar.html" class="btn-cotizar-footer">
+            <span>Cotizar Ahora</span>
+            <span class="btn-cotizar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </span>
+          </a>
+          <a href="https://api.whatsapp.com/send/?phone=5492236025348&text=Hola!%20Quiero%20cotizar%20un%20env%C3%ADo" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-footer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"></path>
+            </svg>
+            <span>WhatsApp Directo</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-columns-grid">
+        <div class="col-brand">
+          <a href="index.html" class="brand-logo-link" aria-label="Envíos DosRuedas — Inicio">
+            <img src="../public/logo.webp" onerror="this.src='../public/img/generales/logo.png'" alt="Envíos DosRuedas" class="brand-logo-img" width="46" height="46" loading="lazy" decoding="async" />
+            <div class="brand-title-box">
+              <span class="brand-name-footer">ENVÍOS <span>DOSRUEDAS</span></span>
+              <span class="brand-tagline-footer">MENSAJERÍA · LOGÍSTICA URBANA MDP</span>
+            </div>
+          </a>
+          <p class="brand-bio">
+            Soluciones logísticas urbanas y de última milla en Mar del Plata. Cadetería express, reparto de e-commerce y distribución con flota propia de confianza desde nuestra base operativa física.
+          </p>
+          <div class="hub-badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Hub Físico: Friuli 1972 · Mar del Plata</span>
+          </div>
+        </div>
+
+        <div class="col-services">
+          <h4 class="col-heading">Servicios &amp; Soluciones</h4>
+          <div class="services-subgrid">
+            <div>
+              <p class="service-category-title">Plataformas</p>
+              <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="logistica-dosruedas.html">Logística DosRuedas</a></li>
+                <li class="footer-link-item"><a href="mardelivery.html">MarDelivery Gastronomía</a></li>
+                <li class="footer-link-item"><a href="servicios-emprendedores.html">Plan Emprendedores MDQ</a></li>
+                <li class="footer-link-item"><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li class="footer-link-item"><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                <li class="footer-link-item"><a href="contacto.html">Contacto Comercial</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="service-category-title">Planes Logísticos</p>
+              <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="servicios-express.html">Envíos Express (3 hs)</a></li>
+                <li class="footer-link-item"><a href="servicios-lowcost.html">Envíos LowCost</a></li>
+                <li class="footer-link-item"><a href="servicios-flex.html">Mercado Envíos Flex</a></li>
+                <li class="footer-link-item"><a href="servicios-cuenta-corriente.html">Cuenta Corriente B2B</a></li>
+                <li class="footer-link-item"><a href="servicios-contrareembolso.html">Contra Reembolso</a></li>
+                <li class="footer-link-item"><a href="cotizar.html" class="footer-link-highlight">Cotizador Online →</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-ops">
+          <h4 class="col-heading">Base de Operaciones MDQ</h4>
+          <div class="ops-cards-stack">
+            <div class="ops-info-box">
+              <div class="ops-icon-container" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="ops-title">Centro de Distribución</p>
+                <p class="ops-text">Friuli 1972, Mar del Plata, Buenos Aires</p>
+              </div>
+            </div>
+
+            <div class="ops-info-box">
+              <div class="ops-icon-container" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="ops-title">Línea Directa y WhatsApp</p>
+                <a href="tel:+5492236025348" class="ops-phone-link">223 602-5348</a>
+              </div>
+            </div>
+
+            <div class="ops-info-box">
+              <div class="ops-icon-container" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <p class="ops-title">Horarios de Despacho</p>
+                <p class="ops-text">Lunes a Viernes: 08:00 a 18:00 hs</p>
+                <p class="ops-text">Sábados: 08:00 a 13:00 hs · Guardia activa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider-row">
+        <button type="button" class="btn-scroll-top" id="btn-scroll-top" aria-label="Volver arriba en la página">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="legal-bar">
+        <p>© 2026 Envíos DosRuedas · Todos los derechos reservados · Mar del Plata, Argentina.</p>
+        <nav class="legal-links" aria-label="Enlaces legales y secundarios">
+          <a href="servicios-express.html">Servicios</a>
+          <a href="logistica-dosruedas.html">Logística</a>
+          <a href="mardelivery.html">MarDelivery</a>
+          <a href="sobre-nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modular Scripts -->
+  <script src="./js/layout.js" defer></script>
+
+</body>
+
+</html>

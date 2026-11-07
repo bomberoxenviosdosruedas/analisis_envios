@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -8,298 +8,30 @@
   <meta name="description"
     content="Soluciones logísticas a medida en Mar del Plata: particulares, comercios e-commerce y empresas con cuenta corriente.">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Geist+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <style>
-    :root {
-      --color-brand-blue: #0950F6;
-      --color-brand-blue-dark: #073ec2;
-      --color-brand-blue-50: #E6EEFE;
-      --color-brand-blue-100: #BACEFD;
-      --color-brand-yellow: #FFEC01;
-      --color-brand-yellow-hover: #FFF12E;
-      --color-brand-white: #FFFFFF;
-      --color-text-main: #0950F6;
-      --color-text-dark: #0f172a;
-
-      --font-display: 'Anton SC', sans-serif;
-      --font-subheading: 'Bebas Neue', sans-serif;
-      --font-sans: 'Outfit', sans-serif;
-      --font-mono: 'Geist Mono', monospace;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      background-color: #FAFAFB;
-      color: var(--color-text-dark);
-      padding: 3.5rem 1rem;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 80rem;
-      margin-inline: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
-
-    /* Section Header */
-    .header-center {
-      text-align: center;
-      max-width: 48rem;
-      margin-inline: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--color-brand-blue);
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: 2.25rem;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      line-height: 1.05;
-      color: var(--color-brand-blue);
-      text-wrap: balance;
-    }
-
-    @media (min-width: 640px) {
-      .section-title {
-        font-size: 3rem;
-      }
-    }
-
-    .title-highlight {
-      color: #EAB308;
-    }
-
-    .section-desc {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #475569;
-      font-weight: 300;
-      text-wrap: balance;
-    }
-
-    /* 3-Column Grid */
-    .segments-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      align-items: stretch;
-    }
-
-    @media (min-width: 768px) {
-      .segments-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-      }
-    }
-
-    /* Double Bezel Card */
-    .bezel-outer {
-      background: linear-gradient(135deg, rgba(9, 80, 246, 0.12), rgba(255, 236, 1, 0.06));
-      padding: 0.5rem;
-      border-radius: 1.5rem;
-      border: 1px solid var(--color-brand-blue-100);
-      box-shadow: 0 16px 36px rgba(9, 80, 246, 0.05);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bezel-outer:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(9, 80, 246, 0.12);
-    }
-
-    .bezel-inner {
-      background-color: #FFFFFF;
-      border-radius: 1.125rem;
-      padding: 1.75rem;
-      border: 1px solid rgba(9, 80, 246, 0.12);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      flex: 1;
-      gap: 1.5rem;
-      position: relative;
-    }
-
-    /* Watermark Number */
-    .watermark-number {
-      position: absolute;
-      right: 1.25rem;
-      top: 1rem;
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: rgba(9, 80, 246, 0.08);
-      user-select: none;
-      pointer-events: none;
-      line-height: 1;
-    }
-
-    .icon-box {
-      width: 3.25rem;
-      height: 3.25rem;
-      border-radius: 0.875rem;
-      background-color: var(--color-brand-blue-50);
-      color: var(--color-brand-blue);
-      border: 1px solid var(--color-brand-blue-100);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      transition: all 0.25s ease;
-    }
-
-    .bezel-outer:hover .icon-box {
-      background-color: var(--color-brand-blue);
-      color: var(--color-brand-yellow);
-    }
-
-    .category-tag {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #64748b;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-title {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      color: var(--color-brand-blue);
-      margin-bottom: 0.75rem;
-    }
-
-    .card-desc {
-      font-size: 0.875rem;
-      line-height: 1.6;
-      color: #475569;
-      font-weight: 300;
-      margin-bottom: 1.25rem;
-    }
-
-    .benefit-pill {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.625rem 0.875rem;
-      border-radius: 0.5rem;
-      background-color: var(--color-brand-blue-50);
-      border: 1px solid var(--color-brand-blue-100);
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--color-brand-blue);
-    }
-
-    .card-footer {
-      padding-top: 1rem;
-      border-top: 1px solid #F1F5F9;
-      margin-top: auto;
-    }
-
-    .cta-button {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 0.875rem 1.25rem;
-      border-radius: 9999px;
-      font-family: var(--font-subheading);
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .cta-primary {
-      background-color: var(--color-brand-yellow);
-      color: var(--color-brand-blue);
-      box-shadow: 0 4px 14px rgba(255, 236, 1, 0.35);
-    }
-
-    .cta-primary:hover {
-      background-color: var(--color-brand-yellow-hover);
-      transform: translateY(-1px);
-    }
-
-    .cta-elevated {
-      background-color: var(--color-brand-blue);
-      color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(9, 80, 246, 0.2);
-    }
-
-    .cta-elevated:hover {
-      background-color: var(--color-brand-blue-dark);
-      transform: translateY(-1px);
-    }
-
-    .svg-icon {
-      width: 1.25rem;
-      height: 1.25rem;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-  </style>
+  <!-- Estilos Modulares -->
+  <link rel="stylesheet" href="./css/globals.css">
+  <link rel="stylesheet" href="./css/segmentos-home.css">
 </head>
 
 <body>
 
-  <section id="segmentos-home" aria-labelledby="segmentos-home-heading">
+  <section id="segmentos-home" class="segmentos-home-section" aria-labelledby="segmentos-home-heading">
     <div class="container">
 
       <!-- Header -->
       <div class="header-center">
         <div class="kicker">
-          <svg class="svg-icon" style="width:0.875rem;height:0.875rem;color:#EAB308;" viewBox="0 0 24 24"
-            aria-hidden="true">
+          <svg class="kicker-icon" viewBox="0 0 24 24" aria-hidden="true">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
           </svg>
-          <span>Soluciones a Medida / en Mar del Plata</span>
+          <span>Soluciones a Medida <span class="kicker-separator">/</span> en Mar del Plata</span>
         </div>
 
         <h2 id="segmentos-home-heading" class="section-title">
@@ -313,16 +45,16 @@
       </div>
 
       <!-- Grid -->
-      <div class="segments-grid">
+      <div class="segments-grid" role="region" aria-label="Segmentos de servicio logístico">
 
         <!-- Card 1: Particulares -->
-        <article class="bezel-outer">
-          <div class="bezel-inner">
+        <article class="double-bezel-outer">
+          <div class="double-bezel-inner">
             <span class="watermark-number" aria-hidden="true">01</span>
 
             <div>
               <div class="icon-box" aria-hidden="true">
-                <svg class="svg-icon" viewBox="0 0 24 24">
+                <svg class="card-icon-svg" viewBox="0 0 24 24">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
@@ -336,8 +68,7 @@
               </p>
 
               <div class="benefit-pill">
-                <svg class="svg-icon" style="width:1rem;height:1rem;color:#EAB308;flex-shrink:0;" viewBox="0 0 24 24"
-                  aria-hidden="true">
+                <svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
                 <span>Franja de 3 hs o entrega inmediata</span>
@@ -345,25 +76,27 @@
             </div>
 
             <div class="card-footer">
-              <a href="/cotizar" class="cta-button cta-primary">
+              <a href="/cotizar" class="cta-nested-pill cta-pill-primary">
                 <span>Cotizar Mandado</span>
-                <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="cta-nested-icon" aria-hidden="true">
+                  <svg class="cta-arrow-svg" viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
               </a>
             </div>
           </div>
         </article>
 
         <!-- Card 2: Comercios -->
-        <article class="bezel-outer">
-          <div class="bezel-inner">
+        <article class="double-bezel-outer">
+          <div class="double-bezel-inner">
             <span class="watermark-number" aria-hidden="true">02</span>
 
             <div>
               <div class="icon-box" aria-hidden="true">
-                <svg class="svg-icon" viewBox="0 0 24 24">
+                <svg class="card-icon-svg" viewBox="0 0 24 24">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
@@ -377,8 +110,7 @@
               </p>
 
               <div class="benefit-pill">
-                <svg class="svg-icon" style="width:1rem;height:1rem;color:#EAB308;flex-shrink:0;" viewBox="0 0 24 24"
-                  aria-hidden="true">
+                <svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
                 <span>Retiro bonificado en tu local</span>
@@ -386,25 +118,27 @@
             </div>
 
             <div class="card-footer">
-              <a href="/servicios/plan-emprendedores" class="cta-button cta-elevated">
+              <a href="/servicios/plan-emprendedores" class="cta-nested-pill cta-pill-elevated">
                 <span>Ver Plan Emprendedores</span>
-                <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="cta-nested-icon" aria-hidden="true">
+                  <svg class="cta-arrow-svg" viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
               </a>
             </div>
           </div>
         </article>
 
         <!-- Card 3: Empresas -->
-        <article class="bezel-outer">
-          <div class="bezel-inner">
+        <article class="double-bezel-outer">
+          <div class="double-bezel-inner">
             <span class="watermark-number" aria-hidden="true">03</span>
 
             <div>
               <div class="icon-box" aria-hidden="true">
-                <svg class="svg-icon" viewBox="0 0 24 24">
+                <svg class="card-icon-svg" viewBox="0 0 24 24">
                   <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                   <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                 </svg>
@@ -418,8 +152,7 @@
               </p>
 
               <div class="benefit-pill">
-                <svg class="svg-icon" style="width:1rem;height:1rem;color:#EAB308;flex-shrink:0;" viewBox="0 0 24 24"
-                  aria-hidden="true">
+                <svg class="benefit-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
                 <span>Atención prioritaria y soporte dedicado</span>
@@ -427,12 +160,14 @@
             </div>
 
             <div class="card-footer">
-              <a href="/servicios/empresas-cuenta-corriente" class="cta-button cta-elevated">
+              <a href="/servicios/empresas-cuenta-corriente" class="cta-nested-pill cta-pill-elevated">
                 <span>Solicitar Apertura B2B</span>
-                <svg class="svg-icon" style="width:1rem;height:1rem;" viewBox="0 0 24 24">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="cta-nested-icon" aria-hidden="true">
+                  <svg class="cta-arrow-svg" viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
               </a>
             </div>
           </div>

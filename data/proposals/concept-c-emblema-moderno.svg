@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>Envios DosRuedas - Concepto C (Emblema Moderno)</title>
+  <!-- Escudo exterior en Azul Oficial con corte de arco aerodinamico -->
+  <path fill="#0C3BA7" d="
+    M 36 44 
+    L 220 44 
+    A 12 12 0 0 1 232 56 
+    L 232 128 
+    C 232 188 140 224 128 228 
+    C 116 224 24 188 24 128 
+    L 24 56 
+    A 12 12 0 0 1 36 44 Z" />
+
+  <!-- Borde interior en Amarillo Acento -->
+  <path fill-rule="evenodd" fill="#FFEC01" d="
+    M 44 54 
+    L 212 54 
+    L 212 124 
+    C 212 174 136 206 128 210 
+    C 120 206 44 174 44 124 Z 
+    M 54 64 
+    L 202 64 
+    L 202 122 
+    C 202 164 134 194 128 196 
+    C 122 194 54 164 54 122 Z" />
+
+  <!-- Dos Ruedas centrales en Amarillo y Blanco -->
+  <path fill-rule="evenodd" fill="#FFEC01" d="
+    M 78 108 
+    A 30 30 0 1 0 78 168 
+    A 30 30 0 1 0 78 108 Z 
+    M 78 124 
+    A 14 14 0 1 1 78 152 
+    A 14 14 0 1 1 78 124 Z" />
+  
+  <path fill-rule="evenodd" fill="#FFEC01" d="
+    M 178 108 
+    A 30 30 0 1 0 178 168 
+    A 30 30 0 1 0 178 108 Z 
+    M 178 124 
+    A 14 14 0 1 1 178 152 
+    A 14 14 0 1 1 178 124 Z" />
+
+  <!-- Flecha de velocidad central conectora -->
+  <polygon points="128,84 166,138 142,138 142,168 114,168 114,138 90,138" fill="#FFFFFF" />
+</svg>
